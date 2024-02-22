@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'EternalDynasties';
+  title = 'Demo';
+  greeting = "";
+  apiUrl = "api";
+  
+  constructor(private http: HttpClient) {
+    let tokenUrl2 = this.apiUrl + '/info/';
+    http.get(tokenUrl2, { observe: 'body', responseType: 'text'}).subscribe(data => {this.greeting = data; console.log(data)});
+  }
 }
