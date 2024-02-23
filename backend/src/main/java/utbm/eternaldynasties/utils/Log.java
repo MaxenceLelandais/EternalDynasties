@@ -88,7 +88,7 @@ public class Log {
             String text = chronoFormat.format(LocalDateTime.now()) + " [" + type + "] = " + message + "\n";
             // Ecriture des logs.
             fw.write(text);
-            System.out.println(text);
+            System.out.print(text);
             fw.close();
 
         } catch (IOException e) {
