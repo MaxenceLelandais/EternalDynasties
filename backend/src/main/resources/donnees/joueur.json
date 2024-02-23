@@ -1,0 +1,19 @@
+{
+    "Nom":"Votre nom de joueur : ",
+    "Civilisation":"Le nom de votre peuple : ",
+    "Temps de jeu":0,
+    "Début de la partie":0,
+    "Ressources":{
+        "Habitants":1,
+        "Nourriture":0,
+        "Chaleur":0
+    },
+    "Caracteristiques collectes":{
+        "Habitant":"-1/s:Nourriture",
+        "Nourriture":"0/s",
+        "Chaleur":"0/s"
+    },
+    "Recherches":[
+        "Feu"
+    ]
+}

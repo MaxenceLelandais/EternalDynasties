@@ -1,0 +1,45 @@
+{
+    "Feu":{
+        "Description":"C'est le début !!!",
+        "Coût":{
+            "Nourriture":10
+        },
+        "Débloque":[
+            "Chasse",
+            "Cuisine",
+            "Pêche"
+        ],
+        "Bonus":{
+            "Nourriture":"+15",
+            "Chaleur":"x1.3"
+        },
+        "Dépendance":null
+    },
+    "Cueillette":{
+        "Description":"C'est la fin de la famine",
+        "Coût":null,
+        "Débloque":[
+            "Chasse",
+            "Cuisine",
+            "Pêche"
+        ],
+        "Bonus":{
+            "Nourriture":"+1/s"
+        },
+        "Dépendance":null
+    },
+    "Chasse":{
+        "Description":"A mort !!",
+        "Coût":{
+            "Nourriture":10
+        },
+        "Débloque":null,
+        "Bonus":{
+            "Nourriture":"+3/s"
+        },
+        "Dépendance":[
+            "Feu",
+            "Cueillette"
+        ]
+    }
+}
