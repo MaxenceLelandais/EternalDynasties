@@ -13,12 +13,12 @@ import utbm.eternaldynasties.utils.Log;
 @RestController
 @RequestMapping(value = "api/*", method = RequestMethod.GET,
         produces = MediaType.TEXT_PLAIN_VALUE)
-public class ServeurServices {
+public class ServeurController {
 
     private final FichierJeuService fichierJeuService;
 
     @Autowired
-    public ServeurServices(FichierJeuService fichierJeuService) {
+    public ServeurController(FichierJeuService fichierJeuService) {
         this.fichierJeuService = fichierJeuService;
     }
 

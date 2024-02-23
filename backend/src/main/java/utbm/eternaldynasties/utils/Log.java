@@ -5,14 +5,16 @@
 
 package utbm.eternaldynasties.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import utbm.eternaldynasties.jeu.Jeu;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Timer;
-import java.util.TimerTask;
+
 
 /**
  * La classe Log est utilisé comme classe statique.
@@ -20,7 +22,7 @@ import java.util.TimerTask;
  */
 public class Log {
 
-    public static HashMap<String, FileWriter> listeEcriture = new HashMap<>();
+    private static final Logger logger = LoggerFactory.getLogger(Log.class);
 
     // Chemin des fichiers logs.
     public static String chemin = "Logs//";
@@ -37,6 +39,7 @@ public class Log {
      */
     public static void error(String nomClasse, String message) {
         send("error", nomClasse, message);
+        logger.error(message);
     }
 
     /**
@@ -47,6 +50,7 @@ public class Log {
      */
     public static void warn(String nomClasse, String message) {
         send("warn", nomClasse, message);
+        logger.warn(message);
     }
 
     /**
@@ -57,6 +61,7 @@ public class Log {
      */
     public static void info(String nomClasse, String message) {
         send("info", nomClasse, message);
+        logger.info(message);
     }
 
     /**
@@ -88,7 +93,7 @@ public class Log {
             String text = chronoFormat.format(LocalDateTime.now()) + " [" + type + "] = " + message + "\n";
             // Ecriture des logs.
             fw.write(text);
-            System.out.print(text);
+
             fw.close();
 
         } catch (IOException e) {
