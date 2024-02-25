@@ -13,10 +13,15 @@ public class JeuService {
 
     @Autowired
     private FichierJeuService fichierJeuService;
+    private Jeu jeu;
 
     @PostConstruct
     public void init(){
         Log.info("JeuService","Démarrage du jeu...");
-        Jeu jeu = new Jeu(fichierJeuService);
+        this.jeu = new Jeu(fichierJeuService);
+    }
+
+    public Jeu getJeu() {
+        return jeu;
     }
 }

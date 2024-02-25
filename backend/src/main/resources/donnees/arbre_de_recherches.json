@@ -13,7 +13,8 @@
             "Nourriture":"+15",
             "Chaleur":"x1.3"
         },
-        "Dépendance":null
+        "Dépendance":null,
+        "Inhibe":null
     },
     "Cueillette":{
         "Description":"C'est la fin de la famine",
@@ -26,7 +27,10 @@
         "Bonus":{
             "Nourriture":"+1/s"
         },
-        "Dépendance":null
+        "Dépendance":null,
+        "Inhibe":[
+            "Pêche"
+        ]
     },
     "Chasse":{
         "Description":"A mort !!",
@@ -40,6 +44,7 @@
         "Dépendance":[
             "Feu",
             "Cueillette"
-        ]
+        ],
+        "Inhibe":null
     }
 }

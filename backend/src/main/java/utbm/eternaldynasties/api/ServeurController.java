@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import utbm.eternaldynasties.services.FichierJeuService;
+import utbm.eternaldynasties.utils.Json;
 import utbm.eternaldynasties.utils.Log;
 
 @RestController
@@ -32,21 +33,21 @@ public class ServeurController {
     public String getArbreDeRecherches() {
         JSONObject json = fichierJeuService.arbreDeRecherches;
         Log.info("ServeurServices", "Récupération du fichier d'arbre de recherches.");
-        return json.toJSONString();
+        return Json.jsonObjectToString(json);
     }
 
     @GetMapping(value = "joueur")
     public String getJoueur() {
         JSONObject json = fichierJeuService.joueur;
         Log.info("ServeurServices", "Récupération du fichier joueur.");
-        return json.toJSONString();
+        return Json.jsonObjectToString(json);
     }
 
     @GetMapping(value = "ressources")
     public String getRessource() {
         JSONObject json = fichierJeuService.ressources;
         Log.info("ServeurServices", "Récupération du fichier ressources.");
-        return json.toJSONString();
+        return Json.jsonObjectToString(json);
     }
 
     @GetMapping(value = "")
