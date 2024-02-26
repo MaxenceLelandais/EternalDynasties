@@ -1,50 +1,880 @@
 {
-    "Feu":{
-        "Description":"C'est le début !!!",
-        "Coût":{
-            "Nourriture":10
-        },
-        "Débloque":[
-            "Chasse",
-            "Cuisine",
-            "Pêche"
-        ],
-        "Bonus":{
-            "Nourriture":"+15",
-            "Chaleur":"x1.3"
-        },
-        "Dépendance":null,
-        "Inhibe":null
-    },
-    "Cueillette":{
-        "Description":"C'est la fin de la famine",
+    "Tribue":{
+        "Description":null,
         "Coût":null,
         "Débloque":[
-            "Chasse",
-            "Cuisine",
-            "Pêche"
+            "Préhistoire"
         ],
-        "Bonus":{
-            "Nourriture":"+1/s"
-        },
-        "Dépendance":null,
-        "Inhibe":[
-            "Pêche"
+        "Bonus":null
+    },
+    "Préhistoire":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Cueuillette",
+            "Croyance"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Tribue"
         ]
     },
-    "Chasse":{
-        "Description":"A mort !!",
-        "Coût":{
-            "Nourriture":10
-        },
-        "Débloque":null,
-        "Bonus":{
-            "Nourriture":"+3/s"
-        },
-        "Dépendance":[
-            "Feu",
-            "Cueillette"
+    "Cueuillette":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Feu"
         ],
-        "Inhibe":null
+        "Bonus":null,
+        "Dépendance":[
+            "Préhistoire"
+        ]
+    },
+    "Feu":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Chasse et pêche"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Cueuillette"
+        ]
+    },
+    "Croyance":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Education",
+            "Mythologie"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Préhistoire"
+        ]
+    },
+    "Chasse et pêche":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Armée",
+            "Elevage",
+            "Navigation",
+            "Antiquité"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Feu"
+        ]
+    },
+    "Education":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Monnaie",
+            "Philosophie",
+            "Antiquité"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Croyance"
+        ]
+    },
+    "Mythologie":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Religion"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Croyance"
+        ]
+    },
+    "Armée":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Conquête",
+            "Antiquité"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Chasse et pêche"
+        ]
+    },
+    "Elevage":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Construction",
+            "Antiquité"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Chasse et pêche"
+        ]
+    },
+    "Religion":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Science",
+            "Magie",
+            "Antiquité"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Mythologie"
+        ]
+    },
+    "Antiquité":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Conquête",
+            "Construction",
+            "Navigation",
+            "Monnaie",
+            "Philosophie",
+            "Science",
+            "Magie"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Armée",
+            "Elevage",
+            "Chasse et pêche",
+            "Education",
+            "Religion"
+        ]
+    },
+    "Navigation":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Cartographie",
+            "Moyen-Age",
+            "Renaissance"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Chasse et pêche",
+            "Antiquité"
+        ]
+    },
+    "Science":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Ingénieurie",
+            "Moyen-Age",
+            "Université"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Religion",
+            "Antiquité"
+        ],
+        "Inhibe":[
+            "Magie"
+        ]
+    },
+    "Magie":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Magie du Bien",
+            "Magie Noire"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Religion",
+            "Antiquité"
+        ],
+        "Inhibe":[
+            "Science"
+        ]
+    },
+    "Construction":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Monuments",
+            "Moyen-Age",
+            "Fortification"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Elevage",
+            "Antiquité"
+        ]
+    },
+    "Monnaie":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Commerce"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Education",
+            "Antiquité"
+        ]
+    },
+    "Philosophie":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Politique"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Education",
+            "Antiquité"
+        ]
+    },
+    "Ingénieurie":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Moyen-Age",
+            "Mécanique"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Science"
+        ]
+    },
+    "Magie du Bien":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Moyen-Age",
+            "Alchimie"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Magie"
+        ]
+    },
+    "Magie Noire":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Moyen-Age",
+            "Sorcellerie"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Magie"
+        ]
+    },
+    "Conquête":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Moyen-Age",
+            "Renaissance",
+            "Poudre à canon"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Armée",
+            "Antiquité"
+        ]
+    },
+    "Monuments":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":null,
+        "Bonus":null,
+        "Dépendance":[
+            "Construction"
+        ]
+    },
+    "Commerce":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Moyen-Age",
+            "Renaissance",
+            "Banque"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Monnaie"
+        ]
+    },
+    "Politique":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Moyen-Age",
+            "Système Féodale"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Philosophie"
+        ]
+    },
+    "Moyen-Age":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Renaissance",
+            "Fortification",
+            "Système Féodale"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Antiquité",
+            "Conquête",
+            "Construction",
+            "Navigation",
+            "Commerce",
+            "Politique"
+        ],
+        "If":{
+            "Science+Ingénieurie":"Université+Mécanique",
+            "Magie du Bien":"Alchimie",
+            "Magie Noire":"Sorcellerie"
+        }
+    },
+    "Fortification":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Renaissance",
+            "Révolution industrielle",
+            "Industrialisation"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Moyen-Age",
+            "Construction"
+        ]
+    },
+    "Système féodale":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Renaissance",
+            "Humanisme"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Moyen-Age",
+            "Politique"
+        ]
+    },
+    "Université":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Renaissance",
+            "Astronomie"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Moyen-Age",
+            "Science"
+        ]
+    },
+    "Mécanique":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Renaissance",
+            "Révolution industrielle",
+            "Electricité"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Moyen-Age",
+            "Ingénieurie"
+        ]
+    },
+    "Alchimie":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Renaissance",
+            "Révolution industrielle",
+            "Contrôle élémentaire"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Moyen-Age",
+            "Magie du Bien"
+        ]
+    },
+    "Sorcellegie":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Renaissance",
+            "Révolution industrielle",
+            "Nécromencie"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Moyen-Age",
+            "Magie Noire"
+        ]
+    },
+    "Renaissance":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Poudre à canon",
+            "Cartographie",
+            "Banque",
+            "Humanisme"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Moyen-Age",
+            "Conquête",
+            "Fortification",
+            "Navigation",
+            "Commerce",
+            "Système féodale"
+        ],
+        "If":{
+            "Université+Mécanique":"Astronomie+Révolution industrielle+Electricité",
+            "Alchimie":"Révolution industrielle+Contrôle élémentaire",
+            "Sorcellerie":"Révolution industrielle+Nécromencie"
+        }
+    },
+    "Poudre à canon":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Révolution industrielle",
+            "Balistique"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Renaissance",
+            "Conquête"
+        ]
+    },
+    "Cartographie":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Colonisation"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Renaissance",
+            "Moyen-Age",
+            "Navigation"
+        ]
+    },
+    "Banque":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Révolution industrielle",
+            "Economie"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Renaissance",
+            "Moyen-Age",
+            "Commerce"
+        ]
+    },
+    "Humanisme":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Révolution industrielle",
+            "Culture"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Renaissance",
+            "Système féodale"
+        ]
+    },
+    "Astronomie":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Révolution industrielle",
+            "Epoque moderne",
+            "Physique"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Renaissance",
+            "Université"
+        ]
+    },
+    "Colonisation":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Révolution industrielle",
+            "Aviation"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Cartographie"
+        ]
+    },
+    "Révolution industrielle":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Balistique",
+            "Industrialisation",
+            "Economie",
+            "Culture"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Renaissance",
+            "Poudre à canon",
+            "Moyen-Age",
+            "Colonisation",
+            "Banque",
+            "Humanisme"
+        ],
+        "If":{
+            "Astronomie+Révolution industrielle":"Electricité+Epoque moderne+Physique",
+            "Révolution industrielle+Alchimie":"Contrôle élémentaire",
+            "Révolution industrielle+Sorcellerie":"Nécromencie"
+        }
+    },
+    "Balistique":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Epoque moderne",
+            "Nucléaire"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Renaissance",
+            "Poudre à canon"
+        ]
+    },
+    "Industrialisation":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Urbanisation"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Moyen-Age",
+            "Renaissance",
+            "Fortification"
+        ]
+    },
+    "Economie":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Epoque moderne",
+            "Globalisation"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Renaissance",
+            "Banque"
+        ]
+    },
+    "Culture":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Epoque moderne",
+            "Médias"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Renaissance",
+            "Humanisme"
+        ]
+    },
+    "Electricité":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Epoque moderne",
+            "Informatique"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Renaissance",
+            "Moyen-Age",
+            "Mécanique"
+        ]
+    },
+    "Contrôle élémentaire":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Epoque moderne",
+            "Puissance élémentaire"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Renaissance",
+            "Moyen-Age",
+            "Alchimie"
+        ]
+    },
+    "Nécromencie":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Epoque moderne",
+            "Force du chaos"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Renaissance",
+            "Moyen-Age",
+            "Sorcellerie"
+        ]
+    },
+    "Urbanisation":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Epoque moderne",
+            "Epoque futuriste",
+            "Urbanisation futuriste"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Industrialisation"
+        ]
+    },
+    "Epoque moderne":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Nucléaire",
+            "Epoque futuriste",
+            "Urbanisation futuriste",
+            "Aviation",
+            "Globalisation",
+            "Médias"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Renaissance",
+            "Révolution industrielle",
+            "Balistique",
+            "Urbanisation",
+            "Colonisation",
+            "Economie",
+            "Culture"
+        ],
+        "If":{
+            "Astronomie+Electricité":"Physique+Informatique",
+            "Contrôle élémentaire":"Puissance élémentaire",
+            "Nécromencie":"Force du chaos"
+        }
+    },
+    "Nucléaire":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Epoque futuriste",
+            "Laser"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Révolution industrielle",
+            "Balistique"
+        ]
+    },
+    "Aviation":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Exploration spatiale"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Révolution industrielle",
+            "Renaissance",
+            "Colonisation"
+        ]
+    },
+    "Globalisation":{
+        "Description":null,
+        "Coût":null,
+        "Bonus":null,
+        "Dépendance":[
+            "Economie"
+        ]
+    },
+    "Médias":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Réseaux sociaux"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Révolution industrielle",
+            "Culture"
+        ]
+    },
+    "Réseaux sociaux":{
+        "Description":null,
+        "Coût":null,
+        "Bonus":null,
+        "Dépendance":[
+            "Médias"
+        ]
+    },
+    "Physique":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Epoque futuriste",
+            "Nano technologies"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Révolution industrielle",
+            "Renaissance",
+            "Astronomie"
+        ]
+    },
+    "Informatique":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Robotique"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Révolution industrielle",
+            "Electricité"
+        ]
+    },
+    "Puissance élémentaire":{
+        "Description":null,
+        "Coût":null,
+        "Bonus":null,
+        "Dépendance":[
+            "Contrôle élémentaire"
+        ]
+    },
+    "Force du chaos":{
+        "Description":null,
+        "Coût":null,
+        "Bonus":null,
+        "Dépendance":[
+            "Nécromencie"
+        ]
+    },
+    "Exploration spatiale":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Epoque futuriste",
+            "Voyage supraluminique"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Aviation"
+        ]
+    },
+    "Robotique":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Epoque futuriste",
+            "Intelligence artificielle"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Informatique"
+        ]
+    },
+    "Epoque futuriste":{
+        "Description":null,
+        "Coût":null,
+        "Débloque":[
+            "Laser",
+            "Urbanisation futuriste",
+            "Voyage supraluminique",
+            "Aviation",
+            "Globalisation",
+            "Médias"
+        ],
+        "Bonus":null,
+        "Dépendance":[
+            "Epoque moderne",
+            "Nucléaire",
+            "Urbanisation",
+            "Révolution industrielle",
+            "Exploration spatiale",
+            "Globalisation",
+            "Réseaux sociaux"
+        ],
+        "If":{
+            "Physique+Robotique":"Nano technologies+Intelligence artificielle",
+            "Puissance élémentaire":"",
+            "Force du chaos":""
+        }
+    },
+    "Laser":{
+        "Description":null,
+        "Coût":null,
+        "Bonus":null,
+        "Dépendance":[
+            "Epoque Moderne",
+            "Nucléaire"
+        ]
+    },
+    "Urbanisation futuriste":{
+        "Description":null,
+        "Coût":null,
+        "Bonus":null,
+        "Dépendance":[
+            "Epoque Moderne",
+            "Révolution industrielle",
+            "Urbanisation"
+        ]
+    },
+    "Voyage supraluminique":{
+        "Description":null,
+        "Coût":null,
+        "Bonus":null,
+        "Dépendance":[
+            "Epoque Moderne",
+            "Exploration spatiale"
+        ]
+    },
+    "Nano technologies":{
+        "Description":null,
+        "Coût":null,
+        "Bonus":null,
+        "Dépendance":[
+            "Epoque Moderne",
+            "Physique"
+        ]
+    },
+    "Intelligence artificielle":{
+        "Description":null,
+        "Coût":null,
+        "Bonus":null,
+        "Dépendance":[
+            "Epoque Moderne",
+            "Robotique"
+        ]
     }
 }
