@@ -36,6 +36,7 @@ public class Recherche {
     }
 
     public Recherche update(Map<String, Recherche> listeRecherches) {
+
         this.description = (String)this.jsonObjet.get("Description");
         this.cout = this.jsonObjet.containsKey("Coût") ? (Map<String, Long>) this.jsonObjet.get("Coût") : null;
         this.bonus = this.jsonObjet.containsKey("Bonus") ? (Map<String, String>) this.jsonObjet.get("Bonus") : null;
@@ -160,8 +161,11 @@ public class Recherche {
     }
 
     public String toString() {
-        return Json.jsonMapToString(jsonObjet);
+        return Json.jsonToString(jsonObjet);
     }
 
+    void forceActive(){
+        this.etat = true;
+    }
 
 }

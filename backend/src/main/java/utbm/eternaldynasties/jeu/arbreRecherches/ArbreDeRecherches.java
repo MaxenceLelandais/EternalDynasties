@@ -3,12 +3,13 @@ package utbm.eternaldynasties.jeu.arbreRecherches;
 import org.json.simple.JSONObject;
 import utbm.eternaldynasties.utils.Json;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class ArbreDeRecherches {
+public class ArbreDeRecherches implements Cloneable{
     private Map<String, Recherche> listeRecherches = new HashMap<>();
 
     public ArbreDeRecherches(JSONObject jsonObject) {
@@ -20,6 +21,10 @@ public class ArbreDeRecherches {
                 this.listeRecherches.put(keyString, new Recherche(keyString, (Map<String, Object>) jsonObject.get(key), this.listeRecherches));
             }
         }
+    }
+
+    public void init(ArrayList<String> recherches){
+        recherches.forEach(r->this.listeRecherches.get(r).forceActive());
     }
 
     public boolean activerRecherche(String nomRecherche) {
@@ -45,6 +50,15 @@ public class ArbreDeRecherches {
     public String toString() {
         Map<String, Object> liste = new HashMap<>();
         this.listeRecherches.values().forEach(r->liste.put(r.getNom(), r.getJsonObjet()));
-        return Json.jsonMapToString(liste);
+        return Json.jsonToString(liste);
+    }
+
+    @Override
+    public ArbreDeRecherches clone() {
+        try {
+            return (ArbreDeRecherches) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }

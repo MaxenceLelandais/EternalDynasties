@@ -4,9 +4,10 @@ import com.google.gson.GsonBuilder;
 import org.apache.tomcat.util.json.JSONParser;
 import org.apache.tomcat.util.json.ParseException;
 import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
 
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Map;
 
 public class Json {
@@ -21,15 +22,7 @@ public class Json {
         }
         return null;
     }
-
-    public static Map convertJsonObjectToMap(JSONObject jsonObject) {
-        return (Map) jsonObject;
-    }
-
-    public static String jsonMapToString(Map<String, Object> jsonObject) {
-        return (new GsonBuilder().setPrettyPrinting().create()).toJson(jsonObject);
-    }
-    public static String jsonObjectToString(JSONObject jsonObject) {
+    public static String jsonToString(Object jsonObject) {
         return (new GsonBuilder().setPrettyPrinting().create()).toJson(jsonObject);
     }
 
@@ -39,6 +32,16 @@ public class Json {
         } catch (ParseException e) {
             Log.error("Json", "Problème stringToJsonObject : " + text);
             return null;
+        }
+    }
+
+    public static void save(String path, Map<Object,Object> data){
+        try (FileWriter file = new FileWriter(path)) {
+            file.write(jsonToString(new JSONObject(data)));
+            file.flush();
+        } catch (IOException e) {
+            Log.error("Json", "Problème d'écriture du fichier : " + path);
+            e.printStackTrace();
         }
     }
 }

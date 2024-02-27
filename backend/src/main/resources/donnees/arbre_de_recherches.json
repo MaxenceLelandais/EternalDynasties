@@ -311,7 +311,7 @@
         "Coût":null,
         "Débloque":[
             "Moyen-Age",
-            "Système Féodale"
+            "Système féodale"
         ],
         "Bonus":null,
         "Dépendance":[
@@ -324,7 +324,7 @@
         "Débloque":[
             "Renaissance",
             "Fortification",
-            "Système Féodale"
+            "Système féodale"
         ],
         "Bonus":null,
         "Dépendance":[
@@ -409,7 +409,7 @@
             "Magie du Bien"
         ]
     },
-    "Sorcellegie":{
+    "Sorcellerie":{
         "Description":null,
         "Coût":null,
         "Débloque":[
@@ -836,7 +836,7 @@
         "Coût":null,
         "Bonus":null,
         "Dépendance":[
-            "Epoque Moderne",
+            "Epoque moderne",
             "Nucléaire"
         ]
     },
@@ -845,7 +845,7 @@
         "Coût":null,
         "Bonus":null,
         "Dépendance":[
-            "Epoque Moderne",
+            "Epoque moderne",
             "Révolution industrielle",
             "Urbanisation"
         ]
@@ -855,7 +855,7 @@
         "Coût":null,
         "Bonus":null,
         "Dépendance":[
-            "Epoque Moderne",
+            "Epoque moderne",
             "Exploration spatiale"
         ]
     },
@@ -864,7 +864,7 @@
         "Coût":null,
         "Bonus":null,
         "Dépendance":[
-            "Epoque Moderne",
+            "Epoque moderne",
             "Physique"
         ]
     },
@@ -873,7 +873,7 @@
         "Coût":null,
         "Bonus":null,
         "Dépendance":[
-            "Epoque Moderne",
+            "Epoque moderne",
             "Robotique"
         ]
     }
