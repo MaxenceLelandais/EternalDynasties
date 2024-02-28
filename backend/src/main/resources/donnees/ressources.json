@@ -72,15 +72,27 @@
         }
     },
     "Mana": {
-        "Description": "Paix de l'âme. Tout harmonie !",
+        "Description": "Force mystique et puissante",
         "Bonus": {
             "Mana": "1"
         }
     },
-    "Magie sombre": {
+    "Pouvoir arcanique": {
+        "Description": "l'essence du bien",
+        "Bonus": {
+            "Pouvoir arcanique": "1"
+        }
+    },
+    "Ame maudite": {
         "Description": "666",
         "Bonus": {
-            "Piété": "1"
+            "Ame maudite": "1"
+        }
+    },
+    "Point de science": {
+        "Description": "science sans conscience n'est que ruine de l'âme",
+        "Bonus": {
+            "Point de science": "1"
         }
     },
     "Electricité": {

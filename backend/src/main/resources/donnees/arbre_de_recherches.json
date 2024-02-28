@@ -415,7 +415,7 @@
         "Débloque":[
             "Renaissance",
             "Révolution industrielle",
-            "Nécromencie"
+            "Nécromancie"
         ],
         "Bonus":null,
         "Dépendance":[
@@ -444,7 +444,7 @@
         "If":{
             "Université+Mécanique":"Astronomie+Révolution industrielle+Electricité",
             "Alchimie":"Révolution industrielle+Contrôle élémentaire",
-            "Sorcellerie":"Révolution industrielle+Nécromencie"
+            "Sorcellerie":"Révolution industrielle+Nécromancie"
         }
     },
     "Poudre à canon":{
@@ -547,7 +547,7 @@
         "If":{
             "Astronomie+Révolution industrielle":"Electricité+Epoque moderne+Physique",
             "Révolution industrielle+Alchimie":"Contrôle élémentaire",
-            "Révolution industrielle+Sorcellerie":"Nécromencie"
+            "Révolution industrielle+Sorcellerie":"Nécromancie"
         }
     },
     "Balistique":{
@@ -630,7 +630,7 @@
             "Alchimie"
         ]
     },
-    "Nécromencie":{
+    "Nécromancie":{
         "Description":null,
         "Coût":null,
         "Débloque":[
@@ -681,7 +681,7 @@
         "If":{
             "Astronomie+Electricité":"Physique+Informatique",
             "Contrôle élémentaire":"Puissance élémentaire",
-            "Nécromencie":"Force du chaos"
+            "Nécromancie":"Force du chaos"
         }
     },
     "Nucléaire":{
@@ -777,7 +777,7 @@
         "Coût":null,
         "Bonus":null,
         "Dépendance":[
-            "Nécromencie"
+            "Nécromancie"
         ]
     },
     "Exploration spatiale":{
