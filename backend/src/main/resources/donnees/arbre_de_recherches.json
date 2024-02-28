@@ -1,11 +1,16 @@
 {
-    "Tribue":{
-        "Description":null,
-        "Coût":null,
-        "Débloque":[
+    "Tribue": {
+        "Description": null,
+        "Coût": null,
+        "Débloque": [
             "Préhistoire"
         ],
-        "Bonus":null
+        "Bonus": {
+            "Villageois": "1",
+            "Nourriture": "1",
+            "Bois": "1",
+            "Pierre": "1"
+        }
     },
     "Préhistoire":{
         "Description":null,

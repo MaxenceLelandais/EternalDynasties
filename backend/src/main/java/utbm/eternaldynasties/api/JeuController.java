@@ -41,13 +41,13 @@ public class JeuController {
     @GetMapping(value="recherchesDisponibles")
     public String getRecherchesDisponibles(@RequestParam(value = "nomJoueur") String nomJoueur) {
         Map<String, String> map = new HashMap<>();
-        this.jeuService.getJeu().getJoueur(nomJoueur).getArbreDeRecherche().recherchesPossibles().forEach(r->map.put(r.getNom(),r.toString()));
+        this.jeuService.getJeu().getJoueur(nomJoueur).recherchesPossibles().forEach(r->map.put(r.getNom(),r.toString()));
         return Json.jsonToString(map);
     }
 
     @GetMapping(value="activerRecherche")
     public void getActiverRecherche(@RequestParam(value = "nomJoueur") String nomJoueur,@RequestParam(value = "recherche") String nomRecherche) {
-        this.jeuService.getJeu().getJoueur(nomJoueur).getArbreDeRecherche().activerRecherche(nomRecherche);
+        this.jeuService.getJeu().getJoueur(nomJoueur).activerRecherche(nomRecherche);
         this.jeuService.getJeu().getJoueur(nomJoueur).save();
     }
 

@@ -11,6 +11,7 @@ public class Ressource {
     private Map<String, Long> listeCout = new HashMap<>();
     private Map<String, Bonus> listeBonus = new HashMap<>();
     private final Map<String, Object> jsonObjet;
+    private boolean active = false;
 
 
     public Ressource(String nom, Map<String, Object> jsonObjet) {
@@ -56,5 +57,13 @@ public class Ressource {
 
     public Map<String, Object> getJsonObjet() {
         return jsonObjet;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }

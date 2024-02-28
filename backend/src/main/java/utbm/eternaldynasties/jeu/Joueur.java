@@ -1,11 +1,15 @@
 package utbm.eternaldynasties.jeu;
 
 import org.json.simple.JSONObject;
+import utbm.eternaldynasties.jeu.arbreDeRessources.ArbreDeRessources;
+import utbm.eternaldynasties.jeu.arbreDeRessources.Bonus;
 import utbm.eternaldynasties.jeu.arbreRecherches.ArbreDeRecherches;
+import utbm.eternaldynasties.jeu.arbreRecherches.Recherche;
 import utbm.eternaldynasties.utils.Json;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Joueur {
@@ -19,9 +23,11 @@ public class Joueur {
     private HashMap<String, String> caracteristiquesCollectes = new HashMap<>();
     private ArrayList<String> recherches = new ArrayList<>();
     private ArbreDeRecherches arbreDeRecherche;
+    private ArbreDeRessources arbreDeRessources;
 
-    public Joueur(JSONObject jsonObject, ArbreDeRecherches arbreDeRecherche) {
+    public Joueur(JSONObject jsonObject, ArbreDeRecherches arbreDeRecherche, ArbreDeRessources arbreDeRessources) {
         this.arbreDeRecherche = arbreDeRecherche;
+        this.arbreDeRessources = arbreDeRessources;
         Map data = jsonObject;
         if (data.containsKey("Nom")) {
             this.nom = data.get("Nom").toString();
@@ -64,7 +70,19 @@ public class Joueur {
         Json.save("src/main/resources/sauvegardes/"+this.nom+".save", toMap());
     }
 
-    public ArbreDeRecherches getArbreDeRecherche(){
-        return this.arbreDeRecherche;
+    public List<Recherche> recherchesPossibles(){
+        return this.arbreDeRecherche.recherchesPossibles();
+    }
+    public boolean activerRecherche(String nomRecherche){
+        if(this.arbreDeRecherche.activerRecherche(nomRecherche)){
+            Map<String, Bonus> map = this.arbreDeRecherche.getRecherche(nomRecherche).getListeBonus();
+            for(String key : map.keySet()){
+                Bonus bonusRessource = this.arbreDeRessources.getRessource(key).getListeBonus().get(key);
+                Bonus bonusRecherche = map.get(key);
+                bonusRessource.
+            }
+            return true;
+        }
+        return false;
     }
 }

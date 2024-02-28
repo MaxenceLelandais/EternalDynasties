@@ -1,6 +1,8 @@
 package utbm.eternaldynasties.jeu.arbreDeRessources;
 
 import org.json.simple.JSONObject;
+import utbm.eternaldynasties.jeu.arbreRecherches.ArbreDeRecherches;
+import utbm.eternaldynasties.jeu.arbreRecherches.Recherche;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,6 +14,19 @@ public class ArbreDeRessources implements Cloneable {
         for (Object key : jsonObject.keySet()) {
             String keyString = key.toString();
             this.listeRessources.put(keyString, new Ressource(keyString, (Map<String, Object>) jsonObject.get(key)));
+        }
+    }
+
+    public Ressource getRessource(String nomRessource){
+        return this.listeRessources.get(nomRessource);
+    }
+
+    @Override
+    public ArbreDeRessources clone() {
+        try {
+            return (ArbreDeRessources) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
         }
     }
 }

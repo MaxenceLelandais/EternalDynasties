@@ -54,12 +54,24 @@ public class Bonus {
         return quantite;
     }
 
+    public void addQuantite(Double add) {
+        this.quantite+=add;
+    }
+
     public double getQuantiteParSecondes() {
         return quantiteParSecondes;
     }
 
+    public void addQuantiteParSecondes(Double add) {
+        this.quantiteParSecondes+=add;
+    }
+
     public Map<String, Double> getQuantiteParRessources() {
         return quantiteParRessources;
+    }
+
+    public void addQuantiteParRessources(String ressource, Double add) {
+        this.quantiteParRessources.get(ressource)+=add;
     }
 
     public double getPourcentage() {

@@ -39,6 +39,10 @@ public class ArbreDeRecherches implements Cloneable{
         return this.listeRecherches.values().stream().filter(Recherche::getEtat).collect(Collectors.toList());
     }
 
+    public Recherche getRecherche(String nomRecherche){
+        return this.listeRecherches.get(nomRecherche);
+    }
+
     public List<Recherche> recherchesPossibles() {
         return this.listeRecherches.values().stream()
                 .filter(r->!r.getEtat())

@@ -46,7 +46,7 @@ public class Jeu {
         if (this.listeJoueur.containsKey(nomPartie)) {
             joueur = this.listeJoueur.get(nomPartie);
         } else {
-            joueur = new Joueur(Json.read("src/main/resources/sauvegardes/" + nomPartie + ".save"), this.arbreDeRecherches.clone());
+            joueur = new Joueur(Json.read("src/main/resources/sauvegardes/" + nomPartie + ".save"), this.arbreDeRecherches.clone(), this.arbreDeRessources.clone());
             joueur.save();
             this.listeJoueur.put(nomPartie, joueur);
         }
@@ -58,7 +58,7 @@ public class Jeu {
         if (this.listeJoueur.containsKey(nomPartie)) {
             joueur = this.listeJoueur.get(nomPartie);
         } else {
-            joueur = new Joueur(Json.read("src/main/resources/donnees/joueur.json"), this.arbreDeRecherches.clone());
+            joueur = new Joueur(Json.read("src/main/resources/donnees/joueur.json"), this.arbreDeRecherches.clone(), this.arbreDeRessources.clone());
             joueur.init(nomPartie);
             joueur.save();
             this.listeJoueur.put(nomPartie, joueur);
