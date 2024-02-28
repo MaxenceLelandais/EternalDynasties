@@ -1,5 +1,168 @@
 {
-    "Habitants":"De la main-d'oeuvre",
-    "Nourriture":"Permet de se nourrir",
-    "Chaleur":"Permet de se réchauffer"
+    "Villageois": {
+        "Description": "De la main-d'oeuvre !",
+        "Coût": {
+            "Nourriture": "10"
+        },
+        "Bonus": {
+            "Personne": "1"
+        }
+    },
+    "Or": {
+        "Description": "Permet d'acheter",
+        "Bonus": {
+            "Or": "1"
+        }
+    },
+    "Point de recherche": {
+        "Description": "Pour débloquer les recherches",
+        "Bonus": {
+            "Point de recherche": "1"
+        }
+    },
+    "Nourriture": {
+        "Description": "C'est le début de la vie",
+        "Bonus": {
+            "Nourriture": "1"
+        }
+    },
+    "Fermier": {
+        "Description": "",
+        "Coût": {
+            "Villageois": "1"
+        },
+        "Bonus": {
+            "Nourriture": "1;1/s;1/Fermier;1/Mine;0.01%;0.01%/Fermier;0.01%/Bois;0.01%/s"
+        }
+    },
+    "Bucheron": {
+        "Description": "",
+        "Coût": {
+            "Villageois": "1"
+        },
+        "Bonus": {
+            "Bois": "1;1/s;0.01%;0.01%/Bucheron;0.01%/s"
+        }
+    },
+    "Mineur": {
+        "Description": "",
+        "Coût": {
+            "Villageois": "1"
+        },
+        "Bonus": {
+            "Pierre": "1;1/s;0.01%;0.01%/Mineur;0.01%/s"
+        }
+    },
+    "Bois": {
+        "Description": "Bob le bricoleur est là !!",
+        "Bonus": {
+            "Bois": "1"
+        }
+    },
+    "Pierre": {
+        "Description": "Fortifions TOUTTTT !!!",
+        "Bonus": {
+            "Pierre": "1"
+        }
+    },
+    "Piété": {
+        "Description": "Pies lesu Domine. Dona eis requiem.",
+        "Bonus": {
+            "Piété": "1"
+        }
+    },
+    "Mana": {
+        "Description": "Paix de l'âme. Tout harmonie !",
+        "Bonus": {
+            "Mana": "1"
+        }
+    },
+    "Magie sombre": {
+        "Description": "666",
+        "Bonus": {
+            "Piété": "1"
+        }
+    },
+    "Electricité": {
+        "Description": "Brizzzt",
+        "Bonus": {
+            "Electricité": "1"
+        }
+    },  
+    "Maison": {
+        "Description": "4 murs et un toit.",
+        "Coût": {
+            "Bois": "10"
+        },
+        "Bonus": {
+            "Maison": "1",
+            "Max-Personne": "1"
+        }
+    },
+    "Ferme": {
+        "Description": "Plantons des choux à la mode de chez nous !",
+        "Coût": {
+            "Bois": "10",
+            "Pierre": "10"
+        },
+        "Bonus": {
+            "Ferme": "1",
+            "Max-Fermier": "1"
+        }
+    },
+    "Forestier": {
+        "Description": "Coupe coupe coupe",
+        "Coût": {
+            "Bois": "10",
+            "Pierre": "10"
+        },
+        "Bonus": {
+            "Forestier": "1",
+            "Max-Bucheron": "1"
+        }
+    },
+    "Mine": {
+        "Description": "Hé o Hé o On va au boulot.",
+        "Coût": {
+            "Bois": "10",
+            "Pierre": "10"
+        },
+        "Bonus": {
+            "Mine": "1",
+            "Max-Mineur": "1"
+        }
+    },
+    "Grange": {
+        "Description": "Ca c'est du grain !!",
+        "Coût": {
+            "Bois": "100",
+            "Pierre": "100"
+        },
+        "Bonus": {
+            "Ferme": "1",
+            "Max-Nourriture": "100"
+        }
+    },
+    "Entrepôt": {
+        "Description": "Toujours plus!!!",
+        "Coût": {
+            "Bois": "100",
+            "Pierre": "100"
+        },
+        "Bonus": {
+            "Entrepôt": "1",
+            "Max-Bois": "100"
+        }
+    },
+    "Carrière": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": {
+            "Bois": "100",
+            "Pierre": "100"
+        },
+        "Bonus": {
+            "Carrière": "1",
+            "Max-Pierre": "100"
+        }
+    }
 }

@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping(value = "*", method = {RequestMethod.GET, RequestMethod.POST},
+@RequestMapping(value = "*", method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
 public class JeuController {
 
@@ -24,12 +24,12 @@ public class JeuController {
         this.jeuService = jeuService;
     }
 
-    @PostMapping(value = "listeRecherches")
+    @GetMapping(value = "listeRecherches")
     public JSONObject sendRecherche() {
         return Json.stringToJsonObject(jeuService.getJeu().getArbreDeRecherches().toString());
     }
 
-    @PostMapping(value = "parties")
+    @GetMapping(value = "parties")
     public String sendSauvegardes() {
         return this.jeuService.getJeu().getSauvegardes();
     }
@@ -48,9 +48,10 @@ public class JeuController {
     @GetMapping(value="activerRecherche")
     public void getActiverRecherche(@RequestParam(value = "nomJoueur") String nomJoueur,@RequestParam(value = "recherche") String nomRecherche) {
         this.jeuService.getJeu().getJoueur(nomJoueur).getArbreDeRecherche().activerRecherche(nomRecherche);
+        this.jeuService.getJeu().getJoueur(nomJoueur).save();
     }
 
-    @RequestMapping(value = "")
+    @GetMapping(value = "")
     public String autre() {
         return "Il n'y a rien ici.";
     }

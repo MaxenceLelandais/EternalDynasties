@@ -1,22 +1,20 @@
 package utbm.eternaldynasties.jeu;
 
-import org.json.simple.JSONObject;
+import utbm.eternaldynasties.jeu.arbreDeRessources.ArbreDeRessources;
 import utbm.eternaldynasties.jeu.arbreRecherches.ArbreDeRecherches;
-import utbm.eternaldynasties.jeu.arbreRecherches.Recherche;
 import utbm.eternaldynasties.services.FichierJeuService;
 import utbm.eternaldynasties.utils.Json;
 import utbm.eternaldynasties.utils.Log;
 
 import java.io.File;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Jeu {
 
     private final FichierJeuService fichierJeuService;
     private ArbreDeRecherches arbreDeRecherches;
+    private ArbreDeRessources arbreDeRessources;
     private Map<String, Joueur> listeJoueur = new HashMap<>();
 
     public Jeu(FichierJeuService fichierJeuService) {
@@ -24,8 +22,9 @@ public class Jeu {
 
         Log.info("JeuService", "Jeu en cours de démarrage ...");
         this.arbreDeRecherches = new ArbreDeRecherches(fichierJeuService.arbreDeRecherches);
-        for(String nomJoueur : getSauvegardes().split("\n")){
-            this.listeJoueur.put(nomJoueur,chargerPartie(nomJoueur));
+        this.arbreDeRessources = new ArbreDeRessources(fichierJeuService.ressources);
+        for (String nomJoueur : getSauvegardes().split("\n")) {
+            this.listeJoueur.put(nomJoueur, chargerPartie(nomJoueur));
         }
     }
 
@@ -67,7 +66,7 @@ public class Jeu {
         return joueur;
     }
 
-    public Joueur getJoueur(String nom){
+    public Joueur getJoueur(String nom) {
         return this.listeJoueur.get(nom);
     }
 

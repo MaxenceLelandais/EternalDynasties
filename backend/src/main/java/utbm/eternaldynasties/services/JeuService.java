@@ -16,8 +16,8 @@ public class JeuService {
     private Jeu jeu;
 
     @PostConstruct
-    public void init(){
-        Log.info("JeuService","Démarrage du jeu...");
+    public void init() {
+        Log.info("JeuService", "Démarrage du jeu...");
         this.jeu = new Jeu(fichierJeuService);
     }
 

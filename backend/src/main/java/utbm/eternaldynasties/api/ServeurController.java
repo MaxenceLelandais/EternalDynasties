@@ -22,34 +22,34 @@ public class ServeurController {
         this.fichierJeuService = fichierJeuService;
     }
 
-    @PostMapping(value = "etat")
+    @GetMapping(value = "etat")
     public String sendEtat() {
         Log.info("ServeurServices", "Démarrage des services OK.");
         return "Réponse du serveur: OK";
     }
 
-    @PostMapping(value = "arbreDeRecherche")
+    @GetMapping(value = "arbreDeRecherche")
     public String sendArbreDeRecherches() {
         JSONObject json = fichierJeuService.arbreDeRecherches;
         Log.info("ServeurServices", "Récupération du fichier type arbre de recherches.");
         return Json.jsonToString(json);
     }
 
-    @PostMapping(value = "joueur")
+    @GetMapping(value = "joueur")
     public String sendJoueur() {
         JSONObject json = fichierJeuService.joueur;
         Log.info("ServeurServices", "Récupération du fichier type joueur.");
         return Json.jsonToString(json);
     }
 
-    @PostMapping(value = "ressources")
+    @GetMapping(value = "ressources")
     public String sendRessource() {
         JSONObject json = fichierJeuService.ressources;
         Log.info("ServeurServices", "Récupération du fichier type ressources.");
         return Json.jsonToString(json);
     }
 
-    @PostMapping(value = "")
+    @GetMapping(value = "")
     public String autre() {
         return "Il n'y a rien ici.";
     }

@@ -1,5 +1,6 @@
 package utbm.eternaldynasties.jeu.arbreRecherches;
 
+import utbm.eternaldynasties.jeu.arbreDeRessources.Bonus;
 import utbm.eternaldynasties.utils.Json;
 
 import java.util.ArrayList;
@@ -9,9 +10,9 @@ import java.util.Map;
 public class Recherche {
     private String nom;
     private String description;
-    private Map<String, Long> cout = new HashMap<>();
+    private Map<String, Long> listeCout = new HashMap<>();
     private Map<String, Recherche> debloque = new HashMap<>();
-    private Map<String, String> bonus = new HashMap<>();
+    private Map<String, Bonus> listeBonus = new HashMap<>();
     private Map<String, Recherche> dependances = new HashMap<>();
     private Map<ArrayList<Recherche>, ArrayList<Recherche>> conditions = new HashMap<>();
     private Map<String, Recherche> inhibe = new HashMap<>();
@@ -37,9 +38,20 @@ public class Recherche {
 
     public Recherche update(Map<String, Recherche> listeRecherches) {
 
-        this.description = (String)this.jsonObjet.get("Description");
-        this.cout = this.jsonObjet.containsKey("Coût") ? (Map<String, Long>) this.jsonObjet.get("Coût") : null;
-        this.bonus = this.jsonObjet.containsKey("Bonus") ? (Map<String, String>) this.jsonObjet.get("Bonus") : null;
+        this.description = (String) this.jsonObjet.get("Description");
+
+        Map<String, String> map = this.jsonObjet.containsKey("Coût") ? (Map<String, String>) this.jsonObjet.get("Coût") : new HashMap<String, String>();
+        if (map != null) {
+            for (String key : map.keySet()) {
+                this.listeCout.put(key, Long.parseLong(map.get(key)));
+            }
+        }
+        map = this.jsonObjet.containsKey("Bonus") ? (Map<String, String>) this.jsonObjet.get("Bonus") : new HashMap<String, String>();
+        if (map != null) {
+            for (String key : map.keySet()) {
+                this.listeBonus.put(key, new Bonus(key, map.get(key)));
+            }
+        }
 
         ajoutVal("Dépendance", this.dependances, listeRecherches);
         ajoutVal("Débloque", this.debloque, listeRecherches);
@@ -55,7 +67,7 @@ public class Recherche {
     private void ajoutVal(String key, Map<String, Recherche> liste, Map<String, Recherche> listeRecherches) {
         if (this.jsonObjet.containsKey(key) && this.jsonObjet.get(key) != null) {
             for (String valeur : (ArrayList<String>) this.jsonObjet.get(key)) {
-                liste.put(valeur, ajoutKeyValListeRecherches(listeRecherches,valeur));
+                liste.put(valeur, ajoutKeyValListeRecherches(listeRecherches, valeur));
             }
         }
     }
@@ -101,16 +113,16 @@ public class Recherche {
         return description;
     }
 
-    public Map<String, Long> getCout() {
-        return cout;
-    }
-
     public Map<String, Recherche> getDebloque() {
         return debloque;
     }
 
-    public Map<String, String> getBonus() {
-        return bonus;
+    public Map<String, Long> getListeCout() {
+        return listeCout;
+    }
+
+    public Map<String, Bonus> getListeBonus() {
+        return listeBonus;
     }
 
     public Map<String, Recherche> getDependances() {
@@ -164,7 +176,7 @@ public class Recherche {
         return Json.jsonToString(jsonObjet);
     }
 
-    void forceActive(){
+    void forceActive() {
         this.etat = true;
     }
 
