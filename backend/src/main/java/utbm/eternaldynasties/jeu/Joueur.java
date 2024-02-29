@@ -119,6 +119,14 @@ public class Joueur {
                     for (Bonus bonusRessource : this.arbreDeRessources.getRessource(ressource).getListeBonus().values()) {
                         String nom = bonusRessource.getRessourceGenere();
                         if (!nom.equals(ressource)) {
+                            if(nom.contains("Max-")){
+                                String nomRessourceMax = nom.replace("Max-","");
+                                if (!nomRessourceMax.equals(ressource)) {
+                                    Map<String, Bonus> liste = this.arbreDeRessources.getRessource(nomRessourceMax).getListeBonus();
+                                    liste.putIfAbsent(nom, new Bonus(nom, "0"));
+                                    liste.get(nom).addQuantite(bonusRessource.getQuantite());
+                                }
+                            }
                             this.arbreDeRessources.getRessource(nom).getListeBonus().get(nom).add(bonusRessource);
                         }
                     }
@@ -128,10 +136,20 @@ public class Joueur {
             Map<String, Bonus> bonus = this.arbreDeRessources.getRessource(ressource).getListeBonus();
             if (bonus != null && !bonus.isEmpty()) {
                 for (String keyBonus : bonus.keySet()) {
-                    this.ressources.replace(keyBonus, this.ressources.get(keyBonus) + (long) (bonus.get(keyBonus).getQuantite() * (1 + bonus.get(keyBonus).getPourcentage()/100)));
+                    long val = this.ressources.get(ressource);
+                    if(!keyBonus.equals("Max-"+ressource)){
+                        val += (long) (bonus.get(keyBonus).getQuantite() * (1 + bonus.get(keyBonus).getPourcentage() / 100));
+                        if(keyBonus.equals(ressource)){
+                            if(val>=bonus.get("Max-"+ressource).getQuantite()){
+                                val = (long)bonus.get("Max-"+ressource).getQuantite();
+                            }
+                        }
+                        this.ressources.replace(keyBonus, val);
+                    }
                 }
             }
         }
+
         save();
         return toMap();
     }
@@ -172,7 +190,14 @@ public class Joueur {
                         nouvelleValeur += this.ressources.get(key) * quantiteParRessources.get(key);
                     }
                 }
-                this.ressources.replace(keyBonus, this.ressources.get(ressource) + nouvelleValeur.longValue());
+
+                long val = this.ressources.get(ressource) + nouvelleValeur.longValue();
+                if(bonus.containsKey("Max-"+ressource)){
+                    if(val>=bonus.get("Max-"+ressource).getQuantite()){
+                        val = (long)bonus.get("Max-"+ressource).getQuantite();
+                    }
+                }
+                this.ressources.replace(keyBonus, val);
             }
         }
     }

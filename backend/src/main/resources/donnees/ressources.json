@@ -5,6 +5,7 @@
             "Nourriture": "10"
         },
         "Bonus": {
+            "Max-Villageois": "1",
             "Villageois": "1"
         }
     },
@@ -23,6 +24,7 @@
     "Nourriture": {
         "Description": "C'est le début de la vie",
         "Bonus": {
+            "Max-Nourriture": "100",
             "Nourriture": "1"
         }
     },
@@ -32,6 +34,8 @@
             "Villageois": "1"
         },
         "Bonus": {
+            "Max-Fermier": "1",
+            "Max-Villageois": "1",
             "Fermier": "1",
             "Nourriture": "1;1/s;1/Fermier;1/Mine;0.01%;0.01%/Fermier;0.01%/Bois;0.01%/s"
         }

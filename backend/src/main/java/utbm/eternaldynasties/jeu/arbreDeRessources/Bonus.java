@@ -141,4 +141,8 @@ public class Bonus {
         }
         return String.join(";", text);
     }
+
+    public void addQuantite(double quantite) {
+        this.quantite+=quantite;
+    }
 }
