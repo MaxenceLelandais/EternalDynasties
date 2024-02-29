@@ -9,10 +9,10 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent {
   title = 'Demo';
   greeting = "";
-  apiUrl = "api";
+  apiUrl = "api/";
   
   constructor(private http: HttpClient) {
-    let tokenUrl2 = this.apiUrl + '/info/';
+    let tokenUrl2 = this.apiUrl+'etat';
     http.get(tokenUrl2, { observe: 'body', responseType: 'text'}).subscribe(data => {this.greeting = data; console.log(data)});
   }
 }
