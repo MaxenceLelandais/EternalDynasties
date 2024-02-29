@@ -30,7 +30,9 @@
         "Débloque":[
             "Feu"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Fermier":"1"
+        },
         "Dépendance":[
             "Préhistoire"
         ]

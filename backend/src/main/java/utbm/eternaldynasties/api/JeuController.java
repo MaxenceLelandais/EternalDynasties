@@ -51,6 +51,21 @@ public class JeuController {
         this.jeuService.getJeu().getJoueur(nomJoueur).save();
     }
 
+    @GetMapping(value="listeRessources")
+    public String getListeRessources(@RequestParam(value = "nomJoueur") String nomJoueur) {
+        return Json.jsonToString(this.jeuService.getJeu().getJoueur(nomJoueur).getRessources());
+    }
+
+    @GetMapping(value="addRessource")
+    public String getAddRessource(@RequestParam(value = "nomJoueur") String nomJoueur,@RequestParam(value = "ressource") String nomRessource) {
+        return Json.jsonToString(this.jeuService.getJeu().getJoueur(nomJoueur).clickAchat(nomRessource));
+    }
+
+    @GetMapping(value="tick")
+    public String getAddRessource(@RequestParam(value = "nomJoueur") String nomJoueur) {
+        return Json.jsonToString(this.jeuService.getJeu().getJoueur(nomJoueur).tickBonus());
+    }
+
     @GetMapping(value = "")
     public String autre() {
         return "Il n'y a rien ici.";

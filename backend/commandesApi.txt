@@ -3,3 +3,6 @@ récupère les nom des parties existantes : http://localhost:9876/parties
 récupère ou créer une nouvelle partie : http://localhost:9876/joueur?nomJoueur=maxenc
 récupère les recherches disponibles : http://localhost:9876/recherchesDisponibles?nomJoueur=maxenc
 active une recherche : http://localhost:9876/activerRecherche?nomJoueur=maxenc&recherche=Tribue
+add une ressources (achat si besoin) : http://localhost:9876/addRessource?nomJoueur=maxenc&ressource=Bois
+tick : http://localhost:9876/tick?nomJoueur=maxenc
+liste ressources : http://localhost:9876/listeRessources?nomJoueur=maxenc

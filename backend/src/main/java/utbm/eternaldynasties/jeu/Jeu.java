@@ -1,5 +1,6 @@
 package utbm.eternaldynasties.jeu;
 
+import org.json.simple.JSONObject;
 import utbm.eternaldynasties.jeu.arbreDeRessources.ArbreDeRessources;
 import utbm.eternaldynasties.jeu.arbreRecherches.ArbreDeRecherches;
 import utbm.eternaldynasties.services.FichierJeuService;
@@ -7,8 +8,7 @@ import utbm.eternaldynasties.utils.Json;
 import utbm.eternaldynasties.utils.Log;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Jeu {
 
@@ -24,7 +24,9 @@ public class Jeu {
         this.arbreDeRecherches = new ArbreDeRecherches(fichierJeuService.arbreDeRecherches);
         this.arbreDeRessources = new ArbreDeRessources(fichierJeuService.ressources);
         for (String nomJoueur : getSauvegardes().split("\n")) {
-            this.listeJoueur.put(nomJoueur, chargerPartie(nomJoueur));
+            if (!nomJoueur.isEmpty()) {
+                this.listeJoueur.put(nomJoueur, chargerPartie(nomJoueur));
+            }
         }
     }
 
@@ -33,8 +35,7 @@ public class Jeu {
     }
 
     public Joueur startPartie(String nomPartie) {
-        String listeSauvegardes = getSauvegardes();
-        if (listeSauvegardes.contains(nomPartie)) {
+        if (List.of(getSauvegardes().split("\n")).contains(nomPartie)) {
             return chargerPartie(nomPartie);
         } else {
             return nouvellePartie(nomPartie);
@@ -42,13 +43,16 @@ public class Jeu {
     }
 
     public Joueur chargerPartie(String nomPartie) {
-        Joueur joueur;
+        Joueur joueur = null;
         if (this.listeJoueur.containsKey(nomPartie)) {
             joueur = this.listeJoueur.get(nomPartie);
         } else {
-            joueur = new Joueur(Json.read("src/main/resources/sauvegardes/" + nomPartie + ".save"), this.arbreDeRecherches.clone(), this.arbreDeRessources.clone());
-            joueur.save();
-            this.listeJoueur.put(nomPartie, joueur);
+            JSONObject jsonObject = Json.read("src/main/resources/sauvegardes/" + nomPartie + ".save");
+            if (jsonObject != null) {
+                joueur = new Joueur(jsonObject, this.arbreDeRecherches.clone(), this.arbreDeRessources.clone());
+                joueur.save();
+                this.listeJoueur.put(nomPartie, joueur);
+            }
         }
         return joueur;
     }

@@ -5,7 +5,7 @@
             "Nourriture": "10"
         },
         "Bonus": {
-            "Personne": "1"
+            "Villageois": "1"
         }
     },
     "Or": {
@@ -32,6 +32,7 @@
             "Villageois": "1"
         },
         "Bonus": {
+            "Fermier": "1",
             "Nourriture": "1;1/s;1/Fermier;1/Mine;0.01%;0.01%/Fermier;0.01%/Bois;0.01%/s"
         }
     },

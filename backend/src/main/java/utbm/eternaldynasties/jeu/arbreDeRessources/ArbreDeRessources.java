@@ -1,8 +1,6 @@
 package utbm.eternaldynasties.jeu.arbreDeRessources;
 
 import org.json.simple.JSONObject;
-import utbm.eternaldynasties.jeu.arbreRecherches.ArbreDeRecherches;
-import utbm.eternaldynasties.jeu.arbreRecherches.Recherche;
 
 import java.util.HashMap;
 import java.util.Map;
