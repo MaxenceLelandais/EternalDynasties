@@ -1,5 +1,6 @@
 {
     "Tribue": {
+        "id": "1",
         "Description": "Le commencement d'une belle aventure.",
         "Coût": null,
         "Débloque": [
@@ -26,6 +27,7 @@
         ]
     },
     "Cueuillette":{
+        "id": "2",
         "Description":"Rassemblons les ressources de la nature.",
         "Coût":null,
         "Débloque":[
@@ -39,6 +41,7 @@
         ]
     },
     "Feu":{
+        "id": "3",
         "Description":"Maîtrisons le feu pour progresser.",
         "Coût":null,
         "Débloque":[
@@ -50,6 +53,7 @@
         ]
     },
     "Croyance":{
+        "id": "4",
         "Description":"Explore les mystères de la foi. ",
         "Coût":null,
         "Débloque":[
@@ -62,6 +66,7 @@
         ]
     },
     "Chasse et pêche":{
+        "id": "5",
         "Description":"Apprenons les arts de la survie. ",
         "Coût":null,
         "Débloque":[
@@ -76,6 +81,7 @@
         ]
     },
     "Education":{
+        "id": "6",
         "Description":"Cultivons l'esprit pour l'avenir. ",
         "Coût":null,
         "Débloque":[
@@ -89,6 +95,7 @@
         ]
     },
     "Mythologie":{
+        "id": "7",
         "Description":"Plongeons dans les récits anciens. ",
         "Coût":null,
         "Débloque":[
@@ -100,6 +107,7 @@
         ]
     },
     "Armée":{
+        "id": "8",
         "Description":"Préparons-nous à défendre et conquérir.",
         "Coût":null,
         "Débloque":[
@@ -112,6 +120,7 @@
         ]
     },
     "Elevage":{
+        "id": "9",
         "Description":"Domptons les bêtes pour notre usage.",
         "Coût":null,
         "Débloque":[
@@ -124,6 +133,7 @@
         ]
     },
     "Religion":{
+        "id": "10",
         "Description":"Explore les croyances et les pratiques spirituelles.",
         "Coût":null,
         "Débloque":[
@@ -158,6 +168,7 @@
         ]
     },
     "Navigation":{
+        "id": "11",
         "Description":"Apprenons à naviguer sur les eaux. ",
         "Coût":null,
         "Débloque":[
@@ -172,6 +183,7 @@
         ]
     },
     "Science":{
+        "id": "12",
         "Description":"Plongeons dans l'étude et la compréhension du monde. ",
         "Coût":null,
         "Débloque":[
@@ -189,6 +201,7 @@
         ]
     },
     "Magie":{
+        "id": "13",
         "Description":"Explore les forces mystiques du monde.",
         "Coût":null,
         "Débloque":[
@@ -205,6 +218,7 @@
         ]
     },
     "Construction":{
+        "id": "14",
         "Description":"Bâtissons des structures durables et fonctionnelles.",
         "Coût":null,
         "Débloque":[
@@ -219,6 +233,7 @@
         ]
     },
     "Monnaie":{
+        "id": "15",
         "Description":"Créons un système d'échange et de commerce.",
         "Coût":null,
         "Débloque":[
@@ -231,6 +246,7 @@
         ]
     },
     "Philosophie":{
+        "id": "16",
         "Description":"Questionnons-nous sur la nature de l'existence.",
         "Coût":null,
         "Débloque":[
@@ -243,6 +259,7 @@
         ]
     },
     "Ingénieurie":{
+        "id": "17",
         "Description":"Mettons en pratique les connaissances scientifiques. ",
         "Coût":null,
         "Débloque":[
@@ -255,6 +272,7 @@
         ]
     },
     "Magie du Bien":{
+        "id": "18",
         "Description":"Utilisons la magie pour le bien de tous.",
         "Coût":null,
         "Débloque":[
@@ -267,6 +285,7 @@
         ]
     },
     "Magie Noire":{
+        "id": "19",
         "Description":"Le monde n'est que ténèbres,poussières et destructions",
         "Coût":null,
         "Débloque":[
@@ -279,6 +298,7 @@
         ]
     },
     "Conquête":{
+        "id": "20",
         "Description":"Étendons notre influence à travers la force.",
         "Coût":null,
         "Débloque":[
@@ -293,6 +313,7 @@
         ]
     },
     "Monuments":{
+        "id": "21",
         "Description":"Érigeons des témoins de notre grandeur.",
         "Coût":null,
         "Débloque":null,
@@ -302,6 +323,7 @@
         ]
     },
     "Commerce":{
+        "id": "22",
         "Description":"Favorisons les échanges économiques. ",
         "Coût":null,
         "Débloque":[
@@ -315,6 +337,7 @@
         ]
     },
     "Politique":{
+        "id": "23",
         "Description":"Organisons la gouvernance de nos sociétés. ",
         "Coût":null,
         "Débloque":[
@@ -350,6 +373,7 @@
         }
     },
     "Fortification":{
+        "id": "24",
         "Description":"Renforçons nos défenses pour assurer notre sécurité.",
         "Coût":null,
         "Débloque":[
@@ -364,6 +388,7 @@
         ]
     },
     "Système féodale":{
+        "id": "25",
         "Description":"Organisons notre société autour du pouvoir féodal.",
         "Coût":null,
         "Débloque":[
@@ -377,6 +402,7 @@
         ]
     },
     "Université":{
+        "id": "26",
         "Description":" Créons des institutions de savoir.",
         "Coût":null,
         "Débloque":[
@@ -390,6 +416,7 @@
         ]
     },
     "Mécanique":{
+        "id": "27",
         "Description":"Explorez les principes fondamentaux des machines et de la mécanique. ",
         "Coût":null,
         "Débloque":[
@@ -404,6 +431,7 @@
         ]
     },
     "Alchimie":{
+        "id": "28",
         "Description":"Plongez dans l'alchimie mystique et ses secrets.",
         "Coût":null,
         "Débloque":[
@@ -418,6 +446,7 @@
         ]
     },
     "Sorcellerie":{
+        "id": "29",
         "Description":"Plongeons dans les profonds ténèbres",
         "Coût":null,
         "Débloque":[
@@ -456,6 +485,7 @@
         }
     },
     "Poudre à canon":{
+        "id": "30",
         "Description":"BOOOOUM!!!",
         "Coût":null,
         "Débloque":[
@@ -469,6 +499,7 @@
         ]
     },
     "Cartographie":{
+        "id": "31",
         "Description":"Permet de s'orienter afin d'explorer de nouveaux horizons",
         "Coût":null,
         "Débloque":[
@@ -482,6 +513,7 @@
         ]
     },
     "Banque":{
+        "id": "32",
         "Description":"Créez des institutions financières pour soutenir l'économie et le commerce.",
         "Coût":null,
         "Débloque":[
@@ -496,6 +528,7 @@
         ]
     },
     "Humanisme":{
+        "id": "33",
         "Description":" Plongez dans le mouvement humaniste, qui met l'homme et ses réalisations au centre. ",
         "Coût":null,
         "Débloque":[
@@ -509,6 +542,7 @@
         ]
     },
     "Astronomie":{
+        "id": "34",
         "Description":"Explorez les mystères de l'univers et des astres.",
         "Coût":null,
         "Débloque":[
@@ -523,6 +557,7 @@
         ]
     },
     "Colonisation":{
+        "id": "35",
         "Description":"Explorez de nouveaux territoires et établissez des colonies lointaines.",
         "Coût":null,
         "Débloque":[
@@ -559,6 +594,7 @@
         }
     },
     "Balistique":{
+        "id": "36",
         "Description":"Étudiez les principes des projectiles et de leur trajectoire.",
         "Coût":null,
         "Débloque":[
@@ -572,6 +608,7 @@
         ]
     },
     "Industrialisation":{
+        "id": "37",
         "Description":"Passez à l'ère de l'industrialisation massive et de la production automatisée.",
         "Coût":null,
         "Débloque":[
@@ -585,6 +622,7 @@
         ]
     },
     "Economie":{
+        "id": "38",
         "Description":"Explorez les mécanismes complexes qui régissent les échanges et les marchés.",
         "Coût":null,
         "Débloque":[
@@ -598,6 +636,7 @@
         ]
     },
     "Culture":{
+        "id": "39",
         "Description":"Célébrez la diversité et l'expression humaine à travers les arts, la littérature et la philosophie.",
         "Coût":null,
         "Débloque":[
@@ -611,6 +650,7 @@
         ]
     },
     "Electricité":{
+        "id": "40",
         "Description":"Découvrez les mystères de l'électricité et de ses applications.",
         "Coût":null,
         "Débloque":[
@@ -625,6 +665,7 @@
         ]
     },
     "Contrôle élémentaire":{
+        "id": "41",
         "Description":"Expérimentez le contrôle des éléments naturels.",
         "Coût":null,
         "Débloque":[
@@ -639,6 +680,7 @@
         ]
     },
     "Nécromancie":{
+        "id": "42",
         "Description":"Plongez dans les pratiques sombres de la magie noire et de la manipulation des morts.",
         "Coût":null,
         "Débloque":[
@@ -653,6 +695,7 @@
         ]
     },
     "Urbanisation":{
+        "id": "43",
         "Description":"Explorez le processus de développement et d'expansion des zones urbaines à travers l'histoire. ",
         "Coût":null,
         "Débloque":[
@@ -693,6 +736,7 @@
         }
     },
     "Nucléaire":{
+        "id": "44",
         "Description":"KAAAAAAAAABOOOOOOOOOOOOOUM!!!!!!!!!!!!!!!!!!!!",
         "Coût":null,
         "Débloque":[
@@ -706,6 +750,7 @@
         ]
     },
     "Aviation":{
+        "id": "45",
         "Description":"Déployez les ailes, réalisez le rêve d'Icare",
         "Coût":null,
         "Débloque":[
@@ -719,6 +764,7 @@
         ]
     },
     "Globalisation":{
+        "id": "46",
         "Description":"Explorez les interactions croissantes entre les nations et les cultures à l'échelle mondiale.",
         "Coût":null,
         "Bonus":null,
@@ -727,6 +773,7 @@
         ]
     },
     "Médias":{
+        "id": "47",
         "Description":"Découvrez le pouvoir des médias dans la diffusion de l'information et la formation de l'opinion publique.",
         "Coût":null,
         "Débloque":[
@@ -739,6 +786,7 @@
         ]
     },
     "Réseaux sociaux":{
+        "id": "48",
         "Description":"Plongez dans l'ère de la connectivité en ligne et de l'interaction sociale numérique. ",
         "Coût":null,
         "Bonus":null,
@@ -747,6 +795,7 @@
         ]
     },
     "Physique":{
+        "id": "49",
         "Description":"Explorez les lois fondamentales de l'univers et les forces qui régissent la matière et l'énergie.",
         "Coût":null,
         "Débloque":[
@@ -761,6 +810,7 @@
         ]
     },
     "Informatique":{
+        "id": "50",
         "Description":"1000010010110011101001",
         "Coût":null,
         "Débloque":[
@@ -773,6 +823,7 @@
         ]
     },
     "Puissance élémentaire":{
+        "id": "51",
         "Description":"Manipulez les éléments naturels à une échelle inédite grâce à des avancées magiques révolutionnaires.",
         "Coût":null,
         "Bonus":null,
@@ -781,6 +832,7 @@
         ]
     },
     "Force du chaos":{
+        "id": "52",
         "Description":"Explorez les aspects les plus sombres de la magie et de la manipulation des énergies occultes pour creer la puissante armée des morts.",
         "Coût":null,
         "Bonus":null,
@@ -789,6 +841,7 @@
         ]
     },
     "Exploration spatiale":{
+        "id": "53",
         "Description":"Lancez-vous à la conquête de l'espace et explorez les mystères de l'univers.",
         "Coût":null,
         "Débloque":[
@@ -801,6 +854,7 @@
         ]
     },
     "Robotique":{
+        "id": "54",
         "Description":"Explorez les possibilités infinies de la robotique.",
         "Coût":null,
         "Débloque":[
@@ -840,6 +894,7 @@
         }
     },
     "Laser":{
+        "id": "55",
         "Description":"Maîtrisez la puissance destructrice et créatrice du laser.",
         "Coût":null,
         "Bonus":null,
@@ -849,6 +904,7 @@
         ]
     },
     "Urbanisation futuriste":{
+        "id": "56",
         "Description":"Explorez les horizons de l'urbanisme dans un monde futuriste.",
         "Coût":null,
         "Bonus":null,
@@ -859,6 +915,7 @@
         ]
     },
     "Voyage supraluminique":{
+        "id": "57",
         "Description":" Pénétrez dans les confins de l'espace à des vitesses supraluminiques.",
         "Coût":null,
         "Bonus":null,
@@ -868,6 +925,7 @@
         ]
     },
     "Nano technologies":{
+        "id": "58",
         "Description":"Maîtrisez les technologies à l'échelle nanométrique. ",
         "Coût":null,
         "Bonus":null,
@@ -877,6 +935,7 @@
         ]
     },
     "Intelligence artificielle":{
+        "id": "59",
         "Description":"Explorez les possibilités de l'intelligence artificielle.",
         "Coût":null,
         "Bonus":null,
