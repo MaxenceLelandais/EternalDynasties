@@ -1,0 +1,10 @@
+<div>
+    <p *ngIf="listeRecherches$ | async as listeRecherches">{{ listeRecherches | json }}</p>
+    <p *ngIf="parties$ | async as parties">{{ parties | json }}</p>
+    <p *ngIf="recherchesDisponibles$ | async as recherchesDisponibles">{{ recherchesDisponibles | json }}</p>
+    <p *ngIf="listeRessources$ | async as listeRessources">{{ listeRessources | json }}</p>
+    <p *ngIf="addRessources$ | async as addRessources">{{ addRessources | json }}</p>
+    <p *ngIf="tick$ | async as tick">{{ tick | json }}</p>
+
+    <button (click)="fetchData()">Interroger l'API</button>
+  </div>

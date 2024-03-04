@@ -140,7 +140,7 @@ public class Joueur {
                     if(!keyBonus.equals("Max-"+ressource)){
                         val += (long) (bonus.get(keyBonus).getQuantite() * (1 + bonus.get(keyBonus).getPourcentage() / 100));
                         if(keyBonus.equals(ressource)){
-                            if(val>=bonus.get("Max-"+ressource).getQuantite()){
+                            if(bonus.containsKey("Max-"+ressource) && val>=bonus.get("Max-"+ressource).getQuantite()){
                                 val = (long)bonus.get("Max-"+ressource).getQuantite();
                             }
                         }

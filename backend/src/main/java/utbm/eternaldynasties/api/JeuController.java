@@ -30,8 +30,8 @@ public class JeuController {
     }
 
     @GetMapping(value = "parties")
-    public String sendSauvegardes() {
-        return this.jeuService.getJeu().getSauvegardes();
+    public JSONObject sendSauvegardes() {
+        return Json.mapToJsonObject(this.jeuService.getJeu().getSauvegardes());
     }
 
     @GetMapping(value="joueur")

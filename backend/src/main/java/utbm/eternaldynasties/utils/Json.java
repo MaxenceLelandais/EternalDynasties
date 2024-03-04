@@ -35,6 +35,10 @@ public class Json {
         }
     }
 
+    public static JSONObject mapToJsonObject(Map<String, String> map){
+        return new JSONObject(map);
+    }
+
     public static void save(String path, Map<Object,Object> data){
         try (FileWriter file = new FileWriter(path)) {
             file.write(jsonToString(new JSONObject(data)));

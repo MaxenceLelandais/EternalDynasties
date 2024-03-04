@@ -23,7 +23,7 @@ public class Jeu {
         Log.info("JeuService", "Jeu en cours de démarrage ...");
         this.arbreDeRecherches = new ArbreDeRecherches(fichierJeuService.arbreDeRecherches);
         this.arbreDeRessources = new ArbreDeRessources(fichierJeuService.ressources);
-        for (String nomJoueur : getSauvegardes().split("\n")) {
+        for (String nomJoueur : getSauvegardes().values()) {
             if (!nomJoueur.isEmpty()) {
                 this.listeJoueur.put(nomJoueur, chargerPartie(nomJoueur));
             }
@@ -35,7 +35,7 @@ public class Jeu {
     }
 
     public Joueur startPartie(String nomPartie) {
-        if (List.of(getSauvegardes().split("\n")).contains(nomPartie)) {
+        if (getSauvegardes().values().contains(nomPartie)) {
             return chargerPartie(nomPartie);
         } else {
             return nouvellePartie(nomPartie);
@@ -74,14 +74,14 @@ public class Jeu {
         return this.listeJoueur.get(nom);
     }
 
-    public String getSauvegardes() {
+    public Map<String, String> getSauvegardes() {
         File[] files = (new File("src/main/resources/sauvegardes")).listFiles();
-        StringBuilder data = new StringBuilder();
+        Map<String, String> data = new HashMap<>();
         if (files != null) {
             for (File file : files) {
-                data.append(file.getName().contains(".save") ? file.getName().replace(".save", "\n") : "");
+                data.put("Partie",file.getName().contains(".save") ? file.getName().replace(".save", "") : "");
             }
         }
-        return data.toString();
+        return data;
     }
 }
