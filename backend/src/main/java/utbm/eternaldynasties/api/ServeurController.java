@@ -12,7 +12,7 @@ import java.io.File;
 import java.util.Arrays;
 
 @RestController
-@RequestMapping(value = "api/*", method = RequestMethod.GET,produces = MediaType.TEXT_PLAIN_VALUE)
+@RequestMapping(value = "serveur/*", method = RequestMethod.GET,produces = MediaType.TEXT_PLAIN_VALUE)
 public class ServeurController {
 
     private final FichierJeuService fichierJeuService;

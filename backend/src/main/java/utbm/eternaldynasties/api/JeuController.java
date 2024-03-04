@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping(value = "*", method = RequestMethod.GET,
+@RequestMapping(value = "jeu/*", method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
 public class JeuController {
 
