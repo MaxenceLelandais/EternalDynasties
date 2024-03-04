@@ -1,15 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\backend",
     "\\backend\\src",
     "\\backend\\src\\main",
     "\\backend\\src\\main\\java",
     "\\backend\\src\\main\\java\\utbm",
     "\\backend\\src\\main\\java\\utbm\\eternaldynasties",
     "\\frontend",
+    "\\frontend\\src",
     "\\frontend\\src\\app"
   ],
-  "SelectedNode": "\\backend\\src\\main\\java\\utbm\\eternaldynasties\\Application.java",
+  "SelectedNode": "\\frontend\\src\\app\\app.component.ts",
   "PreviewInSolutionExplorer": false
 }
