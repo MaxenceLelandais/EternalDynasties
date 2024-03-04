@@ -70,9 +70,6 @@ public class Bonus {
         return quantiteParRessources;
     }
 
-    public void addQuantiteParRessources(String ressource, Double add) {
-        this.quantiteParRessources.get(ressource)+=add;
-    }
 
     public double getPourcentage() {
         return pourcentage;

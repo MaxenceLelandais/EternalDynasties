@@ -79,7 +79,6 @@ public class Joueur {
             for(String key : map.keySet()){
                 Bonus bonusRessource = this.arbreDeRessources.getRessource(key).getListeBonus().get(key);
                 Bonus bonusRecherche = map.get(key);
-                bonusRessource.
             }
             return true;
         }
