@@ -17,7 +17,7 @@ import { Test } from './http/test';
     MenuDemarrageComponent,
     MenuEnvironnementComponent,
     PageAccueilComponent,
-    PageJeuComponent
+    PageJeuComponent,
     Test
   ],
   imports: [
