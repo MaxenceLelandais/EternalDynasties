@@ -19,6 +19,8 @@ public class JeuController {
 
     private JeuService jeuService;
 
+    //////////////////    Jeu      //////////////////
+
     @Autowired
     public JeuController(JeuService jeuService) {
         this.jeuService = jeuService;
@@ -33,6 +35,38 @@ public class JeuController {
     public JSONObject sendSauvegardes() {
         return Json.mapToJsonObject(this.jeuService.getJeu().getSauvegardes());
     }
+
+    @GetMapping(value = "arbreRecherches")
+    public JSONObject sendArbreRecherches() {
+        return Json.objectToJsonObject(this.jeuService.getJeu().getArbreDeRecherches().getArbrePourAffichage());
+    }
+
+    @GetMapping(value = "listeEres")
+    public JSONObject sendListeEres() {
+        Map<String, String> map = new HashMap<>();
+        int nbr = 0;
+        for(String key : this.jeuService.getJeu().getArbreDeRecherches().getEres()){
+            map.put(""+nbr, key);
+            nbr++;
+        }
+        return Json.mapToJsonObject(map);
+    }
+
+    @GetMapping(value = "listeRessourcesJeu")
+    public JSONObject sendRessources() {
+        return Json.stringToJsonObject(jeuService.getJeu().getArbreDeRessources().toString());
+    }
+
+    @GetMapping(value = "listeEnvironnements")
+    public JSONObject sendEnvironnements() {
+        return Json.stringToJsonObject(jeuService.getJeu().getArbreEnvironnements().toString());
+    }
+
+
+    //////////////////    PARTIES      //////////////////
+
+
+
 
     @GetMapping(value="joueur")
     public String getPartie(@RequestParam(value = "nomJoueur") String nomJoueur) {

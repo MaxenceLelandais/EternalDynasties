@@ -8,6 +8,8 @@ import org.json.simple.JSONObject;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class Json {
@@ -36,6 +38,10 @@ public class Json {
     }
 
     public static JSONObject mapToJsonObject(Map<String, String> map){
+        return new JSONObject(map);
+    }
+
+    public static JSONObject objectToJsonObject(Map map) {
         return new JSONObject(map);
     }
 

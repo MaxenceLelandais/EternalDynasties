@@ -4,8 +4,7 @@
         "Description": "Le commencement d'une belle aventure.",
         "Coût": null,
         "Débloque": [
-            "Préhistoire",
-            "Habitation"
+            "Préhistoire"
         ],
         "Bonus": {
             "Villageois": "1",

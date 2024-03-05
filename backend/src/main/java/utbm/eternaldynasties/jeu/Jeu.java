@@ -2,6 +2,7 @@ package utbm.eternaldynasties.jeu;
 
 import org.json.simple.JSONObject;
 import utbm.eternaldynasties.jeu.arbreDeRessources.ArbreDeRessources;
+import utbm.eternaldynasties.jeu.arbreEnvironnements.ArbreEnvironnements;
 import utbm.eternaldynasties.jeu.arbreRecherches.ArbreDeRecherches;
 import utbm.eternaldynasties.services.FichierJeuService;
 import utbm.eternaldynasties.utils.Json;
@@ -15,6 +16,7 @@ public class Jeu {
     private final FichierJeuService fichierJeuService;
     private ArbreDeRecherches arbreDeRecherches;
     private ArbreDeRessources arbreDeRessources;
+    private ArbreEnvironnements arbreEnvironnements;
     private Map<String, Joueur> listeJoueur = new HashMap<>();
 
     public Jeu(FichierJeuService fichierJeuService) {
@@ -23,6 +25,8 @@ public class Jeu {
         Log.info("JeuService", "Jeu en cours de démarrage ...");
         this.arbreDeRecherches = new ArbreDeRecherches(fichierJeuService.arbreDeRecherches);
         this.arbreDeRessources = new ArbreDeRessources(fichierJeuService.ressources);
+        this.arbreEnvironnements = new ArbreEnvironnements(fichierJeuService.environnements);
+
         for (String nomJoueur : getSauvegardes().values()) {
             if (!nomJoueur.isEmpty()) {
                 this.listeJoueur.put(nomJoueur, chargerPartie(nomJoueur));
@@ -68,6 +72,14 @@ public class Jeu {
             this.listeJoueur.put(nomPartie, joueur);
         }
         return joueur;
+    }
+
+    public ArbreDeRessources getArbreDeRessources() {
+        return arbreDeRessources;
+    }
+
+    public ArbreEnvironnements getArbreEnvironnements() {
+        return arbreEnvironnements;
     }
 
     public Joueur getJoueur(String nom) {

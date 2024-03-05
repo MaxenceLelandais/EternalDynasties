@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Recherche {
+
+    private int id = -1;
     private String nom;
     private String description;
     private Map<String, Long> listeCout = new HashMap<>();
@@ -39,6 +41,10 @@ public class Recherche {
     public Recherche update(Map<String, Recherche> listeRecherches) {
 
         this.description = (String) this.jsonObjet.get("Description");
+        String valId = (String) this.jsonObjet.get("id");
+        if(valId!=null){
+            this.id = Integer.parseInt(valId);
+        }
 
         Map<String, String> map = this.jsonObjet.containsKey("Coût") ? (Map<String, String>) this.jsonObjet.get("Coût") : new HashMap<String, String>();
         if (map != null) {
@@ -180,4 +186,7 @@ public class Recherche {
         this.etat = true;
     }
 
+    public int getId() {
+        return id;
+    }
 }

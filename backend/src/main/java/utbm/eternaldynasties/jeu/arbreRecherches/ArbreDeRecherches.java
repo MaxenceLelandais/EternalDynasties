@@ -9,8 +9,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class ArbreDeRecherches implements Cloneable{
+public class ArbreDeRecherches {
     private Map<String, Recherche> listeRecherches = new HashMap<>();
+    private Map<String,Map<String, String>> arbrePourAffichage = new HashMap<>();
+    private ArrayList<String> eres = new ArrayList<>();
 
     public ArbreDeRecherches(JSONObject jsonObject) {
         for (Object key : jsonObject.keySet()) {
@@ -21,10 +23,12 @@ public class ArbreDeRecherches implements Cloneable{
                 this.listeRecherches.put(keyString, new Recherche(keyString, (Map<String, Object>) jsonObject.get(key), this.listeRecherches));
             }
         }
+        this.listeEres();
+        this.convertEnArbre();
     }
 
-    public void init(ArrayList<String> recherches){
-        recherches.forEach(r->this.listeRecherches.get(r).forceActive());
+    public void init(ArrayList<String> recherches) {
+        recherches.forEach(r -> this.listeRecherches.get(r).forceActive());
     }
 
     public boolean activerRecherche(String nomRecherche) {
@@ -39,38 +43,67 @@ public class ArbreDeRecherches implements Cloneable{
         return this.listeRecherches.values().stream().filter(Recherche::getEtat).collect(Collectors.toList());
     }
 
-    public Map<String,String> recherchesEffectueesMap() {
-        Map<String,String> map = new HashMap<>();
-        for(Recherche recherche : this.listeRecherches.values().stream().filter(Recherche::getEtat).collect(Collectors.toList())){
-            map.put(recherche.getNom(),"");
+    public Map<String, String> recherchesEffectueesMap() {
+        Map<String, String> map = new HashMap<>();
+        for (Recherche recherche : this.listeRecherches.values().stream().filter(Recherche::getEtat).collect(Collectors.toList())) {
+            map.put(recherche.getNom(), "");
         }
         return map;
     }
 
-    public Recherche getRecherche(String nomRecherche){
+    public Recherche getRecherche(String nomRecherche) {
         return this.listeRecherches.get(nomRecherche);
     }
 
     public List<Recherche> recherchesPossibles() {
         return this.listeRecherches.values().stream()
-                .filter(r->!r.getEtat())
+                .filter(r -> !r.getEtat())
                 .filter(Recherche::getRecherchePossible)
                 .filter(Recherche::actualiseEtat)
                 .collect(Collectors.toList());
     }
 
-    public String toString() {
-        Map<String, Object> liste = new HashMap<>();
-        this.listeRecherches.values().forEach(r->liste.put(r.getNom(), r.getJsonObjet()));
-        return Json.jsonToString(liste);
+    public void listeEres() {
+        this.eres = (ArrayList<String>) this.listeRecherches.values().stream()
+                .filter(r -> r.getId() == -1)
+                .map(Recherche::getNom)
+                .collect(Collectors.toList());
     }
 
-    @Override
-    public ArbreDeRecherches clone() {
-        try {
-            return (ArbreDeRecherches) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError();
+    public void convertEnArbre() {
+
+        for (Recherche recherche : this.listeRecherches.values()) {
+            if (recherche.getId() != -1) {
+                Map<String, String> map = new HashMap<>();
+                map.put("key", "" + recherche.getId());
+                map.put("text", recherche.getNom());
+                map.put("fill", "#f68c06");
+                map.put("stroke", "#4d90fe");
+
+                Map<String, Recherche> dependances = recherche.getDependances();
+                if (dependances != null && !dependances.isEmpty()) {
+                    dependances.values().stream().filter(r -> !this.eres.contains(r.getNom())).findFirst().ifPresent(r -> map.put("parent", r.getId() + ""));
+                }
+                this.arbrePourAffichage.put(recherche.getNom(),map);
+            }
         }
+    }
+
+    public Map<String, Recherche> getListeRecherches() {
+        return listeRecherches;
+    }
+
+    public Map<String, Map<String, String>> getArbrePourAffichage() {
+        return arbrePourAffichage;
+    }
+
+    public ArrayList<String> getEres() {
+        return eres;
+    }
+
+    public String toString() {
+        Map<String, Object> liste = new HashMap<>();
+        this.listeRecherches.values().forEach(r -> liste.put(r.getNom(), r.getJsonObjet()));
+        return Json.jsonToString(liste);
     }
 }

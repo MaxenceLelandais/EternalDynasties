@@ -1,11 +1,12 @@
 package utbm.eternaldynasties.jeu.arbreDeRessources;
 
 import org.json.simple.JSONObject;
+import utbm.eternaldynasties.utils.Json;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class ArbreDeRessources implements Cloneable {
+public class ArbreDeRessources {
     private Map<String, Ressource> listeRessources = new HashMap<>();
 
     public ArbreDeRessources(JSONObject jsonObject) {
@@ -19,12 +20,9 @@ public class ArbreDeRessources implements Cloneable {
         return this.listeRessources.get(nomRessource);
     }
 
-    @Override
-    public ArbreDeRessources clone() {
-        try {
-            return (ArbreDeRessources) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError();
-        }
+    public String toString() {
+        Map<String, Object> liste = new HashMap<>();
+        this.listeRessources.values().forEach(r -> liste.put(r.getNom(), r.getJsonObjet()));
+        return Json.jsonToString(liste);
     }
 }

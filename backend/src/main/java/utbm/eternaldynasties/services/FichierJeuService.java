@@ -11,14 +11,17 @@ public class FichierJeuService {
     private final String fichierArbreDeRecherches = "src/main/resources/donnees/arbre_de_recherches.json";
     private final String fichierJoueur = "src/main/resources/donnees/joueur.json";
     private final String fichierRessources = "src/main/resources/donnees/ressources.json";
+    private final String fichierEnvironnements = "src/main/resources/donnees/environnements.json";
 
     public JSONObject arbreDeRecherches;
     public JSONObject joueur;
     public JSONObject ressources;
+    public JSONObject environnements;
     @PostConstruct
     public void init(){
         this.arbreDeRecherches  = Json.read(this.fichierArbreDeRecherches);
         this.joueur  = Json.read(this.fichierJoueur);
         this.ressources  = Json.read(this.fichierRessources);
+        this.environnements  = Json.read(this.fichierEnvironnements);
     }
 }

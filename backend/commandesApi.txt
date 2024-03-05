@@ -1,8 +1,17 @@
-récupère la liste des racherches chargées dans le jeu : http://localhost:9876/listeRecherches
-récupère les nom des parties existantes : http://localhost:9876/parties
-récupère ou créer une nouvelle partie : http://localhost:9876/joueur?nomJoueur=maxenc
-récupère les recherches disponibles : http://localhost:9876/recherchesDisponibles?nomJoueur=maxenc
-active une recherche : http://localhost:9876/activerRecherche?nomJoueur=maxenc&recherche=Tribue
-add une ressources (achat si besoin) : http://localhost:9876/addRessource?nomJoueur=maxenc&ressource=Bois
-tick : http://localhost:9876/tick?nomJoueur=maxenc
-liste ressources : http://localhost:9876/listeRessources?nomJoueur=maxenc
+//////////////////    Jeu      //////////////////
+
+récupère la liste des racherches chargées dans le jeu : http://localhost:9876/jeu/listeRecherches
+récupère les nom des parties existantes : http://localhost:9876/jeu/parties
+récupère arbreRecherches pour l'affichage: http://localhost:9876/jeu/arbreRecherches
+récupère listeEres : http://localhost:9876/jeu/listeEres
+récupère listeRessourcesJeu : http://localhost:9876/jeu/listeRessourcesJeu
+récupère listeEnvironnements : http://localhost:9876/jeu/listeEnvironnements
+
+//////////////////    PARTIES      //////////////////
+
+récupère ou créer une nouvelle partie : http://localhost:9876/jeu/joueur?nomJoueur=maxenc
+récupère les recherches disponibles : http://localhost:9876/jeu/recherchesDisponibles?nomJoueur=maxenc
+active une recherche : http://localhost:9876/jeu/activerRecherche?nomJoueur=maxenc&recherche=Tribue
+add une ressources (achat si besoin) : http://localhost:9876/jeu/addRessource?nomJoueur=maxenc&ressource=Bois
+tick : http://localhost:9876/jeu/tick?nomJoueur=maxenc
+liste ressources : http://localhost:9876/jeu/listeRessources?nomJoueur=maxenc
