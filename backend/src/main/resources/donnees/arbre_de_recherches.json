@@ -34,7 +34,8 @@
             "Feu"
         ],
         "Bonus":{
-            "Fermier":"1"
+            "Fermier":"1",
+            "Nourriture": "0.5/Fermier"
         },
         "Dépendance":[
             "Préhistoire"
@@ -47,7 +48,9 @@
         "Débloque":[
             "Chasse et pêche"
         ],
-        "Bonus":null,
+        "Bonus": {
+            "Nourriture":"0.25/Fermier"
+        },
         "Dépendance":[
             "Cueuillette"
         ]
@@ -60,7 +63,9 @@
             "Education",
             "Mythologie"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Piété": "1"
+        },
         "Dépendance":[
             "Préhistoire"
         ]
@@ -75,7 +80,9 @@
             "Navigation",
             "Antiquité"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Nourriture":"0.5/Fermier"
+        },
         "Dépendance":[
             "Feu"
         ]
@@ -89,7 +96,9 @@
             "Philosophie",
             "Antiquité"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Ecole": "1"
+        },
         "Dépendance":[
             "Croyance"
         ]
@@ -101,7 +110,9 @@
         "Débloque":[
             "Religion"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Divinité": "1"
+        },
         "Dépendance":[
             "Croyance"
         ]
@@ -114,7 +125,10 @@
             "Conquête",
             "Antiquité"
         ],
-        "Bonus":null,
+        "Bonus": {
+            "Caserne": "1",
+            "Soldat": "1"
+        },
         "Dépendance":[
             "Chasse et pêche"
         ]
@@ -127,7 +141,9 @@
             "Construction",
             "Antiquité"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Nourriture": "0.5/Fermier"
+        },
         "Dépendance":[
             "Chasse et pêche"
         ]
@@ -141,7 +157,9 @@
             "Magie",
             "Antiquité"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Temple": "1"
+        },
         "Dépendance":[
             "Mythologie"
         ]
@@ -176,7 +194,9 @@
             "Moyen-Age",
             "Renaissance"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Port": "1"
+        },
         "Dépendance":[
             "Chasse et pêche",
             "Antiquité"
@@ -191,7 +211,11 @@
             "Moyen-Age",
             "Université"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Laboratoire": "1",
+            "Point de science": "1",
+            "Scientifique": "1"
+        },
         "Dépendance":[
             "Religion",
             "Antiquité"
@@ -208,7 +232,9 @@
             "Magie du Bien",
             "Magie Noire"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Mana": "1"
+        },
         "Dépendance":[
             "Religion",
             "Antiquité"
@@ -226,7 +252,9 @@
             "Moyen-Age",
             "Fortification"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Villa": "1"
+        },
         "Dépendance":[
             "Elevage",
             "Antiquité"
@@ -239,7 +267,9 @@
         "Débloque":[
             "Commerce"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Or": "1"
+        },
         "Dépendance":[
             "Education",
             "Antiquité"
@@ -252,7 +282,9 @@
         "Débloque":[
             "Politique"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Point de recherche": "0.003/Ecole"
+        },
         "Dépendance":[
             "Education",
             "Antiquité"
@@ -266,7 +298,10 @@
             "Moyen-Age",
             "Mécanique"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Point de science": "1/s",
+            "Point de recherche": "1/s"
+        },
         "Dépendance":[
             "Science"
         ]
@@ -279,7 +314,9 @@
             "Moyen-Age",
             "Alchimie"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Mage": "1"
+        },
         "Dépendance":[
             "Magie"
         ]
@@ -292,7 +329,9 @@
             "Moyen-Age",
             "Sorcellerie"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Sorcier": "1"
+        },
         "Dépendance":[
             "Magie"
         ]
@@ -300,7 +339,9 @@
     "Conquête":{
         "id": "20",
         "Description":"Étendons notre influence à travers la force.",
-        "Coût":null,
+        "Coût":{
+            "Butin de guerre": "2"
+        },
         "Débloque":[
             "Moyen-Age",
             "Renaissance",
