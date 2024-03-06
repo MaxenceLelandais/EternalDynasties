@@ -97,8 +97,10 @@ public class ArbreDeRecherches {
         return arbrePourAffichage;
     }
 
-    public ArrayList<String> getEres() {
-        return eres;
+    public Map<String,ArrayList<String>> getEres() {
+        Map<String,ArrayList<String>> map = new HashMap<>();
+        this.eres.forEach(ere->map.put(this.listeRecherches.get(ere).getNom(), this.listeRecherches.get(ere).getRecherchesEre()));
+        return map;
     }
 
     public String toString() {

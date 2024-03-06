@@ -37,10 +37,6 @@ public class Json {
         }
     }
 
-    public static JSONObject mapToJsonObject(Map<String, String> map){
-        return new JSONObject(map);
-    }
-
     public static JSONObject objectToJsonObject(Map map) {
         return new JSONObject(map);
     }

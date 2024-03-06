@@ -6,6 +6,7 @@ récupère arbreRecherches pour l'affichage: http://localhost:9876/jeu/arbreRech
 récupère listeEres : http://localhost:9876/jeu/listeEres
 récupère listeRessourcesJeu : http://localhost:9876/jeu/listeRessourcesJeu
 récupère listeEnvironnements : http://localhost:9876/jeu/listeEnvironnements
+récupère listeEre : http://localhost:9876/jeu/listeEres
 
 //////////////////    PARTIES      //////////////////
 

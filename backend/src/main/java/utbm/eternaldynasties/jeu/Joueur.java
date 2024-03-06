@@ -8,6 +8,8 @@ import utbm.eternaldynasties.jeu.arbreRecherches.ArbreDeRecherches;
 import utbm.eternaldynasties.jeu.arbreRecherches.Recherche;
 import utbm.eternaldynasties.utils.Json;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -17,9 +19,7 @@ public class Joueur {
 
     private String nom;
     private String civilisation;
-    private long tempsDeJeu;
-    private final long tempsDemarrage;
-    private long debutDeLaPartie;
+    private String debutDeLaPartie;
     private HashMap<String, Long> ressources = new HashMap<>();
     private ArrayList<String> recherches = new ArrayList<>();
     private final ArbreDeRecherches arbreDeRecherche;
@@ -32,8 +32,7 @@ public class Joueur {
         if (data.containsKey("Nom")) {
             this.nom = data.get("Nom").toString();
             this.civilisation = data.get("Civilisation").toString();
-            this.tempsDeJeu = Long.parseLong((String) data.get("Temps de jeu"));
-            this.debutDeLaPartie = Long.parseLong((String) data.get("Début de la partie"));
+            this.debutDeLaPartie = (String) data.get("Début de la partie");
             HashMap<String, String> mapRessource = (HashMap<String, String>) data.get("Ressources");
             HashMap<String, String> caracteristiquesCollectes = (HashMap<String, String>) data.get("Caracteristiques collectes");
             for (String key : mapRessource.keySet()) {
@@ -48,7 +47,6 @@ public class Joueur {
             }
             this.arbreDeRecherche.init(this.recherches);
         }
-        this.tempsDemarrage = System.currentTimeMillis();
     }
 
     public void init(String informations) {
@@ -58,15 +56,14 @@ public class Joueur {
         } else {
             this.nom = informations;
         }
-        this.tempsDeJeu = 0L;
-        this.debutDeLaPartie = System.currentTimeMillis();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        this.debutDeLaPartie = dtf.format(LocalDateTime.now());
     }
 
     public Map<Object, Object> toMap() {
         Map<Object, Object> data = new HashMap<>();
         data.put("Nom", this.nom);
         data.put("Civilisation", this.civilisation);
-        data.put("Temps de jeu", this.tempsDeJeu + "");
         data.put("Début de la partie", this.debutDeLaPartie + "");
         Map<String, String> map = new HashMap<>();
         for (String key : this.ressources.keySet()) {
@@ -83,7 +80,6 @@ public class Joueur {
     }
 
     public void save() {
-        this.tempsDeJeu += System.currentTimeMillis() - this.tempsDemarrage;
         Json.save("src/main/resources/sauvegardes/" + this.nom + ".save", toMap());
     }
 
@@ -210,15 +206,7 @@ public class Joueur {
         return civilisation;
     }
 
-    public long getTempsDeJeu() {
-        return tempsDeJeu;
-    }
-
-    public long getTempsDemarrage() {
-        return tempsDemarrage;
-    }
-
-    public long getDebutDeLaPartie() {
+    public String getDebutDeLaPartie() {
         return debutDeLaPartie;
     }
 

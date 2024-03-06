@@ -1,5 +1,6 @@
 package utbm.eternaldynasties.jeu.arbreRecherches;
 
+import org.json.simple.JSONObject;
 import utbm.eternaldynasties.jeu.arbreDeRessources.Bonus;
 import utbm.eternaldynasties.utils.Json;
 
@@ -12,15 +13,16 @@ public class Recherche {
     private int id = -1;
     private String nom;
     private String description;
-    private Map<String, Long> listeCout = new HashMap<>();
-    private Map<String, Recherche> debloque = new HashMap<>();
-    private Map<String, Bonus> listeBonus = new HashMap<>();
-    private Map<String, Recherche> dependances = new HashMap<>();
-    private Map<ArrayList<Recherche>, ArrayList<Recherche>> conditions = new HashMap<>();
+    private final Map<String, Long> listeCout = new HashMap<>();
+    private final Map<String, Recherche> debloque = new HashMap<>();
+    private final Map<String, Bonus> listeBonus = new HashMap<>();
+    private final Map<String, Recherche> dependances = new HashMap<>();
+    private final Map<ArrayList<Recherche>, ArrayList<Recherche>> conditions = new HashMap<>();
     private Map<String, Recherche> inhibe = new HashMap<>();
     private Boolean etat = false;
     private Boolean recherchePossible = true;
     private Map<String, Object> jsonObjet = new HashMap<>();
+    private ArrayList<String> recherchesEre = new ArrayList<>();
 
     public Recherche(String nom) {
         this.nom = nom;
@@ -44,15 +46,17 @@ public class Recherche {
         String valId = (String) this.jsonObjet.get("id");
         if(valId!=null){
             this.id = Integer.parseInt(valId);
+        }else{
+            this.recherchesEre = (ArrayList<String>) this.jsonObjet.get("Recherches");
         }
 
-        Map<String, String> map = this.jsonObjet.containsKey("Coût") ? (Map<String, String>) this.jsonObjet.get("Coût") : new HashMap<String, String>();
+        Map<String, String> map = this.jsonObjet.containsKey("Coût") ? (Map<String, String>) this.jsonObjet.get("Coût") : new HashMap<>();
         if (map != null) {
             for (String key : map.keySet()) {
                 this.listeCout.put(key, Long.parseLong(map.get(key)));
             }
         }
-        map = this.jsonObjet.containsKey("Bonus") ? (Map<String, String>) this.jsonObjet.get("Bonus") : new HashMap<String, String>();
+        map = this.jsonObjet.containsKey("Bonus") ? (Map<String, String>) this.jsonObjet.get("Bonus") : new HashMap<>();
         if (map != null) {
             for (String key : map.keySet()) {
                 this.listeBonus.put(key, new Bonus(key, map.get(key)));
@@ -178,8 +182,8 @@ public class Recherche {
         this.recherchePossible = false;
     }
 
-    public String toString() {
-        return Json.jsonToString(jsonObjet);
+    public JSONObject convertJSONObject() {
+        return Json.objectToJsonObject(jsonObjet);
     }
 
     void forceActive() {
@@ -188,5 +192,9 @@ public class Recherche {
 
     public int getId() {
         return id;
+    }
+
+    public ArrayList<String> getRecherchesEre() {
+        return recherchesEre;
     }
 }

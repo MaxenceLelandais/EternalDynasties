@@ -23,6 +23,17 @@
         "Bonus":null,
         "Dépendance":[
             "Tribue"
+        ],
+        "Recherches": [
+            "Cueuillette",
+            "Feu",
+            "Chasse et pêche",
+            "Armée",
+            "Elevage",
+            "Croyance",
+            "Education",
+            "Mythologie",
+            "Religion"
         ]
     },
     "Cueuillette":{
@@ -164,6 +175,22 @@
             "Chasse et pêche",
             "Education",
             "Religion"
+        ],
+        "Recherches": [
+            "Conquête",
+            "Construction",
+            "Monuments",
+            "Navigation",
+            "Mine d'or",
+            "Monnaie",
+            "Commerce",
+            "Philosophie",
+            "Politique",
+            "Science",
+            "Ingénieur",
+            "Magie du Bien",
+            "Magie",
+            "Magie Noire"
         ]
     },
     "Navigation":{
@@ -369,7 +396,15 @@
             "Science+Ingénieurie":"Université+Mécanique",
             "Magie du Bien":"Alchimie",
             "Magie Noire":"Sorcellerie"
-        }
+        },
+        "Recherches": [
+            "Fortification",
+            "Système féodale",
+            "Université",
+            "Mécanique",
+            "Alchimie",
+            "Sorcellerie"
+        ]
     },
     "Fortification":{
         "id": "24",
@@ -481,7 +516,15 @@
             "Université+Mécanique":"Astronomie+Révolution industrielle+Electricité",
             "Alchimie":"Révolution industrielle+Contrôle élémentaire",
             "Sorcellerie":"Révolution industrielle+Nécromancie"
-        }
+        },
+        "Recherches": [
+            "Poudre à canon",
+            "Cartographie",
+            "Colonisation",
+            "Banque",
+            "Humanisme",
+            "Astronomie"
+        ]
     },
     "Poudre à canon":{
         "id": "30",
@@ -590,7 +633,17 @@
             "Astronomie+Révolution industrielle":"Electricité+Epoque moderne+Physique",
             "Révolution industrielle+Alchimie":"Contrôle élémentaire",
             "Révolution industrielle+Sorcellerie":"Nécromancie"
-        }
+        },
+        "Recherches": [
+            "Balistique",
+            "Industrialisation",
+            "Urbanisation",
+            "Economie",
+            "Culture",
+            "Electricité",
+            "Contrôle élémentaire",
+            "Nécromancie"
+        ]
     },
     "Balistique":{
         "id": "36",
@@ -732,7 +785,20 @@
             "Astronomie+Electricité":"Physique+Informatique",
             "Contrôle élémentaire":"Puissance élémentaire",
             "Nécromancie":"Force du chaos"
-        }
+        },
+        "Recherches": [
+            "Nucléaire",
+            "Aviation",
+            "Exploration spatiale",
+            "Globalisation",
+            "Médias",
+            "Réseaux sociaux",
+            "Physique",
+            "Informatique",
+            "Robotique",
+            "Puissance élémentaire",
+            "Force du chaos"
+        ]
     },
     "Nucléaire":{
         "id": "44",
@@ -890,7 +956,14 @@
             "Physique+Robotique":"Nano technologies+Intelligence artificielle",
             "Puissance élémentaire":"",
             "Force du chaos":""
-        }
+        },
+        "Recherches": [
+            "Laser",
+            "Urbanisation futuriste",
+            "Voyage supreluminique",
+            "Nano technologies",
+            "Intelligence artificielle"
+        ]
     },
     "Laser":{
         "id": "55",

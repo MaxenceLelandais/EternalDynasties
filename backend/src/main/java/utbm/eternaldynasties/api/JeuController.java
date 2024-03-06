@@ -33,7 +33,7 @@ public class JeuController {
 
     @GetMapping(value = "parties")
     public JSONObject sendSauvegardes() {
-        return Json.mapToJsonObject(this.jeuService.getJeu().getSauvegardes());
+        return Json.objectToJsonObject(this.jeuService.getJeu().getSauvegardes());
     }
 
     @GetMapping(value = "arbreRecherches")
@@ -43,13 +43,7 @@ public class JeuController {
 
     @GetMapping(value = "listeEres")
     public JSONObject sendListeEres() {
-        Map<String, String> map = new HashMap<>();
-        int nbr = 0;
-        for(String key : this.jeuService.getJeu().getArbreDeRecherches().getEres()){
-            map.put(""+nbr, key);
-            nbr++;
-        }
-        return Json.mapToJsonObject(map);
+        return Json.objectToJsonObject(this.jeuService.getJeu().getArbreDeRecherches().getEres());
     }
 
     @GetMapping(value = "listeRessourcesJeu")
@@ -66,17 +60,15 @@ public class JeuController {
     //////////////////    PARTIES      //////////////////
 
 
-
-
     @GetMapping(value="joueur")
-    public String getPartie(@RequestParam(value = "nomJoueur") String nomJoueur) {
-        return Json.jsonToString(this.jeuService.getJeu().startPartie(nomJoueur).toMap());
+    public JSONObject getPartie(@RequestParam(value = "nomJoueur") String nomJoueur) {
+        return Json.objectToJsonObject(this.jeuService.getJeu().startPartie(nomJoueur).toMap());
     }
     @GetMapping(value="recherchesDisponibles")
-    public String getRecherchesDisponibles(@RequestParam(value = "nomJoueur") String nomJoueur) {
-        Map<String, String> map = new HashMap<>();
-        this.jeuService.getJeu().getJoueur(nomJoueur).recherchesPossibles().forEach(r->map.put(r.getNom(),r.toString()));
-        return Json.jsonToString(map);
+    public JSONObject getRecherchesDisponibles(@RequestParam(value = "nomJoueur") String nomJoueur) {
+        Map<String, JSONObject> map = new HashMap<>();
+        this.jeuService.getJeu().getJoueur(nomJoueur).recherchesPossibles().forEach(r->map.put(r.getNom(),r.convertJSONObject()));
+        return Json.objectToJsonObject(map);
     }
 
     @GetMapping(value="activerRecherche")
@@ -86,18 +78,18 @@ public class JeuController {
     }
 
     @GetMapping(value="listeRessources")
-    public String getListeRessources(@RequestParam(value = "nomJoueur") String nomJoueur) {
-        return Json.jsonToString(this.jeuService.getJeu().getJoueur(nomJoueur).getRessources());
+    public JSONObject getListeRessources(@RequestParam(value = "nomJoueur") String nomJoueur) {
+        return Json.objectToJsonObject(this.jeuService.getJeu().getJoueur(nomJoueur).getRessources());
     }
 
     @GetMapping(value="addRessource")
-    public String getAddRessource(@RequestParam(value = "nomJoueur") String nomJoueur,@RequestParam(value = "ressource") String nomRessource) {
-        return Json.jsonToString(this.jeuService.getJeu().getJoueur(nomJoueur).clickAchat(nomRessource));
+    public JSONObject getAddRessource(@RequestParam(value = "nomJoueur") String nomJoueur,@RequestParam(value = "ressource") String nomRessource) {
+        return Json.objectToJsonObject(this.jeuService.getJeu().getJoueur(nomJoueur).clickAchat(nomRessource));
     }
 
     @GetMapping(value="tick")
-    public String getAddRessource(@RequestParam(value = "nomJoueur") String nomJoueur) {
-        return Json.jsonToString(this.jeuService.getJeu().getJoueur(nomJoueur).tickBonus());
+    public JSONObject getAddRessource(@RequestParam(value = "nomJoueur") String nomJoueur) {
+        return Json.objectToJsonObject(this.jeuService.getJeu().getJoueur(nomJoueur).tickBonus());
     }
 
     @GetMapping(value = "")

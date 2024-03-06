@@ -14,7 +14,7 @@ export class JeuService {
 
   // Fonction pour interroger l'API
   private fetchData(url: string): Observable<any> {
-    return this.http.get(url);
+    return this.http.get(url, { observe: 'body', responseType: 'json'});
   }
 
   // Observable pour surveiller les réponses de l'API
