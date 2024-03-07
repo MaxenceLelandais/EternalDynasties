@@ -339,15 +339,15 @@
     "Conquête":{
         "id": "20",
         "Description":"Étendons notre influence à travers la force.",
-        "Coût":{
-            "Butin de guerre": "2"
-        },
+        "Coût": null,
         "Débloque":[
             "Moyen-Age",
             "Renaissance",
             "Poudre à canon"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Butin de guerre": "2"
+        },
         "Dépendance":[
             "Armée",
             "Antiquité"
@@ -372,7 +372,9 @@
             "Renaissance",
             "Banque"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Puissance commerciale":"100"
+        },
         "Dépendance":[
             "Monnaie"
         ]
@@ -385,7 +387,9 @@
             "Moyen-Age",
             "Système féodale"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Puissance culturelle": "100"
+        },
         "Dépendance":[
             "Philosophie"
         ]
@@ -422,7 +426,10 @@
             "Révolution industrielle",
             "Industrialisation"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Puissance militaire": "150",
+            "Nourriture": "0.2/Fermier"
+        },
         "Dépendance":[
             "Moyen-Age",
             "Construction"
@@ -436,7 +443,9 @@
             "Renaissance",
             "Humanisme"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Puissance culturelle": "100"
+        },
         "Dépendance":[
             "Moyen-Age",
             "Politique"
@@ -450,7 +459,10 @@
             "Renaissance",
             "Astronomie"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Point de recherche": "0.1/Professeur",
+            "Professeur": "1"
+        },
         "Dépendance":[
             "Moyen-Age",
             "Science"
@@ -465,7 +477,11 @@
             "Révolution industrielle",
             "Electricité"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Nourriture": "120%",
+            "Bois": "130%",
+            "Pierre": "110%"
+        },
         "Dépendance":[
             "Moyen-Age",
             "Ingénieurie"
@@ -533,7 +549,9 @@
             "Révolution industrielle",
             "Balistique"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Puissance militaire": "500"
+        },
         "Dépendance":[
             "Renaissance",
             "Conquête"
@@ -546,7 +564,11 @@
         "Débloque":[
             "Colonisation"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Puissance militaire": "50",
+            "Puissance commerciale": "75",
+            "Puissance culturelle": "40"
+        },
         "Dépendance":[
             "Renaissance",
             "Moyen-Age",
@@ -561,7 +583,9 @@
             "Révolution industrielle",
             "Economie"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Puissance commerciale": "300"
+        },
         "Dépendance":[
             "Renaissance",
             "Moyen-Age",
@@ -576,7 +600,10 @@
             "Révolution industrielle",
             "Culture"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Puissance culturelle": "150",
+            "Puissance commerciale": "50"
+        },
         "Dépendance":[
             "Renaissance",
             "Système féodale"
@@ -591,7 +618,9 @@
             "Epoque moderne",
             "Physique"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Point de science": "0.1/Professeur"
+        },
         "Dépendance":[
             "Renaissance",
             "Université"
@@ -605,7 +634,11 @@
             "Révolution industrielle",
             "Aviation"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Puissance militaire": "150",
+            "Puissance commercialle": "85",
+            "Puissance culturele": "60"
+        },
         "Dépendance":[
             "Cartographie"
         ]
@@ -642,7 +675,9 @@
             "Epoque moderne",
             "Nucléaire"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Puissance militaire": "400"
+        },
         "Dépendance":[
             "Renaissance",
             "Poudre à canon"
@@ -655,7 +690,11 @@
         "Débloque":[
             "Urbanisation"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Nourriture": "150%",
+            "Bois": "130%",
+            "Pierre": "140%"
+        },
         "Dépendance":[
             "Moyen-Age",
             "Renaissance",
@@ -670,7 +709,9 @@
             "Epoque moderne",
             "Globalisation"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Puissance commerciale": "233"
+        },
         "Dépendance":[
             "Renaissance",
             "Banque"
@@ -684,7 +725,9 @@
             "Epoque moderne",
             "Médias"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Puissance culturelle": "213"
+        },
         "Dépendance":[
             "Renaissance",
             "Humanisme"
@@ -698,7 +741,10 @@
             "Epoque moderne",
             "Informatique"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Electricité": "1",
+            "Centralle électrique": "1"
+        },
         "Dépendance":[
             "Renaissance",
             "Moyen-Age",
@@ -713,7 +759,10 @@
             "Epoque moderne",
             "Puissance élémentaire"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Mage supreme":"1",
+            "Pouvoir arcanique": "1"
+        },
         "Dépendance":[
             "Renaissance",
             "Moyen-Age",
@@ -728,7 +777,10 @@
             "Epoque moderne",
             "Force du chaos"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Ame maudite": "1",
+            "Necromancien": "1"
+        },
         "Dépendance":[
             "Renaissance",
             "Moyen-Age",
@@ -744,7 +796,10 @@
             "Epoque futuriste",
             "Urbanisation futuriste"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Immeuble": "1",
+            "Prospérité": "15"
+        },
         "Dépendance":[
             "Industrialisation"
         ]
@@ -784,7 +839,9 @@
             "Epoque futuriste",
             "Laser"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Puissance militaire": "500"
+        },
         "Dépendance":[
             "Révolution industrielle",
             "Balistique"
@@ -797,7 +854,9 @@
         "Débloque":[
             "Exploration spatiale"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Puissance militaire": "250"
+        },
         "Dépendance":[
             "Révolution industrielle",
             "Renaissance",
@@ -808,7 +867,9 @@
         "id": "46",
         "Description":"Explorez les interactions croissantes entre les nations et les cultures à l'échelle mondiale.",
         "Coût":null,
-        "Bonus":null,
+        "Bonus":{
+            "Puissance commerciale": "725"
+        },
         "Dépendance":[
             "Economie"
         ]
@@ -820,7 +881,9 @@
         "Débloque":[
             "Réseaux sociaux"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Puissance culturelle": "350"
+        },
         "Dépendance":[
             "Révolution industrielle",
             "Culture"
@@ -830,7 +893,9 @@
         "id": "48",
         "Description":"Plongez dans l'ère de la connectivité en ligne et de l'interaction sociale numérique. ",
         "Coût":null,
-        "Bonus":null,
+        "Bonus":{
+            "Puissance culturelle": "550"
+        },
         "Dépendance":[
             "Médias"
         ]
@@ -843,7 +908,13 @@
             "Epoque futuriste",
             "Nano technologies"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Nourriture": "150%",
+            "Bois": "130%",
+            "Pierre": "140%",
+            "Point de recherche": "200%",
+            "Point de science": "155%"
+        },
         "Dépendance":[
             "Révolution industrielle",
             "Renaissance",
@@ -857,7 +928,11 @@
         "Débloque":[
             "Robotique"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Puissance commerciale": "125",
+            "Puissance culturelle": "35",
+            "Point de recherche": "2/s"
+        },
         "Dépendance":[
             "Révolution industrielle",
             "Electricité"
@@ -889,7 +964,10 @@
             "Epoque futuriste",
             "Voyage supraluminique"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Puissance culturelle": "150",
+            "Puissance commerciale": "75"
+        },
         "Dépendance":[
             "Aviation"
         ]
@@ -902,7 +980,11 @@
             "Epoque futuriste",
             "Intelligence artificielle"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Nourriture": "130%",
+            "Bois": "*130%",
+            "Pierre": "*130%"
+        },
         "Dépendance":[
             "Informatique"
         ]
@@ -938,7 +1020,9 @@
         "id": "55",
         "Description":"Maîtrisez la puissance destructrice et créatrice du laser.",
         "Coût":null,
-        "Bonus":null,
+        "Bonus":{
+            "Puissance militaire": "1000"
+        },
         "Dépendance":[
             "Epoque moderne",
             "Nucléaire"
@@ -948,7 +1032,11 @@
         "id": "56",
         "Description":"Explorez les horizons de l'urbanisme dans un monde futuriste.",
         "Coût":null,
-        "Bonus":null,
+        "Bonus":{
+            "Gratte-ciel": "1",
+            "Prospérité": "15",
+            "Puissance culturelle": "200"
+        },
         "Dépendance":[
             "Epoque moderne",
             "Révolution industrielle",
@@ -959,7 +1047,10 @@
         "id": "57",
         "Description":" Pénétrez dans les confins de l'espace à des vitesses supraluminiques.",
         "Coût":null,
-        "Bonus":null,
+        "Bonus":{
+            "Puissance culturelle": "300",
+            "Puissance commerciale": "250"
+        },
         "Dépendance":[
             "Epoque moderne",
             "Exploration spatiale"
@@ -969,7 +1060,11 @@
         "id": "58",
         "Description":"Maîtrisez les technologies à l'échelle nanométrique. ",
         "Coût":null,
-        "Bonus":null,
+        "Bonus":{
+            "Puissance culturelle": "230",
+            "Puissance commerciale": "200",
+            "Puissence militaire": "100"
+        },
         "Dépendance":[
             "Epoque moderne",
             "Physique"
@@ -978,7 +1073,11 @@
     "Intelligence artificielle":{
         "id": "59",
         "Description":"Explorez les possibilités de l'intelligence artificielle.",
-        "Coût":null,
+        "Coût": {
+            "Nourriture": "300%",
+            "Bois": "300%",
+            "Pierre": "300%"
+        },
         "Bonus":null,
         "Dépendance":[
             "Epoque moderne",
