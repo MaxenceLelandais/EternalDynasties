@@ -1,4 +1,9 @@
 {
+  "Recherches": {
+    "Préhistoire": "",
+    "Cueuillette": "",
+    "Tribue": ""
+  },
   "Ressources": {
     "Villageois": "10",
     "Pierre": "25",
@@ -7,6 +12,7 @@
     "Fermier": "13"
   },
   "Début de la partie": "1709201958032",
+  "Nom": "max",
   "Caracteristiques collectes": {
     "Villageois": "1.0",
     "Pierre": "1.0",
@@ -14,11 +20,5 @@
     "Nourriture": "13.0;15.0/s;0.15%;0.15%/s;15.0/Mine;15.0/Fermier;0.15%/Bois;0.15%/Fermier",
     "Fermier": "1.0"
   },
-  "Civilisation": "",
-  "Recherches": {
-    "Préhistoire": "",
-    "Cueuillette": "",
-    "Tribue": ""
-  },
-  "Nom": "max"
+  "Civilisation": ""
 }

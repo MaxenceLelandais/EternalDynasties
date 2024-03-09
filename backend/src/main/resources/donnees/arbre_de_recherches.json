@@ -1145,12 +1145,12 @@
     "Intelligence artificielle":{
         "id": "59",
         "Description":"Explorez les possibilités de l'intelligence artificielle.",
-        "Coût": {
+        "Coût": null,
+        "Bonus":{
             "Nourriture": "300%",
             "Bois": "300%",
             "Pierre": "300%"
         },
-        "Bonus":null,
         "Dépendance":[
             "Epoque moderne",
             "Robotique"
