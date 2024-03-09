@@ -2,7 +2,7 @@
   "Environnements": [
     {
       "nom": "Plaine",
-      "Description": "Sur le vaste tapis des plaines, là où l'horizon embrasse le ciel, les herbes dansent au gré du vent, susurrant des histoires d'aventure et de liberté",
+      "description": "Sur le vaste tapis des plaines, là où l'horizon embrasse le ciel, les herbes dansent au gré du vent, susurrant des histoires d'aventure et de liberté",
       "logo": "./assets/img/envorionnement/plaine/logo.png",
       "logo-hover": "./assets/img/envorionnement/plaine/logo-hover.png",
       "banniere": "./assets/img/envorionnement/plaine/banniere.png",
