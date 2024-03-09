@@ -1,5 +1,6 @@
 <div>
     <p *ngIf="listeRecherches$ | async as listeRecherches">{{ listeRecherches | json }}</p>
+    <p *ngIf="listeEnvironnements$ | async as listeEnvironnements">{{ listeEnvironnements | json }}</p>
     <p *ngIf="parties$ | async as parties">{{ parties | json }}</p>
     <p *ngIf="recherchesDisponibles$ | async as recherchesDisponibles">{{ recherchesDisponibles | json }}</p>
     <p *ngIf="listeRessources$ | async as listeRessources">{{ listeRessources | json }}</p>

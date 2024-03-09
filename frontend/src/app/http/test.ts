@@ -10,6 +10,7 @@ export class Test  {
 
   //le $ signifi que c'est un observeur
   listeRecherches$!: Observable<any>;
+  listeEnvironnements$!: Observable<any>;
   parties$!: Observable<any>;
   recherchesDisponibles$!: Observable<any>;
   listeRessources$!: Observable<any>;
@@ -21,6 +22,7 @@ export class Test  {
 
   fetchData(){
     this.listeRecherches$ = this.jeuService.httpListeRecherches();
+    this.listeEnvironnements$ = this.jeuService.httpListeEnvironnements();
     this.parties$ = this.jeuService.httpParties();
     this.recherchesDisponibles$ = this.jeuService.httpRecherchesDisponibles("max");
     this.listeRessources$ = this.jeuService.httpListeRessources("max");
