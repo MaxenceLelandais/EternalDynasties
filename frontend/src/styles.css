@@ -161,7 +161,7 @@ body {
   font-size: 28px;
   transition: color 0.3s ease-in-out;
   justify-self: center;
-  margin-top: 20px;
+  margin-top: 100px;
 }
 .creation-environnement .creation-environnement-form .info-environnement button:hover {
   color: rgb(225, 209, 117);
