@@ -53,7 +53,7 @@ public class JeuController {
 
     @GetMapping(value = "listeEnvironnements")
     public JSONObject sendEnvironnements() {
-        return Json.stringToJsonObject(jeuService.getJeu().getArbreEnvironnements().toString());
+        return jeuService.getJeu().getListeEnvironnements();
     }
 
 
