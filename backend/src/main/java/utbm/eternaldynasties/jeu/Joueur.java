@@ -4,6 +4,7 @@ import org.json.simple.JSONObject;
 import utbm.eternaldynasties.jeu.arbreDeRessources.ArbreDeRessources;
 import utbm.eternaldynasties.jeu.arbreDeRessources.Bonus;
 import utbm.eternaldynasties.jeu.arbreDeRessources.Ressource;
+import utbm.eternaldynasties.jeu.arbreEnvironnements.Environnement;
 import utbm.eternaldynasties.jeu.arbreRecherches.ArbreDeRecherches;
 import utbm.eternaldynasties.jeu.arbreRecherches.Recherche;
 import utbm.eternaldynasties.utils.Json;
@@ -17,20 +18,20 @@ import java.util.Map;
 
 public class Joueur {
 
-    private String nom;
     private String civilisation;
+    private Environnement environnement;
     private String debutDeLaPartie;
     private HashMap<String, Long> ressources = new HashMap<>();
     private ArrayList<String> recherches = new ArrayList<>();
     private final ArbreDeRecherches arbreDeRecherche;
     private final ArbreDeRessources arbreDeRessources;
 
-    public Joueur(JSONObject jsonObject, ArbreDeRecherches arbreDeRecherche, ArbreDeRessources arbreDeRessources) {
+    public Joueur(JSONObject jsonObject, ArbreDeRecherches arbreDeRecherche, ArbreDeRessources arbreDeRessources, Environnement environnement) {
         this.arbreDeRecherche = arbreDeRecherche;
         this.arbreDeRessources = arbreDeRessources;
         Map data = jsonObject;
-        if (data.containsKey("Nom")) {
-            this.nom = data.get("Nom").toString();
+        if (data.containsKey("Civilisation")) {
+            this.environnement = environnement;
             this.civilisation = data.get("Civilisation").toString();
             this.debutDeLaPartie = (String) data.get("Début de la partie");
             HashMap<String, String> mapRessource = (HashMap<String, String>) data.get("Ressources");
@@ -49,21 +50,19 @@ public class Joueur {
         }
     }
 
-    public void init(String informations) {
-        if (informations.contains(":")) {
-            this.nom = informations.split(":")[0];
-            this.civilisation = informations.split(":")[1];
-        } else {
-            this.nom = informations;
-        }
+    public void init(String civilisation, Environnement environnement) {
+
+        this.civilisation = civilisation;
+        this.environnement = environnement;
+
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         this.debutDeLaPartie = dtf.format(LocalDateTime.now());
     }
 
     public Map<Object, Object> toMap() {
         Map<Object, Object> data = new HashMap<>();
-        data.put("Nom", this.nom);
         data.put("Civilisation", this.civilisation);
+        data.put("Environnement", this.environnement.getNom());
         data.put("Début de la partie", this.debutDeLaPartie + "");
         Map<String, String> map = new HashMap<>();
         for (String key : this.ressources.keySet()) {
@@ -80,7 +79,7 @@ public class Joueur {
     }
 
     public void save() {
-        Json.save("src/main/resources/sauvegardes/" + this.nom + ".save", toMap());
+        Json.save("src/main/resources/sauvegardes/" + this.civilisation + "-" + this.environnement.getNom()+ ".save", toMap());
     }
 
     public List<Recherche> recherchesPossibles() {
@@ -198,8 +197,8 @@ public class Joueur {
         }
     }
 
-    public String getNom() {
-        return nom;
+    public Environnement getEnvironnement() {
+        return environnement;
     }
 
     public String getCivilisation() {

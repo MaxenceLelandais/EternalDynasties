@@ -53,7 +53,7 @@ public class JeuController {
 
     @GetMapping(value = "listeEnvironnements")
     public JSONObject sendEnvironnements() {
-        return jeuService.getJeu().getListeEnvironnements();
+        return Json.stringToJsonObject(jeuService.getJeu().getListeEnvironnements());
     }
 
 
@@ -61,8 +61,8 @@ public class JeuController {
 
 
     @GetMapping(value="joueur")
-    public JSONObject getPartie(@RequestParam(value = "nomJoueur") String nomJoueur) {
-        return Json.objectToJsonObject(this.jeuService.getJeu().startPartie(nomJoueur).toMap());
+    public JSONObject getPartie(@RequestParam(value = "civilisation") String civilisation, @RequestParam(value = "environnement") String environnement) {
+        return Json.objectToJsonObject(this.jeuService.getJeu().startPartie(civilisation, environnement).toMap());
     }
     @GetMapping(value="recherchesDisponibles")
     public JSONObject getRecherchesDisponibles(@RequestParam(value = "nomJoueur") String nomJoueur) {
