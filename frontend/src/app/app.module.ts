@@ -10,6 +10,7 @@ import { MenuEnvironnementComponent } from './menu-environnement/menu-environnem
 import { PageAccueilComponent } from './page-accueil/page-accueil.component';
 import { PageJeuComponent } from './page-jeu/page-jeu.component';
 import { Test } from './http/test';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { Test } from './http/test';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
