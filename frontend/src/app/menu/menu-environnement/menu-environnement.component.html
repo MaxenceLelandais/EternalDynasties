@@ -6,7 +6,7 @@
     <form action="" class="creation-environnement-form">
         <div class="input-container">
             <label for="nom-civilisation" class="label-nom-civilisation">Entrer un nom de civilisation</label>
-            <input id="nom-civilisation" name="nom-civilisation" type="text" />
+            <input id="nom-civilisation" name="nom-civilisation" type="text" [(ngModel)]="nomCivilisation"/>
         </div>
         <div *ngIf="listeEnvironnements">
             <ul class="liste-logo-environnement" *ngIf="listeEnvironnements">
@@ -21,7 +21,7 @@
         <div *ngIf="hoveredKey || selectedKey" class="info-environnement">
             <h2>{{ getEnvironmentInfo(hoveredKey || selectedKey, 'nom') }}</h2>
             <p class="description">{{ getEnvironmentInfo(hoveredKey || selectedKey, 'description') }}</p>
-            <button class="button-environnement" routerLink="/page-jeu">Créer Civilisation</button>
+            <button class="button-environnement" routerLink="/page-jeu" (click)="createCivilisation()">Créer Civilisation</button>
         </div>
     </form>
     <!-- <p *ngIf="listeEnvironnements">{{ listeEnvironnements | json }}</p> -->

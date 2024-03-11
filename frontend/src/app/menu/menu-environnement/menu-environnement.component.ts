@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { JeuService } from '../http/jeuService';
-import { Environnement, Environnements } from '../model/environnement.model';
+import { JeuService } from '../../http/jeuService';
+import { Environnement, Environnements } from '../../model/environnement.model';
+import { Civilisation } from 'src/app/model/civilisation.model';
+import { CivilisationService } from 'src/app/service/civilisationService'; // Importez CivilisationService
 
 @Component({
   selector: 'app-menu-environnement',
@@ -12,8 +14,9 @@ export class MenuEnvironnementComponent implements OnInit {
   selectedEnvironment: Environnement | null = null;
   hoveredKey: string | null = null;
   selectedKey: string | null = null;
+  nomCivilisation: string = '';
 
-  constructor(private jeuService: JeuService) {}
+  constructor(private jeuService: JeuService, private civilisationService: CivilisationService) {}
 
   ngOnInit(): void {
     this.fetchData();
@@ -47,6 +50,16 @@ export class MenuEnvironnementComponent implements OnInit {
     }
     const env = this.listeEnvironnements ? this.listeEnvironnements[key] : null;
     return env ? env[infoType] : '';
+  }
+
+  createCivilisation(): void {
+    if (this.selectedKey && this.nomCivilisation) {
+      const nomEnvironnement = this.getEnvironmentInfo(this.selectedKey, 'nom');
+      var civilisation:Civilisation = new Civilisation();
+      civilisation.nom = this.nomCivilisation;
+      civilisation.nomEnvironnement = nomEnvironnement;
+      this.civilisationService.setCivilisation(civilisation);
+    }
   }
   
 }
