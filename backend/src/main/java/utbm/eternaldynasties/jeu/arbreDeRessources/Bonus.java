@@ -6,11 +6,11 @@ import java.util.Map;
 
 public class Bonus {
     private String ressourceGenere;
-    private double quantite;
-    private double quantiteParSecondes;
+    private double quantite = 0.0;
+    private double quantiteParSecondes = 0.0;
     private Map<String, Double> quantiteParRessources = new HashMap<>();
-    private double pourcentage;
-    private double pourcentageParSecondes;
+    private double pourcentage = 0.0;
+    private double pourcentageParSecondes = 0.0;
     private Map<String, Double> pourcentageParRessources = new HashMap<>();
 
     public Bonus(String ressourceGenere, String generation) {
@@ -119,9 +119,7 @@ public class Bonus {
 
     public String toString() {
         ArrayList<String> text = new ArrayList<>();
-        if (this.getQuantite() != 0.0) {
-            text.add(this.getQuantite() + "");
-        }
+        text.add(this.getQuantite() + "");
 
         if (this.getQuantiteParSecondes() != 0.0) {
             text.add(this.getQuantiteParSecondes() + "/s");

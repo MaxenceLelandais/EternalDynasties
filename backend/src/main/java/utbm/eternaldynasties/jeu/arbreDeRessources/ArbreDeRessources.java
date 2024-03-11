@@ -16,6 +16,10 @@ public class ArbreDeRessources {
         }
     }
 
+    public Map<String, Ressource> getListeRessources() {
+        return listeRessources;
+    }
+
     public Ressource getRessource(String nomRessource){
         return this.listeRessources.get(nomRessource);
     }

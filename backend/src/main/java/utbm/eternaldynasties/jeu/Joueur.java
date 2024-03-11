@@ -90,10 +90,9 @@ public class Joueur {
         if (this.arbreDeRecherche.activerRecherche(nomRecherche)) {
             Map<String, Bonus> map = this.arbreDeRecherche.getRecherche(nomRecherche).getListeBonus();
             for (String key : map.keySet()) {
-                for (Bonus bonusRessource : this.arbreDeRessources.getRessource(key).getListeBonus().values()) {
-                    String nom = bonusRessource.getRessourceGenere();
-                    this.arbreDeRessources.getRessource(nom).getListeBonus().get(nom).add(bonusRessource);
-                }
+                Bonus bonusRessource=map.get(key);
+                String nom = bonusRessource.getRessourceGenere();
+                this.arbreDeRessources.getRessource(nom).getListeBonus().get(nom).add(bonusRessource);
                 this.ressources.putIfAbsent(key, 0L);
             }
             save();
@@ -169,14 +168,14 @@ public class Joueur {
                 Double nouvelleValeur = 0.0;
 
                 Double quantiteParSecondes = ressourceBonus.getQuantiteParSecondes();
-                Double pourcentageParSecondes = ressourceBonus.getPourcentageParSecondes();
+                Double pourcentageParSecondes = (ressourceBonus.getPourcentageParSecondes()/100);
 
-                nouvelleValeur += quantiteParSecondes + (pourcentageParSecondes * nouvelleValeur);
+                nouvelleValeur += quantiteParSecondes + ((pourcentageParSecondes/100) * nouvelleValeur);
 
                 Map<String, Double> pourcentageParRessources = ressourceBonus.getPourcentageParRessources();
                 for (String key : pourcentageParRessources.keySet()) {
                     if (this.ressources.containsKey(key)) {
-                        nouvelleValeur += this.ressources.get(key) * pourcentageParRessources.get(key)/100;
+                        nouvelleValeur += this.ressources.get(key) * (pourcentageParRessources.get(key)/100);
                     }
                 }
                 Map<String, Double> quantiteParRessources = ressourceBonus.getQuantiteParRessources();

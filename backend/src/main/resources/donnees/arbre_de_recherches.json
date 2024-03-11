@@ -345,6 +345,9 @@
         },
         "Dépendance":[
             "Magie"
+        ],
+        "Inhibe":[
+            "Magie Noire"
         ]
     },
     "Magie Noire":{
@@ -360,6 +363,9 @@
         },
         "Dépendance":[
             "Magie"
+        ],
+        "Inhibe":[
+            "Magie du Bien"
         ]
     },
     "Conquête":{
@@ -678,8 +684,8 @@
         ],
         "Bonus":{
             "Puissance militaire": "150",
-            "Puissance commercialle": "85",
-            "Puissance culturele": "60"
+            "Puissance commerciale": "85",
+            "Puissance culturelle": "60"
         },
         "Dépendance":[
             "Cartographie"
@@ -795,7 +801,7 @@
         ],
         "Bonus":{
             "Electricité": "1",
-            "Centralle électrique": "1"
+            "Centrale électrique": "1"
         },
         "Dépendance":[
             "Renaissance",
@@ -1047,8 +1053,8 @@
         ],
         "Bonus":{
             "Nourriture": "130%",
-            "Bois": "*130%",
-            "Pierre": "*130%"
+            "Bois": "130%",
+            "Pierre": "130%"
         },
         "Dépendance":[
             "Informatique"

@@ -57,6 +57,7 @@ public class ArbreDeRecherches {
 
     public List<Recherche> recherchesPossibles() {
         return this.listeRecherches.values().stream()
+                .filter(Recherche::checkConditions)
                 .filter(r -> !r.getEtat())
                 .filter(Recherche::getRecherchePossible)
                 .filter(Recherche::actualiseEtat)

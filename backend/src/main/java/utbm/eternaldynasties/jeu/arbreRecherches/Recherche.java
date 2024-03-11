@@ -150,7 +150,7 @@ public class Recherche {
         }
     }
 
-    private boolean checkConditions() {
+    boolean checkConditions() {
         if (this.conditions.isEmpty()) {
             return true;
         }

@@ -6,26 +6,26 @@
         },
         "Bonus": {
             "Max-Villageois": "1",
-            "Villageois": "1"
+            "Villageois": "0"
         }
     },
     "Or": {
         "Description": "Permet d'acheter",
         "Bonus": {
-            "Or": "1"
+            "Or": "0"
         }
     },
     "Point de recherche": {
         "Description": "Pour débloquer les recherches",
         "Bonus": {
-            "Point de recherche": "1"
+            "Point de recherche": "0"
         }
     },
     "Nourriture": {
         "Description": "C'est le début de la vie",
         "Bonus": {
             "Max-Nourriture": "100",
-            "Nourriture": "1"
+            "Nourriture": "0"
         }
     },
     "Fermier": {
@@ -36,8 +36,15 @@
         "Bonus": {
             "Max-Fermier": "1",
             "Max-Villageois": "1",
-            "Fermier": "1",
+            "Fermier": "0",
             "Nourriture": "1;1/s;1/Fermier;1/Mine;0.01%;0.01%/Fermier;0.01%/Bois;0.01%/s"
+        }
+    },
+    "Max-Villageois": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Max-Villageois": "0"
         }
     },
     "Bucheron": {
@@ -46,6 +53,7 @@
             "Villageois": "1"
         },
         "Bonus": {
+            "Bucheron": "0",
             "Bois": "1;1/s;0.01%;0.01%/Bucheron;0.01%/s"
         }
     },
@@ -55,55 +63,56 @@
             "Villageois": "1"
         },
         "Bonus": {
+            "Mineur" : "0",
             "Pierre": "1;1/s;0.01%;0.01%/Mineur;0.01%/s"
         }
     },
     "Bois": {
         "Description": "Bob le bricoleur est là !!",
         "Bonus": {
-            "Bois": "1"
+            "Bois": "0"
         }
     },
     "Pierre": {
         "Description": "Fortifions TOUTTTT !!!",
         "Bonus": {
-            "Pierre": "1"
+            "Pierre": "0"
         }
     },
     "Piété": {
         "Description": "Pies lesu Domine. Dona eis requiem.",
         "Bonus": {
-            "Piété": "1"
+            "Piété": "0"
         }
     },
     "Mana": {
         "Description": "Force mystique et puissante",
         "Bonus": {
-            "Mana": "1"
+            "Mana": "0"
         }
     },
     "Pouvoir arcanique": {
         "Description": "l'essence du bien",
         "Bonus": {
-            "Pouvoir arcanique": "1"
+            "Pouvoir arcanique": "0"
         }
     },
     "Ame maudite": {
         "Description": "666",
         "Bonus": {
-            "Ame maudite": "1"
+            "Ame maudite": "0"
         }
     },
     "Point de science": {
         "Description": "science sans conscience n'est que ruine de l'âme",
         "Bonus": {
-            "Point de science": "1"
+            "Point de science": "0"
         }
     },
     "Electricité": {
         "Description": "Brizzzt",
         "Bonus": {
-            "Electricité": "1"
+            "Electricité": "0"
         }
     },  
     "Maison": {
@@ -112,8 +121,15 @@
             "Bois": "10"
         },
         "Bonus": {
-            "Maison": "1",
+            "Maison": "0",
             "Max-Personne": "1"
+        }
+    },
+    "Max-Personne": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Max-Personne": "0"
         }
     },
     "Ferme": {
@@ -123,8 +139,15 @@
             "Pierre": "10"
         },
         "Bonus": {
-            "Ferme": "1",
+            "Ferme": "0",
             "Max-Fermier": "1"
+        }
+    },
+    "Max-Fermier": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Max-Fermier": "0"
         }
     },
     "Forestier": {
@@ -134,8 +157,15 @@
             "Pierre": "10"
         },
         "Bonus": {
-            "Forestier": "1",
+            "Forestier": "0",
             "Max-Bucheron": "1"
+        }
+    },
+    "Max-Bucheron": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Max-Bucheron": "0"
         }
     },
     "Mine": {
@@ -145,8 +175,15 @@
             "Pierre": "10"
         },
         "Bonus": {
-            "Mine": "1",
+            "Mine": "0",
             "Max-Mineur": "1"
+        }
+    },
+    "Max-Mineur": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Max-Mineur": "0"
         }
     },
     "Grange": {
@@ -156,7 +193,15 @@
             "Pierre": "100"
         },
         "Bonus": {
+            "Grange": "0",
             "Ferme": "1",
+            "Max-Nourriture": "100"
+        }
+    },
+    "Max-Nourriture": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
             "Max-Nourriture": "100"
         }
     },
@@ -167,7 +212,14 @@
             "Pierre": "100"
         },
         "Bonus": {
-            "Entrepôt": "1",
+            "Entrepôt": "0",
+            "Max-Bois": "100"
+        }
+    },
+    "Max-Bois": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
             "Max-Bois": "100"
         }
     },
@@ -178,8 +230,169 @@
             "Pierre": "100"
         },
         "Bonus": {
-            "Carrière": "1",
+            "Carrière": "0",
             "Max-Pierre": "100"
+        }
+    },
+    "Max-Pierre": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Max-Pierre": "100"
+        }
+    },
+    "Divinité": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Divinité": "0"
+        }
+    },
+    "Ecole": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Ecole": "0"
+        }
+    },
+    "Caserne": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Caserne": "0"
+        }
+    },
+    "Soldat": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Soldat": "0"
+        }
+    },
+    "Temple": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Temple": "0"
+        }
+    },
+    "Port": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Port": "0"
+        }
+    },
+    "Laboratoire": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Laboratoire": "0"
+        }
+    },
+    "Scientifique": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Scientifique": "0"
+        }
+    },
+    "Villa": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Villa": "0"
+        }
+    },
+    "Mage": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Mage": "0"
+        }
+    },
+    "Sorcier": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Sorcier": "0"
+        }
+    },
+    "Butin de guerre": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Butin de guerre": "0"
+        }
+    },
+    "Puissance militaire": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Puissance militaire": "0"
+        }
+    },
+    "Puissance culturelle": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Puissance culturelle": "0"
+        }
+    },
+    "Professeur": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Professeur": "0"
+        }
+    },
+    "Puissance commerciale": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Puissance commerciale": "0"
+        }
+    },
+    "Centrale électrique": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Centrale électrique": "0"
+        }
+    },
+    "Mage supreme": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Mage supreme": "0"
+        }
+    },
+    "Necromancien": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Necromancien": "0"
+        }
+    },
+    "Immeuble": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Immeuble": "0"
+        }
+    },
+    "Prospérité": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Prospérité": "0"
+        }
+    },
+    "Gratte-ciel": {
+        "Description": "Je ne sais plus quoi mettre",
+        "Coût": null,
+        "Bonus": {
+            "Gratte-ciel": "0"
         }
     }
 }
