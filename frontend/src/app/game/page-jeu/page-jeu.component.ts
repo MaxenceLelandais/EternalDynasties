@@ -3,6 +3,8 @@ import { Civilisation } from 'src/app/model/civilisation.model';
 import { CivilisationService } from 'src/app/service/civilisationService';
 import { JeuService } from 'src/app/http/jeuService';
 import { Environnement } from 'src/app/model/environnement.model';
+import { HeaderJeuComponent } from '../header-jeu/header-jeu.component';
+import { EnvironnementService } from 'src/app/service/environnementService';
 
 @Component({
   selector: 'app-page-jeu',
@@ -14,7 +16,7 @@ export class PageJeuComponent implements OnInit {
   environnement: Environnement | null = null;
   
 
-  constructor(private jeuService: JeuService, private civilisationService: CivilisationService) { }
+  constructor(private jeuService: JeuService, private civilisationService: CivilisationService, private environnementService: EnvironnementService) { }
 
   ngOnInit() {
     this.civilisation = this.civilisationService.getCivilisation();
@@ -34,6 +36,7 @@ export class PageJeuComponent implements OnInit {
         this.jeuService.httpEnvironnement(this.civilisation.nomEnvironnement).subscribe(
           data => {
             this.environnement = data;
+            this.environnementService.changeEnvironnement(data); // Mettez à jour le service ici
             console.log(data);
           },
           error => {
@@ -42,5 +45,4 @@ export class PageJeuComponent implements OnInit {
         );
     }
   }
-  
 }

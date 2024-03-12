@@ -1,5 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&family=Whisper&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&display=swap");
+@font-face {
+  font-family: "prehistoire";
+  src: url("../src/assets/font/LatinRunesFree-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "antiquite";
+  src: url("../src/assets/font/geek.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "medieval";
+  src: url("../src/assets/font/CloisterBlack.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "renaissance";
+  src: url("../src/assets/font/Manstein.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "industrielle";
+  src: url("../src/assets/font/Albertsthal Typewriter.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "moderne";
+  src: url("../src/assets/font/HackneyPersonalUseOnly.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "futuriste";
+  src: url("../src/assets/font/Glipervelz-Origy FULL.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   margin: 0;
   padding: 0;
@@ -15,6 +58,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   flex-direction: column;
   gap: 19vh;
   min-height: 100vh;
@@ -45,6 +89,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   margin: 35px 50px 100px;
   position: relative;
 }
@@ -105,9 +150,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   margin: 50px 0;
   list-style: none;
   justify-content: space-between;
+  padding-left: 0;
 }
 .creation-environnement .creation-environnement-form .liste-logo-environnement li {
   position: relative;
@@ -137,10 +184,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   flex-direction: column;
 }
 .creation-environnement .creation-environnement-form .info-environnement .description {
-  font-family: "Parisienne", cursive;
+  font-family: "Whisper", cursive;
   color: white;
   font-size: 26px;
   font-weight: normal;
@@ -165,4 +213,45 @@ body {
 }
 .creation-environnement .creation-environnement-form .info-environnement button:hover {
   color: rgb(225, 209, 117);
+}
+
+.header-jeu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header-jeu .header-jeu-banniere {
+  width: 100%;
+}
+.header-jeu .header-jeu-ecusson {
+  filter: drop-shadow(0px -5px 16px #000000);
+  position: relative;
+  width: 200px;
+  margin-top: -110px;
+}
+.header-jeu h1 {
+  margin-top: 0;
+  font-size: 45px;
+}
+.header-jeu .prehistoire {
+  font-family: "prehistoire", sans-serif;
+}
+.header-jeu .antiquite {
+  font-family: "antiquite", sans-serif;
+}
+.header-jeu .medieval {
+  font-family: "medieval", sans-serif;
+}
+.header-jeu .renaissance {
+  font-family: "renaissance", sans-serif;
+}
+.header-jeu .industrielle {
+  font-family: "industrielle", sans-serif;
+}
+.header-jeu .moderne {
+  font-family: "moderne", sans-serif;
+}
+.header-jeu .futuriste {
+  font-family: "futuriste", sans-serif;
 }/*# sourceMappingURL=styles.css.map */
