@@ -10,6 +10,7 @@ import { MenuDemarrageComponent } from './menu/menu-demarrage/menu-demarrage.com
 import { MenuEnvironnementComponent } from './menu/menu-environnement/menu-environnement.component';
 import { PageAccueilComponent } from './menu/page-accueil/page-accueil.component';
 import { PageJeuComponent } from './game/page-jeu/page-jeu.component';
+import { HeaderJeuComponent } from './game/header-jeu/header-jeu.component';
 import { Test } from './http/test';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
@@ -20,7 +21,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     MenuEnvironnementComponent,
     PageAccueilComponent,
     PageJeuComponent,
-    Test
+    Test,
+    HeaderJeuComponent
   ],
   imports: [
     BrowserModule,
