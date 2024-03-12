@@ -1,0 +1,29 @@
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    background-color: #333; /* Couleur de fond normale */
+    color: #fff; /* Couleur du texte normale */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s; /* Transition pour l'animation */
+    text-decoration: none; /* Désactiver le soulignement */
+  
+    // Styles supplémentaires pour le thème sombre
+    body.dark-theme & {
+      background-color: #222; /* Couleur de fond dans le thème sombre */
+      color: #fff; /* Couleur du texte dans le thème sombre */
+    }
+  
+    &:hover {
+      transform: translateY(-3px); /* Translation au survol */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Changement de l'ombre au survol */
+      background-color: #555; /* Nouvelle couleur de fond au survol */
+      color: #fff; /* Nouvelle couleur du texte au survol */
+    }
+  }
+  
