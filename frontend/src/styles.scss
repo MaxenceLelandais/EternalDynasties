@@ -16,7 +16,7 @@
 }
 @font-face {
   font-family: 'medieval';
-  src: url('../src/assets/font/CloisterBlack.ttf') format('truetype');
+  src: url('../src/assets/font/Por\ Siempre\ Gótica.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -73,14 +73,14 @@ $hover-opacity: 0.5;
   transition: $property $duration ease-in-out;
 }
 
-@mixin button-style {
+@mixin button-style($font-size: 16px) {
   padding: 0;
   border: none;
   background: none;
   color: $text-color-default;
   font-family: $font-primary;
   cursor: pointer;
-  font-size: 28px;
+  font-size: $font-size;
   @include transition(color);
 
   &:hover {
@@ -111,7 +111,7 @@ body {
   }
   
   button {
-    @include button-style;
+    @include button-style(28px);
   }
 
   p {
@@ -240,7 +240,7 @@ body {
       }
 
       button {
-        @include button-style;
+        @include button-style(28px);
         justify-self: center;
         margin-top: 100px;
       }
@@ -250,42 +250,55 @@ body {
 
 
 .header-jeu {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .header-jeu-banniere {
+  .header-info {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .header-jeu-banniere {
+      width: 100%;
+    }
+    .header-jeu-ecusson {
+      filter: drop-shadow(0px -5px 16px #000000);
+      position: relative;
+      width: 200px;
+      margin-top: -110px;
+    }
+    h1 {
+      margin-top: 0; 
+    }
+    .prehistoire {
+      font-family: 'prehistoire', sans-serif;
+      font-size: 50px;
+    }
+    .antiquite {
+      font-family: 'antiquite', sans-serif;
+      font-size: 30px;
+    }
+    .medieval {
+      font-family: 'medieval', sans-serif;
+      font-size: 40px;
+    }
+    .renaissance {
+      font-family: 'renaissance', sans-serif;
+    }
+    .industrielle {
+      font-family: 'industrielle', sans-serif;
+    }
+    .moderne {
+      font-family: 'moderne', sans-serif;
+      font-size:  40px;
+    }
+    .futuriste {
+      font-family: 'futuriste', sans-serif;
+      font-size: 40px;
+    }
   }
-  .header-jeu-ecusson {
-    filter: drop-shadow(0px -5px 16px #000000);
+  .arbre-recherche-button-container {
     position: relative;
-    width: 200px;
-    margin-top: -110px;
-  }
-  h1 {
-    margin-top: 0; 
-    font-size: 45px;
-  }
-  .prehistoire {
-    font-family: 'prehistoire', sans-serif;
-  }
-  .antiquite {
-    font-family: 'antiquite', sans-serif;
-  }
-  .medieval {
-    font-family: 'medieval', sans-serif;
-  }
-  .renaissance {
-    font-family: 'renaissance', sans-serif;
-  }
-  .industrielle {
-    font-family: 'industrielle', sans-serif;
-  }
-  .moderne {
-    font-family: 'moderne', sans-serif;
-  }
-  .futuriste {
-    font-family: 'futuriste', sans-serif;
+    margin-top: -100px;
+    .arbre-recherche-button {
+      @include button-style(20px);
+    }
   }
 }

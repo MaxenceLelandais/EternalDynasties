@@ -37,3 +37,6 @@ build/
 
 ### sauvegardes ###
 *.save
+
+### graphiques ###
+/Graphiques/*
