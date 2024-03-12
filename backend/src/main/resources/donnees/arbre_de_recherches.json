@@ -15,7 +15,11 @@
     },
     "Préhistoire":{
         "Description":"Entamons le voyage dans les premiers âges.",
-        "Coût":null,
+        "Coût":{
+            "Nourriture": "10",
+            "Bois": "10",
+            "Pierre": "10"
+        },
         "Débloque":[
             "Cueuillette",
             "Croyance"
@@ -39,12 +43,15 @@
     "Cueuillette":{
         "id": "2",
         "Description":"Rassemblons les ressources de la nature.",
-        "Coût":null,
+        "Coût":{
+            "Nourriture": "100"
+        },
         "Débloque":[
             "Feu"
         ],
         "Bonus":{
             "Fermier":"1",
+            "Grange":"1",
             "Nourriture": "0.5/Fermier"
         },
         "Dépendance":[
@@ -54,11 +61,15 @@
     "Feu":{
         "id": "3",
         "Description":"Maîtrisons le feu pour progresser.",
-        "Coût":null,
+        "Coût":{
+            "Nourriture": "200"
+        },
         "Débloque":[
             "Chasse et pêche"
         ],
         "Bonus": {
+            "Entrepôt":"1",
+            "Carrière":"1",
             "Nourriture":"0.25/Fermier"
         },
         "Dépendance":[
@@ -68,7 +79,11 @@
     "Croyance":{
         "id": "4",
         "Description":"Explore les mystères de la foi. ",
-        "Coût":null,
+        "Coût":{
+            "Nourriture": "500",
+            "Bois": "500",
+            "Pierre": "500"
+        },
         "Débloque":[
             "Education",
             "Mythologie"
@@ -83,7 +98,9 @@
     "Chasse et pêche":{
         "id": "5",
         "Description":"Apprenons les arts de la survie. ",
-        "Coût":null,
+        "Coût":{
+            "Nourriture": "300"
+        },
         "Débloque":[
             "Armée",
             "Elevage",
@@ -100,7 +117,10 @@
     "Education":{
         "id": "6",
         "Description":"Cultivons l'esprit pour l'avenir. ",
-        "Coût":null,
+        "Coût":
+        {
+            "Bois": "10000"
+        },
         "Débloque":[
             "Monnaie",
             "Philosophie",
@@ -867,7 +887,7 @@
         "Coût":null,
         "Débloque":[
             "Epoque Moderne",
-            "Epoque futuriste",
+            "Epoque Futuriste",
             "Urbanisation futuriste"
         ],
         "Bonus":{
@@ -883,7 +903,7 @@
         "Coût":null,
         "Débloque":[
             "Nucléaire",
-            "Epoque futuriste",
+            "Epoque Futuriste",
             "Urbanisation futuriste",
             "Aviation",
             "Globalisation",
@@ -923,7 +943,7 @@
         "Description":"KAAAAAAAAABOOOOOOOOOOOOOUM!!!!!!!!!!!!!!!!!!!!",
         "Coût":null,
         "Débloque":[
-            "Epoque futuriste",
+            "Epoque Futuriste",
             "Laser"
         ],
         "Bonus":{
@@ -993,7 +1013,7 @@
         "Description":"Explorez les lois fondamentales de l'univers et les forces qui régissent la matière et l'énergie.",
         "Coût":null,
         "Débloque":[
-            "Epoque futuriste",
+            "Epoque Futuriste",
             "Nano technologies"
         ],
         "Bonus":{
@@ -1051,7 +1071,7 @@
         "Description":"Lancez-vous à la conquête de l'espace et explorez les mystères de l'univers.",
         "Coût":null,
         "Débloque":[
-            "Epoque futuriste",
+            "Epoque Futuriste",
             "Voyage supraluminique"
         ],
         "Bonus":{
@@ -1067,7 +1087,7 @@
         "Description":"Explorez les possibilités infinies de la robotique.",
         "Coût":null,
         "Débloque":[
-            "Epoque futuriste",
+            "Epoque Futuriste",
             "Intelligence artificielle"
         ],
         "Bonus":{
@@ -1079,7 +1099,7 @@
             "Informatique"
         ]
     },
-    "Epoque futuriste":{
+    "Epoque Futuriste":{
         "Description":"Plongez dans un monde où la technologie repousse les frontières de l'imagination.",
         "Coût":null,
         "Débloque":[

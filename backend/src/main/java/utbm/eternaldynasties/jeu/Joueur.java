@@ -86,8 +86,24 @@ public class Joueur {
         return this.arbreDeRecherche.recherchesPossibles();
     }
 
-    public boolean activerRecherche(String nomRecherche) {
+    public String activerRecherche(String nomRecherche) {
+        Map<String, Long> listeCout = this.arbreDeRecherche.getRecherche(nomRecherche).getListeCout();
+        StringBuilder txt = new StringBuilder(nomRecherche + " : RESSOURCES INSUFISANTES { ");
+        boolean pbRessource = false;
+        for(String nomRessource : listeCout.keySet()){
+            long val = this.ressources.get(nomRessource)-listeCout.get(nomRessource);
+            if(val<0){
+                txt.append(nomRessource).append(" : ").append(val).append("; ");
+                pbRessource = true;
+            }
+        }
+        if(pbRessource){
+            return txt+" }";
+        }
         if (this.arbreDeRecherche.activerRecherche(nomRecherche)) {
+            for(String nomRessource : listeCout.keySet()){
+                this.ressources.replace(nomRessource,this.ressources.get(nomRessource)-listeCout.get(nomRessource));
+            }
             Map<String, Bonus> map = this.arbreDeRecherche.getRecherche(nomRecherche).getListeBonus();
             for (String key : map.keySet()) {
                 Bonus bonusRessource=map.get(key);
@@ -96,9 +112,9 @@ public class Joueur {
                 this.ressources.putIfAbsent(key, 0L);
             }
             save();
-            return true;
+            return nomRecherche + ": RECHERCHE EFFECTUEE";
         }
-        return false;
+        return nomRecherche + " : RECHERCHE NON DEBLOQUEE";
     }
 
     public Map<Object, Object> clickAchat(String ressource) {
