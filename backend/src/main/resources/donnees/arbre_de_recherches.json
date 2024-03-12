@@ -52,7 +52,7 @@
         "Bonus":{
             "Fermier":"1",
             "Grange":"1",
-            "Nourriture": "0.5/Fermier"
+            "Nourriture": "1.0/s;0.5/Fermier"
         },
         "Dépendance":[
             "Préhistoire"

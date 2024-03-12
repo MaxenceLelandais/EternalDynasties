@@ -25,6 +25,7 @@ class JeuTest {
     String environnement = "Plaine";
     int nbrCliquesParSecondes = 5;
     float tempsJeu = 0;
+    int tempsPast = 0;
     ArrayList<Float> tempsList = new ArrayList<>();
     Map<String, ArrayList<Long>> allData = new HashMap<>();
     Jeu jeu;
@@ -61,17 +62,16 @@ class JeuTest {
             }
 
             if (rechercheLaMoinsCouteuse != null) {
-                System.out.println("Nom de la recherche : " + rechercheLaMoinsCouteuse.getNom() + ", " + listeRecherchesPossibles.size());
+                System.out.println("Recherche : "+rechercheLaMoinsCouteuse.getNom());
                 for (String nomRessource : rechercheLaMoinsCouteuse.getListeCout().keySet()) {
                     this.addTempsJeu(1);
-                    long quantiteDeRessourcesAOptenir = rechercheLaMoinsCouteuse.getListeCout().get(nomRessource) - listeRessourcePossedee.get(nomRessource);
                     Ressource maximum = joueur.getArbreDeRessources().getRessource("Max-" + nomRessource);
                     if (maximum != null && maximum.getListeBonus().get("Max-" + nomRessource).getQuantite() < rechercheLaMoinsCouteuse.getListeCout().get(nomRessource)) {
 
                         Map<Double, Ressource> map = joueur.getArbreDeRessources().getListeUpMax().get("Max-" + nomRessource);
                         Double valeurMax = map.keySet().stream().sorted().findFirst().orElse(null);
                         if (valeurMax != null) {
-                            int diff = (int) ((quantiteDeRessourcesAOptenir - maximum.getListeBonus().get("Max-" + nomRessource).getQuantite()) / valeurMax);
+                            int diff = (int) ((rechercheLaMoinsCouteuse.getListeCout().get(nomRessource) - maximum.getListeBonus().get("Max-" + nomRessource).getQuantite()) / valeurMax);
                             for (int n = 0; n < diff; n++) {
                                 Ressource ressourceAOptenir = map.get(valeurMax);
                                 for (String nom : ressourceAOptenir.getListeCout().keySet()) {
@@ -104,6 +104,10 @@ class JeuTest {
     private void addTempsJeu(double val) {
         this.tempsJeu += (float) val;
         this.tempsList.add(this.tempsJeu);
+        if(this.tempsPast!=(int)this.tempsJeu){
+            this.tempsPast = (int)this.tempsJeu;
+            joueur.tickBonus();
+        }
         for (String nomRessource : joueur.getRessources().keySet()) {
             if (this.allData.containsKey(nomRessource)) {
                 this.allData.get(nomRessource).add(joueur.getRessources().get(nomRessource));
