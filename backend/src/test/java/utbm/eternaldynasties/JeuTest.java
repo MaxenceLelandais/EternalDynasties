@@ -137,5 +137,7 @@ class JeuTest {
             ArrayList<Long> y = this.allData.get(nomRessource);
             new GraphGenerator(x, y, dossier + "/" + nomRessource + ".png", nomRessource);
         }
+
+        new GraphGenerator(this.allData, this.tempsList, dossier + "/all.png");
     }
 }
