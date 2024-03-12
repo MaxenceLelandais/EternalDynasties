@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Civilisation } from 'src/app/model/civilisation.model';
 import { CivilisationService } from 'src/app/service/civilisationService';
 import { JeuService } from 'src/app/http/jeuService';
+import { Environnement } from 'src/app/model/environnement.model';
 
 @Component({
   selector: 'app-page-jeu',
@@ -10,6 +11,8 @@ import { JeuService } from 'src/app/http/jeuService';
 })
 export class PageJeuComponent implements OnInit {
   civilisation: Civilisation | null = null;
+  environnement: Environnement | null = null;
+  
 
   constructor(private jeuService: JeuService, private civilisationService: CivilisationService) { }
 
@@ -28,6 +31,15 @@ export class PageJeuComponent implements OnInit {
             console.error('Erreur lors de la requête', error);
           }
         });
+        this.jeuService.httpEnvironnement(this.civilisation.nomEnvironnement).subscribe(
+          data => {
+            this.environnement = data;
+            console.log(data);
+          },
+          error => {
+            console.error("Erreur lors de la récupération des environnements", error);
+          }
+        );
     }
   }
   

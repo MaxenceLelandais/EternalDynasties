@@ -25,6 +25,10 @@ export class JeuService {
     return this.fetchData(this.apiUrl+"listeEnvironnements");
   }
 
+  httpEnvironnement(nom: string): Observable<any> {
+    return this.fetchData(this.apiUrl+"environnement?nom="+nom);
+  }
+
   httpJoueur(nomCivilisation:string, nomEnvironnement: string): Observable<any> {
     return this.fetchData(this.apiUrl+"joueur?civilisation="+nomCivilisation+"&environnement="+nomEnvironnement);
   }
