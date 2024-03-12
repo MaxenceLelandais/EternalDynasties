@@ -144,6 +144,7 @@ public class Recherche {
     }
 
     public void activer() {
+
         if (actualiseEtat() && checkConditions()) {
             this.etat = true;
             this.inhibe.values().forEach(Recherche::disableRecherche);
@@ -188,6 +189,7 @@ public class Recherche {
 
     void forceActive() {
         this.etat = true;
+        this.inhibe.values().forEach(Recherche::disableRecherche);
     }
 
     public int getId() {

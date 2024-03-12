@@ -32,6 +32,7 @@ public class ArbreDeRecherches {
     }
 
     public boolean activerRecherche(String nomRecherche) {
+
         if (this.listeRecherches.containsKey(nomRecherche)) {
             this.listeRecherches.get(nomRecherche).activer();
             return true;

@@ -199,7 +199,7 @@
             "Construction",
             "Monuments",
             "Navigation",
-            "Mine d'or",
+            "Mine d or",
             "Monnaie",
             "Commerce",
             "Philosophie",
@@ -426,6 +426,20 @@
             "Philosophie"
         ]
     },
+    "Mine d or":{
+        "id": "60",
+        "Description":"Organisons la gouvernance de nos sociétés. ",
+        "Coût":null,
+        "Débloque":[
+            "Moyen-Age"
+        ],
+        "Bonus":{
+            "Puissance culturelle": "100"
+        },
+        "Dépendance":[
+            "Monnaie"
+        ]
+    },
     "Moyen-Age":{
         "Description":"Entamons une nouvelle ère de progrès.",
         "Coût":null,
@@ -441,7 +455,8 @@
             "Construction",
             "Navigation",
             "Commerce",
-            "Politique"
+            "Politique",
+            "Mine d or"
         ],
         "If":{
             "Science+Ingénieurie":"Université+Mécanique",
@@ -602,6 +617,7 @@
         },
         "Dépendance":[
             "Renaissance",
+            "Moyen-Age",
             "Conquête"
         ]
     },
@@ -663,7 +679,7 @@
         "Coût":null,
         "Débloque":[
             "Révolution industrielle",
-            "Epoque moderne",
+            "Epoque Moderne",
             "Physique"
         ],
         "Bonus":{
@@ -710,9 +726,9 @@
             "Humanisme"
         ],
         "If":{
-            "Astronomie+Révolution industrielle":"Electricité+Epoque moderne+Physique",
-            "Révolution industrielle+Alchimie":"Contrôle élémentaire",
-            "Révolution industrielle+Sorcellerie":"Nécromancie"
+            "Astronomie+Renaissance":"Electricité+Epoque Moderne+Physique",
+            "Renaissance+Alchimie":"Contrôle élémentaire",
+            "Renaissance+Sorcellerie":"Nécromancie"
         },
         "Recherches": [
             "Balistique",
@@ -730,14 +746,14 @@
         "Description":"Étudiez les principes des projectiles et de leur trajectoire.",
         "Coût":null,
         "Débloque":[
-            "Epoque moderne",
+            "Epoque Moderne",
             "Nucléaire"
         ],
         "Bonus":{
             "Puissance militaire": "400"
         },
         "Dépendance":[
-            "Renaissance",
+            "Révolution industrielle",
             "Poudre à canon"
         ]
     },
@@ -754,7 +770,7 @@
             "Pierre": "140%"
         },
         "Dépendance":[
-            "Moyen-Age",
+            "Révolution industrielle",
             "Renaissance",
             "Fortification"
         ]
@@ -764,14 +780,14 @@
         "Description":"Explorez les mécanismes complexes qui régissent les échanges et les marchés.",
         "Coût":null,
         "Débloque":[
-            "Epoque moderne",
+            "Epoque Moderne",
             "Globalisation"
         ],
         "Bonus":{
             "Puissance commerciale": "233"
         },
         "Dépendance":[
-            "Renaissance",
+            "Révolution industrielle",
             "Banque"
         ]
     },
@@ -780,14 +796,14 @@
         "Description":"Célébrez la diversité et l'expression humaine à travers les arts, la littérature et la philosophie.",
         "Coût":null,
         "Débloque":[
-            "Epoque moderne",
+            "Epoque Moderne",
             "Médias"
         ],
         "Bonus":{
             "Puissance culturelle": "213"
         },
         "Dépendance":[
-            "Renaissance",
+            "Révolution industrielle",
             "Humanisme"
         ]
     },
@@ -796,7 +812,7 @@
         "Description":"Découvrez les mystères de l'électricité et de ses applications.",
         "Coût":null,
         "Débloque":[
-            "Epoque moderne",
+            "Epoque Moderne",
             "Informatique"
         ],
         "Bonus":{
@@ -805,7 +821,7 @@
         },
         "Dépendance":[
             "Renaissance",
-            "Moyen-Age",
+            "Révolution industrielle",
             "Mécanique"
         ]
     },
@@ -814,7 +830,7 @@
         "Description":"Expérimentez le contrôle des éléments naturels.",
         "Coût":null,
         "Débloque":[
-            "Epoque moderne",
+            "Epoque Moderne",
             "Puissance élémentaire"
         ],
         "Bonus":{
@@ -823,7 +839,7 @@
         },
         "Dépendance":[
             "Renaissance",
-            "Moyen-Age",
+            "Révolution industrielle",
             "Alchimie"
         ]
     },
@@ -832,7 +848,7 @@
         "Description":"Plongez dans les pratiques sombres de la magie noire et de la manipulation des morts.",
         "Coût":null,
         "Débloque":[
-            "Epoque moderne",
+            "Epoque Moderne",
             "Force du chaos"
         ],
         "Bonus":{
@@ -841,7 +857,7 @@
         },
         "Dépendance":[
             "Renaissance",
-            "Moyen-Age",
+            "Révolution industrielle",
             "Sorcellerie"
         ]
     },
@@ -850,7 +866,7 @@
         "Description":"Explorez le processus de développement et d'expansion des zones urbaines à travers l'histoire. ",
         "Coût":null,
         "Débloque":[
-            "Epoque moderne",
+            "Epoque Moderne",
             "Epoque futuriste",
             "Urbanisation futuriste"
         ],
@@ -862,7 +878,7 @@
             "Industrialisation"
         ]
     },
-    "Epoque moderne":{
+    "Epoque Moderne":{
         "Description":"Plongez dans une période de changements radicaux, d'explorations audacieuses et de révolutions culturelles",
         "Coût":null,
         "Débloque":[
@@ -914,7 +930,7 @@
             "Puissance militaire": "500"
         },
         "Dépendance":[
-            "Révolution industrielle",
+            "Epoque Moderne",
             "Balistique"
         ]
     },
@@ -930,7 +946,7 @@
         },
         "Dépendance":[
             "Révolution industrielle",
-            "Renaissance",
+            "Epoque Moderne",
             "Colonisation"
         ]
     },
@@ -942,7 +958,8 @@
             "Puissance commerciale": "725"
         },
         "Dépendance":[
-            "Economie"
+            "Economie",
+            "Epoque Moderne"
         ]
     },
     "Médias":{
@@ -956,7 +973,7 @@
             "Puissance culturelle": "350"
         },
         "Dépendance":[
-            "Révolution industrielle",
+            "Epoque Moderne",
             "Culture"
         ]
     },
@@ -988,7 +1005,7 @@
         },
         "Dépendance":[
             "Révolution industrielle",
-            "Renaissance",
+            "Epoque Moderne",
             "Astronomie"
         ]
     },
@@ -1005,7 +1022,7 @@
             "Point de recherche": "2/s"
         },
         "Dépendance":[
-            "Révolution industrielle",
+            "Epoque Moderne",
             "Electricité"
         ]
     },
@@ -1015,7 +1032,8 @@
         "Coût":null,
         "Bonus":null,
         "Dépendance":[
-            "Contrôle élémentaire"
+            "Contrôle élémentaire",
+            "Epoque Moderne"
         ]
     },
     "Force du chaos":{
@@ -1024,7 +1042,8 @@
         "Coût":null,
         "Bonus":null,
         "Dépendance":[
-            "Nécromancie"
+            "Nécromancie",
+            "Epoque Moderne"
         ]
     },
     "Exploration spatiale":{
@@ -1073,7 +1092,7 @@
         ],
         "Bonus":null,
         "Dépendance":[
-            "Epoque moderne",
+            "Epoque Moderne",
             "Nucléaire",
             "Urbanisation",
             "Révolution industrielle",
@@ -1102,7 +1121,7 @@
             "Puissance militaire": "1000"
         },
         "Dépendance":[
-            "Epoque moderne",
+            "Epoque Futuriste",
             "Nucléaire"
         ]
     },
@@ -1116,8 +1135,8 @@
             "Puissance culturelle": "200"
         },
         "Dépendance":[
-            "Epoque moderne",
-            "Révolution industrielle",
+            "Epoque Moderne",
+            "Epoque Futuriste",
             "Urbanisation"
         ]
     },
@@ -1130,7 +1149,7 @@
             "Puissance commerciale": "250"
         },
         "Dépendance":[
-            "Epoque moderne",
+            "Epoque Futuriste",
             "Exploration spatiale"
         ]
     },
@@ -1144,7 +1163,7 @@
             "Puissence militaire": "100"
         },
         "Dépendance":[
-            "Epoque moderne",
+            "Epoque Futuriste",
             "Physique"
         ]
     },
@@ -1158,7 +1177,7 @@
             "Pierre": "300%"
         },
         "Dépendance":[
-            "Epoque moderne",
+            "Epoque Futuriste",
             "Robotique"
         ]
     }

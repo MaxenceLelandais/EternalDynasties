@@ -58,12 +58,12 @@ class JeuTest {
 
             double tempsCollectRessources = 0.0;
             if (rechercheLaMoinsCouteuse != null) {
-                System.out.println("Nom de la recherche : " + rechercheLaMoinsCouteuse.getNom());
+                System.out.println("Nom de la recherche : " + rechercheLaMoinsCouteuse.getNom()+", "+listeRecherchesPossibles.size());
                 for (String nomRessource : rechercheLaMoinsCouteuse.getListeCout().keySet()) {
                     tempsCollectRessources += 1;
                     long quantiteDeRessourcesAOptenir = rechercheLaMoinsCouteuse.getListeCout().get(nomRessource) - listeRessourcePossedee.get(nomRessource);
                     long nombreRessourcesAOptenir = quantiteDeRessourcesAOptenir > 0 ? quantiteDeRessourcesAOptenir : 0;
-                    System.out.println(nomRessource + " manquant : " + nombreRessourcesAOptenir);
+                    //System.out.println(nomRessource + " manquant : " + nombreRessourcesAOptenir);
                     for (int nbrClick = 0; nbrClick < nombreRessourcesAOptenir; nbrClick++) {
                         joueur.clickAchat(nomRessource);
                         tempsCollectRessources += 1.0 / this.nbrCliquesParSecondes;
