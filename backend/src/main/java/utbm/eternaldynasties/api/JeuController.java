@@ -77,9 +77,8 @@ public class JeuController {
     }
 
     @GetMapping(value="activerRecherche")
-    public void getActiverRecherche(@RequestParam(value = "nomJoueur") String nomJoueur,@RequestParam(value = "recherche") String nomRecherche) {
-        this.jeuService.getJeu().getJoueur(nomJoueur).activerRecherche(nomRecherche);
-        this.jeuService.getJeu().getJoueur(nomJoueur).save();
+    public String getActiverRecherche(@RequestParam(value = "nomJoueur") String nomJoueur,@RequestParam(value = "recherche") String nomRecherche) {
+        return this.jeuService.getJeu().getJoueur(nomJoueur).activerRecherche(nomRecherche);
     }
 
     @GetMapping(value="listeRessources")

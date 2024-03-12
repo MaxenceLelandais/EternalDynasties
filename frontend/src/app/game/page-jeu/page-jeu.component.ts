@@ -6,6 +6,7 @@ import { Environnement } from 'src/app/model/environnement.model';
 import { HeaderJeuComponent } from '../header-jeu/header-jeu.component';
 import { EnvironnementService } from 'src/app/service/environnementService';
 
+
 @Component({
   selector: 'app-page-jeu',
   templateUrl: './page-jeu.component.html',
