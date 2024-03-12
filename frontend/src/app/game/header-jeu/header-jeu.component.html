@@ -1,11 +1,19 @@
 <header class="header-jeu">
-    <img src="{{ environnement?.banniere }}" alt="" class="header-jeu-banniere">
-    <img src="{{ environnement?.ecusson }}" alt="" class="header-jeu-ecusson">
-    <h1 class="prehistoire">{{ civilisation?.nom }}</h1>
-    <h1 class="antiquite">{{ civilisation?.nom }}</h1>
+    <div class="header-info">
+        <img [src]="environnement?.banniere" alt="" class="header-jeu-banniere">
+        <img [src]="environnement?.ecusson" alt="" class="header-jeu-ecusson">
+        <h1 class="prehistoire">{{ civilisation?.nom }}</h1>
+    </div>
+    <div class="arbre-recherche-button-container">
+        <button class="arbre-recherche-button">Arbre de Recherches</button>
+    </div>
+    <!-- <h1 class="antiquite">{{ civilisation?.nom }}</h1>
     <h1 class="medieval">{{ civilisation?.nom }}</h1>
     <h1 class="renaissance">{{ civilisation?.nom }}</h1>
     <h1 class="industrielle">{{ civilisation?.nom }}</h1>
     <h1 class="moderne">{{ civilisation?.nom }}</h1>
-    <h1 class="futuriste">{{ civilisation?.nom }}</h1>
+    <h1 class="futuriste">{{ civilisation?.nom }}</h1> -->
 </header>
+
+
+

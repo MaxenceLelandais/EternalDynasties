@@ -19,6 +19,8 @@ export class MenuEnvironnementComponent implements OnInit {
   constructor(private jeuService: JeuService, private civilisationService: CivilisationService) {}
 
   ngOnInit(): void {
+    localStorage.removeItem('environnement');
+    localStorage.removeItem('civilisation');
     this.fetchData();
   }
 

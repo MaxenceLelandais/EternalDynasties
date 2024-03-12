@@ -6,7 +6,7 @@
     <form action="" class="creation-environnement-form">
         <div class="input-container">
             <label for="nom-civilisation" class="label-nom-civilisation">Entrer un nom de civilisation</label>
-            <input id="nom-civilisation" name="nom-civilisation" type="text" [(ngModel)]="nomCivilisation"/>
+            <input id="nom-civilisation" name="nom-civilisation" type="text" [(ngModel)]="nomCivilisation" pattern="[A-Za-z0-9]*" maxlength="40"/>
         </div>
         <div *ngIf="listeEnvironnements">
             <ul class="liste-logo-environnement" *ngIf="listeEnvironnements">

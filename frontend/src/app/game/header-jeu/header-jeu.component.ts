@@ -3,6 +3,7 @@ import { Environnement } from 'src/app/model/environnement.model';
 import { EnvironnementService } from 'src/app/service/environnementService';
 import { Civilisation } from 'src/app/model/civilisation.model';
 import { CivilisationService } from 'src/app/service/civilisationService';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header-jeu',
@@ -17,9 +18,37 @@ export class HeaderJeuComponent implements OnInit {
   constructor(private environnementService: EnvironnementService, private civilisationService: CivilisationService) {}
 
   ngOnInit() {
-    this.environnementService.currentEnvironnement.subscribe(environnement => {
-      this.environnement = environnement;
-    });
-    this.civilisation = this.civilisationService.getCivilisation();
+
+    this.loadEnvironnement();
+    this.loadCivilisation();
+  }
+
+  private loadEnvironnement() {
+    if (localStorage.getItem('environnement')) {
+      const savedEnv = localStorage.getItem('environnement');
+      if (savedEnv != null) {
+        this.environnement = JSON.parse(savedEnv);
+      }
+    } else {
+      console.log("savedEnv");
+      this.environnementService.currentEnvironnement.subscribe(environnement => {
+        this.environnement = environnement;
+        localStorage.setItem('environnement', JSON.stringify(environnement));
+      });
+    }
+    
+  }
+
+  private loadCivilisation() {
+    if (localStorage.getItem('civilisation')) {
+      const savedCivilisation = localStorage.getItem('civilisation');
+      if (savedCivilisation != null) {
+        this.civilisation = JSON.parse(savedCivilisation);
+      }
+    } else {
+      console.log("savedCivilisation");
+      this.civilisation = this.civilisationService.getCivilisation();
+      localStorage.setItem('civilisation', JSON.stringify(this.civilisation));
+    }
   }
 }
