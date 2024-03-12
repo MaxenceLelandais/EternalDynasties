@@ -56,6 +56,11 @@ public class JeuController {
         return Json.stringToJsonObject(jeuService.getJeu().getListeEnvironnements());
     }
 
+    @GetMapping(value = "environnement")
+    public JSONObject sendEnvironnementsByName(@RequestParam(value = "nom") String environnement) {
+        return Json.objectToJsonObject(jeuService.getJeu().getArbreEnvironnements().get(environnement).getJsonObjet());
+    }
+
 
     //////////////////    PARTIES      //////////////////
 
