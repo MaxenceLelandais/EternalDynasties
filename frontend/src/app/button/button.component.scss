@@ -1,4 +1,5 @@
 .btn {
+    position: relative; /* Définit la position relative */
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
@@ -12,6 +13,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre */
     transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s; /* Transition pour l'animation */
     text-decoration: none; /* Désactiver le soulignement */
+    top: -100px; /* Déplace le bouton vers le haut de 20 pixels */
   
     // Styles supplémentaires pour le thème sombre
     body.dark-theme & {
