@@ -3,7 +3,6 @@ import { Environnement } from 'src/app/model/environnement.model';
 import { EnvironnementService } from 'src/app/service/environnementService';
 import { Civilisation } from 'src/app/model/civilisation.model';
 import { CivilisationService } from 'src/app/service/civilisationService';
-import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header-jeu',

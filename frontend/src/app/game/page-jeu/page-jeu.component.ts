@@ -1,21 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , ElementRef, ViewChild } from '@angular/core';
 import { Civilisation } from 'src/app/model/civilisation.model';
 import { CivilisationService } from 'src/app/service/civilisationService';
 import { JeuService } from 'src/app/http/jeuService';
 import { Environnement } from 'src/app/model/environnement.model';
-import { HeaderJeuComponent } from '../header-jeu/header-jeu.component';
 import { EnvironnementService } from 'src/app/service/environnementService';
-
-
+import { DropEvent } from 'angular-draggable-droppable';
+import {
+  DroppableDirective,
+  ValidateDrop,
+} from 'src/lib/droppable.directive';
 @Component({
   selector: 'app-page-jeu',
   templateUrl: './page-jeu.component.html',
-  styleUrls: ['./page-jeu.component.css']
+  styleUrls: ['./page-jeu.component.scss']
 })
 export class PageJeuComponent implements OnInit {
   civilisation: Civilisation | null = null;
   environnement: Environnement | null = null;
-  
 
   constructor(private jeuService: JeuService, private civilisationService: CivilisationService, private environnementService: EnvironnementService) { }
 
@@ -23,6 +24,23 @@ export class PageJeuComponent implements OnInit {
     this.civilisation = this.civilisationService.getCivilisation();
     this.fetchData();
   }
+
+  droppedDataZone1: string = '';
+  droppedDataZone2: string = '';
+
+  @ViewChild(DroppableDirective, { read: ElementRef, static: true })
+  droppableElement!: ElementRef;
+
+  onDropZone1({ dropData }: DropEvent<string>): void {
+    this.droppedDataZone1 = dropData;
+  }
+
+  onDropZone2({ dropData }: DropEvent<string>): void {
+    this.droppedDataZone2 = dropData;
+  }
+
+  validateDrop: ValidateDrop = ({ target }) =>
+    this.droppableElement.nativeElement.contains(target as Node);
 
   fetchData() {
     if (this.civilisation != null) {
@@ -47,3 +65,5 @@ export class PageJeuComponent implements OnInit {
     }
   }
 }
+
+

@@ -1,0 +1,19 @@
+<div *ngIf="isMenuOpen">
+    <ul class="burger-liste">
+        <li *ngFor="let bouton of listeBoutons">
+            <button mwlDraggable dropData="{{bouton.class}}" dragActiveClass="drag-active"
+                (click)="toggleMenu()" class="burger-img burger-{{bouton.class}}">
+                <img src="{{bouton.src}}" alt="Menu" height="55" title="{{bouton.class}}"/>
+            </button>
+        </li>
+    </ul>
+</div>
+
+
+<button (click)="toggleMenu()" [ngClass]="{'clicked': isMenuOpen}" class="burger-button">
+  <!-- <img src="assets\img\burger\choix.png" alt="Menu" width="40" height="40"/> -->
+  <div class="container">
+    <img class="base-image" src="assets\img\burger\choix.png" >
+    <img class="hover-image" src="assets\img\burger\gchoix.png" >
+  </div>
+</button> 

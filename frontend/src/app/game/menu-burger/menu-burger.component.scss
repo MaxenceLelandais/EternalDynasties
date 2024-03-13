@@ -1,0 +1,73 @@
+.burger-button {
+    position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      color: black;
+      background-color: black;
+      border:none;
+      cursor: pointer;
+      
+    }
+  
+.container{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+  
+  
+    base-image, .hover-image {
+        transition: "all" 0.3s ease-in-out;
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 20px;
+        right: 20px;
+    }
+  
+    .base-image {
+      opacity: 1;
+      width: 60px;
+    }
+  
+    .hover-image {
+      opacity: 0;
+    }
+  
+    &:hover .hover-image, &.selected .hover-image {
+      opacity: 1;
+    }
+}
+button
+{
+    z-index: 255;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.burger-liste{
+    background-color: black;
+    height: 55*6;
+    width: auto;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+}
+
+.burger-img {
+    background-color: black;
+    border:none;
+    cursor: pointer;
+}
+
+.burger-coli {}
+.burger-vu {}
+.burger-home {}
+.burger-metier {}
+.burger-ressource {}
+.burger-puissance {}
