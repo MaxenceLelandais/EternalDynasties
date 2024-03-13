@@ -172,9 +172,9 @@ public class Joueur {
                 }
 
                 long val = this.ressources.get(ressource) + nouvelleValeur.longValue();
-                if(bonus.containsKey("Max-"+ressource)){
-                    if(val>=bonus.get("Max-"+ressource).getQuantite()){
-                        val = (long)bonus.get("Max-"+ressource).getQuantite();
+                if(this.ressources.containsKey("Max-"+ressource)){
+                    if(val>=this.ressources.get("Max-"+ressource)){
+                        val = this.ressources.get("Max-"+ressource);
                     }
                 }
                 this.ressources.replace(keyBonus, val);
