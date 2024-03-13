@@ -2,18 +2,21 @@
 <app-button></app-button>
 
 
+<app-menu-burger></app-menu-burger>
 
-<app-burger *ngIf="isMenuOpen"></app-burger>
+<div mwlDroppable (drop)="onDropZone1($event)" class="dropZone1" dragOverClass="drop-over-active">
+  <span [hidden]="droppedDataZone1">Drop here</span>
+  <span [hidden]="!droppedDataZone1"
+    >Item dropped here with data: "{{ droppedDataZone1 }}"!</span
+  >
+</div>
 
-<button (click)="toggleMenu()" [ngClass]="{'clicked': isMenuOpen}" class="burger-button">
-  <!-- <img src="assets\img\burger\choix.png" alt="Menu" width="40" height="40"/> -->
-  <div class="container">
-    <img class="base-image" src="assets\img\burger\choix.png" >
-    <img class="hover-image" src="assets\img\burger\gchoix.png" >
-  </div>
-</button> 
-
-
+<div mwlDroppable (drop)="onDropZone2($event)" class="dropZone2" dragOverClass="drop-over-active">
+  <span [hidden]="droppedDataZone2">Drop here</span>
+  <span [hidden]="!droppedDataZone2"
+    >Item dropped here with data: "{{ droppedDataZone2 }}"!</span
+  >
+</div>
 
   
 <!-- <p>Felicitation vous avez perdu !</p>

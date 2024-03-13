@@ -1,43 +1,33 @@
-.burger-button {
+[mwlDroppable] {
+  background-color: black;
+  width: calc(40vw - 50px);
+  height: calc(90vh - 20vw);
+  z-index: 1;
+}
+.dropZone1{
   position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 20px;
-    right: 20px;
-    color: black;
-    background-color: black;
-    border:none;
-    cursor: pointer;
-    
+  bottom: 20px;
+  right: 130px;
+  z-index: -1;
   }
+.dropZone2{
+  position: fixed;
+  bottom: 20px;
+  left: 130px;
+  z-index: -1;
+}
 
-  .container{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
+[mwlDraggable],
+[mwlDroppable] {
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: dashed 1px white;
+}
 
-
-    base-image, .hover-image {
-      transition: "all" 0.3s ease-in-out;
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
-    }
-
-  .base-image {
-    opacity: 1;
-    width: 60px;
-  }
-
-  .hover-image {
-    opacity: 0;
-  }
-
-  &:hover .hover-image, &.selected .hover-image {
-    opacity: 1;
-  }
+.drop-over-active {
+  border: dashed 1px black;
+  background-color: grey;
 }

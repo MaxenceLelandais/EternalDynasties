@@ -14,7 +14,8 @@ import { HeaderJeuComponent } from './game/header-jeu/header-jeu.component';
 import { Test } from './http/test';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ButtonComponent } from './button/button.component';
-import { BurgerComponent } from './burger/burger.component';
+import { MenuBurgerComponent } from './game/menu-burger/menu-burger.component';
+import { DragAndDropModule } from 'angular-draggable-droppable';
 
 @NgModule({
   declarations: [
@@ -26,13 +27,14 @@ import { BurgerComponent } from './burger/burger.component';
     Test,
     HeaderJeuComponent,
     ButtonComponent,
-    BurgerComponent
+    MenuBurgerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    DragAndDropModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
