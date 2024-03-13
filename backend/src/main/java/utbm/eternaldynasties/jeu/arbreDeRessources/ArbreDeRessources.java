@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class ArbreDeRessources {
     private Map<String, Ressource> listeRessources = new HashMap<>();
-    private Map<String, Map<Double, Ressource>> listeUpMax = new HashMap<>();
+    private Map<String, Map<Bonus, Ressource>> listeUpgrade = new HashMap<>();
 
     public ArbreDeRessources(JSONObject jsonObject) {
         for (Object key : jsonObject.keySet()) {
@@ -17,20 +17,16 @@ public class ArbreDeRessources {
             this.listeRessources.put(keyString, new Ressource(keyString, (Map<String, Object>) jsonObject.get(key)));
         }
         this.listeRessources.values().forEach(r -> {
-            if (!r.getNom().contains("Max-")) {
-                for (String nomBonus : r.getListeBonus().keySet()) {
-                    if (nomBonus.contains("Max-") && !nomBonus.replace("Max-","").equals(r.getNom())) {
-                        double quantite = r.getListeBonus().get(nomBonus).getQuantite();
-                        if (this.listeUpMax.containsKey(nomBonus)) {
-                            this.listeUpMax.get(nomBonus).put(quantite, r);
-                        } else {
-                            Map<Double, Ressource> map = new HashMap<>();
-                            map.put(quantite, r);
-                            this.listeUpMax.put(nomBonus, map);
-                        }
-                    }
+
+            r.getListeBonus().forEach((nomBonus, bonus) -> {
+                if (this.listeUpgrade.containsKey(nomBonus)) {
+                    this.listeUpgrade.get(nomBonus).put(bonus, r);
+                } else {
+                    Map<Bonus, Ressource> map = new HashMap<>();
+                    map.put(bonus, r);
+                    this.listeUpgrade.put(nomBonus, map);
                 }
-            }
+            });
         });
     }
 
@@ -42,8 +38,14 @@ public class ArbreDeRessources {
         return this.listeRessources.getOrDefault(nomRessource, null);
     }
 
-    public Map<String, Map<Double, Ressource>> getListeUpMax() {
-        return listeUpMax;
+    public Map<Bonus, Ressource> getListeRessourceEnFonctionBonus(String nomRessourceDemande, HashMap<String, Long> ressourcesActuelles){
+        Map<Bonus, Ressource> val = new HashMap<>();
+        this.listeUpgrade.get(nomRessourceDemande).forEach((bonus, ressource)->{
+            if(!ressource.getNom().equals(nomRessourceDemande)){
+                val.put(bonus.resume(ressourcesActuelles), ressource);
+            }
+        });
+        return val;
     }
 
     public String toString() {
