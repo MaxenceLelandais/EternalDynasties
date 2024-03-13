@@ -14,6 +14,7 @@ import { HeaderJeuComponent } from './game/header-jeu/header-jeu.component';
 import { Test } from './http/test';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ButtonComponent } from './button/button.component';
+import { BurgerComponent } from './burger/burger.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ButtonComponent } from './button/button.component';
     PageJeuComponent,
     Test,
     HeaderJeuComponent,
-    ButtonComponent
+    ButtonComponent,
+    BurgerComponent
   ],
   imports: [
     BrowserModule,

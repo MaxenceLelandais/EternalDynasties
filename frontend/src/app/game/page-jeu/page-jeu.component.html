@@ -1,5 +1,21 @@
 <app-header-jeu></app-header-jeu>
+<app-button></app-button>
 
+
+
+<app-burger *ngIf="isMenuOpen"></app-burger>
+
+<button (click)="toggleMenu()" [ngClass]="{'clicked': isMenuOpen}" class="burger-button">
+  <!-- <img src="assets\img\burger\choix.png" alt="Menu" width="40" height="40"/> -->
+  <div class="container">
+    <img class="base-image" src="assets\img\burger\choix.png" >
+    <img class="hover-image" src="assets\img\burger\gchoix.png" >
+  </div>
+</button> 
+
+
+
+  
 <!-- <p>Felicitation vous avez perdu !</p>
 <p>{{civilisation?.nom}}</p>
 <p>{{civilisation?.nomEnvironnement}}</p>

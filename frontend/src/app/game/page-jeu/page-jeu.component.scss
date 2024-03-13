@@ -1,0 +1,43 @@
+.burger-button {
+  position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    color: black;
+    background-color: black;
+    border:none;
+    cursor: pointer;
+    
+  }
+
+  .container{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+
+
+    base-image, .hover-image {
+      transition: "all" 0.3s ease-in-out;
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+    }
+
+  .base-image {
+    opacity: 1;
+    width: 60px;
+  }
+
+  .hover-image {
+    opacity: 0;
+  }
+
+  &:hover .hover-image, &.selected .hover-image {
+    opacity: 1;
+  }
+}
