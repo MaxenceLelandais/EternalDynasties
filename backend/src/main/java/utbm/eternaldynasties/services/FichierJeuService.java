@@ -1,3 +1,8 @@
+/**
+ * Classe FichierJeuService : Singleton du projet initialisé et géré par Spring Boot.
+ */
+
+
 package utbm.eternaldynasties.services;
 
 import jakarta.annotation.PostConstruct;
@@ -17,6 +22,10 @@ public class FichierJeuService {
     public JSONObject joueur;
     public JSONObject ressources;
     public JSONObject environnements;
+
+    /**
+     * Fonction d'appelée lors de l'instanciation.
+     */
     @PostConstruct
     public void init(){
         this.arbreDeRecherches  = Json.read(this.fichierArbreDeRecherches);

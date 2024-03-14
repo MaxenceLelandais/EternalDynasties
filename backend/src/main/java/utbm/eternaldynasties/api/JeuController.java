@@ -1,30 +1,42 @@
+/**
+ * Classe JeuController : Elle fait partie de l'api. Elle permet de réceptionner les requêtes, de les traîter et de renvoyer des informations.
+ * Elle traîte toutes les requêtes liées au jeu.
+ */
+
 package utbm.eternaldynasties.api;
 
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import utbm.eternaldynasties.jeu.arbreRecherches.Recherche;
 import utbm.eternaldynasties.services.JeuService;
 import utbm.eternaldynasties.utils.Json;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * C'est un contrôlleur Rest.
+ * Cet observeur réceptionne les requêtes GET, avec comme entête de requête "jeu/*".
+ * Il renvoie les données sous forme de JSON.
+ */
 @RestController
 @RequestMapping(value = "jeu/*", method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
 public class JeuController {
 
-    private JeuService jeuService;
+    private final JeuService jeuService;
 
-    //////////////////    Jeu      //////////////////
-
+    /**
+     * Spring Boot s'occupe de lier les instances pour qu'elles soient utilisables n'importe où.
+     * Dans notre cas, le service gérant le jeu est récupéré pour être utilisé dans les traitements des requêtes.
+     */
     @Autowired
     public JeuController(JeuService jeuService) {
         this.jeuService = jeuService;
     }
+
+    //////////////////    Jeu : regroupe les requêtes pour obtenir les informations du jeu lui même.      //////////////////
 
     @GetMapping(value = "listeRecherches")
     public JSONObject sendRecherche() {
@@ -62,7 +74,7 @@ public class JeuController {
     }
 
 
-    //////////////////    PARTIES      //////////////////
+    //////////////////    PARTIES : regroupe les requêtes pour obtenir les informations d'une partie     //////////////////
 
 
     @GetMapping(value="joueur")

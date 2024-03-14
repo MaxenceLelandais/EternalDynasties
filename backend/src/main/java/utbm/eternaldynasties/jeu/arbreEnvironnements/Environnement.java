@@ -1,12 +1,15 @@
+/**
+ * Classe Environnement : Rassemble les informations des environnements.
+ */
+
 package utbm.eternaldynasties.jeu.arbreEnvironnements;
 
-import org.json.simple.JSONObject;
-import utbm.eternaldynasties.jeu.arbreDeRessources.Bonus;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Elle est utilisée dans le jeu pour conserver les données des environnements du jeu.
+ */
 public class Environnement {
 
     private Map<String, Object> jsonObjet;
@@ -23,6 +26,9 @@ public class Environnement {
         this.update();
     }
 
+    /**
+     * Actualise les données provenant du json ressource.
+     */
     public Environnement update(Map<String, Object> jsonObjet) {
         this.jsonObjet = jsonObjet;
         return update();

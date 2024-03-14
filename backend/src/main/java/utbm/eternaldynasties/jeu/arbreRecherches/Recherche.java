@@ -1,3 +1,7 @@
+/**
+ * Classe Recherche : Elle regroupe toutes les informations d'une Recherche.
+ */
+
 package utbm.eternaldynasties.jeu.arbreRecherches;
 
 import org.json.simple.JSONObject;
@@ -11,15 +15,19 @@ import java.util.Map;
 public class Recherche {
 
     private int id = -1;
-    private String nom;
+    private final String nom;
     private String description;
     private final Map<String, Long> listeCout = new HashMap<>();
     private final Map<String, Recherche> debloque = new HashMap<>();
     private final Map<String, Bonus> listeBonus = new HashMap<>();
     private final Map<String, Recherche> dependances = new HashMap<>();
     private final Map<ArrayList<Recherche>, ArrayList<Recherche>> conditions = new HashMap<>();
-    private Map<String, Recherche> inhibe = new HashMap<>();
+    private final Map<String, Recherche> inhibe = new HashMap<>();
+
+    // Etat de la recherche.
     private Boolean etat = false;
+
+    // Une recherche peut être disponible dans la partie si elle n'est pas désactivé par une recherche.
     private Boolean recherchePossible = true;
     private Map<String, Object> jsonObjet = new HashMap<>();
     private ArrayList<String> recherchesEre = new ArrayList<>();
@@ -35,18 +43,24 @@ public class Recherche {
         this.update(listeRecherches);
     }
 
+    /**
+     * Actualise les données provenant du json recherche.
+     */
     public Recherche update(Map<String, Object> jsonObjet, Map<String, Recherche> listeRecherches) {
         this.jsonObjet = jsonObjet;
         return update(listeRecherches);
     }
 
+    /**
+     * Actualise les données provenant du json recherche.
+     */
     public Recherche update(Map<String, Recherche> listeRecherches) {
 
         this.description = (String) this.jsonObjet.get("Description");
         String valId = (String) this.jsonObjet.get("id");
-        if(valId!=null){
+        if (valId != null) {
             this.id = Integer.parseInt(valId);
-        }else{
+        } else {
             this.recherchesEre = (ArrayList<String>) this.jsonObjet.get("Recherches");
         }
 
@@ -66,7 +80,7 @@ public class Recherche {
         ajoutVal("Dépendance", this.dependances, listeRecherches);
         ajoutVal("Débloque", this.debloque, listeRecherches);
         ajoutVal("Inhibe", this.inhibe, listeRecherches);
-        ajoutValIf("If", listeRecherches);
+        ajoutValIf(listeRecherches);
 
         this.jsonObjet.put("Etat", this.etat);
         this.jsonObjet.put("Recherche possible", this.recherchePossible);
@@ -82,10 +96,9 @@ public class Recherche {
         }
     }
 
-
-    private void ajoutValIf(String key, Map<String, Recherche> listeRecherches) {
-        if (this.jsonObjet.containsKey(key) && this.jsonObjet.get(key) != null) {
-            Map<String, String> map = (Map<String, String>) this.jsonObjet.get(key);
+    private void ajoutValIf(Map<String, Recherche> listeRecherches) {
+        if (this.jsonObjet.containsKey("If") && this.jsonObjet.get("If") != null) {
+            Map<String, String> map = (Map<String, String>) this.jsonObjet.get("If");
             for (String recherchesDependantes : map.keySet()) {
                 ArrayList<Recherche> listeDependance = new ArrayList<>();
                 ArrayList<Recherche> listeDebloque = new ArrayList<>();
@@ -114,6 +127,30 @@ public class Recherche {
         return recherche;
     }
 
+    public void activer() {
+
+        if (actualiseEtat() && checkConditions()) {
+            this.etat = true;
+            this.inhibe.values().forEach(Recherche::disableRecherche);
+        }
+    }
+
+    boolean checkConditions() {
+        if (this.conditions.isEmpty()) {
+            return true;
+        }
+        for (ArrayList<Recherche> dependances : this.conditions.keySet()) {
+            if (dependances.stream().allMatch(Recherche::getEtat)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    void forceActive() {
+        this.etat = true;
+        this.inhibe.values().forEach(Recherche::disableRecherche);
+    }
 
     public String getNom() {
         return nom;
@@ -143,26 +180,6 @@ public class Recherche {
         return etat;
     }
 
-    public void activer() {
-
-        if (actualiseEtat() && checkConditions()) {
-            this.etat = true;
-            this.inhibe.values().forEach(Recherche::disableRecherche);
-        }
-    }
-
-    boolean checkConditions() {
-        if (this.conditions.isEmpty()) {
-            return true;
-        }
-        for (ArrayList<Recherche> dependances : this.conditions.keySet()) {
-            if (dependances.stream().allMatch(Recherche::getEtat)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public boolean actualiseEtat() {
         return dependances.values().stream().allMatch(Recherche::getEtat);
     }
@@ -185,11 +202,6 @@ public class Recherche {
 
     public JSONObject convertJSONObject() {
         return Json.objectToJsonObject(jsonObjet);
-    }
-
-    void forceActive() {
-        this.etat = true;
-        this.inhibe.values().forEach(Recherche::disableRecherche);
     }
 
     public int getId() {

@@ -1,6 +1,10 @@
+/**
+ * Classe Jeu : cette classe rassemble tous les fichiers json du jeu, la gestion des parties et des sauvegardes.
+ */
+
+
 package utbm.eternaldynasties.jeu;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import utbm.eternaldynasties.jeu.arbreDeRessources.ArbreDeRessources;
 import utbm.eternaldynasties.jeu.arbreEnvironnements.ArbreEnvironnements;
@@ -11,17 +15,23 @@ import utbm.eternaldynasties.utils.Log;
 
 import java.io.File;
 import java.util.*;
-import java.util.stream.Collectors;
 
+/**
+ * Cette classe rassemble les fonctions de bases du jeu.
+ */
 public class Jeu {
 
     private final FichierJeuService fichierJeuService;
-    private ArbreDeRecherches arbreDeRecherches;
-    private ArbreDeRessources arbreDeRessources;
+    private final ArbreDeRecherches arbreDeRecherches;
+    private final ArbreDeRessources arbreDeRessources;
+    private final ArbreEnvironnements arbreEnvironnements;
+    private final Map<String, Joueur> listeJoueur = new HashMap<>();
 
-    private ArbreEnvironnements arbreEnvironnements;
-    private Map<String, Joueur> listeJoueur = new HashMap<>();
-
+    /**
+     * Récupère les instances de chaques fichiers du jeu (fichiers json).
+     * Il initialise les arbres et les sauvegardes.
+     * @param fichierJeuService service où on récupère les instances des fichiers json.
+     */
     public Jeu(FichierJeuService fichierJeuService) {
         this.fichierJeuService = fichierJeuService;
 
@@ -40,18 +50,28 @@ public class Jeu {
         }
     }
 
-    public ArbreDeRecherches getArbreDeRecherches() {
-        return arbreDeRecherches;
-    }
-
+    /**
+     * S'occupe de démarrer une partie.
+     * Il charge une partie si elle existe.
+     * Sinon, elle en créait une.
+     * @param civilisation Nom de la partie
+     * @param environnement Nom de l'environnement choisi pour la partie
+     * @return la partie nouvellement chargée.
+     */
     public Joueur startPartie(String civilisation, String environnement) {
-        if (getSauvegardes().values().contains(civilisation)) {
+        if (getSauvegardes().containsValue(civilisation)) {
             return chargerPartie(civilisation,environnement);
         } else {
             return nouvellePartie(civilisation,environnement);
         }
     }
 
+    /**
+     * Charge une partie existante.
+     * @param civilisation Nom de la partie
+     * @param environnement Nom de l'environnement choisi pour la partie
+     * @return la partie nouvellement chargée.
+     */
     public Joueur chargerPartie(String civilisation, String environnement) {
         Joueur joueur = null;
         if (this.listeJoueur.containsKey(civilisation+"-"+environnement)) {
@@ -67,6 +87,12 @@ public class Jeu {
         return joueur;
     }
 
+    /**
+     * Créait une nouvelle partie.
+     * @param civilisation Nom de la partie
+     * @param environnement Nom de l'environnement choisi pour la partie
+     * @return la partie nouvellement chargée.
+     */
     public Joueur nouvellePartie(String civilisation, String environnement) {
         Joueur joueur;
         if (this.listeJoueur.containsKey(civilisation+"-"+environnement)) {
@@ -86,6 +112,10 @@ public class Jeu {
 
     public ArbreEnvironnements getArbreEnvironnements() {
         return arbreEnvironnements;
+    }
+
+    public ArbreDeRecherches getArbreDeRecherches() {
+        return arbreDeRecherches;
     }
 
     public Joueur getJoueur(String nom) {

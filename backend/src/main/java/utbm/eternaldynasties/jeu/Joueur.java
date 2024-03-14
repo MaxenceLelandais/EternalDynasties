@@ -1,3 +1,7 @@
+/**
+ * Classe Joueur : Traite toutes les actions possibles et les données d'un joueur.
+ */
+
 package utbm.eternaldynasties.jeu;
 
 import org.json.simple.JSONObject;
@@ -18,28 +22,34 @@ public class Joueur {
     private String civilisation;
     private Environnement environnement;
     private String debutDeLaPartie;
-    private HashMap<String, Long> ressources = new HashMap<>();
-    private ArrayList<String> recherches = new ArrayList<>();
+    private final HashMap<String, Long> ressources = new HashMap<>();
+    private final ArrayList<String> recherches = new ArrayList<>();
     private final ArbreDeRecherches arbreDeRecherche;
     private final ArbreDeRessources arbreDeRessources;
 
+    /**
+     * Traduit les données.
+     * @param jsonObject
+     * @param arbreDeRecherche
+     * @param arbreDeRessources
+     * @param environnement
+     */
     public Joueur(JSONObject jsonObject, ArbreDeRecherches arbreDeRecherche, ArbreDeRessources arbreDeRessources, Environnement environnement) {
         this.arbreDeRecherche = arbreDeRecherche;
         this.arbreDeRessources = arbreDeRessources;
-        Map data = jsonObject;
-        if (data.containsKey("Civilisation")) {
+        if (((Map) jsonObject).containsKey("Civilisation")) {
             this.environnement = environnement;
-            this.civilisation = data.get("Civilisation").toString();
-            this.debutDeLaPartie = (String) data.get("Début de la partie");
-            HashMap<String, String> mapRessource = (HashMap<String, String>) data.get("Ressources");
-            HashMap<String, String> caracteristiquesCollectes = (HashMap<String, String>) data.get("Caracteristiques collectes");
+            this.civilisation = ((Map) jsonObject).get("Civilisation").toString();
+            this.debutDeLaPartie = (String) ((Map) jsonObject).get("Début de la partie");
+            HashMap<String, String> mapRessource = (HashMap<String, String>) ((Map) jsonObject).get("Ressources");
+            HashMap<String, String> caracteristiquesCollectes = (HashMap<String, String>) ((Map) jsonObject).get("Caracteristiques collectes");
             for (String key : mapRessource.keySet()) {
                 this.ressources.put(key, Long.parseLong(mapRessource.get(key)));
                 if (caracteristiquesCollectes.containsKey(key)) {
                     this.arbreDeRessources.getRessource(key).getListeBonus().replace(key, new Bonus(key, caracteristiquesCollectes.get(key)));
                 }
             }
-            HashMap<String, String> mapRecherches = (HashMap<String, String>) data.get("Recherches");
+            HashMap<String, String> mapRecherches = (HashMap<String, String>) ((Map) jsonObject).get("Recherches");
             if (mapRecherches != null && !mapRecherches.isEmpty()) {
                 this.recherches.addAll(mapRecherches.keySet());
             }
@@ -64,27 +74,27 @@ public class Joueur {
         Map<String, Long> listeCout = this.arbreDeRecherche.getRecherche(nomRecherche).getListeCout();
         StringBuilder txt = new StringBuilder(nomRecherche + " : RESSOURCES INSUFISANTES { ");
         boolean pbRessource = false;
-        for(String nomRessource : listeCout.keySet()){
-            long val = this.ressources.get(nomRessource)-listeCout.get(nomRessource);
-            if(val<0){
+        for (String nomRessource : listeCout.keySet()) {
+            long val = this.ressources.get(nomRessource) - listeCout.get(nomRessource);
+            if (val < 0) {
                 txt.append(nomRessource).append(" : ").append(val).append("; ");
                 pbRessource = true;
             }
         }
-        if(pbRessource){
-            return txt+" }";
+        if (pbRessource) {
+            return txt + " }";
         }
         if (this.arbreDeRecherche.activerRecherche(nomRecherche)) {
-            for(String nomRessource : listeCout.keySet()){
-                this.ressources.replace(nomRessource,this.ressources.get(nomRessource)-listeCout.get(nomRessource));
+            for (String nomRessource : listeCout.keySet()) {
+                this.ressources.replace(nomRessource, this.ressources.get(nomRessource) - listeCout.get(nomRessource));
             }
             Map<String, Bonus> map = this.arbreDeRecherche.getRecherche(nomRecherche).getListeBonus();
             for (String key : map.keySet()) {
-                Bonus bonusRessource=map.get(key);
+                Bonus bonusRessource = map.get(key);
                 String nom = bonusRessource.getRessourceGenere();
                 Bonus bonusInfos = this.arbreDeRessources.getRessource(nom).getListeBonus().get(nom);
                 bonusInfos.add(bonusRessource);
-                if(key.contains("Max-")){
+                if (key.contains("Max-")) {
                     this.ressources.putIfAbsent(key, bonusInfos.estimationValeur(this.ressources));
                 }
                 this.ressources.putIfAbsent(key, 0L);
@@ -95,14 +105,14 @@ public class Joueur {
         return nomRecherche + " : RECHERCHE NON DEBLOQUEE";
     }
 
-    private void checkEtAddVal(Map<String, Bonus> bonus){
-        bonus.forEach((key, value)->{
+    private void checkEtAddVal(Map<String, Bonus> bonus) {
+        bonus.forEach((key, value) -> {
             long valeur = value.estimationValeur(this.ressources);
             if (this.ressources.containsKey("Max-" + key)) {
                 if (this.ressources.get(key) + valeur <= this.ressources.get("Max-" + key)) {
                     this.ressources.replace(key, this.ressources.get(key) + valeur);
                 }
-            }else{
+            } else {
                 this.ressources.replace(key, this.ressources.get(key) + valeur);
             }
         });
@@ -151,17 +161,17 @@ public class Joueur {
         if (bonus != null && !bonus.isEmpty()) {
             for (String keyBonus : bonus.keySet()) {
                 Bonus ressourceBonus = bonus.get(keyBonus);
-                Double nouvelleValeur = 0.0;
+                double nouvelleValeur = 0.0;
 
-                Double quantiteParSecondes = ressourceBonus.getQuantiteParSecondes();
-                Double pourcentageParSecondes = (ressourceBonus.getPourcentageParSecondes()/100);
+                double quantiteParSecondes = ressourceBonus.getQuantiteParSecondes();
+                double pourcentageParSecondes = (ressourceBonus.getPourcentageParSecondes() / 100);
 
-                nouvelleValeur += quantiteParSecondes + ((pourcentageParSecondes/100) * nouvelleValeur);
+                nouvelleValeur += quantiteParSecondes + ((pourcentageParSecondes / 100) * nouvelleValeur);
 
                 Map<String, Double> pourcentageParRessources = ressourceBonus.getPourcentageParRessources();
                 for (String key : pourcentageParRessources.keySet()) {
                     if (this.ressources.containsKey(key)) {
-                        nouvelleValeur += this.ressources.get(key) * (pourcentageParRessources.get(key)/100);
+                        nouvelleValeur += this.ressources.get(key) * (pourcentageParRessources.get(key) / 100);
                     }
                 }
                 Map<String, Double> quantiteParRessources = ressourceBonus.getQuantiteParRessources();
@@ -171,10 +181,10 @@ public class Joueur {
                     }
                 }
 
-                long val = this.ressources.get(ressource) + nouvelleValeur.longValue();
-                if(this.ressources.containsKey("Max-"+ressource)){
-                    if(val>=this.ressources.get("Max-"+ressource)){
-                        val = this.ressources.get("Max-"+ressource);
+                long val = this.ressources.get(ressource) + (long)nouvelleValeur;
+                if (this.ressources.containsKey("Max-" + ressource)) {
+                    if (val >= this.ressources.get("Max-" + ressource)) {
+                        val = this.ressources.get("Max-" + ressource);
                     }
                 }
                 this.ressources.replace(keyBonus, val);
@@ -237,44 +247,44 @@ public class Joueur {
     public void ajoutStockage(ArrayList<String> listeActions) {
         Map<String, Long> ressourcesMax = new HashMap<>();
         int position = 0;
-        while(position<listeActions.size()) {
+        while (position < listeActions.size()) {
             String[] data = listeActions.get(position).split(":");
             String nomRessource = data[0];
             long quantite = Long.parseLong(data[1]);
             Map<Bonus, Ressource> map;
-            for(Bonus bonus : this.arbreDeRessources.getRessource(nomRessource).getListeBonus().values()){
-                if(bonus.getRessourceGenere().contains("Max-")){
-                    if(ressourcesMax.containsKey(bonus.getRessourceGenere())){
-                        ressourcesMax.replace(bonus.getRessourceGenere(),ressourcesMax.get(bonus.getRessourceGenere())+bonus.estimationValeur(this.ressources));
-                    }else{
-                        ressourcesMax.put(bonus.getRessourceGenere(),bonus.estimationValeur(this.ressources));
+            for (Bonus bonus : this.arbreDeRessources.getRessource(nomRessource).getListeBonus().values()) {
+                if (bonus.getRessourceGenere().contains("Max-")) {
+                    if (ressourcesMax.containsKey(bonus.getRessourceGenere())) {
+                        ressourcesMax.replace(bonus.getRessourceGenere(), ressourcesMax.get(bonus.getRessourceGenere()) + bonus.estimationValeur(this.ressources));
+                    } else {
+                        ressourcesMax.put(bonus.getRessourceGenere(), bonus.estimationValeur(this.ressources));
                     }
                 }
             }
             if (this.ressources.containsKey("Max-" + nomRessource)) {
-                ressourcesMax.putIfAbsent("Max-" + nomRessource,this.ressources.get("Max-" + nomRessource));
+                ressourcesMax.putIfAbsent("Max-" + nomRessource, this.ressources.get("Max-" + nomRessource));
                 if (quantite > ressourcesMax.get("Max-" + nomRessource)) {
                     map = this.arbreDeRessources.getListeRessourceEnFonctionBonus("Max-" + nomRessource, this.ressources);
                     long valeur = 0;
                     Ressource ressourceAPrendre = null;
-                    for(Bonus bonus : map.keySet()){
+                    for (Bonus bonus : map.keySet()) {
                         long tmp = bonus.estimationValeur(this.ressources);
-                        if(valeur==0){
+                        if (valeur == 0) {
                             valeur = tmp;
                             ressourceAPrendre = map.get(bonus);
-                        }else{
-                            if(valeur<tmp){
+                        } else {
+                            if (valeur < tmp) {
                                 valeur = tmp;
                                 ressourceAPrendre = map.get(bonus);
                             }
                         }
                     }
-                    if(ressourceAPrendre!=null){
-                        long nbrRessources = (long)((double)(quantite-ressourcesMax.get("Max-" + nomRessource))/(double)valeur+0.5);
+                    if (ressourceAPrendre != null) {
+                        long nbrRessources = (long) ((double) (quantite - ressourcesMax.get("Max-" + nomRessource)) / (double) valeur + 0.5);
                         HashMap<String, Long> demande = new HashMap<>();
                         demande.put(ressourceAPrendre.getNom(), nbrRessources);
                         ArrayList<String> aRajouter = this.besoinRessources(demande);
-                        listeActions.addAll(position,aRajouter);
+                        listeActions.addAll(position, aRajouter);
                         position--;
                     }
                 }
@@ -315,7 +325,7 @@ public class Joueur {
         Map<Object, Object> data = new HashMap<>();
         data.put("Civilisation", this.civilisation);
         data.put("Environnement", this.environnement.getNom());
-        data.put("Début de la partie", this.debutDeLaPartie + "");
+        data.put("Début de la partie", this.debutDeLaPartie);
         Map<String, String> map = new HashMap<>();
         for (String key : this.ressources.keySet()) {
             map.put(key, String.valueOf(this.ressources.get(key)));

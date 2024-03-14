@@ -1,16 +1,25 @@
+/**
+ * Classe Ressource : Rassemble les informations des ressources.
+ */
+
 package utbm.eternaldynasties.jeu.arbreDeRessources;
 
 
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Elle est utilisée dans le jeu pour conserver les données des ressources du jeu.
+ */
 public class Ressource {
 
-    private String nom;
+    private final String nom;
     private String description;
-    private Map<String, Long> listeCout = new HashMap<>();
-    private Map<String, Bonus> listeBonus = new HashMap<>();
+    private final Map<String, Long> listeCout = new HashMap<>();
+    private final Map<String, Bonus> listeBonus = new HashMap<>();
     private final Map<String, Object> jsonObjet;
+
+    // Une ressource peut être disponible dans la partie si elle a été activé dans une recherche.
     private boolean active = false;
 
 
@@ -21,6 +30,9 @@ public class Ressource {
         this.update();
     }
 
+    /**
+     * Actualise les données provenant du json ressource.
+     */
     public Ressource update() {
 
         this.description = (String) this.jsonObjet.get("Description");

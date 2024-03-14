@@ -1,3 +1,8 @@
+/**
+ * Classe Json : Gère les fichiers Json du projet.
+ */
+
+
 package utbm.eternaldynasties.utils;
 
 import com.google.gson.GsonBuilder;
@@ -12,6 +17,11 @@ import java.util.Map;
 
 public class Json {
 
+    /**
+     * Lit un fichier json et le converti en objet json exploitable.
+     * @param src Chemin du fichier.
+     * @return L'objet json généré.
+     */
     public static JSONObject read(String src) {
 
         try (FileReader fichier = new FileReader(src)) {
@@ -22,11 +32,12 @@ public class Json {
         }
         return null;
     }
+
     public static String jsonToString(Object jsonObject) {
         return (new GsonBuilder().setPrettyPrinting().create()).toJson(jsonObject);
     }
 
-    public static JSONObject stringToJsonObject(String text){
+    public static JSONObject stringToJsonObject(String text) {
         try {
             return new JSONObject((Map) new JSONParser(text).parse());
         } catch (ParseException e) {
@@ -39,7 +50,10 @@ public class Json {
         return new JSONObject(map);
     }
 
-    public static void save(String path, Map<Object,Object> data){
+    /**
+     * Enregistre les données jsons dans un fichier json.
+     */
+    public static void save(String path, Map<Object, Object> data) {
         try {
             FileWriter file = new FileWriter(path);
             file.write(jsonToString(new JSONObject(data)));
