@@ -20,6 +20,8 @@ public class Jeu {
     private ArbreDeRessources arbreDeRessources;
 
     private ArbreEnvironnements arbreEnvironnements;
+
+    public JSONObject eres;
     private Map<String, Joueur> listeJoueur = new HashMap<>();
 
     public Jeu(FichierJeuService fichierJeuService) {
@@ -29,6 +31,7 @@ public class Jeu {
         this.arbreDeRecherches = new ArbreDeRecherches(fichierJeuService.arbreDeRecherches);
         this.arbreDeRessources = new ArbreDeRessources(fichierJeuService.ressources);
         this.arbreEnvironnements = new ArbreEnvironnements(fichierJeuService.environnements);
+        this.eres = fichierJeuService.eres;
 
         for (String nomJoueur : getSauvegardes().values()) {
             if (!nomJoueur.isEmpty()) {

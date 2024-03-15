@@ -3,7 +3,6 @@ import { Civilisation } from 'src/app/model/civilisation.model';
 import { CivilisationService } from 'src/app/service/civilisationService';
 import { JeuService } from 'src/app/http/jeuService';
 import { Environnement } from 'src/app/model/environnement.model';
-import { HeaderJeuComponent } from '../header-jeu/header-jeu.component';
 import { EnvironnementService } from 'src/app/service/environnementService';
 
 

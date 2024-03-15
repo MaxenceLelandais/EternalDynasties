@@ -13,7 +13,8 @@ import { PageJeuComponent } from './game/page-jeu/page-jeu.component';
 import { HeaderJeuComponent } from './game/header-jeu/header-jeu.component';
 import { Test } from './http/test';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { ButtonComponent } from './button/button.component';
+import { ModalArbreRechercheComponent } from './game/modal-arbre-recherche/modal-arbre-recherche.component';
+import { FriseChronologiqueComponent } from './game/frise-chronologique/frise-chronologique.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ButtonComponent } from './button/button.component';
     PageJeuComponent,
     Test,
     HeaderJeuComponent,
-    ButtonComponent
+    ModalArbreRechercheComponent,
+    FriseChronologiqueComponent
   ],
   imports: [
     BrowserModule,

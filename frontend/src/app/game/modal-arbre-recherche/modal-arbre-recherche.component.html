@@ -1,0 +1,8 @@
+<p>modal-arbre-recherche works!</p>
+<div *ngIf="listeRecherches">
+    <ul class="liste-logo-recherche" *ngIf="listeRecherches">
+        <li *ngFor="let envKey of listeRecherches | keyvalue; let i = index">
+            <p>{{ envKey.value.Nom }}</p>
+        </li>
+    </ul>
+</div>
