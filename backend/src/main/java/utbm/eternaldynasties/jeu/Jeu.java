@@ -27,6 +27,11 @@ public class Jeu {
     private final ArbreEnvironnements arbreEnvironnements;
     private final Map<String, Joueur> listeJoueur = new HashMap<>();
 
+    private ArbreEnvironnements arbreEnvironnements;
+
+    public JSONObject eres;
+    private Map<String, Joueur> listeJoueur = new HashMap<>();
+
     /**
      * Récupère les instances de chaques fichiers du jeu (fichiers json).
      * Il initialise les arbres et les sauvegardes.
@@ -39,6 +44,7 @@ public class Jeu {
         this.arbreDeRecherches = new ArbreDeRecherches(fichierJeuService.arbreDeRecherches);
         this.arbreDeRessources = new ArbreDeRessources(fichierJeuService.ressources);
         this.arbreEnvironnements = new ArbreEnvironnements(fichierJeuService.environnements);
+        this.eres = fichierJeuService.eres;
 
         for (String nomJoueur : getSauvegardes().values()) {
             if (!nomJoueur.isEmpty()) {

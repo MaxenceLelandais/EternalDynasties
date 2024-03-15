@@ -222,7 +222,16 @@ body {
   flex-direction: column;
   align-items: center;
 }
+<<<<<<< HEAD
+.header-jeu .header-info .img-container {
+  height: 200px;
+}
+.header-jeu .header-info .img-container .header-jeu-banniere {
+  display: block;
+  height: 200px;
+=======
 .header-jeu .header-info .header-jeu-banniere {
+>>>>>>> be78f7eb72a42c17d7021421fdabad5efa23f360
   width: 100%;
 }
 .header-jeu .header-info .header-jeu-ecusson {
@@ -276,4 +285,11 @@ body {
 }
 .header-jeu .arbre-recherche-button-container .arbre-recherche-button:hover {
   color: rgb(225, 209, 117);
+<<<<<<< HEAD
+}
+
+.test {
+  padding: 100px;
+=======
+>>>>>>> be78f7eb72a42c17d7021421fdabad5efa23f360
 }/*# sourceMappingURL=styles.css.map */

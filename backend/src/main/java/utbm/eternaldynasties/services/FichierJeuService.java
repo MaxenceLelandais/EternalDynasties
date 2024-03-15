@@ -17,11 +17,13 @@ public class FichierJeuService {
     private final String fichierJoueur = "src/main/resources/donnees/joueur.json";
     private final String fichierRessources = "src/main/resources/donnees/ressources.json";
     private final String fichierEnvironnements = "src/main/resources/donnees/environnements.json";
+    private final String fichierEre = "src/main/resources/donnees/ere.json";
 
     public JSONObject arbreDeRecherches;
     public JSONObject joueur;
     public JSONObject ressources;
     public JSONObject environnements;
+    public JSONObject eres;
 
     /**
      * Fonction d'appelée lors de l'instanciation.
@@ -32,5 +34,6 @@ public class FichierJeuService {
         this.joueur  = Json.read(this.fichierJoueur);
         this.ressources  = Json.read(this.fichierRessources);
         this.environnements  = Json.read(this.fichierEnvironnements);
+        this.eres = Json.read(this.fichierEre);
     }
 }
