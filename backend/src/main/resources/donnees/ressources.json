@@ -5,7 +5,6 @@
             "Nourriture": "10"
         },
         "Bonus": {
-            "Max-Villageois": "1",
             "Villageois": "0"
         }
     },
@@ -24,7 +23,6 @@
     "Nourriture": {
         "Description": "C'est le début de la vie",
         "Bonus": {
-            "Max-Nourriture": "100",
             "Nourriture": "0"
         }
     },
@@ -34,10 +32,9 @@
             "Villageois": "1"
         },
         "Bonus": {
-            "Max-Fermier": "1",
             "Max-Villageois": "1",
             "Fermier": "0",
-            "Nourriture": "1;1/s;1/Fermier;1/Mine;0.01%;0.01%/Fermier;0.01%/Bois;0.01%/s"
+            "Nourriture": "1;1/s;1/Fermier;0.01%;0.01%/Fermier;0.01%/Bois;0.01%/s"
         }
     },
     "Max-Villageois": {
@@ -202,7 +199,7 @@
         "Description": "Je ne sais plus quoi mettre",
         "Coût": null,
         "Bonus": {
-            "Max-Nourriture": "100"
+            "Max-Nourriture": "0"
         }
     },
     "Entrepôt": {
@@ -220,7 +217,7 @@
         "Description": "Je ne sais plus quoi mettre",
         "Coût": null,
         "Bonus": {
-            "Max-Bois": "100"
+            "Max-Bois": "0"
         }
     },
     "Carrière": {
@@ -238,7 +235,7 @@
         "Description": "Je ne sais plus quoi mettre",
         "Coût": null,
         "Bonus": {
-            "Max-Pierre": "100"
+            "Max-Pierre": "0"
         }
     },
     "Divinité": {

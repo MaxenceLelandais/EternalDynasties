@@ -8,8 +8,6 @@ import org.json.simple.JSONObject;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 public class Json {
@@ -42,9 +40,10 @@ public class Json {
     }
 
     public static void save(String path, Map<Object,Object> data){
-        try (FileWriter file = new FileWriter(path)) {
+        try {
+            FileWriter file = new FileWriter(path);
             file.write(jsonToString(new JSONObject(data)));
-            file.flush();
+            file.close();
         } catch (IOException e) {
             Log.error("Json", "Problème d'écriture du fichier : " + path);
             e.printStackTrace();

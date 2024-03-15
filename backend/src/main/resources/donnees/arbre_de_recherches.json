@@ -8,9 +8,13 @@
         ],
         "Bonus": {
             "Villageois": "1",
+            "Max-Villageois": "100",
             "Nourriture": "1",
+            "Max-Nourriture": "100",
             "Bois": "1",
-            "Pierre": "1"
+            "Max-Bois": "100",
+            "Pierre": "1",
+            "Max-Pierre": "100"
         }
     },
     "Préhistoire":{
@@ -51,6 +55,7 @@
         ],
         "Bonus":{
             "Fermier":"1",
+            "Ferme": "1",
             "Grange":"1",
             "Nourriture": "1.0/s;0.5/Fermier"
         },
@@ -82,7 +87,9 @@
         "Coût":{
             "Nourriture": "500",
             "Bois": "500",
-            "Pierre": "500"
+            "Pierre": "500",
+            "Fermier": "2",
+            "Grange" : "5"
         },
         "Débloque":[
             "Education",

@@ -18,8 +18,12 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+<<<<<<< HEAD
     "d3": "^7.9.0",
     "gojs": "^2.3.15",
+=======
+    "angular-draggable-droppable": "^8.0.0",
+>>>>>>> be78f7eb72a42c17d7021421fdabad5efa23f360
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"page-jeu.component.css"}
+{"version":3,"sources":["page-jeu.component.scss","page-jeu.component.css"],"names":[],"mappings":"AAAA;EACE,eAAA;EACE,SAAA;EACA,YAAA;EACA,WAAA;EACA,YAAA;EACA,uBAAA;EACA,YAAA;EACA,eAAA;EACA,wCAAA;ACCJ;;ADKE;EACE,eAAA;EACA,YAAA;EACA,WAAA;EACA,WAAA;EACA,YAAA;ACFJ;ADMI;EACE,kCAAA;EACA,kBAAA;EACA,WAAA;EACA,YAAA;ACJN;ADOE;EACE,UAAA;ACLJ;ADQE;EACE,UAAA;ACNJ;ADSE;EACE,UAAA;ACPJ","file":"page-jeu.component.css"}

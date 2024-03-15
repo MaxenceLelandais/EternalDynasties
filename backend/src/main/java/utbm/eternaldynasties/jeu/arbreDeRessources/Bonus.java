@@ -13,6 +13,8 @@ public class Bonus {
     private double pourcentageParSecondes = 0.0;
     private Map<String, Double> pourcentageParRessources = new HashMap<>();
 
+    private Bonus() {}
+
     public Bonus(String ressourceGenere, String generation) {
         this.ressourceGenere = ressourceGenere;
         for (String production : generation.split(";")) {
@@ -142,5 +144,51 @@ public class Bonus {
 
     public void addQuantite(double quantite) {
         this.quantite+=quantite;
+    }
+
+    private void setQuantite(double quantite) {
+        this.quantite = quantite;
+    }
+
+    private void setQuantiteParSecondes(double quantiteParSecondes) {
+        this.quantiteParSecondes = quantiteParSecondes;
+    }
+
+    private void setPourcentageParSecondes(double pourcentageParSecondes) {
+        this.pourcentageParSecondes = pourcentageParSecondes;
+    }
+
+    public Bonus resume(HashMap<String, Long> ressourcesActuelles) {
+        Bonus resumeBonus = new Bonus();
+        double q = this.getQuantite();
+        for(String nom : this.getQuantiteParRessources().keySet()){
+            q+=this.getQuantiteParRessources().get(nom)*ressourcesActuelles.get(nom);
+        }
+
+        double p = this.getPourcentage();
+        for(String nom : this.getPourcentageParRessources().keySet()){
+            p+=this.getPourcentageParRessources().get(nom)*ressourcesActuelles.get(nom);
+        }
+
+        q*=1+(p/100);
+        resumeBonus.setQuantite(q);
+        resumeBonus.setQuantiteParSecondes(this.getQuantiteParSecondes());
+        resumeBonus.setPourcentageParSecondes(this.getPourcentageParSecondes());
+        return resumeBonus;
+    }
+
+    public long estimationValeur(HashMap<String, Long> ressourcesActuelles) {
+        double q = this.getQuantite();
+        for(String nom : this.getQuantiteParRessources().keySet()){
+            q+=this.getQuantiteParRessources().get(nom)*ressourcesActuelles.get(nom);
+        }
+
+        double p = this.getPourcentage();
+        for(String nom : this.getPourcentageParRessources().keySet()){
+            p+=this.getPourcentageParRessources().get(nom)*ressourcesActuelles.get(nom);
+        }
+
+        q*=1+(p/100);
+        return (long) q;
     }
 }

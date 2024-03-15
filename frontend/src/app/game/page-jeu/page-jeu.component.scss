@@ -1,0 +1,33 @@
+[mwlDroppable] {
+  background-color: black;
+  width: calc(40vw - 50px);
+  height: calc(90vh - 20vw);
+  z-index: 1;
+}
+.dropZone1{
+  position: fixed;
+  bottom: 20px;
+  right: 130px;
+  z-index: -1;
+  }
+.dropZone2{
+  position: fixed;
+  bottom: 20px;
+  left: 130px;
+  z-index: -1;
+}
+
+[mwlDraggable],
+[mwlDroppable] {
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: dashed 1px white;
+}
+
+.drop-over-active {
+  border: dashed 1px black;
+  background-color: grey;
+}

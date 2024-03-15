@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import utbm.eternaldynasties.jeu.Jeu;
 import utbm.eternaldynasties.jeu.Joueur;
+import utbm.eternaldynasties.jeu.arbreDeRessources.Bonus;
 import utbm.eternaldynasties.jeu.arbreDeRessources.Ressource;
 import utbm.eternaldynasties.jeu.arbreRecherches.Recherche;
 import utbm.eternaldynasties.services.JeuService;
@@ -41,56 +42,45 @@ class JeuTest {
         while (!joueur.recherchesPossibles().isEmpty()) {
 
             List<Recherche> listeRecherchesPossibles = joueur.recherchesPossibles();
-            Recherche rechercheLaMoinsCouteuse = null;
-            long quantiteDeRessourcesAOptenirLaMoinsNombreuse = 0L;
+            Recherche rechercheLaMoinsCouteuseEnTemps = null;
+            float tempsLePLusCourt = 0;
+            ArrayList<String> listeActionsRechercheCourte = null;
 
             for (Recherche rechercheActuelleAComparer : listeRecherchesPossibles) {
-                long quantiteAOptenir = 0L;
-                for (String nomRessource : rechercheActuelleAComparer.getListeCout().keySet()) {
-                    long quantiteDeRessourcesAOptenir = rechercheActuelleAComparer.getListeCout().get(nomRessource) - listeRessourcePossedee.get(nomRessource);
-                    quantiteAOptenir += quantiteDeRessourcesAOptenir > 0 ? quantiteDeRessourcesAOptenir : 0;
+
+                ArrayList<String> listeActions = joueur.besoinRessources(rechercheActuelleAComparer.getListeCout());
+                joueur.ajoutStockage(listeActions);
+                float tempsEstime = 0;
+                for (String action : listeActions) {
+                    tempsEstime += 1;
+                    tempsEstime += ((float) Long.parseLong(action.split(":")[1]) / this.nbrCliquesParSecondes);
                 }
-                if (quantiteDeRessourcesAOptenirLaMoinsNombreuse == 0L) {
-                    quantiteDeRessourcesAOptenirLaMoinsNombreuse = quantiteAOptenir;
-                    rechercheLaMoinsCouteuse = rechercheActuelleAComparer;
-                } else {
-                    if (quantiteDeRessourcesAOptenirLaMoinsNombreuse > quantiteAOptenir) {
-                        quantiteDeRessourcesAOptenirLaMoinsNombreuse = quantiteAOptenir;
-                        rechercheLaMoinsCouteuse = rechercheActuelleAComparer;
-                    }
+                if (tempsLePLusCourt == 0) {
+                    tempsLePLusCourt = tempsEstime;
+                    rechercheLaMoinsCouteuseEnTemps = rechercheActuelleAComparer;
+                    listeActionsRechercheCourte = listeActions;
+                } else if (tempsLePLusCourt > tempsEstime) {
+                    tempsLePLusCourt = tempsEstime;
+                    rechercheLaMoinsCouteuseEnTemps = rechercheActuelleAComparer;
+                    listeActionsRechercheCourte = listeActions;
                 }
             }
+            if (rechercheLaMoinsCouteuseEnTemps != null) {
+                System.out.println("Recherche : " + rechercheLaMoinsCouteuseEnTemps.getNom());
 
-            if (rechercheLaMoinsCouteuse != null) {
-                System.out.println("Recherche : "+rechercheLaMoinsCouteuse.getNom());
-                for (String nomRessource : rechercheLaMoinsCouteuse.getListeCout().keySet()) {
-                    this.addTempsJeu(1);
-                    Ressource maximum = joueur.getArbreDeRessources().getRessource("Max-" + nomRessource);
-                    if (maximum != null && maximum.getListeBonus().get("Max-" + nomRessource).getQuantite() < rechercheLaMoinsCouteuse.getListeCout().get(nomRessource)) {
-
-                        Map<Double, Ressource> map = joueur.getArbreDeRessources().getListeUpMax().get("Max-" + nomRessource);
-                        Double valeurMax = map.keySet().stream().sorted().findFirst().orElse(null);
-                        if (valeurMax != null) {
-                            int diff = (int) ((rechercheLaMoinsCouteuse.getListeCout().get(nomRessource) - maximum.getListeBonus().get("Max-" + nomRessource).getQuantite()) / valeurMax);
-                            for (int n = 0; n < diff; n++) {
-                                Ressource ressourceAOptenir = map.get(valeurMax);
-                                for (String nom : ressourceAOptenir.getListeCout().keySet()) {
-                                    while (listeRessourcePossedee.get(nom) - ressourceAOptenir.getListeCout().get(nom) < 0) {
-                                        joueur.clickAchat(nom);
-                                        this.addTempsJeu(1.0 / this.nbrCliquesParSecondes);
-                                    }
-                                }
-                                joueur.clickAchat(ressourceAOptenir.getNom());
-                            }
-                        }
-                    }
-
-                    while (rechercheLaMoinsCouteuse.getListeCout().get(nomRessource) - listeRessourcePossedee.get(nomRessource) > 0) {
+                for(String action : listeActionsRechercheCourte) {
+                    String[] data = action.split(":");
+                    String nomRessource = data[0];
+                    long quantite = Long.parseLong(data[1]);
+                    this.addTempsJeu(1.0);
+                    for(int n=0;n<quantite;n++) {
                         joueur.clickAchat(nomRessource);
                         this.addTempsJeu(1.0 / this.nbrCliquesParSecondes);
                     }
                 }
-                String retour = joueur.activerRecherche(rechercheLaMoinsCouteuse.getNom());
+                this.addTempsJeu(1.0);
+
+                String retour = joueur.activerRecherche(rechercheLaMoinsCouteuseEnTemps.getNom());
                 System.out.println(retour);
                 if (retour.contains("RECHERCHE EFFECTUEE")) {
                     System.out.println("Temps collecte ressources : " + this.tempsJeu);

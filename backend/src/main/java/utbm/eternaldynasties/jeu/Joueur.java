@@ -11,10 +11,7 @@ import utbm.eternaldynasties.utils.Json;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Joueur {
 
@@ -59,29 +56,6 @@ public class Joueur {
         this.debutDeLaPartie = dtf.format(LocalDateTime.now());
     }
 
-    public Map<Object, Object> toMap() {
-        Map<Object, Object> data = new HashMap<>();
-        data.put("Civilisation", this.civilisation);
-        data.put("Environnement", this.environnement.getNom());
-        data.put("Début de la partie", this.debutDeLaPartie + "");
-        Map<String, String> map = new HashMap<>();
-        for (String key : this.ressources.keySet()) {
-            map.put(key, String.valueOf(this.ressources.get(key)));
-        }
-        HashMap<String, String> caracteristiquesCollectes = new HashMap<>();
-        data.put("Ressources", map);
-        for (String key : this.ressources.keySet()) {
-            caracteristiquesCollectes.put(key, this.arbreDeRessources.getRessource(key).getListeBonus().get(key).toString());
-        }
-        data.put("Caracteristiques collectes", caracteristiquesCollectes);
-        data.put("Recherches", this.arbreDeRecherche.recherchesEffectueesMap());
-        return data;
-    }
-
-    public void save() {
-        Json.save("src/main/resources/sauvegardes/" + this.civilisation + "-" + this.environnement.getNom()+ ".save", toMap());
-    }
-
     public List<Recherche> recherchesPossibles() {
         return this.arbreDeRecherche.recherchesPossibles();
     }
@@ -108,7 +82,11 @@ public class Joueur {
             for (String key : map.keySet()) {
                 Bonus bonusRessource=map.get(key);
                 String nom = bonusRessource.getRessourceGenere();
-                this.arbreDeRessources.getRessource(nom).getListeBonus().get(nom).add(bonusRessource);
+                Bonus bonusInfos = this.arbreDeRessources.getRessource(nom).getListeBonus().get(nom);
+                bonusInfos.add(bonusRessource);
+                if(key.contains("Max-")){
+                    this.ressources.putIfAbsent(key, bonusInfos.estimationValeur(this.ressources));
+                }
                 this.ressources.putIfAbsent(key, 0L);
             }
             save();
@@ -117,47 +95,39 @@ public class Joueur {
         return nomRecherche + " : RECHERCHE NON DEBLOQUEE";
     }
 
-    public Map<Object, Object> clickAchat(String ressource) {
-        Map<String, Long> cout = this.arbreDeRessources.getRessource(ressource).getListeCout();
-        if ((cout != null && !cout.isEmpty())) {
-            for (String keyCout : cout.keySet()) {
-                long val = this.ressources.get(keyCout) - cout.get(keyCout);
-                if (val >= 0) {
-                    this.ressources.replace(keyCout, val);
-                    Bonus bRessource = this.arbreDeRessources.getRessource(ressource).getListeBonus().get(ressource);
-                    this.ressources.replace(ressource, this.ressources.get(ressource)+(long) (bRessource.getQuantite() * (1 + bRessource.getPourcentage()/100)));
-                    for (Bonus bonusRessource : this.arbreDeRessources.getRessource(ressource).getListeBonus().values()) {
-                        String nom = bonusRessource.getRessourceGenere();
-                        if (!nom.equals(ressource)) {
-                            if(nom.contains("Max-")){
-                                String nomRessourceMax = nom.replace("Max-","");
-                                if (!nomRessourceMax.equals(ressource)) {
-                                    Map<String, Bonus> liste = this.arbreDeRessources.getRessource(nomRessourceMax).getListeBonus();
-                                    liste.putIfAbsent(nom, new Bonus(nom, "0"));
-                                    liste.get(nom).addQuantite(bonusRessource.getQuantite());
-                                }
-                            }
-                            this.arbreDeRessources.getRessource(nom).getListeBonus().get(nom).add(bonusRessource);
-                        }
-                    }
+    private void checkEtAddVal(Map<String, Bonus> bonus){
+        bonus.forEach((key, value)->{
+            long valeur = value.estimationValeur(this.ressources);
+            if (this.ressources.containsKey("Max-" + key)) {
+                if (this.ressources.get(key) + valeur <= this.ressources.get("Max-" + key)) {
+                    this.ressources.replace(key, this.ressources.get(key) + valeur);
                 }
+            }else{
+                this.ressources.replace(key, this.ressources.get(key) + valeur);
+            }
+        });
+    }
+
+    public Map<Object, Object> clickAchat(String nomRessource) {
+
+        Map<String, Long> cout = this.arbreDeRessources.getRessource(nomRessource).getListeCout();
+        Map<String, Bonus> bonus = this.arbreDeRessources.getRessource(nomRessource).getListeBonus();
+        if ((cout != null && !cout.isEmpty())) {
+            boolean pasAssezDeRessources = false;
+            for (String key : cout.keySet()) {
+                long diff = this.ressources.get(key) - cout.get(key);
+                if (diff >= 0) {
+                    this.ressources.replace(key, diff);
+                } else {
+                    pasAssezDeRessources = true;
+                    break;
+                }
+            }
+            if (!pasAssezDeRessources) {
+                this.checkEtAddVal(bonus);
             }
         } else {
-            Map<String, Bonus> bonus = this.arbreDeRessources.getRessource(ressource).getListeBonus();
-            if (bonus != null && !bonus.isEmpty()) {
-                for (String keyBonus : bonus.keySet()) {
-                    long val = this.ressources.get(ressource);
-                    if(!keyBonus.equals("Max-"+ressource)){
-                        val += (long) (bonus.get(keyBonus).getQuantite() * (1 + bonus.get(keyBonus).getPourcentage() / 100));
-                        if(keyBonus.equals(ressource)){
-                            if(bonus.containsKey("Max-"+ressource) && val>=bonus.get("Max-"+ressource).getQuantite()){
-                                val = (long)bonus.get("Max-"+ressource).getQuantite();
-                            }
-                        }
-                        this.ressources.replace(keyBonus, val);
-                    }
-                }
-            }
+            this.checkEtAddVal(bonus);
         }
 
         save();
@@ -202,13 +172,114 @@ public class Joueur {
                 }
 
                 long val = this.ressources.get(ressource) + nouvelleValeur.longValue();
-                if(bonus.containsKey("Max-"+ressource)){
-                    if(val>=bonus.get("Max-"+ressource).getQuantite()){
-                        val = (long)bonus.get("Max-"+ressource).getQuantite();
+                if(this.ressources.containsKey("Max-"+ressource)){
+                    if(val>=this.ressources.get("Max-"+ressource)){
+                        val = this.ressources.get("Max-"+ressource);
                     }
                 }
                 this.ressources.replace(keyBonus, val);
             }
+        }
+    }
+
+    private boolean decomposition(Map<String, Long> ressourcesComplexe, ArrayList<String> listeActions) {
+        if (ressourcesComplexe.isEmpty()) {
+            return true;
+        } else {
+            for (String nom : ressourcesComplexe.keySet()) {
+                listeActions.add(nom + ":" + 1);
+                Map<String, Long> besoin = this.arbreDeRessources.getRessource(nom).getListeCout();
+                for (String nomBesoin : besoin.keySet()) {
+                    if (this.arbreDeRessources.getRessource(nomBesoin).getListeCout().isEmpty()) {
+                        listeActions.add(nomBesoin + ":" + besoin.get(nomBesoin));
+                    } else {
+                        if (ressourcesComplexe.containsKey(nomBesoin)) {
+                            ressourcesComplexe.replace(nomBesoin, ressourcesComplexe.get(nomBesoin) + besoin.get(nomBesoin));
+                        } else {
+                            ressourcesComplexe.put(nomBesoin, besoin.get(nomBesoin));
+                        }
+                    }
+                }
+                long valeur = ressourcesComplexe.get(nom) - 1;
+                if (valeur <= 0) {
+                    ressourcesComplexe.remove(nom);
+                } else {
+                    ressourcesComplexe.replace(nom, valeur);
+                }
+                if (ressourcesComplexe.isEmpty()) {
+                    return true;
+                }
+                if (this.decomposition(ressourcesComplexe, listeActions)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public ArrayList<String> besoinRessources(Map<String, Long> ressourcesDemandees) {
+
+        Map<String, Long> ressourcesComplexe = new HashMap<>();
+
+        ArrayList<String> listeActions = new ArrayList<>();
+        ressourcesDemandees.forEach((key, value) -> {
+            if (this.arbreDeRessources.getRessource(key).getListeCout().isEmpty()) {
+                listeActions.add(key + ":" + value);
+            } else {
+                ressourcesComplexe.put(key, value);
+            }
+        });
+        this.decomposition(ressourcesComplexe, listeActions);
+        Collections.reverse(listeActions);
+        return listeActions;
+    }
+
+    public void ajoutStockage(ArrayList<String> listeActions) {
+        Map<String, Long> ressourcesMax = new HashMap<>();
+        int position = 0;
+        while(position<listeActions.size()) {
+            String[] data = listeActions.get(position).split(":");
+            String nomRessource = data[0];
+            long quantite = Long.parseLong(data[1]);
+            Map<Bonus, Ressource> map;
+            for(Bonus bonus : this.arbreDeRessources.getRessource(nomRessource).getListeBonus().values()){
+                if(bonus.getRessourceGenere().contains("Max-")){
+                    if(ressourcesMax.containsKey(bonus.getRessourceGenere())){
+                        ressourcesMax.replace(bonus.getRessourceGenere(),ressourcesMax.get(bonus.getRessourceGenere())+bonus.estimationValeur(this.ressources));
+                    }else{
+                        ressourcesMax.put(bonus.getRessourceGenere(),bonus.estimationValeur(this.ressources));
+                    }
+                }
+            }
+            if (this.ressources.containsKey("Max-" + nomRessource)) {
+                ressourcesMax.putIfAbsent("Max-" + nomRessource,this.ressources.get("Max-" + nomRessource));
+                if (quantite > ressourcesMax.get("Max-" + nomRessource)) {
+                    map = this.arbreDeRessources.getListeRessourceEnFonctionBonus("Max-" + nomRessource, this.ressources);
+                    long valeur = 0;
+                    Ressource ressourceAPrendre = null;
+                    for(Bonus bonus : map.keySet()){
+                        long tmp = bonus.estimationValeur(this.ressources);
+                        if(valeur==0){
+                            valeur = tmp;
+                            ressourceAPrendre = map.get(bonus);
+                        }else{
+                            if(valeur<tmp){
+                                valeur = tmp;
+                                ressourceAPrendre = map.get(bonus);
+                            }
+                        }
+                    }
+                    if(ressourceAPrendre!=null){
+                        long nbrRessources = (long)((double)(quantite-ressourcesMax.get("Max-" + nomRessource))/(double)valeur+0.5);
+                        HashMap<String, Long> demande = new HashMap<>();
+                        demande.put(ressourceAPrendre.getNom(), nbrRessources);
+                        ArrayList<String> aRajouter = this.besoinRessources(demande);
+                        listeActions.addAll(position,aRajouter);
+                        position--;
+                    }
+                }
+            }
+            position++;
         }
     }
 
@@ -238,5 +309,30 @@ public class Joueur {
 
     public ArbreDeRessources getArbreDeRessources() {
         return arbreDeRessources;
+    }
+
+    public Map<Object, Object> toMap() {
+        Map<Object, Object> data = new HashMap<>();
+        data.put("Civilisation", this.civilisation);
+        data.put("Environnement", this.environnement.getNom());
+        data.put("Début de la partie", this.debutDeLaPartie + "");
+        Map<String, String> map = new HashMap<>();
+        for (String key : this.ressources.keySet()) {
+            map.put(key, String.valueOf(this.ressources.get(key)));
+        }
+        HashMap<String, String> caracteristiquesCollectes = new HashMap<>();
+        data.put("Ressources", map);
+        for (String key : this.ressources.keySet()) {
+            if (!key.contains("Max-")) {
+                caracteristiquesCollectes.put(key, this.arbreDeRessources.getRessource(key).getListeBonus().get(key).toString());
+            }
+        }
+        data.put("Caracteristiques collectes", caracteristiquesCollectes);
+        data.put("Recherches", this.arbreDeRecherche.recherchesEffectueesMap());
+        return data;
+    }
+
+    public void save() {
+        Json.save("src/main/resources/sauvegardes/" + this.civilisation + "-" + this.environnement.getNom() + ".save", toMap());
     }
 }
