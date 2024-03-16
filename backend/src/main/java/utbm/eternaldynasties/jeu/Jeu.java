@@ -5,10 +5,12 @@
 
 package utbm.eternaldynasties.jeu;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import utbm.eternaldynasties.jeu.arbreDeRessources.ArbreDeRessources;
 import utbm.eternaldynasties.jeu.arbreEnvironnements.ArbreEnvironnements;
 import utbm.eternaldynasties.jeu.arbreRecherches.ArbreDeRecherches;
+import utbm.eternaldynasties.jeu.arbreRecherches.Recherche;
 import utbm.eternaldynasties.services.FichierJeuService;
 import utbm.eternaldynasties.utils.Json;
 import utbm.eternaldynasties.utils.Log;
@@ -27,10 +29,7 @@ public class Jeu {
     private final ArbreEnvironnements arbreEnvironnements;
     private final Map<String, Joueur> listeJoueur = new HashMap<>();
 
-    private ArbreEnvironnements arbreEnvironnements;
-
     public JSONObject eres;
-    private Map<String, Joueur> listeJoueur = new HashMap<>();
 
     /**
      * Récupère les instances de chaques fichiers du jeu (fichiers json).

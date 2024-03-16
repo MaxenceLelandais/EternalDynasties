@@ -53,11 +53,6 @@ public class JeuController {
         return Json.objectToJsonObject(this.jeuService.getJeu().getArbreDeRecherches().getArbrePourAffichage());
     }
 
-    @GetMapping(value = "listeEres")
-    public JSONObject sendListeEres() {
-        return Json.objectToJsonObject(this.jeuService.getJeu().getArbreDeRecherches().getEres());
-    }
-
     @GetMapping(value = "listeRessourcesJeu")
     public JSONObject sendRessources() {
         return Json.stringToJsonObject(jeuService.getJeu().getArbreDeRessources().toString());
@@ -73,10 +68,10 @@ public class JeuController {
         return Json.objectToJsonObject(jeuService.getJeu().getArbreEnvironnements().get(environnement).getJsonObjet());
     }
 
-    /*@GetMapping(value = "listeEres")
+    @GetMapping(value = "listeEres")
     public JSONObject sendEresByName() {
         return jeuService.getJeu().eres;
-    }*/
+    }
 
 
     //////////////////    PARTIES : regroupe les requêtes pour obtenir les informations d'une partie     //////////////////

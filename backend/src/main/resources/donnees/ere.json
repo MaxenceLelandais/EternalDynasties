@@ -1,39 +1,38 @@
 {
-  "Ere" : [
+  "Préhistoire":
     {
       "Id": 1,
       "Nom": "Préhistoire",
       "Description": "La Préhistoire, ère de mystères et d'aube de l'humanité, où nos ancêtres ont façonné les premiers outils et découvert le feu, jetant les bases des premières civilisations."
     },
-    {
+  "Antiquité": {
       "Id": 2,
       "Nom": "Antiquité",
       "Description": "L'Antiquité, apogée des empires et berceau de la philosophie, où les grandes civilisations comme Rome, la Grèce, et l'Égypte ont érigé des monuments immortels et posé les fondations de notre monde moderne."
     },
-    {
+  "Moyen-Age": {
       "Id": 3,
       "Nom": "Moyen-Age",
       "Description": "Le Moyen Âge, époque de chevaliers et de châteaux forts, marquée par les croisades, la féodalité et l'essor des villes et des universités, tissant la trame d'un Monde en pleine mutation."
     },
-    {
+  "Renaissance": {
       "Id": 4,
       "Nom": "Renaissance",
       "Description": "La Renaissance, renaissance des arts et des sciences, période de redécouverte des savoirs de l'Antiquité et d'innovations qui ont illuminé le Monde, ouvrant la voie à l'âge moderne."
     },
-    {
+  "Revolution Industrielle": {
       "Id": 5,
       "Nom": "Revolution Industrielle",
       "Description": "La Révolution industrielle, ère de progrès technique fulgurant, a transformé les sociétés avec l'avènement des machines, inaugurant l'ère de la production de masse et le début de la société moderne."
     },
-    {
+  "Epoque Moderne": {
       "Id": 6,
       "Nom": "Epoque Moderne",
       "Description": "L'époque moderne, ère de la connectivité globale et de l'innovation numérique, où la technologie avance à pas de géant, remodelant notre quotidien et ouvrant des horizons sans précédent pour l'humanité."
     },
-    {
+  "Epoque Futuriste": {
       "Id": 7,
       "Nom": "Epoque Futuriste",
       "Description": "L'ère futuriste, vision d'un avenir où la technologie avancée et l'intelligence artificielle façonnent une société interconnectée et interstellaire, promettant des découvertes et des modes de vie révolutionnaires."
-    }
-  ]
+  }
 }

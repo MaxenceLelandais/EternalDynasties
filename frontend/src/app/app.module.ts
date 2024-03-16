@@ -11,8 +11,11 @@ import { MenuEnvironnementComponent } from './menu/menu-environnement/menu-envir
 import { PageAccueilComponent } from './menu/page-accueil/page-accueil.component';
 import { PageJeuComponent } from './game/page-jeu/page-jeu.component';
 import { HeaderJeuComponent } from './game/header-jeu/header-jeu.component';
-import { Test } from './http/test';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { ModalArbreRechercheComponent } from './game/modal-arbre-recherche/modal-arbre-recherche.component';
+import { FriseChronologiqueComponent } from './game/frise-chronologique/frise-chronologique.component';
+import { MenuBurgerComponent } from './game/menu-burger/menu-burger.component';
+import { DragAndDropModule } from 'angular-draggable-droppable';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     MenuEnvironnementComponent,
     PageAccueilComponent,
     PageJeuComponent,
-    Test,
+    ModalArbreRechercheComponent,
+    FriseChronologiqueComponent,
+    MenuBurgerComponent,
     HeaderJeuComponent
   ],
   imports: [

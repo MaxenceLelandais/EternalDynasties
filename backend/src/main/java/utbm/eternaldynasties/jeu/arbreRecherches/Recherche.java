@@ -193,6 +193,8 @@ public class Recherche {
     }
 
     public Map<String, Object> getJsonObjet() {
+
+        this.jsonObjet.put("nom",this.nom);
         return jsonObjet;
     }
 

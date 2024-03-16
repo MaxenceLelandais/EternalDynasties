@@ -2,7 +2,7 @@
 <div *ngIf="listeRecherches">
     <ul class="liste-logo-recherche" *ngIf="listeRecherches">
         <li *ngFor="let envKey of listeRecherches | keyvalue; let i = index">
-            <p>{{ envKey.value.Nom }}</p>
+            <p>{{ envKey.value.nom }}</p>
         </li>
     </ul>
 </div>

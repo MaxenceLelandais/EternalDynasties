@@ -13,14 +13,14 @@ import { Recherche, Recherches } from 'src/app/model/recherche.model';
 export class ModalArbreRechercheComponent {
   listeRecherches: Recherches | null = null;
 
-  constructor(private jeuService: JeuService) {}
+  constructor(private jeuService: JeuService) {this.fetchData()}
 
   fetchData() {
     console.log(this.listeRecherches);
     this.jeuService.httpListeRecherches().subscribe(
       data => {
         this.listeRecherches = data;
-        console.log(this.listeRecherches);
+        console.log(data);
       },
       error => {
         console.error("Erreur lors de la récupération des recherches", error);
