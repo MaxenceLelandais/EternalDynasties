@@ -1,15 +1,16 @@
+import { Ere } from "./ere.model";
+
 export interface Recherche {
     nom: string;
     description: string;
-    logo: string;
-    'logo-hover': string;
-    banniere: string;
-    ecusson: string;
-    images: string[];
-    merveille: string;
+    icone: string;
+    cout: string;
+    bonus: string;
+    dobloque: Recherche[];
+    verouille: Recherche[];
+    ere: Ere;
   }
   
   export interface Recherches {
     [key: string]: Recherche;
   }
-  
