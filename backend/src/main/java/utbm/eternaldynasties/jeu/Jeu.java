@@ -27,6 +27,7 @@ public class Jeu {
 
         Log.info("JeuService", "Jeu en cours de démarrage ...");
         this.arbreDeRecherches = new ArbreDeRecherches(fichierJeuService.arbreDeRecherches);
+        this.arbreDeRecherches.setEresObj(this.fichierJeuService.eres);
         this.arbreDeRessources = new ArbreDeRessources(fichierJeuService.ressources);
         this.arbreEnvironnements = new ArbreEnvironnements(fichierJeuService.environnements);
 

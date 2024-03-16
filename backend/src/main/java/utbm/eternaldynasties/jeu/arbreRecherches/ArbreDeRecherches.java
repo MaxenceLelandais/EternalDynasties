@@ -1,5 +1,6 @@
 package utbm.eternaldynasties.jeu.arbreRecherches;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import utbm.eternaldynasties.utils.Json;
 
@@ -13,6 +14,7 @@ public class ArbreDeRecherches {
     private Map<String, Recherche> listeRecherches = new HashMap<>();
     private Map<String,Map<String, String>> arbrePourAffichage = new HashMap<>();
     private ArrayList<String> eres = new ArrayList<>();
+    private Map<String, JSONObject> mapEre = new HashMap<>();
 
     public ArbreDeRecherches(JSONObject jsonObject) {
         for (Object key : jsonObject.keySet()) {
@@ -105,12 +107,30 @@ public class ArbreDeRecherches {
         return map;
     }
 
+    public Map<String, JSONObject> getEresObj() {
+        return mapEre;
+    }
+
+    public void setEresObj(JSONObject eresObj) {
+
+        for(Object object : (List)eresObj.get("Ere")){
+            JSONObject jsonObject = Json.objectToJsonObject((Map) object);
+            this.mapEre.put((String) jsonObject.get("nom"),jsonObject);
+        }
+    }
+
     public String toString() {
         Map<String, Object> liste = new HashMap<>();
         this.listeRecherches.values().forEach(r -> {
             if (!this.getEres().containsKey(r.getNom())) {
                 liste.put(r.getNom(), r.getJsonObjet());
             }
+        });
+
+        this.getEres().forEach((key, val)->{
+            val.forEach(recherche->{
+                this.listeRecherches.get(recherche).getJsonObjet().put("Ere",this.mapEre.get(key));
+            });
         });
         return Json.jsonToString(liste);
     }
