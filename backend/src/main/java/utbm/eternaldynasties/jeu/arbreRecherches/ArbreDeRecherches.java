@@ -107,7 +107,11 @@ public class ArbreDeRecherches {
 
     public String toString() {
         Map<String, Object> liste = new HashMap<>();
-        this.listeRecherches.values().forEach(r -> liste.put(r.getNom(), r.getJsonObjet()));
+        this.listeRecherches.values().forEach(r -> {
+            if (!this.getEres().containsKey(r.getNom())) {
+                liste.put(r.getNom(), r.getJsonObjet());
+            }
+        });
         return Json.jsonToString(liste);
     }
 }
