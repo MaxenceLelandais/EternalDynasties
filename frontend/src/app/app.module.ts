@@ -14,6 +14,7 @@ import { HeaderJeuComponent } from './game/header-jeu/header-jeu.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ModalArbreRechercheComponent } from './game/modal-arbre-recherche/modal-arbre-recherche.component';
 import { FriseChronologiqueComponent } from './game/frise-chronologique/frise-chronologique.component';
+import { MenuBurgerComponent } from './game/menu-burger/menu-burger.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FriseChronologiqueComponent } from './game/frise-chronologique/frise-ch
     PageJeuComponent,
     ModalArbreRechercheComponent,
     FriseChronologiqueComponent,
-    HeaderJeuComponent
+    HeaderJeuComponent,
+    MenuBurgerComponent
   ],
   imports: [
     BrowserModule,

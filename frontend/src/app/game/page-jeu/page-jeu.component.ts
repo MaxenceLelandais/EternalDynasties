@@ -5,6 +5,7 @@ import { JeuService } from 'src/app/http/jeuService';
 import { Environnement } from 'src/app/model/environnement.model';
 import { HeaderJeuComponent } from '../header-jeu/header-jeu.component';
 import { EnvironnementService } from 'src/app/service/environnementService';
+import { MenuBurgerComponent } from '../menu-burger/menu-burger.component';
 
 
 @Component({

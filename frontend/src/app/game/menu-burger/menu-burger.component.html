@@ -1,0 +1,18 @@
+<div class="menu-burgercontainer">
+    <input type="checkbox" id="checkbox2" class="checkbox2 visuallyHidden" [(ngModel)]="isMenuOpen" (click)="toggleMenu()">
+    <label for="checkbox2">
+        <div class="hamburger hamburger2">
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+            <span class="bar bar3"></span>
+            <span class="bar bar4"></span>
+        </div>
+    </label>
+</div>
+
+<div class="icon-list" *ngIf="isMenuOpen">
+    <div *ngFor="let icon of icons; let i = index" class="icon-container" (mouseenter)="hoverIn(i)" (mouseleave)="hoverOut(i)">
+        <img [src]="icon.src" [alt]="icon.alt">
+        <span *ngIf="hoveredIndex === i" class="icon-description">{{icon.description}}</span>
+    </div>
+</div>
