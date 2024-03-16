@@ -43,7 +43,7 @@ public class JeuController {
 
     @GetMapping(value = "listeEres")
     public JSONObject sendListeEres() {
-        return Json.objectToJsonObject(this.jeuService.getJeu().getArbreDeRecherches().getEres());
+        return Json.objectToJsonObject(this.jeuService.getJeu().getFichierJeuService().eres);
     }
 
     @GetMapping(value = "listeRessourcesJeu")

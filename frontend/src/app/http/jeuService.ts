@@ -21,6 +21,9 @@ export class JeuService {
   httpListeRecherches(): Observable<any> {
     return this.fetchData(this.apiUrl+"listeRecherches");
   }
+  httpListeEres(): Observable<any> {
+    return this.fetchData(this.apiUrl+"listeEres");
+  }
   httpListeEnvironnements(): Observable<any> {
     return this.fetchData(this.apiUrl+"listeEnvironnements");
   }

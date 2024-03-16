@@ -40,6 +40,11 @@ public class Jeu {
         }
     }
 
+
+    public FichierJeuService getFichierJeuService() {
+        return fichierJeuService;
+    }
+
     public ArbreDeRecherches getArbreDeRecherches() {
         return arbreDeRecherches;
     }

@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu-demarrage.component.scss']
 })
 export class MenuDemarrageComponent {
+  constructor(){};
 }

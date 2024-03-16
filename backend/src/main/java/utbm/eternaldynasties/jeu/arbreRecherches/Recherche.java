@@ -176,6 +176,7 @@ public class Recherche {
     }
 
     public Map<String, Object> getJsonObjet() {
+        jsonObjet.put("nom",this.nom);
         return jsonObjet;
     }
 

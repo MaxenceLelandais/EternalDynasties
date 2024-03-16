@@ -1,4 +1,5 @@
 export interface Ere {
+  id:number,
     nom: string;
     description: string;
   }

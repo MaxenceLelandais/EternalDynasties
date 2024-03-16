@@ -1,0 +1,8 @@
+<p>frise-chronologique works!</p>
+<div *ngIf="listeEre">
+    <ul *ngIf="listeEre">
+        <li *ngFor="let envKey of listeEre | keyvalue; let i = index">
+            <p>{{ envKey.value.nom }}</p>
+        </li>
+    </ul>
+</div>
