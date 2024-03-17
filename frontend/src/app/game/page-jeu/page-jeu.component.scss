@@ -1,0 +1,14 @@
+.drop-component-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+    .drop-component {
+        border-radius: 10px;
+        border: 2px dashed white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70vh;
+        height: 50vh;
+    }
+}

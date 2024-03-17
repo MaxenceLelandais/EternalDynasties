@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { ApercueComponent } from '../game-components/apercue/apercue.component';
+import { RessourcesComponent } from '../game-components/ressources/ressources.component';
+import { MetiersComponent } from '../game-components/metiers/metiers.component';
+import { BatimentsComponent } from '../game-components/batiments/batiments.component';
+import { PuissancesComponent } from '../game-components/puissances/puissances.component';
+import { MerveilleComponent } from '../game-components/merveille/merveille.component';
 
 
 @Component({
@@ -11,12 +16,12 @@ export class MenuBurgerComponent {
   isMenuOpen = false;
   hoveredIndex = -1;
   icons = [
-    {src: "../../../assets/img/icon/merveille.png", alt: 'Icon 2', description: 'Merveilles'},
-    {src: "../../../assets/img/icon/puissances.png", alt: 'Icon 2', description: 'Puissances'},
-    {src: "../../../assets/img/icon/batiments.png", alt: 'Icon 4', description: 'Bâtiments'},
-    {src: "../../../assets/img/icon/metiers.png", alt: 'Icon 3', description: 'Métiers'},
-    {src: "../../../assets/img/icon/ressources.png", alt: 'Icon 2', description: 'Ressources'},
-    {src: "../../../assets/img/icon/apercue.png", alt: 'Icon 1', description: 'Aperçue'}
+    {src: "../../../assets/img/icon/merveille.png", alt: 'Icon 2', description: 'Merveilles', component: MerveilleComponent},
+    {src: "../../../assets/img/icon/puissances.png", alt: 'Icon 2', description: 'Puissances', component: PuissancesComponent},
+    {src: "../../../assets/img/icon/batiments.png", alt: 'Icon 4', description: 'Bâtiments', component: BatimentsComponent},
+    {src: "../../../assets/img/icon/metiers.png", alt: 'Icon 3', description: 'Métiers', component: MetiersComponent},
+    {src: "../../../assets/img/icon/ressources.png", alt: 'Icon 2', description: 'Ressources', component: RessourcesComponent},
+    {src: "../../../assets/img/icon/apercue.png", alt: 'Icon 1', description: 'Aperçue', component: ApercueComponent}
   ];
 
   toggleMenu() {

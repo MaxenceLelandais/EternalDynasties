@@ -6,6 +6,14 @@ import { Environnement } from 'src/app/model/environnement.model';
 import { HeaderJeuComponent } from '../header-jeu/header-jeu.component';
 import { EnvironnementService } from 'src/app/service/environnementService';
 import { MenuBurgerComponent } from '../menu-burger/menu-burger.component';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
+import { ComponentFactoryResolver, ViewContainerRef } from '@angular/core';
+import { ApercueComponent } from '../game-components/apercue/apercue.component';
+import { RessourcesComponent } from '../game-components/ressources/ressources.component';
+import { MetiersComponent } from '../game-components/metiers/metiers.component';
+import { BatimentsComponent } from '../game-components/batiments/batiments.component';
+import { PuissancesComponent } from '../game-components/puissances/puissances.component';
+import { MerveilleComponent } from '../game-components/merveille/merveille.component';
 
 
 @Component({
@@ -18,7 +26,8 @@ export class PageJeuComponent implements OnInit {
   environnement: Environnement | null = null;
   
 
-  constructor(private jeuService: JeuService, private civilisationService: CivilisationService, private environnementService: EnvironnementService) { }
+  constructor(private jeuService: JeuService, private civilisationService: CivilisationService, private environnementService: EnvironnementService,
+              private viewContainerRef: ViewContainerRef, private componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
     this.civilisation = this.civilisationService.getCivilisation();
@@ -46,5 +55,14 @@ export class PageJeuComponent implements OnInit {
           }
         );
     }
+  }
+
+  drop(event: CdkDragDrop<any>) {
+    console.log(event);
+    console.log(event.item.data);
+    const componentData = event.item.data;
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(componentData.component);
+    this.viewContainerRef.clear();
+    this.viewContainerRef.createComponent(componentFactory);
   }
 }

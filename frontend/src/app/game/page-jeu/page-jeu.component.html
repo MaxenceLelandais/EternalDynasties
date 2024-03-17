@@ -1,4 +1,14 @@
 <app-header-jeu></app-header-jeu>
+<div class="drop-component-container">
+    <div cdkDropList (cdkDropListDropped)="drop($event)" class="drop-component">
+        Insérez un élément ici
+    </div>
+    
+    <div cdkDropList (cdkDropListDropped)="drop($event)" class="drop-component">
+        Insérez un élément ici
+    </div>
+    
+</div>
 <app-menu-burger></app-menu-burger>
 <!-- <app-frise-chronologique></app-frise-chronologique>
 <app-modal-arbre-recherche></app-modal-arbre-recherche> -->
