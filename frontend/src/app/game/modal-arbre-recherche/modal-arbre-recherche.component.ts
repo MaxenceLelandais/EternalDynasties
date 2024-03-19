@@ -1,16 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { JeuService } from 'src/app/http/jeuService';
 import { Recherches } from 'src/app/model/recherche.model';
+import { ModalService } from 'src/app/service/modal.Service';
 
 @Component({
   selector: 'app-modal-arbre-recherche',
-  templateUrl: './modal-arbre-recherche.component.html'
+  templateUrl: './modal-arbre-recherche.component.html',
+  styleUrls: ['./modal-arbre-recherche.component.css']
 })
 
-export class ModalArbreRechercheComponent {
+export class ModalArbreRechercheComponent implements OnInit {
   listeRecherches: Recherches | null = null;
+  displayModal: boolean = false;
+  
 
-  constructor(private jeuService: JeuService) {this.fetchData()}
+  constructor(private jeuService: JeuService, private modalService: ModalService) {this.fetchData()}
 
   fetchData() {
     console.log(this.listeRecherches);
@@ -23,5 +27,19 @@ export class ModalArbreRechercheComponent {
         console.error("Erreur lors de la récupération des recherches", error);
       }
     );
+  }
+
+  ngOnInit() {
+    this.modalService.watch().subscribe((status: 'open' | 'close') => {
+      this.displayModal = status === 'open';
+    });
+  }
+
+  closeModal() {
+    this.modalService.close();
+  }
+
+  onBackgroundClicked(event: MouseEvent) {
+    this.closeModal();
   }
 }

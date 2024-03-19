@@ -6,6 +6,7 @@ import { DragAndDropModule } from 'angular-draggable-droppable';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { HttpClientModule } from '@angular/common/http';
 import { MenuDemarrageComponent } from './menu/menu-demarrage/menu-demarrage.component';
@@ -18,6 +19,9 @@ import { ModalArbreRechercheComponent } from './game/modal-arbre-recherche/modal
 import { FriseChronologiqueComponent } from './game/frise-chronologique/frise-chronologique.component';
 import { MenuBurgerComponent } from './game/menu-burger/menu-burger.component';
 import { ApercueComponent } from './game/game-components/apercue/apercue.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +42,10 @@ import { ApercueComponent } from './game/game-components/apercue/apercue.compone
     HttpClientModule,
     FormsModule,
     DragDropModule,
-    DragAndDropModule
+    DragAndDropModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
