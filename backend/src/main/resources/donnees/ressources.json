@@ -3,11 +3,16 @@
         "Personne": {
             "Description": "La vie la vie c'est la vie",
             "Coût": {
-                "Nourriture": "5;0.1/Personne"
+                "Nourriture": "5;10/Personne"
             },
             "Bonus": {
                 "Personne": "0"
             }
+        },
+        "Personne Morte": {
+            "Description": "RIP",
+            "Coût": null,
+            "Bonus": null
         },
         "Max-Personne": {
             "Description": "",
@@ -154,6 +159,7 @@
         "Ames maudites": {
             "Description": "666",
             "Coût": {
+                "Personne Morte": "1"
             },
             "Bonus": {
                 "Ames maudites": "0"
@@ -208,6 +214,8 @@
         "Maison": {
             "Description": "4 murs et un toit.",
             "Coût": {
+                "Pierre": "50",
+                "Bois": "100"
             },
             "Bonus": {
                 "Maison": "0",
