@@ -3,11 +3,16 @@
         "Personne": {
             "Description": "La vie la vie c'est la vie",
             "Coût": {
-                "Nourriture": "5;0.1/Personne"
+                "Nourriture": "5;10/Personne"
             },
             "Bonus": {
                 "Personne": "0"
             }
+        },
+        "Personne Morte": {
+            "Description": "RIP",
+            "Coût": null,
+            "Bonus": null
         },
         "Max-Personne": {
             "Description": "",
@@ -154,6 +159,7 @@
         "Ames maudites": {
             "Description": "666",
             "Coût": {
+                "Personne Morte": "1"
             },
             "Bonus": {
                 "Ames maudites": "0"
@@ -208,9 +214,12 @@
         "Maison": {
             "Description": "4 murs et un toit.",
             "Coût": {
+                "Pierre": "50",
+                "Bois": "100"
             },
             "Bonus": {
-                "Maison": "0"
+                "Maison": "0",
+                "Max-Personne": "4"
             }
         },
         "Villa": {
@@ -218,7 +227,8 @@
             "Coût": {
             },
             "Bonus": {
-                "Villa": "0"
+                "Villa": "0",
+                "Max-Personne": "12"
             }
         },
         "Temple": {
@@ -228,7 +238,7 @@
             "Bonus": {
                 "Temple": "0",
                 "Max-Prêtre": "1",
-                "Max-Piété": "1"
+                "Max-Piété": "1000"
             }
         },
         "Caserne": {
@@ -237,7 +247,7 @@
             },
             "Bonus": {
                 "Caserne": "0",
-                "Max-Soldat": "1"
+                "Max-Soldat": "10"
             }
         },
         "Port": {
@@ -246,7 +256,7 @@
             },
             "Bonus": {
                 "Port": "0",
-                "Max-Navigateur": "1"
+                "Max-Navigateur": "4"
             }
         },
         "Ferme": {
@@ -262,7 +272,8 @@
             "Coût": {
             },
             "Bonus": {
-                "Immeuble": "0"
+                "Immeuble": "0",
+                "Max-Personne": "120"
             }
         },
         "Ecole": {
@@ -287,7 +298,8 @@
             "Coût": {
             },
             "Bonus": {
-                "Gratte-Ciel": "0"
+                "Gratte-Ciel": "0",
+                "Max-Personne": "1000"
             }
         },
         "Mine d'or": {
@@ -322,7 +334,7 @@
             },
             "Bonus": {
                 "Carrière": "0",
-                "Max-Pierre": "1"
+                "Max-Pierre": "1000"
             }
         },
         "Laboratoire": {
@@ -331,9 +343,9 @@
             },
             "Bonus": {
                 "Laboratoire": "0",
-                "Max-Scientifique": "1",
-                "Max-Points de science": "1",
-                "Max-Points de recherche": "1"
+                "Max-Scientifique": "10",
+                "Max-Points de science": "100",
+                "Max-Points de recherche": "100"
             }
         },
         "Université": {
@@ -351,7 +363,7 @@
             },
             "Bonus": {
                 "Grange": "0",
-                "Max-Nourriture": "1"
+                "Max-Nourriture": "1000"
             }
         },
         "Entrepôt": {
@@ -360,7 +372,7 @@
             },
             "Bonus": {
                 "Entrepôt": "0",
-                "Max-Bois": "1"
+                "Max-Bois": "1000"
             }
         },
         "Centrale électrique": {
@@ -369,7 +381,7 @@
             },
             "Bonus": {
                 "Centrale électrique": "0",
-                "Max-Électricité": "1"
+                "Max-Électricité": "1000"
             }
         },
         "Ecole bu bien": {
@@ -393,12 +405,12 @@
                 "Max-Pouvoir arcanique": "1"
             }
         },
-        "Ecole des mal": {
+        "Ecole du mal": {
             "Description": "",
             "Coût": {
             },
             "Bonus": {
-                "Ecole des méchants": "0",
+                "Ecole du mal": "0",
                 "Max-Sorcier": "1",
                 "Max-Enseignant": "1",
                 "Max-Mana": "1"
