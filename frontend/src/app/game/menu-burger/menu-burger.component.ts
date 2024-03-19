@@ -1,4 +1,12 @@
 import { Component } from '@angular/core';
+import { MerveilleComponent } from '../game-components/merveille/merveille.component';
+import { ApercueComponent } from '../game-components/apercue/apercue.component';
+import { RessourcesComponent } from '../game-components/ressources/ressources.component';
+import { MetiersComponent } from '../game-components/metiers/metiers.component';
+import { BatimentsComponent } from '../game-components/batiments/batiments.component';
+import { PuissancesComponent } from '../game-components/puissances/puissances.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 @Component({
   selector: 'app-menu-burger',
@@ -6,19 +14,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu-burger.component.scss']
 })
 export class MenuBurgerComponent {
+  isMenuOpen = false;
+  hoveredIndex = -1;
+  icons = [
+    {src: "../../../assets/img/icon/merveille.png", alt: 'Icon 2', description: 'Merveilles', component: MerveilleComponent},
+    {src: "../../../assets/img/icon/puissances.png", alt: 'Icon 2', description: 'Puissances', component: PuissancesComponent},
+    {src: "../../../assets/img/icon/batiments.png", alt: 'Icon 4', description: 'Bâtiments', component: BatimentsComponent},
+    {src: "../../../assets/img/icon/metiers.png", alt: 'Icon 3', description: 'Métiers', component: MetiersComponent},
+    {src: "../../../assets/img/icon/ressources.png", alt: 'Icon 2', description: 'Ressources', component: RessourcesComponent},
+    {src: "../../../assets/img/icon/apercue.png", alt: 'Icon 1', description: 'Aperçue', component: ApercueComponent}
+  ];
 
-  isMenuOpen: boolean = false; // Ajout de la variable pour contrôler l'état du menu
-
-  listeBoutons = [
-    {"src":"assets\\img\\burger\\coli.png","class":"coli"},
-    {"src":"assets\\img\\burger\\vu.png","class":"vu"},
-    {"src":"assets\\img\\burger\\home.png","class":"home"},
-    {"src":"assets\\img\\burger\\metier.png","class":"metier"},
-    {"src":"assets\\img\\burger\\ressource.png","class":"ressource"},
-    {"src":"assets\\img\\burger\\puissance.png","class":"puissance"}
-  ]
-
-  toggleMenu(): void {
+  toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
+
+  hoverIn(index: number) {
+    this.hoveredIndex = index;
+  }
+
+  hoverOut(index: number) {
+    this.hoveredIndex = -1;
+  }
+  
 }

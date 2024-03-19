@@ -1,4 +1,4 @@
-import { Component, OnInit , ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild  } from '@angular/core';
 import { Civilisation } from 'src/app/model/civilisation.model';
 import { CivilisationService } from 'src/app/service/civilisationService';
 import { JeuService } from 'src/app/http/jeuService';
@@ -9,6 +9,8 @@ import {
   DroppableDirective,
   ValidateDrop,
 } from 'src/lib/droppable.directive';
+
+
 @Component({
   selector: 'app-page-jeu',
   templateUrl: './page-jeu.component.html',
@@ -17,6 +19,9 @@ import {
 export class PageJeuComponent implements OnInit {
   civilisation: Civilisation | null = null;
   environnement: Environnement | null = null;
+
+  
+  
 
   constructor(private jeuService: JeuService, private civilisationService: CivilisationService, private environnementService: EnvironnementService) { }
 

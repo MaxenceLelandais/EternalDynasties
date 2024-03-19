@@ -41,6 +41,7 @@ public class Jeu {
 
         Log.info("JeuService", "Jeu en cours de démarrage ...");
         this.arbreDeRecherches = new ArbreDeRecherches(fichierJeuService.arbreDeRecherches);
+        this.arbreDeRecherches.setEresObj(this.fichierJeuService.eres);
         this.arbreDeRessources = new ArbreDeRessources(fichierJeuService.ressources);
         this.arbreEnvironnements = new ArbreEnvironnements(fichierJeuService.environnements);
         this.eres = fichierJeuService.eres;
@@ -53,6 +54,15 @@ public class Jeu {
                 this.listeJoueur.put(nomJoueur, chargerPartie(civilisation,environnement));
             }
         }
+    }
+
+
+    public FichierJeuService getFichierJeuService() {
+        return fichierJeuService;
+    }
+
+    public ArbreDeRecherches getArbreDeRecherches() {
+        return arbreDeRecherches;
     }
 
     /**

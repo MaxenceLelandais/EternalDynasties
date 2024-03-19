@@ -1,9 +1,9 @@
 export interface Ere {
-    Id: number;
-    Nom: string;
-    Description: string;
+  id:number,
+    nom: string;
+    description: string;
   }
   
-export interface Eres {
+  export interface Eres {
     [key: string]: Ere;
-}
+  }

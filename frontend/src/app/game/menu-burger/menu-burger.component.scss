@@ -1,75 +1,121 @@
-.burger-button {
-    position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
-      color: black;
-      background-color: black;
-      border:none;
-      cursor: pointer;
-      
-    }
-  
-.container{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-  
-  
-    base-image, .hover-image {
-        transition: "all" 0.3s ease-in-out;
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        bottom: 20px;
-        right: 20px;
-    }
-  
-    .base-image {
-      opacity: 1;
-      width: 60px;
-    }
-  
-    .hover-image {
-      opacity: 0;
-    }
-  
-    &:hover .hover-image, &.selected .hover-image {
-      opacity: 1;
-    }
-}
-button
-{
-    z-index: 255;
+$gold-color: rgb(225, 209, 117);
+
+
+
+.menu-burgercontainer {
+    position: fixed; /* Ou 'absolute' si vous ne voulez pas qu'il reste fixé lors du défilement */
+    right: 0; /* Aligner à droite */
+    bottom: 0; /* Aligner en bas */
+    margin: 20px; /* Ajoute un peu d'espace autour du bouton pour ne pas qu'il touche les bords de l'écran */
 }
 
-ul {
-    list-style-type: none;
+.visuallyHidden {
+    position: absolute; 
+    overflow: hidden; 
+    clip: rect(0 0 0 0); 
+    height: 1px; width: 1px; 
+    margin: -1px; padding: 0; border: 0; 
 }
 
-.burger-liste{
-    background-color: black;
-    height: 55*6;
-    width: auto;
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-}
-
-.burger-img {
-    background-color: black;
-    border:none;
+.hamburger {
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    position: relative;
     cursor: pointer;
-    background: none;
-    box-shadow: inset;
+    &:hover .bar {
+        background-color: $gold-color;
+    }
 }
 
-.burger-coli {}
-.burger-vu {}
-.burger-home {}
-.burger-metier {}
-.burger-ressource {}
-.burger-puissance {}
+.hamburger .bar {
+    padding: 0;
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    display: block;
+    border-radius: 4px;
+    transition: all 0.4s ease-in-out;
+    position: absolute; 
+}
+
+.bar1 {
+    top: 0;
+}
+
+.bar2,
+.bar3 {
+    top: 13.5px;
+}
+
+.bar3 {
+    right: 0;
+}
+
+.bar4 {
+    bottom: 0;
+}
+
+.checkbox2 {
+    width: fit-content;
+    block-size: fit-content;
+}
+
+.checkbox2:checked + label > .hamburger2 > .bar1{
+    transform: translateX(40px);
+    background-color: transparent;
+}
+
+.checkbox2:checked + label > .hamburger2 > .bar2{
+    transform: rotate(45deg);
+}
+
+.checkbox2:checked + label > .hamburger2 > .bar3{
+    transform: rotate(-45deg);
+}
+
+.checkbox2:checked + label > .hamburger2 > .bar4{
+    transform: translateX(-40px);
+    background-color: transparent;
+}
+
+
+.icon-list {
+    position: fixed;
+    bottom: 60px;
+    right: 0;
+    margin: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+}
+
+.icon-container {
+    margin: 10px 0 0 0;
+    transition: background-color 0.4s ease;
+    width: 65px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    img {
+        width: 100%;
+    }
+}
+
+.icon-container:hover {
+    background-color: #444444;
+}
+
+.icon-description {
+    position: absolute;
+    right: 100%; /* Adjust based on actual layout */
+    margin-top: 25px;
+    margin-right: 20px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.icon-container:hover .icon-description {
+    opacity: 1;
+}

@@ -1,34 +1,35 @@
-.burger-button {
-  position: fixed;
-  width: 20;
-  bottom: 40px;
-  right: 40px;
-  color: black;
+[mwlDroppable] {
   background-color: black;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s, opacity 0.3s;
+  width: 40vw;
+  height: 550px;
+  z-index: 1;
+  position: fixed;
+  bottom: 100px;
+  border-radius: 10px;
+  transition-duration: 0.3s;
 }
 
-.container {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  width: 20px;
-  height: 20px;
+.dropZone1 {
+  right: 10vh;
+  z-index: -1;
 }
-.container base-image, .container .hover-image {
-  transition: "all" 0.3s ease-in-out;
-  position: absolute;
-  width: 100%;
-  height: 100%;
+
+.dropZone2 {
+  left: 10vh;
+  z-index: -1;
 }
-.container .base-image {
-  opacity: 1;
+
+[mwlDraggable],
+[mwlDroppable] {
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='white' stroke-width='2' stroke-dasharray='20%2c 20' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 }
-.container .hover-image {
-  opacity: 0;
-}
-.container:hover .hover-image, .container.selected .hover-image {
-  opacity: 1;
+
+.drop-over-active {
+  background-color: rgb(30, 30, 30);
+  box-shadow: inset 0px 0px 8px 5px rgba(0, 0, 0, 0.74);
 }/*# sourceMappingURL=page-jeu.component.css.map */

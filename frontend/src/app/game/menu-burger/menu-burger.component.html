@@ -1,19 +1,28 @@
-<div *ngIf="isMenuOpen">
-    <ul class="burger-liste">
-        <li *ngFor="let bouton of listeBoutons">
-            <button mwlDraggable dropData="{{bouton.class}}" dragActiveClass="drag-active"
-                (click)="toggleMenu()" class="burger-img burger-{{bouton.class}}">
-                <img src="{{bouton.src}}" alt="Menu" height="55" title="{{bouton.class}}"/>
-            </button>
-        </li>
-    </ul>
+<div class="list-menu-burger-conatiner">
+
+    <div class="menu-burgercontainer">
+        <input type="checkbox" id="checkbox2" class="checkbox2 visuallyHidden" [(ngModel)]="isMenuOpen" (click)="toggleMenu()">
+        <label for="checkbox2">
+            <div class="hamburger hamburger2">
+                <span class="bar bar1"></span>
+                <span class="bar bar2"></span>
+                <span class="bar bar3"></span>
+                <span class="bar bar4"></span>
+            </div>
+        </label>
+    </div>
+
+    <div class="icon-list" *ngIf="isMenuOpen">
+        <div  dragActiveClass="drag-active" *ngFor="let icon of icons; let i = index" class="icon-container" mwlDraggable dropData="{{icon.component}}" (mouseenter)="hoverIn(i)" (mouseleave)="hoverOut(i)">
+            <img [src]="icon.src" [alt]="icon.alt">
+            <span *ngIf="hoveredIndex === i" class="icon-description">{{icon.description}}</span>
+        </div>
+    </div>
+
 </div>
-
-
-<button (click)="toggleMenu()" [ngClass]="{'clicked': isMenuOpen}" class="burger-button">
-  <!-- <img src="assets\img\burger\choix.png" alt="Menu" width="40" height="40"/> -->
-  <div class="container">
-    <img class="base-image" src="assets\img\burger\choix.png" >
-    <img class="hover-image" src="assets\img\burger\gchoix.png" >
-  </div>
-</button> 
+<!-- <div class="icon-list" *ngIf="isMenuOpen" cdkDropList>
+    <div *ngFor="let icon of icons; let i = index" class="icon-container" cdkDrag [cdkDragData]="icon" (mouseenter)="hoverIn(i)" (mouseleave)="hoverOut(i)">
+        <img [src]="icon.src" [alt]="icon.alt">
+        <span *ngIf="hoveredIndex === i" class="icon-description">{{icon.description}}</span>
+    </div>
+</div> -->

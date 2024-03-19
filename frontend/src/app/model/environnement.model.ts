@@ -12,4 +12,3 @@ export interface Environnement {
   export interface Environnements {
     [key: string]: Environnement;
   }
-  
