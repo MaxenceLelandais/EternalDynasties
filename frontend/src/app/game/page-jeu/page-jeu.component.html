@@ -1,5 +1,18 @@
 <app-header-jeu></app-header-jeu>
-<div class="drop-component-container">
+<div mwlDroppable (drop)="onDropZone1($event)" class="dropZone1" dragOverClass="drop-over-active">
+    <span [hidden]="droppedDataZone1">Drop here</span>
+    <span [hidden]="!droppedDataZone1"
+      >Item dropped here with data: "{{ droppedDataZone1 }}"!</span
+    >
+  </div>
+  
+  <div mwlDroppable (drop)="onDropZone2($event)" class="dropZone2" dragOverClass="drop-over-active">
+    <span [hidden]="droppedDataZone2">Drop here</span>
+    <span [hidden]="!droppedDataZone2"
+      >Item dropped here with data: "{{ droppedDataZone2 }}"!</span
+    >
+  </div>
+<!-- <div cdkDropListGroup class="drop-component-container">
     <div cdkDropList (cdkDropListDropped)="drop($event)" class="drop-component">
         Insérez un élément ici
     </div>
@@ -8,7 +21,7 @@
         Insérez un élément ici
     </div>
     
-</div>
+</div> -->
 <app-menu-burger></app-menu-burger>
 <!-- <app-frise-chronologique></app-frise-chronologique>
 <app-modal-arbre-recherche></app-modal-arbre-recherche> -->

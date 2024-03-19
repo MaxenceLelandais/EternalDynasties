@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { MerveilleComponent } from '../game-components/merveille/merveille.component';
 import { ApercueComponent } from '../game-components/apercue/apercue.component';
 import { RessourcesComponent } from '../game-components/ressources/ressources.component';
 import { MetiersComponent } from '../game-components/metiers/metiers.component';
 import { BatimentsComponent } from '../game-components/batiments/batiments.component';
 import { PuissancesComponent } from '../game-components/puissances/puissances.component';
-import { MerveilleComponent } from '../game-components/merveille/merveille.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
 @Component({
@@ -35,4 +36,5 @@ export class MenuBurgerComponent {
   hoverOut(index: number) {
     this.hoveredIndex = -1;
   }
+  
 }
