@@ -121,13 +121,14 @@ public class ArbreDeRecherches {
 
     public String toString() {
         Map<String, Object> liste = new HashMap<>();
+        Map<String, ArrayList<String>> lesEres = this.getEres();
         this.listeRecherches.values().forEach(r -> {
-            if (!this.getEres().containsKey(r.getNom())) {
+            if (!lesEres.containsKey(r.getNom())) {
                 liste.put(r.getNom(), r.getJsonObjet());
             }
         });
 
-        this.getEres().forEach((key, val)->{
+        lesEres.forEach((key, val)->{
             val.forEach(recherche->{
                 this.listeRecherches.get(recherche).getJsonObjet().put("Ere",this.mapEre.get(key));
             });

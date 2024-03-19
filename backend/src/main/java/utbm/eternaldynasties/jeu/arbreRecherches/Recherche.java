@@ -57,7 +57,7 @@ public class Recherche {
     public Recherche update(Map<String, Recherche> listeRecherches) {
 
         this.description = (String) this.jsonObjet.get("Description");
-        String valId = (String) this.jsonObjet.get("id");
+        String valId = (String) this.jsonObjet.get("Id");
         if (valId != null) {
             this.id = Integer.parseInt(valId);
         } else {

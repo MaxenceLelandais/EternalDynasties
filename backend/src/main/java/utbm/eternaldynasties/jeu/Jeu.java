@@ -129,10 +129,6 @@ public class Jeu {
         return arbreEnvironnements;
     }
 
-    public ArbreDeRecherches getArbreDeRecherches() {
-        return arbreDeRecherches;
-    }
-
     public Joueur getJoueur(String nom) {
         return this.listeJoueur.get(nom);
     }
