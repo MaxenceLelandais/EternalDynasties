@@ -3,7 +3,7 @@
         "Personne": {
             "Description": "La vie la vie c'est la vie",
             "Coût": {
-                "Nourriture": "5;10/Personne"
+                "Nourriture": "5"
             },
             "Bonus": {
                 "Personne": "0"

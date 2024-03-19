@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Ressources } from 'src/app/model/ressource.model';
 
 @Component({
   selector: 'app-batiments',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./batiments.component.scss']
 })
 export class BatimentsComponent {
-
+  @Input()
+  donnees!:Ressources;
 }

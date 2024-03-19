@@ -124,6 +124,10 @@ public class Jeu {
     public ArbreDeRessources getArbreDeRessources() {
         return arbreDeRessources;
     }
+    public ArbreDeRessources getArbreDeRessourcesSimple() {
+
+        return arbreDeRessources;
+    }
 
     public ArbreEnvironnements getArbreEnvironnements() {
         return arbreEnvironnements;

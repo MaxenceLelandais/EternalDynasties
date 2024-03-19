@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Ressources } from 'src/app/model/ressource.model';
 
 @Component({
   selector: 'app-ressources',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./ressources.component.scss']
 })
 export class RessourcesComponent {
-
+  @Input()
+  donnees!:Ressources;
+  constructor(){
+    console.log(this.donnees);
+  }
 }

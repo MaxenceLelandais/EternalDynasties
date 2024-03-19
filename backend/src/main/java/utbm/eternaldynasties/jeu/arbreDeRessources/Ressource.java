@@ -17,32 +17,29 @@ public class Ressource {
     private String description;
     private final Map<String, Long> listeCout = new HashMap<>();
     private final Map<String, Bonus> listeBonus = new HashMap<>();
-    private final Map<String, Object> jsonObjet;
 
     // Une ressource peut être disponible dans la partie si elle a été activé dans une recherche.
     private boolean active = false;
 
 
     public Ressource(String nom, Map<String, Object> jsonObjet) {
-
-        this.jsonObjet = jsonObjet;
         this.nom = nom;
-        this.update();
+        this.update(jsonObjet);
     }
 
     /**
      * Actualise les données provenant du json ressource.
      */
-    public Ressource update() {
+    public Ressource update(Map<String, Object> jsonObjet) {
 
-        this.description = (String) this.jsonObjet.get("Description");
-        Map<String, String> map = this.jsonObjet.containsKey("Coût") ? (Map<String, String>) this.jsonObjet.get("Coût") : new HashMap<String, String>();
+        this.description = (String) jsonObjet.get("Description");
+        Map<String, String> map = jsonObjet.containsKey("Coût") ? (Map<String, String>) jsonObjet.get("Coût") : new HashMap<String, String>();
         if (map != null) {
             for (String key : map.keySet()) {
                 this.listeCout.put(key, Long.parseLong(map.get(key)));
             }
         }
-        map = this.jsonObjet.containsKey("Bonus") ? (Map<String, String>) this.jsonObjet.get("Bonus") : new HashMap<String, String>();
+        map = jsonObjet.containsKey("Bonus") ? (Map<String, String>) jsonObjet.get("Bonus") : new HashMap<String, String>();
         if (map != null) {
             for (String key : map.keySet()) {
                 this.listeBonus.put(key, new Bonus(key, map.get(key)));
@@ -65,10 +62,6 @@ public class Ressource {
 
     public Map<String, Bonus> getListeBonus() {
         return listeBonus;
-    }
-
-    public Map<String, Object> getJsonObjet() {
-        return jsonObjet;
     }
 
     public boolean isActive() {

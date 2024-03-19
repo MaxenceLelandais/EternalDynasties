@@ -54,6 +54,7 @@ public class Joueur {
                 this.recherches.addAll(mapRecherches.keySet());
             }
             this.arbreDeRecherche.init(this.recherches);
+            this.arbreDeRessources.init(this.ressources);
         }
     }
 
@@ -307,6 +308,24 @@ public class Joueur {
 
     public HashMap<String, Long> getRessources() {
         return ressources;
+    }
+
+
+    public Map<String, Map<String, Ressource>> getArbreRessources() {
+
+        Map<String, Map<String, Ressource>> toutesLesRessources = this.arbreDeRessources.getListeRessources();
+        Map<String, Map<String, Ressource>> nouvelArbre = new HashMap<>();
+        for(String type : toutesLesRessources.keySet()){
+            HashMap<String, Ressource> map = new HashMap<>();
+            nouvelArbre.put(type, map);
+            for(String nom : toutesLesRessources.get(type).keySet()){
+                Ressource ressource = toutesLesRessources.get(type).get(nom);
+                if(ressource.isActive()){
+                    map.put(nom, ressource);
+                }
+            }
+        }
+        return nouvelArbre;
     }
 
     public ArrayList<String> getRecherches() {

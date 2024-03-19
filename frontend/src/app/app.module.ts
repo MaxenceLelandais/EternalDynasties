@@ -18,6 +18,10 @@ import { ModalArbreRechercheComponent } from './game/modal-arbre-recherche/modal
 import { FriseChronologiqueComponent } from './game/frise-chronologique/frise-chronologique.component';
 import { MenuBurgerComponent } from './game/menu-burger/menu-burger.component';
 import { ApercueComponent } from './game/game-components/apercue/apercue.component';
+import { MenuRessourcesComponent } from './menu/menu-ressources/menu-ressources.component';
+import { BatimentsComponent } from './game/game-components/batiments/batiments.component';
+import { RessourcesComponent } from './game/game-components/ressources/ressources.component';
+import { MetiersComponent } from './game/game-components/metiers/metiers.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { ApercueComponent } from './game/game-components/apercue/apercue.compone
     FriseChronologiqueComponent,
     HeaderJeuComponent,
     MenuBurgerComponent,
-    ApercueComponent
+    ApercueComponent,
+    MenuRessourcesComponent,
+    BatimentsComponent,
+    RessourcesComponent,
+    MetiersComponent
   ],
   imports: [
     BrowserModule,

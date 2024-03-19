@@ -7,8 +7,8 @@
             "Préhistoire"
         ],
         "Bonus": {
-            "Villageois": "1",
-            "Max-Villageois": "100",
+            "Personne": "1",
+            "Max-Personne": "100",
             "Nourriture": "1",
             "Max-Nourriture": "100",
             "Bois": "1",

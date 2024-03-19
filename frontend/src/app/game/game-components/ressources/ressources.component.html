@@ -1,1 +1,9 @@
-<p>ressources works!</p>
+<p>Ressources</p>
+<div *ngIf="donnees">
+    <ul>
+        <li *ngFor="let envKey of donnees | keyvalue; let i = index">
+            <p>{{ envKey.value.nom }}</p>
+            <p>{{ envKey.value.description }}</p>
+        </li>
+    </ul>
+</div>
