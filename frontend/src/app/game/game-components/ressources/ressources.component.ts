@@ -11,11 +11,23 @@ export class RessourcesComponent {
   donnees!:Ressources;
 
   @Input()
-  quantite!:Map<string,number>;
+  quantite!:any;
 
-  constructor(){
-    console.log("RessourcesComponent");
-    console.log(this.donnees);
-    console.log(this.quantite);
+  getNumberRessources(nom:string){
+    return this.quantite[nom];
+  }
+
+  testPresent(nom:string){
+    return this.quantite[nom]!=null;
+  }
+
+  add(nom:string){
+    if(this.testPresent("Max-"+nom)){
+      if(this.quantite[nom]+1<=this.quantite["Max-"+nom]){
+        this.quantite[nom]+=1
+      }
+    }else{
+      this.quantite[nom]+=1;
+    }
   }
 }

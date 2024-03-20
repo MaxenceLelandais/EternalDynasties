@@ -1,9 +1,19 @@
-<p>Ressources</p>
-<div *ngIf="donnees">
-    <ul>
-        <li *ngFor="let envKey of donnees | keyvalue; let i = index">
-            <p>{{ envKey.value.nom }}</p>
-            <p>{{ envKey.value.description }}</p>
-        </li>
-    </ul>
+<div>
+    <p>Ressources</p>
+    <div class="zone_metiers">
+        <div *ngFor="let envKey of donnees | keyvalue"
+            
+        >
+            <div *ngIf="!envKey.value.nom.includes('Max-')">
+                <button (click)="this.add(envKey.value.nom)" title="{{ envKey.value.description }}">
+                    <div *ngIf="this.testPresent('Max-'+envKey.value.nom)">
+                        {{envKey.value.nom}} : {{this.getNumberRessources(envKey.value.nom)}} / {{this.getNumberRessources("Max-"+envKey.value.nom)}}
+                    </div>
+                    <div *ngIf="!this.testPresent('Max-'+envKey.value.nom)">
+                        {{envKey.value.nom}} : {{this.getNumberRessources(envKey.value.nom)}}
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
