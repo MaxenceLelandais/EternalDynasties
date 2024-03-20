@@ -56,7 +56,7 @@ export class MetiersComponent {
         break;
       }
       case "-OO":{
-        nombre=-100000;
+        nombre=-this.quantite[nom];
         break;
       }
       default :{
@@ -64,7 +64,9 @@ export class MetiersComponent {
         break;
       }
     }
-    this.quantite[nom] = this.quantite[nom] + nombre;
+    if(this.quantite[nom] + nombre>=0){
+      this.quantite[nom] = this.quantite[nom] + nombre;
+    }
   }
 
   getNumberRessources(nom:string){
