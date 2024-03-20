@@ -227,8 +227,8 @@
         "Villa": {
             "Description": "",
             "Coût": {
-                "Pierre": "180",
-                "Bois": "350"
+                "Pierre": "120",
+                "Bois": "250"
             },
             "Bonus": {
                 "Villa": "0",
@@ -238,8 +238,8 @@
         "Temple": {
             "Description": "",
             "Coût": {
-                "Pierre": "200",
-                "Bois": "100"
+
+                "Pierre": "1000"
             },
             "Bonus": {
                 "Temple": "0",
@@ -250,9 +250,8 @@
         "Caserne": {
             "Description": "",
             "Coût": {
-                "Pierre": "500",
-                "Bois": "100",
-                "Nourriture": "100"
+                "Pierre": "505",
+                "Bois": "300"
             },
             "Bonus": {
                 "Caserne": "0",
@@ -262,9 +261,9 @@
         "Port": {
             "Description": "",
             "Coût": {
-                "Pierre": "1500",
-                "Bois": "1000",
-                "Nourriture": "100"
+                "Pierre": "1000",
+                "Bois": "100"
+
             },
             "Bonus": {
                 "Port": "0",
@@ -274,6 +273,8 @@
         "Ferme": {
             "Description": "Plantons des choux à la mode de chez nous !",
             "Coût": {
+                "Pierre": "50",
+                "Bois": "100"
             },
             "Bonus": {
                 "Ferme": "0"
@@ -282,6 +283,8 @@
         "Immeuble": {
             "Description": "",
             "Coût": {
+                "Pierre": "1000",
+                "Bois": "2000"
             },
             "Bonus": {
                 "Immeuble": "0",
@@ -291,6 +294,8 @@
         "Ecole": {
             "Description": "",
             "Coût": {
+                "Pierre": "505",
+                "Bois": "2100"
             },
             "Bonus": {
                 "Ecole": "0",
@@ -300,6 +305,8 @@
         "Forestier": {
             "Description": "Coupe coupe coupe",
             "Coût": {
+                "Pierre": "50",
+                "Bois": "10"
             },
             "Bonus": {
                 "Forestier": "0"
@@ -308,6 +315,8 @@
         "Gratte-Ciel": {
             "Description": "",
             "Coût": {
+                "Pierre": "7777",
+                "Bois": "2500"
             },
             "Bonus": {
                 "Gratte-Ciel": "0",
@@ -317,6 +326,8 @@
         "Mine d'or": {
             "Description": "",
             "Coût": {
+                "Pierre": "5000",
+                "Bois": "15000"
             },
             "Bonus": {
                 "Mine d'or": "0",
@@ -326,6 +337,9 @@
         "Banque": {
             "Description": "",
             "Coût": {
+                "Pierre": "500",
+                "Bois": "1000",
+                "Or": "100"
             },
             "Bonus": {
                 "Banque": "0",
@@ -335,6 +349,8 @@
         "Mine": {
             "Description": "Hé o Hé o On va au boulot.",
             "Coût": {
+                "Pierre": "50",
+                "Bois": "100"
             },
             "Bonus": {
                 "Mine": "0"
@@ -343,6 +359,7 @@
         "Carrière": {
             "Description": "",
             "Coût": {
+                "Pierre": "500"
             },
             "Bonus": {
                 "Carrière": "0",
@@ -352,6 +369,8 @@
         "Laboratoire": {
             "Description": "",
             "Coût": {
+                "Pierre": "5000",
+                "Bois": "5000"
             },
             "Bonus": {
                 "Laboratoire": "0",
@@ -363,6 +382,8 @@
         "Université": {
             "Description": "",
             "Coût": {
+                "Pierre": "2500",
+                "Bois": "1000"
             },
             "Bonus": {
                 "Université": "0",
@@ -372,6 +393,8 @@
         "Grange": {
             "Description": "Ca c'est du grain !!",
             "Coût": {
+                "Pierre": "50",
+                "Bois": "50"
             },
             "Bonus": {
                 "Grange": "0",
@@ -381,6 +404,8 @@
         "Entrepôt": {
             "Description": "Toujours plus!!!",
             "Coût": {
+                "Pierre": "10",
+                "Bois": "150"
             },
             "Bonus": {
                 "Entrepôt": "0",
@@ -390,6 +415,9 @@
         "Centrale électrique": {
             "Description": "",
             "Coût": {
+                "Pierre": "5000",
+                "Bois": "4400",
+                "Or":"50"
             },
             "Bonus": {
                 "Centrale électrique": "0",
@@ -399,6 +427,8 @@
         "Ecole bu bien": {
             "Description": "",
             "Coût": {
+                "Pierre": "550",
+                "Bois": "1000"
             },
             "Bonus": {
                 "Ecole bu bien": "0",
@@ -410,6 +440,8 @@
         "Tour de la sagesse": {
             "Description": "",
             "Coût": {
+                "Pierre": "50000",
+                "Bois": "10000"
             },
             "Bonus": {
                 "Tour de la sagesse": "0",
@@ -420,6 +452,8 @@
         "Ecole du mal": {
             "Description": "",
             "Coût": {
+                "Pierre": "1000",
+                "Bois": "550"
             },
             "Bonus": {
                 "Ecole du mal": "0",
@@ -431,6 +465,8 @@
         "Tour du Mordor": {
             "Description": "",
             "Coût": {
+                "Pierre": "10000",
+                "Bois": "55000"
             },
             "Bonus": {
                 "Tour du Mordor": "0",
@@ -443,6 +479,7 @@
         "Fermier": {
             "Description": "",
             "Coût": {
+                "Villageois": "1"
             },
             "Bonus": {
                 "Fermier": "0"
@@ -451,6 +488,7 @@
         "Mineur": {
             "Description": "",
             "Coût": {
+                "Villageois": "1"
             },
             "Bonus": {
                 "Mineur": "0"
@@ -459,6 +497,7 @@
         "Bûcheron": {
             "Description": "",
             "Coût": {
+                "Villageois": "1"
             },
             "Bonus": {
                 "Bûcheron": "0"
@@ -467,6 +506,7 @@
         "Prêtre": {
             "Description": "",
             "Coût": {
+                "Villageois": "1"
             },
             "Bonus": {
                 "Prêtre": "0"
@@ -482,6 +522,8 @@
         "Soldat": {
             "Description": "",
             "Coût": {
+                "Villageois": "1",
+                "Or": "0.05"
             },
             "Bonus": {
                 "Soldat": "0"
@@ -497,6 +539,8 @@
         "Navigateur": {
             "Description": "",
             "Coût": {
+                "Villageois": "1",
+                "Or": "1"
             },
             "Bonus": {
                 "Navigateur": "0"
@@ -512,6 +556,8 @@
         "Banquier": {
             "Description": "",
             "Coût": {
+                "Villageois": "1",
+                "Or": "1"
             },
             "Bonus": {
                 "Banquier": "0"
@@ -527,6 +573,7 @@
         "Enseignant": {
             "Description": "",
             "Coût": {
+                "Villageois": "1"
             },
             "Bonus": {
                 "Enseignant": "0"
@@ -542,6 +589,7 @@
         "Scientifique": {
             "Description": "",
             "Coût": {
+                "Villageois": "1"
             },
             "Bonus": {
                 "Scientifique": "0"
@@ -557,6 +605,7 @@
         "Professeur d'université": {
             "Description": "",
             "Coût": {
+                "Villageois": "1"
             },
             "Bonus": {
                 "Professeur d'université": "0"
@@ -572,6 +621,7 @@
         "Mage": {
             "Description": "",
             "Coût": {
+                "Villageois": "1"
             },
             "Bonus": {
                 "Mage": "0"
@@ -602,6 +652,7 @@
         "Sorcier": {
             "Description": "",
             "Coût": {
+                "Villageois": "1"
             },
             "Bonus": {
                 "Sorcier": "0"
@@ -617,6 +668,7 @@
         "Nécromancien": {
             "Description": "",
             "Coût": {
+                "Villageois": "1"
             },
             "Bonus": {
                 "Nécromancien": "0"
