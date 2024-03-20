@@ -1,7 +1,7 @@
 {
     "ressources": {
         "Personne": {
-            "Description": "La vie la vie c'est la vie",
+            "Description": "Il était une fois la vie !",
             "Coût": {
                 "Nourriture": "5"
             },
@@ -11,8 +11,12 @@
         },
         "Personne Morte": {
             "Description": "RIP",
-            "Coût": null,
-            "Bonus": null
+            "Coût": {
+                "Personne": "1"
+            },
+            "Bonus": {
+                "Personne Morte": "0"
+            }
         },
         "Max-Personne": {
             "Description": "",
@@ -22,7 +26,7 @@
             }
         },
         "Or": {
-            "Description": "Permet d'acheter",
+            "Description": "Le capitalisme",
             "Coût": {
             },
             "Bonus": {
@@ -53,8 +57,7 @@
         },
         "Nourriture": {
             "Description": "C'est le début de la vie",
-            "Coût": {
-            },
+            "Coût": null,
             "Bonus": {
                 "Nourriture": "0"
             }
@@ -68,8 +71,7 @@
         },
         "Bois": {
             "Description": "Bob le bricoleur est là !!",
-            "Coût": {
-            },
+            "Coût": null,
             "Bonus": {
                 "Bois": "0"
             }
@@ -83,8 +85,7 @@
         },
         "Pierre": {
             "Description": "Hé ho Hé ho, on va au boulôt",
-            "Coût": {
-            },
+            "Coût": null,
             "Bonus": {
                 "Pierre": "0"
             }
@@ -98,8 +99,7 @@
         },
         "Piété": {
             "Description": "Pies lesu Domine. Dona eis requiem.",
-            "Coût": {
-            },
+            "Coût": null,
             "Bonus": {
                 "Piété": "0"
             }
@@ -114,6 +114,10 @@
         "Mana": {
             "Description": "Force mystique et puissante",
             "Coût": {
+                "Nourriture": "100",
+                "Pierre": "100",
+                "Bois": "100",
+                "Piété": "100"
             },
             "Bonus": {
                 "Mana": "0"
@@ -129,21 +133,19 @@
         "Points de science": {
             "Description": "Science sans conscience n'est que ruine de l'âme",
             "Coût": {
+                "Nourriture": "100",
+                "Pierre": "100",
+                "Bois": "100"
             },
             "Bonus": {
+                "Piété": "10;-0.01/s",
                 "Points de science": "0"
-            }
-        },
-        "Max-Points de science": {
-            "Description": "",
-            "Coût": null,
-            "Bonus": {
-                "Max-Points de science": "0"
             }
         },
         "Pouvoir arcanique": {
             "Description": "L'essence du bien",
             "Coût": {
+                "Mana": "100"
             },
             "Bonus": {
                 "Pouvoir arcanique": "0"
@@ -159,6 +161,7 @@
         "Ames maudites": {
             "Description": "666",
             "Coût": {
+                "Mana": "100",
                 "Personne Morte": "1"
             },
             "Bonus": {
@@ -174,8 +177,7 @@
         },
         "Électricité": {
             "Description": "Brizzzt",
-            "Coût": {
-            },
+            "Coût": null,
             "Bonus": {
                 "Électricité": "0"
             }
