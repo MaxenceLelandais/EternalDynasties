@@ -227,6 +227,8 @@
         "Villa": {
             "Description": "",
             "Coût": {
+                "Pierre": "180",
+                "Bois": "350"
             },
             "Bonus": {
                 "Villa": "0",
@@ -236,6 +238,8 @@
         "Temple": {
             "Description": "",
             "Coût": {
+                "Pierre": "200",
+                "Bois": "100"
             },
             "Bonus": {
                 "Temple": "0",
@@ -246,6 +250,9 @@
         "Caserne": {
             "Description": "",
             "Coût": {
+                "Pierre": "500",
+                "Bois": "100",
+                "Nourriture": "100"
             },
             "Bonus": {
                 "Caserne": "0",
@@ -255,6 +262,9 @@
         "Port": {
             "Description": "",
             "Coût": {
+                "Pierre": "1500",
+                "Bois": "1000",
+                "Nourriture": "100"
             },
             "Bonus": {
                 "Port": "0",
