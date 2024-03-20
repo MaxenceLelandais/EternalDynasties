@@ -29,8 +29,8 @@
     background-image: url("../../../assets/img/image/recherches-fond.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    border: solid 1px rgb(61, 61, 61);
-
+    border: solid 2px rgb(65, 88, 85);
+    box-sizing: border-box;
     .modal-title {
         display: flex;
         align-items: center;
@@ -65,17 +65,26 @@
         }
     }
     .modal-content {
-
+        box-sizing: border-box; // Inclut le padding et la bordure dans la dimension
+        overflow-y: auto; // Permet le défilement vertical si nécessaire
+        padding: 15px;
         ul {
             margin: 0;
             padding: 30px;
             list-style: none;
+            display: flex;
+            text-align: center;
             li {
-                p {
-                    margin: 0;
-                    font-style: 'Montserrat', sans-serif;
+                div {
+                    font-size: 14px;
+                    margin-bottom: 16px;
                 }
             }
         }
     }
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
