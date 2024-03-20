@@ -4,7 +4,9 @@
         "Description": "Le commencement d'une belle aventure.",
         "Coût": null,
         "Débloque": [
-            "Préhistoire"
+            "Préhistoire",
+            "Cueillette",
+            "Croyance"
         ],
         "Bonus": {
             "Villageois": "1",
@@ -21,7 +23,7 @@
             "Pierre": "10"
         },
         "Débloque":[
-            "Cueuillette",
+            "Cueillette",
             "Croyance"
         ],
         "Bonus":null,
@@ -29,7 +31,7 @@
             "Tribue"
         ],
         "Recherches": [
-            "Cueuillette",
+            "Cueillette",
             "Feu",
             "Chasse et pêche",
             "Armée",
@@ -40,7 +42,7 @@
             "Religion"
         ]
     },
-    "Cueuillette":{
+    "Cueillette":{
         "id": "2",
         "Description":"Rassemblons les ressources de la nature.",
         "Coût":{
@@ -55,7 +57,7 @@
             "Nourriture": "1.0/s;0.5/Fermier"
         },
         "Dépendance":[
-            "Préhistoire"
+            "Tribue"
         ]
     },
     "Feu":{
@@ -73,7 +75,7 @@
             "Nourriture":"0.25/Fermier"
         },
         "Dépendance":[
-            "Cueuillette"
+            "Cueillette"
         ]
     },
     "Croyance":{
@@ -92,7 +94,7 @@
             "Piété": "1"
         },
         "Dépendance":[
-            "Préhistoire"
+            "Tribue"
         ]
     },
     "Chasse et pêche":{

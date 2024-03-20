@@ -11,6 +11,7 @@ import { ModalService } from 'src/app/service/modal.Service';
 
 export class ModalArbreRechercheComponent implements OnInit {
   listeRecherches: Recherches | null = null;
+  arbreRecherches: Recherches | null = null;
   displayModal: boolean = false;
   
 
@@ -21,7 +22,16 @@ export class ModalArbreRechercheComponent implements OnInit {
     this.jeuService.httpListeRecherches().subscribe(
       data => {
         this.listeRecherches = data;
-        console.log(data);
+        console.log(this.listeRecherches);
+      },
+      error => {
+        console.error("Erreur lors de la récupération des recherches", error);
+      }
+    );
+    this.jeuService.httpArbreRecherches().subscribe(
+      data2 => {
+        this.arbreRecherches = data2;
+        console.log(this.arbreRecherches);
       },
       error => {
         console.error("Erreur lors de la récupération des recherches", error);

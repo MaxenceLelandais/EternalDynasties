@@ -1,14 +1,27 @@
-
 <div *ngIf="displayModal" class="modal-background" (click)="onBackgroundClicked($event)">
     <div class="modal" (click)="$event.stopPropagation()">
-        <span class="close-button" (click)="closeModal()">&times;</span>
-        <p>modal-arbre-recherche works!</p>
-        <div *ngIf="listeRecherches">
-            <ul class="liste-logo-recherche" *ngIf="listeRecherches">
-                <li *ngFor="let envKey of listeRecherches | keyvalue; let i = index">
-                    <p>{{ envKey.value.nom }}</p>
-                </li>
-            </ul>
+        <div class="modal-title">
+            <span class="close-button" (click)="closeModal()">&times;</span>
+            <h3>Arbre de Recherches</h3>
+        </div>
+        <div class="modal-content">
+            <div *ngIf="listeRecherches">
+                <ul class="liste-logo-recherche">
+                    <li *ngFor="let envKey of (listeRecherches | keyvalue | sortBy:'value.id'); let i = index">
+                        <p>{{ envKey.value.id }}</p>
+                        <p>{{ envKey.value.nom }}</p>
+                    </li>
+                </ul>
+            </div>
+            <div *ngIf="arbreRecherches">
+                <ul class="liste-logo-recherche">
+                    <li *ngFor="let envKey of (arbreRecherches | keyvalue | sortBy:'value.id'); let i = index">
+                        <p>{{ envKey.value.id }}</p>
+                        <p>{{ envKey.value.parent }}</p>
+                        <p>{{ envKey.value.nom }}</p>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

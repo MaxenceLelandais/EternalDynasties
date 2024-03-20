@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 .modal-background {
     position: fixed; /* ou absolute */
@@ -12,11 +13,10 @@
   }
 
 .modal {
-    padding: 20px;
     border-radius: 10px;
     background-color: black;
     width: 90%;
-    height: 800px;
+    height: 80%;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -26,4 +26,56 @@
     overflow-y:scroll;
     background-color: rgb(14, 14, 14);
     box-shadow:  0px 0px 8px 5px rgba(0,0,0,0.74);
+    background-image: url("../../../assets/img/image/recherches-fond.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border: solid 1px rgb(61, 61, 61);
+
+    .modal-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: sticky; /* Modifiez ici de relative à sticky */
+        top: 0; /* Ajoutez cette ligne pour fixer en haut */
+        background-color: rgb(14, 14, 14); /* Assurez-vous que le fond est opaque */
+        z-index: 1000; /* S'assure que modal-title reste au-dessus du contenu défilant */
+        box-shadow: 0px 11px 27px 0px rgba(0,0,0,0.79);
+        &::before,
+        &::after {
+          content: "";
+          flex: 1;
+        }
+        span {
+            position: absolute;
+            left: 0;
+            cursor: pointer;
+            font-size: 30px;
+            padding: 0 10px 0 10px;
+            border-radius: 5px;
+            margin-left: 20px;
+            &:hover {
+                border: 2px solid rgb(43, 43, 43);
+                margin-left: 18px;
+                background-color: black;
+            }
+        }
+        h3 {
+            font-style: 'Montserrat', sans-serif;;
+        }
+    }
+    .modal-content {
+
+        ul {
+            margin: 0;
+            padding: 30px;
+            list-style: none;
+            li {
+                p {
+                    margin: 0;
+                    font-style: 'Montserrat', sans-serif;
+                }
+            }
+        }
+    }
 }

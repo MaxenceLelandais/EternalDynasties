@@ -56,6 +56,7 @@ export class HeaderJeuComponent implements OnInit {
 
   openModal() {
     this.modalService.open();
+    
   }
   
 }

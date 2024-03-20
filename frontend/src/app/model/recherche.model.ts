@@ -1,6 +1,8 @@
 import { Ere } from "./ere.model";
 
 export interface Recherche {
+    id: number;
+    parent: number;
     nom: string;
     description: string;
     icone: string;
