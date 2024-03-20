@@ -44,7 +44,7 @@ public class ArbreDeRessources {
         })));
     }
 
-    public void init(HashMap<String, Long> ressources) {
+    public void init(HashMap<String, Double> ressources) {
         for(String nom : ressources.keySet()){
             this.listeRessources.forEach((key, val)->{
                 if(val.containsKey(nom)){
@@ -68,7 +68,7 @@ public class ArbreDeRessources {
         return ressource[0];
     }
 
-    public Map<Bonus, Ressource> getListeRessourceEnFonctionBonus(String nomRessourceDemande, HashMap<String, Long> ressourcesActuelles){
+    public Map<Bonus, Ressource> getListeRessourceEnFonctionBonus(String nomRessourceDemande, HashMap<String, Double> ressourcesActuelles){
         Map<Bonus, Ressource> val = new HashMap<>();
         this.listeUpgrade.get(nomRessourceDemande).forEach((bonus, ressource)->{
             if(!ressource.getNom().equals(nomRessourceDemande)){

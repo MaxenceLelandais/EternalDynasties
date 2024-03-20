@@ -15,7 +15,7 @@ public class Ressource {
 
     private final String nom;
     private String description;
-    private final Map<String, Long> listeCout = new HashMap<>();
+    private final Map<String, Double> listeCout = new HashMap<>();
     private final Map<String, Bonus> listeBonus = new HashMap<>();
 
     // Une ressource peut être disponible dans la partie si elle a été activé dans une recherche.
@@ -36,7 +36,7 @@ public class Ressource {
         Map<String, String> map = jsonObjet.containsKey("Coût") ? (Map<String, String>) jsonObjet.get("Coût") : new HashMap<String, String>();
         if (map != null) {
             for (String key : map.keySet()) {
-                this.listeCout.put(key, Long.parseLong(map.get(key)));
+                this.listeCout.put(key, Double.parseDouble(map.get(key)));
             }
         }
         map = jsonObjet.containsKey("Bonus") ? (Map<String, String>) jsonObjet.get("Bonus") : new HashMap<String, String>();
@@ -56,7 +56,7 @@ public class Ressource {
         return description;
     }
 
-    public Map<String, Long> getListeCout() {
+    public Map<String, Double> getListeCout() {
         return listeCout;
     }
 

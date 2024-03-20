@@ -14,21 +14,21 @@ import java.util.Map;
 
 public class GraphGenerator {
 
-    public GraphGenerator(ArrayList<Float> x, ArrayList<Long> y, String nom, String nomRessource) {
+    public GraphGenerator(ArrayList<Double> x, ArrayList<Double> y, String nom, String nomRessource) {
         JFreeChart chart = createChart(x, y, "Graphique de " + nomRessource);
         saveChartAsImage(chart, nom);
     }
 
-    public GraphGenerator(Map<String, ArrayList<Long>> allData, ArrayList<Float> x, String nom) {
+    public GraphGenerator(Map<String, ArrayList<Double>> allData, ArrayList<Double> x, String nom) {
         JFreeChart chart = createChart(allData, x);
         saveChartAsImage(chart, nom);
     }
 
-    private JFreeChart createChart(Map<String, ArrayList<Long>> allData, ArrayList<Float> x) {
+    private JFreeChart createChart(Map<String, ArrayList<Double>> allData, ArrayList<Double> x) {
         XYSeriesCollection dataset = new XYSeriesCollection();
         for (String nomRessource : allData.keySet()) {
 
-            ArrayList<Long> y = allData.get(nomRessource);
+            ArrayList<Double> y = allData.get(nomRessource);
             XYSeries series = new XYSeries(nomRessource);
 
             int diff = x.size() - y.size();
@@ -54,7 +54,7 @@ public class GraphGenerator {
         );
     }
 
-    private JFreeChart createChart(ArrayList<Float> x, ArrayList<Long> y, String title) {
+    private JFreeChart createChart(ArrayList<Double> x, ArrayList<Double> y, String title) {
         XYSeries series = new XYSeries("Série");
 
         int diff = x.size() - y.size();

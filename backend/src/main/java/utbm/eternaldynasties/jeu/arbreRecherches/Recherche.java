@@ -17,7 +17,7 @@ public class Recherche {
     private int id = -1;
     private final String nom;
     private String description;
-    private final Map<String, Long> listeCout = new HashMap<>();
+    private final Map<String, Double> listeCout = new HashMap<>();
     private final Map<String, Recherche> debloque = new HashMap<>();
     private final Map<String, Bonus> listeBonus = new HashMap<>();
     private final Map<String, Recherche> dependances = new HashMap<>();
@@ -67,7 +67,7 @@ public class Recherche {
         Map<String, String> map = this.jsonObjet.containsKey("Coût") ? (Map<String, String>) this.jsonObjet.get("Coût") : new HashMap<>();
         if (map != null) {
             for (String key : map.keySet()) {
-                this.listeCout.put(key, Long.parseLong(map.get(key)));
+                this.listeCout.put(key, Double.parseDouble(map.get(key)));
             }
         }
         map = this.jsonObjet.containsKey("Bonus") ? (Map<String, String>) this.jsonObjet.get("Bonus") : new HashMap<>();
@@ -164,7 +164,7 @@ public class Recherche {
         return debloque;
     }
 
-    public Map<String, Long> getListeCout() {
+    public Map<String, Double> getListeCout() {
         return listeCout;
     }
 

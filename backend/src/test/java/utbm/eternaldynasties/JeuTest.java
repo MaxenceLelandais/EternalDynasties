@@ -25,10 +25,10 @@ class JeuTest {
     String civilisation = "Test";
     String environnement = "Plaine";
     int nbrCliquesParSecondes = 5;
-    float tempsJeu = 0;
+    double tempsJeu = 0;
     int tempsPast = 0;
-    ArrayList<Float> tempsList = new ArrayList<>();
-    Map<String, ArrayList<Long>> allData = new HashMap<>();
+    ArrayList<Double> tempsList = new ArrayList<>();
+    Map<String, ArrayList<Double>> allData = new HashMap<>();
     Jeu jeu;
 
     Joueur joueur;
@@ -37,23 +37,23 @@ class JeuTest {
     void contextLoads() {
         jeu = this.jeuService.getJeu();
         joueur = jeu.startPartie(civilisation, environnement);
-        HashMap<String, Long> listeRessourcePossedee = joueur.getRessources();
+        HashMap<String, Double> listeRessourcePossedee = joueur.getRessources();
 
         while (!joueur.recherchesPossibles().isEmpty()) {
 
             List<Recherche> listeRecherchesPossibles = joueur.recherchesPossibles();
             Recherche rechercheLaMoinsCouteuseEnTemps = null;
-            float tempsLePLusCourt = 0;
+            double tempsLePLusCourt = 0;
             ArrayList<String> listeActionsRechercheCourte = null;
 
             for (Recherche rechercheActuelleAComparer : listeRecherchesPossibles) {
 
                 ArrayList<String> listeActions = joueur.besoinRessources(rechercheActuelleAComparer.getListeCout());
                 joueur.ajoutStockage(listeActions);
-                float tempsEstime = 0;
+                double tempsEstime = 0;
                 for (String action : listeActions) {
                     tempsEstime += 1;
-                    tempsEstime += ((float) Long.parseLong(action.split(":")[1]) / this.nbrCliquesParSecondes);
+                    tempsEstime += Double.parseDouble(action.split(":")[1]) / this.nbrCliquesParSecondes;
                 }
                 if (tempsLePLusCourt == 0) {
                     tempsLePLusCourt = tempsEstime;
@@ -71,7 +71,7 @@ class JeuTest {
                 for(String action : listeActionsRechercheCourte) {
                     String[] data = action.split(":");
                     String nomRessource = data[0];
-                    long quantite = Long.parseLong(data[1]);
+                    double quantite = Double.parseDouble(data[1]);
                     this.addTempsJeu(1.0);
                     for(int n=0;n<quantite;n++) {
                         joueur.clickAchat(nomRessource);
@@ -92,7 +92,7 @@ class JeuTest {
     }
 
     private void addTempsJeu(double val) {
-        this.tempsJeu += (float) val;
+        this.tempsJeu += val;
         this.tempsList.add(this.tempsJeu);
         if(this.tempsPast!=(int)this.tempsJeu){
             this.tempsPast = (int)this.tempsJeu;
@@ -102,7 +102,7 @@ class JeuTest {
             if (this.allData.containsKey(nomRessource)) {
                 this.allData.get(nomRessource).add(joueur.getRessources().get(nomRessource));
             } else {
-                ArrayList<Long> list = new ArrayList<>();
+                ArrayList<Double> list = new ArrayList<>();
                 list.add(joueur.getRessources().get(nomRessource));
                 this.allData.put(nomRessource, list);
             }
@@ -123,8 +123,8 @@ class JeuTest {
 
         for (String nomRessource : this.allData.keySet()) {
 
-            ArrayList<Float> x = this.tempsList;
-            ArrayList<Long> y = this.allData.get(nomRessource);
+            ArrayList<Double> x = this.tempsList;
+            ArrayList<Double> y = this.allData.get(nomRessource);
             new GraphGenerator(x, y, dossier + "/" + nomRessource + ".png", nomRessource);
         }
 

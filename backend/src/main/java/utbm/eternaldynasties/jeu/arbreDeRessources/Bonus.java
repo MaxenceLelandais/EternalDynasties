@@ -116,7 +116,7 @@ public class Bonus {
      * @param ressourcesActuelles Liste des ressources possédées.
      * @return Un bonus qui résume ces données.
      */
-    public Bonus resume(HashMap<String, Long> ressourcesActuelles) {
+    public Bonus resume(HashMap<String, Double> ressourcesActuelles) {
         Bonus resumeBonus = new Bonus();
         double q = this.getQuantite();
         for (String nom : this.getQuantiteParRessources().keySet()) {
@@ -139,9 +139,9 @@ public class Bonus {
      * Traduit à l'instant T les ressources qui seront potentiellement gagnées.
      *
      * @param ressourcesActuelles Liste des ressources possédées.
-     * @return Un long qui résume ces données.
+     * @return Un double qui résume ces données.
      */
-    public long estimationValeur(HashMap<String, Long> ressourcesActuelles) {
+    public double estimationValeur(HashMap<String, Double> ressourcesActuelles) {
         double q = this.getQuantite();
         for (String nom : this.getQuantiteParRessources().keySet()) {
             q += this.getQuantiteParRessources().get(nom) * ressourcesActuelles.get(nom);
@@ -153,7 +153,7 @@ public class Bonus {
         }
 
         q *= 1 + (p / 100);
-        return (long) q;
+        return q;
     }
 
     public String getRessourceGenere() {

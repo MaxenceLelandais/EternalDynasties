@@ -1,9 +1,29 @@
-<p>Metiers</p>
-<div *ngIf="donnees">
-    <ul>
-        <li *ngFor="let envKey of donnees | keyvalue; let i = index">
-            <p>{{ envKey.value.nom }}</p>
-            <p>{{ envKey.value.description }}</p>
-        </li>
-    </ul>
+<div>
+    <p>Metiers</p>
+    <p>Nombre de personne sans travail : {{this.quantite["Personne"]}}</p>
+    <div class="zone_metiers">
+        <button *ngFor="let envKey of donnees | keyvalue"
+            title="{{ envKey.value.description }}"
+            (click)="this.add(envKey.value.nom)"
+            class="boutonMetier"
+        >
+            <div class="boutons-soustractions">
+                <button id="{{envKey.value.nom}}--OO" class="multiplicateur" (click)="this.activate(envKey.value.nom,'-OO')">-ALL</button>
+                <button id="{{envKey.value.nom}}--100" class="multiplicateur" (click)="activate(envKey.value.nom,'-100')">-100</button>
+                <button id="{{envKey.value.nom}}--10" class="multiplicateur" (click)="activate(envKey.value.nom,'-10')">-10</button>
+                <button id="{{envKey.value.nom}}--1" class="multiplicateur" (click)="activate(envKey.value.nom,'-1')">-1</button>
+            </div>
+
+            <div class="informations">
+                <p>{{ getNumberRessources(envKey.value.nom) }} <br> <br> {{ envKey.value.nom }}</p>
+            </div>
+
+            <div class="boutons-additions">
+                <button id="{{envKey.value.nom}}-1" class="multiplicateur activate" (click)="activate(envKey.value.nom,'1')">1</button>
+                <button id="{{envKey.value.nom}}-10" class="multiplicateur" (click)="activate(envKey.value.nom,'10')">10</button>
+                <button id="{{envKey.value.nom}}-100" class="multiplicateur" (click)="activate(envKey.value.nom,'100')">100</button>
+                <button id="{{envKey.value.nom}}-OO" class="multiplicateur" (click)="activate(envKey.value.nom,'OO')">OO</button>
+            </div>
+        </button>
+    </div>
 </div>
