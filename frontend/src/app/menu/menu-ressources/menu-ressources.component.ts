@@ -14,14 +14,17 @@ export class MenuRessourcesComponent implements OnInit {
   metiers!:Ressources;
   batiments!:Ressources;
   ressources!:Ressources;
+  quantite!:Map<string, number>;
 
   constructor(private jeuService: JeuService, private civilisationService: CivilisationService) {}
 
   ngOnInit(): void {
-    this.fetchData();
+    this.quantite = new Map<string, number>;
+    this.fetchDataArbreRessources();
+    this.fetchQuantiteRessources();
   }
 
-  fetchData() {
+  fetchDataArbreRessources() {
     if(this.civilisationService.getCivilisation()!=null){
       this.civilisation = this.civilisationService.getCivilisation();
       this.jeuService.httpArbreRessources(this.civilisation.nom+"-"+this.civilisation.nomEnvironnement).subscribe(
@@ -35,5 +38,16 @@ export class MenuRessourcesComponent implements OnInit {
         }
       );
     }
+  }
+
+  fetchQuantiteRessources() {
+    this.jeuService.httpListeRessources(this.civilisation.nom+"-"+this.civilisation.nomEnvironnement).subscribe(
+      data => {
+        this.quantite = data;
+      },
+      error => {
+        console.error("Erreur lors de la récupération des environnements", error);
+      }
+    );
   }
 }

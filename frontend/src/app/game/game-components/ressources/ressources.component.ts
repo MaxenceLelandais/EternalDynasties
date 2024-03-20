@@ -9,7 +9,13 @@ import { Ressources } from 'src/app/model/ressource.model';
 export class RessourcesComponent {
   @Input()
   donnees!:Ressources;
+
+  @Input()
+  quantite!:Map<string,number>;
+
   constructor(){
+    console.log("RessourcesComponent");
     console.log(this.donnees);
+    console.log(this.quantite);
   }
 }
