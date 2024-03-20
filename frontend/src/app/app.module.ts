@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DragAndDropModule } from 'angular-draggable-droppable';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -43,7 +42,6 @@ import { SortRecherchesById } from './sorts/sort-recherches-by-id.pipe';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    DragDropModule,
     DragAndDropModule,
     NgbModule,
     BrowserAnimationsModule

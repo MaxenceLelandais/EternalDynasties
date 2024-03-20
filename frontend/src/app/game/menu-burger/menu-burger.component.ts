@@ -5,8 +5,6 @@ import { RessourcesComponent } from '../game-components/ressources/ressources.co
 import { MetiersComponent } from '../game-components/metiers/metiers.component';
 import { BatimentsComponent } from '../game-components/batiments/batiments.component';
 import { PuissancesComponent } from '../game-components/puissances/puissances.component';
-import { DragDropModule } from '@angular/cdk/drag-drop';
-
 
 @Component({
   selector: 'app-menu-burger',
