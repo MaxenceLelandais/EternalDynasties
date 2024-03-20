@@ -1,13 +1,14 @@
 <p>Batiments</p>
 <div class="zone_batiments">
-    <button *ngFor="let envKey of donnees | keyvalue;"
+    <button *ngFor="let envKey of donnees | keyvalue"
         title="{{ envKey.value.description }}"
         (click)="this.add(envKey.value.nom)"
+        class="{{envKey.value.nom}}"
     >
         <p>{{ envKey.value.nom }} : {{ getNumberRessources(envKey.value.nom) }}</p>
-        <button id="1" class="multiplicateur activate" (click)="this.activate('1')">x1</button>
-        <button id="10" class="multiplicateur" (click)="activate('10')">x10</button>
-        <button id="100" class="multiplicateur" (click)="activate('100')">x100</button>
-        <button id="OO" class="multiplicateur" (click)="activate('OO')">xOO</button>
+        <button id="{{envKey.value.nom}}-1" class="multiplicateur activate" (click)="this.activate(envKey.value.nom,'1')">x1</button>
+        <button id="{{envKey.value.nom}}-10" class="multiplicateur" (click)="activate(envKey.value.nom,'10')">x10</button>
+        <button id="{{envKey.value.nom}}-100" class="multiplicateur" (click)="activate(envKey.value.nom,'100')">x100</button>
+        <button id="{{envKey.value.nom}}-OO" class="multiplicateur" (click)="activate(envKey.value.nom,'OO')">xOO</button>
     </button>
 </div>

@@ -8,7 +8,7 @@ import { Ressources } from 'src/app/model/ressource.model';
 })
 export class BatimentsComponent {
 
-  valClick!:string;
+  valClick!:Map<string, string>;
 
   @Input()
   donnees!:Ressources;
@@ -17,14 +17,17 @@ export class BatimentsComponent {
   quantite!:any;
 
   constructor(){
-    this.valClick = "1";
+    this.valClick = new Map<string, string>;
   }
 
   add(nom:string){
     
     let nombre = 0;
-
-    switch(this.valClick){
+    if(!this.valClick.has(nom)){
+      this.valClick.set(nom,"1");
+    }
+    
+    switch(this.valClick.get(nom)){
       case "1":{
         nombre=1;
         break;
@@ -49,19 +52,20 @@ export class BatimentsComponent {
     return this.quantite[nom];
   }
 
-  activate(id:string){
-    this.changeClass("1","multiplicateur");
-    this.changeClass("10","multiplicateur");
-    this.changeClass("100","multiplicateur");
-    this.changeClass("OO","multiplicateur");
-    this.changeClass(id,"multiplicateur activate");
-    this.valClick = id;
+  activate(idPere:string, idEnfant:string){
+
+    this.changeClass(idPere,"1","multiplicateur");
+    this.changeClass(idPere,"10","multiplicateur");
+    this.changeClass(idPere,"100","multiplicateur");
+    this.changeClass(idPere,"OO","multiplicateur");
+    this.changeClass(idPere,idEnfant,"multiplicateur activate");
+    this.valClick.set(idPere,idEnfant);
   }
 
-  changeClass(id:string, classe:string){
-    let element = document.getElementById(id);
-    if(element!=null){
-      element.className = classe;
+  changeClass(idPere:string, idEnfant:string, classe:string){
+    let elementFils = document.getElementById(idPere+"-"+idEnfant);
+    if(elementFils!=null){
+      elementFils.className = classe;
     }
   }
 }
