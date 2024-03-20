@@ -42,6 +42,7 @@ export class ModalArbreRechercheComponent implements OnInit {
   }
   
   construireArborescence() {
+    this.arborescenceRecherche = []; 
     if (this.arbreRecherches === null) {
       console.warn("arbreRecherches est null, impossible de construire l'arborescence");
       return;
@@ -49,7 +50,6 @@ export class ModalArbreRechercheComponent implements OnInit {
   
     const map = new Map<number, ArbreRecherche>();
   
-    // Initialisation de la map avec des éléments transformés de Recherche à ArbreRecherche
     Object.values(this.arbreRecherches).forEach(recherche => {
       map.set(recherche.id, { id: recherche.id, nom: recherche.nom, enfant: [] });
     });
@@ -59,10 +59,9 @@ export class ModalArbreRechercheComponent implements OnInit {
       if (recherche.parent !== null && map.has(recherche.parent)) {
         const parentArbre = map.get(recherche.parent);
         if (parentArbre && arbreRechercheTransforme) {
-          parentArbre.enfant.push(arbreRechercheTransforme); // Ici on pousse bien un ArbreRecherche
+          parentArbre.enfant.push(arbreRechercheTransforme);
         }
       } else {
-        // C'est une racine, donc on l'ajoute directement à arborescenceRecherche si elle existe
         if (arbreRechercheTransforme) {
           this.arborescenceRecherche.push(arbreRechercheTransforme);
         }
@@ -76,7 +75,7 @@ export class ModalArbreRechercheComponent implements OnInit {
     this.modalService.watch().subscribe((status: 'open' | 'close') => {
       this.displayModal = status === 'open';
       if(this.displayModal) {
-        this.construireArborescence(); // Appel de la fonction pour construire l'arborescence
+        this.construireArborescence();
       }
     });
   }
