@@ -238,6 +238,7 @@
         "Temple": {
             "Description": "",
             "Coût": {
+
                 "Pierre": "1000"
             },
             "Bonus": {
@@ -262,6 +263,7 @@
             "Coût": {
                 "Pierre": "1000",
                 "Bois": "100"
+
             },
             "Bonus": {
                 "Port": "0",
