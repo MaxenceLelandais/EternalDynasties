@@ -5,23 +5,18 @@
             <h3>Arbre de Recherches</h3>
         </div>
         <div class="modal-content">
-            <div *ngIf="listeRecherches">
-                <ul class="liste-logo-recherche">
-                    <li *ngFor="let envKey of (listeRecherches | keyvalue | sortBy:'value.id'); let i = index">
-                        <p>{{ envKey.value.id }}</p>
-                        <p>{{ envKey.value.nom }}</p>
-                    </li>
-                </ul>
-            </div>
-            <div *ngIf="arbreRecherches">
-                <ul class="liste-logo-recherche">
-                    <li *ngFor="let envKey of (arbreRecherches | keyvalue | sortBy:'value.id'); let i = index">
-                        <p>{{ envKey.value.id }}</p>
-                        <p>{{ envKey.value.parent }}</p>
-                        <p>{{ envKey.value.nom }}</p>
-                    </li>
-                </ul>
-            </div>
+            <ul *ngIf="arborescenceRecherche && arborescenceRecherche.length > 0">
+                <ng-container *ngTemplateOutlet="recursiveList; context: {$implicit: arborescenceRecherche}"></ng-container>
+            </ul>
         </div>
     </div>
 </div>
+
+<ng-template #recursiveList let-recherches>
+    <li *ngFor="let recherche of recherches">
+        <div>{{ recherche.nom }}</div>
+        <ul *ngIf="recherche.enfant && recherche.enfant.length > 0">
+            <ng-container *ngTemplateOutlet="recursiveList; context: {$implicit: recherche.enfant}"></ng-container>
+        </ul>
+    </li>
+</ng-template>
