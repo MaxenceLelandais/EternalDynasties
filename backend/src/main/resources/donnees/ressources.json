@@ -479,7 +479,7 @@
         "Fermier": {
             "Description": "",
             "Coût": {
-                "Villageois": "1"
+                "Personne": "1"
             },
             "Bonus": {
                 "Fermier": "0"
@@ -488,7 +488,7 @@
         "Mineur": {
             "Description": "",
             "Coût": {
-                "Villageois": "1"
+                "Personne": "1"
             },
             "Bonus": {
                 "Mineur": "0"
@@ -497,7 +497,7 @@
         "Bûcheron": {
             "Description": "",
             "Coût": {
-                "Villageois": "1"
+                "Personne": "1"
             },
             "Bonus": {
                 "Bûcheron": "0"
@@ -506,7 +506,7 @@
         "Prêtre": {
             "Description": "",
             "Coût": {
-                "Villageois": "1"
+                "Personne": "1"
             },
             "Bonus": {
                 "Prêtre": "0"
@@ -522,7 +522,7 @@
         "Soldat": {
             "Description": "",
             "Coût": {
-                "Villageois": "1",
+                "Personne": "1",
                 "Or": "0.05"
             },
             "Bonus": {
@@ -539,7 +539,7 @@
         "Navigateur": {
             "Description": "",
             "Coût": {
-                "Villageois": "1",
+                "Personne": "1",
                 "Or": "1"
             },
             "Bonus": {
@@ -556,7 +556,7 @@
         "Banquier": {
             "Description": "",
             "Coût": {
-                "Villageois": "1",
+                "Personne": "1",
                 "Or": "1"
             },
             "Bonus": {
@@ -573,7 +573,7 @@
         "Enseignant": {
             "Description": "",
             "Coût": {
-                "Villageois": "1"
+                "Personne": "1"
             },
             "Bonus": {
                 "Enseignant": "0"
@@ -589,7 +589,7 @@
         "Scientifique": {
             "Description": "",
             "Coût": {
-                "Villageois": "1"
+                "Personne": "1"
             },
             "Bonus": {
                 "Scientifique": "0"
@@ -605,7 +605,7 @@
         "Professeur d'université": {
             "Description": "",
             "Coût": {
-                "Villageois": "1"
+                "Personne": "1"
             },
             "Bonus": {
                 "Professeur d'université": "0"
@@ -621,7 +621,9 @@
         "Mage": {
             "Description": "",
             "Coût": {
-                "Villageois": "1"
+                "Personne": "1",
+                "Mana": "1",
+                "Piété": "1000"
             },
             "Bonus": {
                 "Mage": "0"
@@ -635,8 +637,12 @@
             }
         },
         "Mage suprême": {
-            "Description": "",
+            "Description": "Son pouvoir n'a d'égal que son charisme, le mage suprême est absolu",
             "Coût": {
+                "Personne": "5",
+                "Personne Morte": "10",
+                "Piété": "10000",
+                "Mana": "1000"
             },
             "Bonus": {
                 "Mage suprême": "0"
@@ -652,7 +658,10 @@
         "Sorcier": {
             "Description": "",
             "Coût": {
-                "Villageois": "1"
+                "Personne": "2",
+                "Personne Morte": "1",
+                "Mana": "1",
+                "Piété": "2000"
             },
             "Bonus": {
                 "Sorcier": "0"
@@ -668,7 +677,10 @@
         "Nécromancien": {
             "Description": "",
             "Coût": {
-                "Villageois": "1"
+                "Personne": "5",
+                "Personne Morte": "10",
+                "Mana": "5000",
+                "Piété": "5000"
             },
             "Bonus": {
                 "Nécromancien": "0"
