@@ -16,11 +16,17 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ModalArbreRechercheComponent } from './game/modal-arbre-recherche/modal-arbre-recherche.component';
 import { FriseChronologiqueComponent } from './game/frise-chronologique/frise-chronologique.component';
 import { MenuBurgerComponent } from './game/menu-burger/menu-burger.component';
-import { ApercueComponent } from './game/game-components/apercue/apercue.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SortRecherchesById } from './sorts/sort-recherches-by-id.pipe';
+import { DrappableComponent } from './game/drappable/drappable.component';
+import { ApercueComponent } from './game/game-components/apercue/apercue.component';
+import { RessourcesComponent } from './game/game-components/ressources/ressources.component';
+import { MetiersComponent } from './game/game-components/metiers/metiers.component';
+import { BatimentsComponent } from './game/game-components/batiments/batiments.component';
+import { PuissancesComponent } from './game/game-components/puissances/puissances.component';
+import { MerveilleComponent } from './game/game-components/merveille/merveille.component';
 
 
 @NgModule({
@@ -35,7 +41,13 @@ import { SortRecherchesById } from './sorts/sort-recherches-by-id.pipe';
     HeaderJeuComponent,
     MenuBurgerComponent,
     ApercueComponent,
-    SortRecherchesById
+    SortRecherchesById,
+    DrappableComponent,
+    BatimentsComponent,
+    MerveilleComponent,
+    MetiersComponent,
+    RessourcesComponent,
+    PuissancesComponent
   ],
   imports: [
     BrowserModule,

@@ -229,7 +229,7 @@ body {
 .header-jeu .header-info .header-jeu-ecusson {
   filter: drop-shadow(0px -5px 16px #000000);
   position: relative;
-  width: 200px;
+  width: 180px;
   margin-top: -110px;
 }
 .header-jeu .header-info h1 {

@@ -65,26 +65,40 @@
         }
     }
     .modal-content {
-        box-sizing: border-box; // Inclut le padding et la bordure dans la dimension
-        overflow-y: auto; // Permet le défilement vertical si nécessaire
         padding: 15px;
-        ul {
-            margin: 0;
-            padding: 30px;
-            list-style: none;
-            display: flex;
-            text-align: center;
-            li {
-                div {
-                    font-size: 14px;
-                    margin-bottom: 16px;
-                }
-            }
-        }
+        display: flex;
+        flex-direction: row;
+        height: 80%;
+        align-items: center;
     }
-}
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
+    
+    ul {
+        height: 100%;
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    li {
+        display: flex;
+        flex-direction: row; /* Oriente le contenu de l'élément de la liste horizontalement */
+        align-items: center;
+        height: 100%;
+    }
+    
+    li > div {
+        padding-right: 20px;
+    }
+    
+    /* Style supplémentaire pour aligner les éléments enfants */
+    li > ul {
+        display: flex;
+        flex-direction: column;
+        padding-left: 20px; /* Espace pour visualiser la hiérarchie */
+        justify-content: center;
+    }
+    
+    
 }

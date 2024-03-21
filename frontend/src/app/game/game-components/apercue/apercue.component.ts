@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-apercue',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./apercue.component.scss']
 })
 export class ApercueComponent {
-
+  @Input()
+  data:any;
 }
