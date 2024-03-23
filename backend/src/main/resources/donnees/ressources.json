@@ -622,8 +622,12 @@
             "Description": "",
             "Coût": {
                 "Personne": "1",
+<<<<<<< Updated upstream
                 "Mana": "1",
                 "Piété": "1000"
+=======
+                "Mana": "10"
+>>>>>>> Stashed changes
             },
             "Bonus": {
                 "Mage": "0"
@@ -641,11 +645,15 @@
             "Coût": {
                 "Personne": "5",
                 "Personne Morte": "10",
+<<<<<<< Updated upstream
                 "Piété": "10000",
+=======
+>>>>>>> Stashed changes
                 "Mana": "1000"
             },
             "Bonus": {
-                "Mage suprême": "0"
+                "Mage suprême": "0",
+                "Personne": "10"
             }
         },
         "Max-Mage suprême": {
@@ -660,8 +668,12 @@
             "Coût": {
                 "Personne": "2",
                 "Personne Morte": "1",
+<<<<<<< Updated upstream
                 "Mana": "1",
                 "Piété": "2000"
+=======
+                "Mana": "100"
+>>>>>>> Stashed changes
             },
             "Bonus": {
                 "Sorcier": "0"
@@ -679,8 +691,13 @@
             "Coût": {
                 "Personne": "5",
                 "Personne Morte": "10",
+<<<<<<< Updated upstream
                 "Mana": "5000",
                 "Piété": "5000"
+=======
+                "Ames maudites": "10",
+                "Mana": "1000"
+>>>>>>> Stashed changes
             },
             "Bonus": {
                 "Nécromancien": "0"
