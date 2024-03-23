@@ -7,14 +7,17 @@
             "Préhistoire"
         ],
         "Bonus": {
-            "Personne": "1",
-            "Max-Personne": "100",
-            "Nourriture": "1",
-            "Max-Nourriture": "100",
-            "Bois": "1",
-            "Max-Bois": "100",
-            "Pierre": "1",
-            "Max-Pierre": "100"
+            "Personne":"5",
+            "Max-Personne":"0",
+            "Personne Morte":"0",
+            "Points de recherche":"0",
+            "Nourriture":"0",
+            "Max-Nourriture":"0",
+            "Bois":"0",
+            "Max-Bois":"0",
+            "Pierre":"0",
+            "Max-Pierre":"0",
+            "Maison":"0"
         }
     },
     "Préhistoire":{
@@ -48,6 +51,7 @@
         "Id": "2",
         "Description":"Rassemblons les ressources de la nature.",
         "Coût":{
+            "Points de recherche":"1",
             "Nourriture": "100"
         },
         "Débloque":[
@@ -67,15 +71,23 @@
         "Id": "3",
         "Description":"Maîtrisons le feu pour progresser.",
         "Coût":{
-            "Nourriture": "200"
+            "Points de recherche":"1",
+            "Nourriture": "200",
+            "Bois":"10"
         },
         "Débloque":[
             "Chasse et pêche"
         ],
         "Bonus": {
-            "Entrepôt":"1",
-            "Carrière":"1",
-            "Nourriture":"0.25/Fermier"
+            "Mine":"0",
+            "Fermier":"0",
+            "Nourriture":"0.25/Fermier",
+            "Ferme":"0",
+            "Forestier":"0",
+            "Mineur":"0",
+            "Bûcheron":"0",
+            "Grange":"0",
+            "Entrepôt":"0"
         },
         "Dépendance":[
             "Cueuillette"
@@ -85,18 +97,20 @@
         "Id": "4",
         "Description":"Explore les mystères de la foi. ",
         "Coût":{
-            "Nourriture": "500",
-            "Bois": "500",
-            "Pierre": "500",
-            "Fermier": "2",
-            "Grange" : "5"
+            "Points de recherche":"2",
+            "Nourriture":"500",
+            "Pierre":"500"
         },
         "Débloque":[
             "Education",
             "Mythologie"
         ],
         "Bonus":{
-            "Piété": "1"
+            "Piété": "0",
+            "Temple": "0",
+            "Max-Piété":"100",
+            "Prêtre": "0",
+            "Max-Prêtre": "0"
         },
         "Dépendance":[
             "Préhistoire"
@@ -106,6 +120,7 @@
         "Id": "5",
         "Description":"Apprenons les arts de la survie. ",
         "Coût":{
+            "Points de recherche":"2",
             "Nourriture": "300"
         },
         "Débloque":[
@@ -126,7 +141,8 @@
         "Description":"Cultivons l'esprit pour l'avenir. ",
         "Coût":
         {
-            "Bois": "10000"
+            "Points de recherche":"4",
+            "Bois": "1000"
         },
         "Débloque":[
             "Monnaie",
@@ -134,7 +150,7 @@
             "Antiquité"
         ],
         "Bonus":{
-            "Ecole": "1"
+            "Puissance culturelle": "0"
         },
         "Dépendance":[
             "Croyance"
@@ -143,12 +159,15 @@
     "Mythologie":{
         "Id": "7",
         "Description":"Plongeons dans les récits anciens. ",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"5",
+            "Nourriture":"1000",
+            "Piété":"100"
+        },
         "Débloque":[
             "Religion"
         ],
         "Bonus":{
-            "Divinité": "1"
         },
         "Dépendance":[
             "Croyance"
@@ -157,14 +176,20 @@
     "Armée":{
         "Id": "8",
         "Description":"Préparons-nous à défendre et conquérir.",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"6",
+            "Bois":"100",
+            "Pierre":"250"
+        },
         "Débloque":[
             "Conquête",
             "Antiquité"
         ],
         "Bonus": {
-            "Caserne": "1",
-            "Soldat": "1"
+            "Puissance militaire":"0",
+            "Caserne":"0",
+            "Soldat":"0",
+            "Max-Soldat":"0"
         },
         "Dépendance":[
             "Chasse et pêche"
@@ -173,7 +198,10 @@
     "Elevage":{
         "Id": "9",
         "Description":"Domptons les bêtes pour notre usage.",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"5",
+            "Nourriture":"200"
+        },
         "Débloque":[
             "Construction",
             "Antiquité"
