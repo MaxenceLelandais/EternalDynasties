@@ -8,7 +8,7 @@ export interface Recherche {
     icone: string;
     cout: string;
     bonus: string;
-    dobloque: Recherche[];
+    debloque: Recherche[];
     verouille: Recherche[];
     ere: Ere;
   }

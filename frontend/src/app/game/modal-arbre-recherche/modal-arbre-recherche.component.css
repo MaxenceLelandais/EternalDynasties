@@ -32,6 +32,11 @@
   border: solid 2px rgb(65, 88, 85);
   box-sizing: border-box;
   /* Style supplémentaire pour aligner les éléments enfants */
+  /* Cache le connecteur vertical par défaut */
+  /* Ajoute un connecteur vertical si un 'li' suit un autre 'li', indiquant plusieurs enfants */
+  /* Connecteur horizontal pour tous les 'li' */
+  /* Assure que les 'li' sont positionnés relativement pour que les pseudos-éléments se positionnent correctement */
+  /* Style supplémentaire pour aligner les éléments enfants */
 }
 .modal .modal-title {
   display: flex;
@@ -94,4 +99,30 @@
   flex-direction: column;
   padding-left: 20px; /* Espace pour visualiser la hiérarchie */
   justify-content: center;
+}
+.modal li::after {
+  display: none;
+}
+.modal li + li::before {
+  content: "";
+  position: absolute;
+  top: 0; /* Ajustez si nécessaire pour aligner avec le parent */
+  left: -40px; /* Position horizontale du connecteur, à ajuster */
+  transform: translateY(-50%);
+  height: 100%; /* Hauteur pour connecter au li précédent et suivant */
+  border-left: 2px solid #fff; /* Style du connecteur vertical */
+}
+.modal li > div::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -40px; /* Ajustez pour la longueur souhaitée du connecteur horizontal */
+  width: 60px;
+  border-top: 2px solid #fff; /* Style du connecteur horizontal */
+}
+.modal li {
+  position: relative;
+}
+.modal li > ul {
+  padding-left: 40px; /* Espace pour visualiser la hiérarchie et les connecteurs */
 }/*# sourceMappingURL=modal-arbre-recherche.component.css.map */

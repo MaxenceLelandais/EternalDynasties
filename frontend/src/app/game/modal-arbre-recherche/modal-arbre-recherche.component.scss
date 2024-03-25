@@ -100,5 +100,43 @@
         justify-content: center;
     }
     
+/* Cache le connecteur vertical par défaut */
+li::after {
+    display: none;
+}
+
+/* Ajoute un connecteur vertical si un 'li' suit un autre 'li', indiquant plusieurs enfants */
+li + li::before {
+    content: '';
+    position: absolute;
+    top: 0; /* Ajustez si nécessaire pour aligner avec le parent */
+    left: -40px; /* Position horizontale du connecteur, à ajuster */
+    transform: translateY(-50%); 
+    height: calc(100%); /* Hauteur pour connecter au li précédent et suivant */
+    border-left: 2px solid #fff; /* Style du connecteur vertical */
+}
+
+/* Connecteur horizontal pour tous les 'li' */
+li > div::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -40px; /* Ajustez pour la longueur souhaitée du connecteur horizontal */
+    width: 60px;
+    border-top: 2px solid #fff; /* Style du connecteur horizontal */
+}
+
+/* Assure que les 'li' sont positionnés relativement pour que les pseudos-éléments se positionnent correctement */
+li {
+    position: relative;
+}
+
+/* Style supplémentaire pour aligner les éléments enfants */
+li > ul {
+    padding-left: 40px; /* Espace pour visualiser la hiérarchie et les connecteurs */
+}
+
+    
+    
     
 }

@@ -1,7 +1,9 @@
 .arbre-recherche-button-container {
-  position: relative;
-  margin-top: -6%;
+  height: 125px;
+  margin-top: -8%;
   margin-left: 10vh;
+  display: flex;
+  align-items: center;
 }
 .arbre-recherche-button-container .arbre-recherche-button {
   padding: 0;
