@@ -7,17 +7,20 @@
             "Préhistoire"
         ],
         "Bonus": {
-            "Personne":"5",
+            "Personne":"0",
             "Max-Personne":"0",
             "Personne Morte":"0",
             "Points de recherche":"0",
             "Nourriture":"0",
-            "Max-Nourriture":"0",
+            "Max-Nourriture":"100",
             "Bois":"0",
-            "Max-Bois":"0",
+            "Max-Bois":"100",
             "Pierre":"0",
-            "Max-Pierre":"0",
-            "Maison":"0"
+            "Max-Pierre":"100",
+            "Maison":"0",
+            "Puissance militaire":"0",
+            "Puissance commerciale":"0",
+            "Puissance culturelle": "0"
         }
     },
     "Préhistoire":{
@@ -87,7 +90,8 @@
             "Mineur":"0",
             "Bûcheron":"0",
             "Grange":"0",
-            "Entrepôt":"0"
+            "Entrepôt":"0",
+            "Carriere": "0"
         },
         "Dépendance":[
             "Cueuillette"
@@ -150,7 +154,9 @@
             "Antiquité"
         ],
         "Bonus":{
-            "Puissance culturelle": "0"
+            "Ecole": "0",
+            "Max-Enseignant": "0",
+            "Enseignant": "0"
         },
         "Dépendance":[
             "Croyance"
@@ -186,7 +192,6 @@
             "Antiquité"
         ],
         "Bonus": {
-            "Puissance militaire":"0",
             "Caserne":"0",
             "Soldat":"0",
             "Max-Soldat":"0"
@@ -216,14 +221,19 @@
     "Religion":{
         "Id": "10",
         "Description":"Explore les croyances et les pratiques spirituelles.",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"6",
+            "Nourriture":"2000",
+            "Bois": "2000",
+            "Pierre": "2000"
+        },
         "Débloque":[
             "Science",
             "Magie",
             "Antiquité"
         ],
         "Bonus":{
-            "Temple": "1"
+            "Piété":"1/Prêtre"
         },
         "Dépendance":[
             "Mythologie"
@@ -269,14 +279,21 @@
     "Navigation":{
         "Id": "11",
         "Description":"Apprenons à naviguer sur les eaux. ",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"10",
+            "Nourriture":"5000",
+            "Bois": "3000",
+            "Pierre": "100"
+        },
         "Débloque":[
             "Cartographie",
             "Moyen-Age",
             "Renaissance"
         ],
         "Bonus":{
-            "Port": "1"
+            "Port": "0",
+            "Navigateur": "0",
+            "Max-Navigateur": "0"
         },
         "Dépendance":[
             "Chasse et pêche",
@@ -286,16 +303,22 @@
     "Science":{
         "Id": "12",
         "Description":"Plongeons dans l'étude et la compréhension du monde. ",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"10",
+            "Nourriture":"2000",
+            "Bois": "3000",
+            "Pierre": "4000"
+        },
         "Débloque":[
             "Ingénieurie",
             "Moyen-Age",
             "Université"
         ],
         "Bonus":{
-            "Laboratoire": "1",
-            "Point de science": "1",
-            "Scientifique": "1"
+            "Laboratoire": "0",
+            "Point de science": "0",
+            "Scientifique": "0",
+            "Max-Scientifique": "0"
         },
         "Dépendance":[
             "Religion",
@@ -308,13 +331,19 @@
     "Magie":{
         "Id": "13",
         "Description":"Explore les forces mystiques du monde.",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"30",
+            "Nourriture":"2000",
+            "Bois": "3000",
+            "Pierre": "4000"
+        },
         "Débloque":[
             "Magie du Bien",
             "Magie Noire"
         ],
         "Bonus":{
-            "Mana": "1"
+            "Mana": "0",
+            "Max-Mana": "0"
         },
         "Dépendance":[
             "Religion",
@@ -327,14 +356,18 @@
     "Construction":{
         "Id": "14",
         "Description":"Bâtissons des structures durables et fonctionnelles.",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"8",
+            "Bois": "5000",
+            "Pierre": "8000"
+        },
         "Débloque":[
             "Monuments",
             "Moyen-Age",
             "Fortification"
         ],
         "Bonus":{
-            "Villa": "1"
+            "Villa": "0"
         },
         "Dépendance":[
             "Elevage",
@@ -344,12 +377,21 @@
     "Monnaie":{
         "Id": "15",
         "Description":"Créons un système d'échange et de commerce.",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"15",
+            "Nourriture":"10000",
+            "Piété": "1000",
+            "Pierre": "5000"
+        },
         "Débloque":[
             "Commerce"
         ],
         "Bonus":{
-            "Or": "1"
+            "Or": "0",
+            "Max-Or": "0",
+            "Banque": "0",
+            "Banquier": "0",
+            "Max-Banquier": "0"
         },
         "Dépendance":[
             "Education",
@@ -359,7 +401,11 @@
     "Philosophie":{
         "Id": "16",
         "Description":"Questionnons-nous sur la nature de l'existence.",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"13",
+            "Nourriture":"15000",
+            "Piété": "3000"
+        },
         "Débloque":[
             "Politique"
         ],
@@ -374,7 +420,12 @@
     "Ingénieurie":{
         "Id": "17",
         "Description":"Mettons en pratique les connaissances scientifiques. ",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"21",
+            "Nourriture":"30000",
+            "Bois": "10000",
+            "Pierre": "12000"
+        },
         "Débloque":[
             "Moyen-Age",
             "Mécanique"
@@ -390,13 +441,18 @@
     "Magie du Bien":{
         "Id": "18",
         "Description":"Utilisons la magie pour le bien de tous.",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"40",
+            "Nourriture":"20000",
+            "Piété": "100",
+            "Mana": "100"
+        },
         "Débloque":[
             "Moyen-Age",
             "Alchimie"
         ],
         "Bonus":{
-            "Mage": "1"
+            "Mage": "0"
         },
         "Dépendance":[
             "Magie"
@@ -408,13 +464,21 @@
     "Magie Noire":{
         "Id": "19",
         "Description":"Le monde n'est que ténèbres,poussières et destructions",
-        "Coût":null,
+        "Coût": {
+            "Personne": "50",
+            "Points de recherche":"50",
+            "Nourriture":"20000",
+            "Piété": "100",
+            "Mana": "100"
+        },
         "Débloque":[
             "Moyen-Age",
             "Sorcellerie"
         ],
         "Bonus":{
-            "Sorcier": "1"
+            "Sorcier": "1",
+            "Max-Sorcier": "1",
+            "Personne Morte": "50"
         },
         "Dépendance":[
             "Magie"
@@ -426,7 +490,11 @@
     "Conquête":{
         "Id": "20",
         "Description":"Étendons notre influence à travers la force.",
-        "Coût": null,
+        "Coût": {
+            "Points de recherche":"23",
+            "Nourriture":"25000",
+            "Point de science": "100"
+        },
         "Débloque":[
             "Moyen-Age",
             "Renaissance",
@@ -443,7 +511,12 @@
     "Monuments":{
         "Id": "21",
         "Description":"Érigeons des témoins de notre grandeur.",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"32",
+            "Bois":"20000",
+            "Point de science": "500",
+            "Pierre": "15000"
+        },
         "Débloque":null,
         "Bonus":null,
         "Dépendance":[
@@ -453,7 +526,10 @@
     "Commerce":{
         "Id": "22",
         "Description":"Favorisons les échanges économiques. ",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"44",
+            "Or":"10"
+        },
         "Débloque":[
             "Moyen-Age",
             "Renaissance",
@@ -469,7 +545,10 @@
     "Politique":{
         "Id": "23",
         "Description":"Organisons la gouvernance de nos sociétés. ",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"25",
+            "Or": "50"
+        },
         "Débloque":[
             "Moyen-Age",
             "Système féodale"
@@ -484,12 +563,18 @@
     "Mine d or":{
         "Id": "60",
         "Description":"Organisons la gouvernance de nos sociétés. ",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"29",
+            "Or":"100",
+            "Bois": "1000",
+            "Pierre": "20000"
+        },
         "Débloque":[
             "Moyen-Age"
         ],
         "Bonus":{
-            "Puissance culturelle": "100"
+            "Puissance culturelle": "100",
+            "Mine d'or": "0"
         },
         "Dépendance":[
             "Monnaie"
