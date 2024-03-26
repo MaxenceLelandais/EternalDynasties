@@ -316,7 +316,7 @@
         ],
         "Bonus":{
             "Laboratoire": "0",
-            "Point de science": "0",
+            "Points de science": "0",
             "Scientifique": "0",
             "Max-Scientifique": "0"
         },
@@ -410,7 +410,7 @@
             "Politique"
         ],
         "Bonus":{
-            "Point de recherche": "0.003/Ecole"
+            "Points de recherche": "0.003/Ecole"
         },
         "Dépendance":[
             "Education",
@@ -431,8 +431,8 @@
             "Mécanique"
         ],
         "Bonus":{
-            "Point de science": "1/s",
-            "Point de recherche": "1/s"
+            "Points de science": "1/s",
+            "Points de recherche": "1/s"
         },
         "Dépendance":[
             "Science"
@@ -493,7 +493,7 @@
         "Coût": {
             "Points de recherche":"23",
             "Nourriture":"25000",
-            "Point de science": "100"
+            "Points de science": "100"
         },
         "Débloque":[
             "Moyen-Age",
@@ -514,7 +514,7 @@
         "Coût":{
             "Points de recherche":"32",
             "Bois":"20000",
-            "Point de science": "500",
+            "Points de science": "500",
             "Pierre": "15000"
         },
         "Débloque":null,
@@ -615,7 +615,13 @@
     "Fortification":{
         "Id": "24",
         "Description":"Renforçons nos défenses pour assurer notre sécurité.",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"40",
+            "Or": "40",
+            "Bois": "2000",
+            "Pierre": "40000",
+            "Points de science": "200"
+        },
         "Débloque":[
             "Renaissance",
             "Révolution industrielle",
@@ -633,7 +639,11 @@
     "Système féodale":{
         "Id": "25",
         "Description":"Organisons notre société autour du pouvoir féodal.",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"30",
+            "Or":"200",
+            "Points de science": "400"
+        },
         "Débloque":[
             "Renaissance",
             "Humanisme"
@@ -649,14 +659,20 @@
     "Université":{
         "Id": "26",
         "Description":" Créons des institutions de savoir.",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"55",
+            "Or":"100",
+            "Points de science": "1000"
+        },
         "Débloque":[
             "Renaissance",
             "Astronomie"
         ],
         "Bonus":{
-            "Point de recherche": "0.1/Professeur",
-            "Professeur": "1"
+            "Points de recherche": "0.1/Professeur",
+            "Professeur d'université": "0",
+            "Max-Professeur d'université": "0",
+            "Université": "0"
         },
         "Dépendance":[
             "Moyen-Age",
@@ -666,7 +682,11 @@
     "Mécanique":{
         "Id": "27",
         "Description":"Explorez les principes fondamentaux des machines et de la mécanique. ",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"65",
+            "Or":"150",
+            "Points de science": "1200"
+        },
         "Débloque":[
             "Renaissance",
             "Révolution industrielle",
@@ -685,13 +705,19 @@
     "Alchimie":{
         "Id": "28",
         "Description":"Plongez dans l'alchimie mystique et ses secrets.",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"80",
+            "Or":"200",
+            "Mana": "2000"
+        },
         "Débloque":[
             "Renaissance",
             "Révolution industrielle",
             "Contrôle élémentaire"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Sort de prospérité": "0"
+        },
         "Dépendance":[
             "Moyen-Age",
             "Magie du Bien"
@@ -700,13 +726,22 @@
     "Sorcellerie":{
         "Id": "29",
         "Description":"Plongeons dans les profonds ténèbres",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"105",
+            "Or":"200",
+            "Mana": "2000",
+            "Personne": "200"
+        },
         "Débloque":[
             "Renaissance",
             "Révolution industrielle",
             "Nécromancie"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Personne Morte": "200",
+            "Malédiction de guerre":"1",
+            "Clic maudit": "1"
+        },
         "Dépendance":[
             "Moyen-Age",
             "Magie Noire"
@@ -747,7 +782,12 @@
     "Poudre à canon":{
         "Id": "30",
         "Description":"BOOOOUM!!!",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"79",
+            "Bois":"20000",
+            "Pierre": "50000",
+            "Points de science": "2000"
+        },
         "Débloque":[
             "Révolution industrielle",
             "Balistique"
@@ -764,7 +804,11 @@
     "Cartographie":{
         "Id": "31",
         "Description":"Permet de s'orienter afin d'explorer de nouveaux horizons",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"67",
+            "Or":"100",
+            "Points de science": "1000"
+        },
         "Débloque":[
             "Colonisation"
         ],
@@ -782,7 +826,11 @@
     "Banque":{
         "Id": "32",
         "Description":"Créez des institutions financières pour soutenir l'économie et le commerce.",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"80",
+            "Or":"1000",
+            "Points de science": "2500"
+        },
         "Débloque":[
             "Révolution industrielle",
             "Economie"
@@ -799,7 +847,11 @@
     "Humanisme":{
         "Id": "33",
         "Description":" Plongez dans le mouvement humaniste, qui met l'homme et ses réalisations au centre. ",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"90",
+            "Piété":"5000",
+            "Points de science": "500"
+        },
         "Débloque":[
             "Révolution industrielle",
             "Culture"
@@ -816,14 +868,18 @@
     "Astronomie":{
         "Id": "34",
         "Description":"Explorez les mystères de l'univers et des astres.",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"95",
+            "Or":"500",
+            "Points de science": "5000"
+        },
         "Débloque":[
             "Révolution industrielle",
             "Epoque Moderne",
             "Physique"
         ],
         "Bonus":{
-            "Point de science": "0.1/Professeur"
+            "Points de science": "0.1/Professeur"
         },
         "Dépendance":[
             "Renaissance",
@@ -833,7 +889,11 @@
     "Colonisation":{
         "Id": "35",
         "Description":"Explorez de nouveaux territoires et établissez des colonies lointaines.",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"60",
+            "Or":"200",
+            "Points de science": "3000"
+        },
         "Débloque":[
             "Révolution industrielle",
             "Aviation"
@@ -884,7 +944,11 @@
     "Balistique":{
         "Id": "36",
         "Description":"Étudiez les principes des projectiles et de leur trajectoire.",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"80",
+            "Bois":"50000",
+            "Points de science": "8000"
+        },
         "Débloque":[
             "Epoque Moderne",
             "Nucléaire"
@@ -900,7 +964,12 @@
     "Industrialisation":{
         "Id": "37",
         "Description":"Passez à l'ère de l'industrialisation massive et de la production automatisée.",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"500",
+            "Bois":"10000",
+            "Points de science": "10000",
+            "Pierre": "50000"
+        },
         "Débloque":[
             "Urbanisation"
         ],
@@ -918,7 +987,11 @@
     "Economie":{
         "Id": "38",
         "Description":"Explorez les mécanismes complexes qui régissent les échanges et les marchés.",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"150",
+            "Or":"1000",
+            "Points de science": "5000"
+        },
         "Débloque":[
             "Epoque Moderne",
             "Globalisation"
@@ -934,7 +1007,11 @@
     "Culture":{
         "Id": "39",
         "Description":"Célébrez la diversité et l'expression humaine à travers les arts, la littérature et la philosophie.",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"120",
+            "Piété":"5000",
+            "Points de science": "5000"
+        },
         "Débloque":[
             "Epoque Moderne",
             "Médias"
@@ -950,7 +1027,13 @@
     "Electricité":{
         "Id": "40",
         "Description":"Découvrez les mystères de l'électricité et de ses applications.",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"300",
+            "Points de science": "25000",
+            "Electricité": "0",
+            "Max-Electricité": "0",
+            "Centrale électrique": "0"
+        },
         "Débloque":[
             "Epoque Moderne",
             "Informatique"
@@ -968,14 +1051,20 @@
     "Contrôle élémentaire":{
         "Id": "41",
         "Description":"Expérimentez le contrôle des éléments naturels.",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"605",
+            "Mana":"50000"
+        },
         "Débloque":[
             "Epoque Moderne",
             "Puissance élémentaire"
         ],
         "Bonus":{
-            "Mage supreme":"1",
-            "Pouvoir arcanique": "1"
+            "Mage supreme":"0",
+            "Pouvoir arcanique": "0",
+            "Tour de la sagesse": "0",
+            "Max-Mage supreme": "O",
+            "Max-Pouvoir arcanique": "0"
         },
         "Dépendance":[
             "Renaissance",
@@ -986,14 +1075,22 @@
     "Nécromancie":{
         "Id": "42",
         "Description":"Plongez dans les pratiques sombres de la magie noire et de la manipulation des morts.",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"1200",
+            "Mana":"50000",
+            "Personne": "1000",
+            "Personne Morte": "10000"
+        },
         "Débloque":[
             "Epoque Moderne",
             "Force du chaos"
         ],
         "Bonus":{
-            "Ame maudite": "1",
-            "Necromancien": "1"
+            "Ame maudite": "0",
+            "Necromancien": "0",
+            "Max-Ame maudite": "0",
+            "Tour du Mordor": "0",
+            "Max-Necromancien": "0"
         },
         "Dépendance":[
             "Renaissance",
@@ -1004,7 +1101,12 @@
     "Urbanisation":{
         "Id": "43",
         "Description":"Explorez le processus de développement et d'expansion des zones urbaines à travers l'histoire. ",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"400",
+            "Or":"1500",
+            "Points de science": "10000",
+            "Electricité": "200"
+        },
         "Débloque":[
             "Epoque Moderne",
             "Epoque Futuriste",
@@ -1061,7 +1163,11 @@
     "Nucléaire":{
         "Id": "44",
         "Description":"KAAAAAAAAABOOOOOOOOOOOOOUM!!!!!!!!!!!!!!!!!!!!",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"15000",
+            "Electricité":"5000",
+            "Points de science": "50000"
+        },
         "Débloque":[
             "Epoque Futuriste",
             "Laser"
@@ -1077,7 +1183,11 @@
     "Aviation":{
         "Id": "45",
         "Description":"Déployez les ailes, réalisez le rêve d'Icare",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"1300",
+            "Electricité":"1200",
+            "Points de science": "1000"
+        },
         "Débloque":[
             "Exploration spatiale"
         ],
@@ -1093,7 +1203,10 @@
     "Globalisation":{
         "Id": "46",
         "Description":"Explorez les interactions croissantes entre les nations et les cultures à l'échelle mondiale.",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche": "1200",
+            "Point de science": "12000"
+        },
         "Bonus":{
             "Puissance commerciale": "725"
         },
@@ -1105,7 +1218,10 @@
     "Médias":{
         "Id": "47",
         "Description":"Découvrez le pouvoir des médias dans la diffusion de l'information et la formation de l'opinion publique.",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche": "1400",
+            "Electricité": "10000"
+        },
         "Débloque":[
             "Réseaux sociaux"
         ],
@@ -1120,7 +1236,10 @@
     "Réseaux sociaux":{
         "Id": "48",
         "Description":"Plongez dans l'ère de la connectivité en ligne et de l'interaction sociale numérique. ",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche": "1200",
+            "Electricité": "15000"
+        },
         "Bonus":{
             "Puissance culturelle": "550"
         },
@@ -1131,7 +1250,10 @@
     "Physique":{
         "Id": "49",
         "Description":"Explorez les lois fondamentales de l'univers et les forces qui régissent la matière et l'énergie.",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche": "1250",
+            "Points de science": "10000"
+        },
         "Débloque":[
             "Epoque Futuriste",
             "Nano technologies"
@@ -1140,8 +1262,8 @@
             "Nourriture": "150%",
             "Bois": "130%",
             "Pierre": "140%",
-            "Point de recherche": "200%",
-            "Point de science": "155%"
+            "Points de recherche": "200%",
+            "Points de science": "155%"
         },
         "Dépendance":[
             "Révolution industrielle",
@@ -1152,14 +1274,17 @@
     "Informatique":{
         "Id": "50",
         "Description":"1000010010110011101001",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche": "3000",
+            "Electricité": "25000"
+        },
         "Débloque":[
             "Robotique"
         ],
         "Bonus":{
             "Puissance commerciale": "125",
             "Puissance culturelle": "35",
-            "Point de recherche": "2/s"
+            "Points de recherche": "2/s"
         },
         "Dépendance":[
             "Epoque Moderne",
@@ -1169,8 +1294,15 @@
     "Puissance élémentaire":{
         "Id": "51",
         "Description":"Manipulez les éléments naturels à une échelle inédite grâce à des avancées magiques révolutionnaires.",
-        "Coût":null,
-        "Bonus":null,
+        "Coût": {
+            "Points de recherche": "100000",
+            "Mana": "5000",
+            "Or": "500",
+            "Pouvoir arcanique": "500"
+        },
+        "Bonus": {
+            "Enchantement divin": "1"
+        },
         "Dépendance":[
             "Contrôle élémentaire",
             "Epoque Moderne"
@@ -1179,8 +1311,17 @@
     "Force du chaos":{
         "Id": "52",
         "Description":"Explorez les aspects les plus sombres de la magie et de la manipulation des énergies occultes pour creer la puissante armée des morts.",
-        "Coût":null,
-        "Bonus":null,
+        "Coût": {
+            "Points de recherche": "150000",
+            "Personne": "5000",
+            "Personne Morte": "15000",
+            "Or": "500",
+            "Mana": "5000"
+        },
+        "Bonus": {
+            "Personne Morte": "5000",
+            "Armée des morts": "1"
+        },
         "Dépendance":[
             "Nécromancie",
             "Epoque Moderne"
@@ -1189,7 +1330,11 @@
     "Exploration spatiale":{
         "Id": "53",
         "Description":"Lancez-vous à la conquête de l'espace et explorez les mystères de l'univers.",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche": "25000",
+            "Electricité": "30000",
+            "Or": "25000"
+        },
         "Débloque":[
             "Epoque Futuriste",
             "Voyage supraluminique"
@@ -1205,7 +1350,13 @@
     "Robotique":{
         "Id": "54",
         "Description":"Explorez les possibilités infinies de la robotique.",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche": "4000",
+            "Electricité": "50000",
+            "Or": "15000",
+            "Bois": "100000",
+            "Pierre": "100000"
+        },
         "Débloque":[
             "Epoque Futuriste",
             "Intelligence artificielle"
@@ -1256,7 +1407,11 @@
     "Laser":{
         "Id": "55",
         "Description":"Maîtrisez la puissance destructrice et créatrice du laser.",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche": "45000",
+            "Electricité": "75000",
+            "Points de science": "50000"
+        },
         "Bonus":{
             "Puissance militaire": "1000"
         },
@@ -1268,9 +1423,13 @@
     "Urbanisation futuriste":{
         "Id": "56",
         "Description":"Explorez les horizons de l'urbanisme dans un monde futuriste.",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche": "15000",
+            "Piété": "800000",
+            "Electricité": "30000"
+        },
         "Bonus":{
-            "Gratte-ciel": "1",
+            "Gratte-ciel": "0",
             "Prospérité": "15",
             "Puissance culturelle": "200"
         },
@@ -1283,7 +1442,12 @@
     "Voyage supraluminique":{
         "Id": "57",
         "Description":" Pénétrez dans les confins de l'espace à des vitesses supraluminiques.",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche": "45000",
+            "Electricité": "80000",
+            "Or": "50000",
+            "Points de science": "1000000"
+        },
         "Bonus":{
             "Puissance culturelle": "300",
             "Puissance commerciale": "250"
@@ -1296,7 +1460,12 @@
     "Nano technologies":{
         "Id": "58",
         "Description":"Maîtrisez les technologies à l'échelle nanométrique. ",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche": "50000",
+            "Electricité": "120000",
+            "Or": "25000",
+            "Points de science":"350000"
+        },
         "Bonus":{
             "Puissance culturelle": "230",
             "Puissance commerciale": "200",
@@ -1310,7 +1479,12 @@
     "Intelligence artificielle":{
         "Id": "59",
         "Description":"Explorez les possibilités de l'intelligence artificielle.",
-        "Coût": null,
+        "Coût": {
+            "Points de recherche": "45000",
+            "Electricité": "150000",
+            "Or": "75000",
+            "Points de science": "500000"
+        },
         "Bonus":{
             "Nourriture": "300%",
             "Bois": "300%",
