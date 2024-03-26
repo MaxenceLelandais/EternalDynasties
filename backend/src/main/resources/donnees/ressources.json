@@ -209,6 +209,27 @@
             "Bonus": {
                 "Puissance culturelle": "0"
             }
+        },
+        "Sort de prospérité": {
+            "Description": "",
+            "Coût": null,
+            "Bonus": {
+                "Sort de prospérité": "0"
+            }
+        },
+        "Malédiction de guerre": {
+            "Description": "",
+            "Coût": null,
+            "Bonus": {
+                "Malédiction de guerre": "0"
+            }
+        },
+        "Clic maudit": {
+            "Description": "",
+            "Coût": null,
+            "Bonus": {
+                "Clic maudit": "0"
+            }
         }
     },
 
@@ -216,8 +237,8 @@
         "Maison": {
             "Description": "4 murs et un toit.",
             "Coût": {
-                "Pierre": "50",
-                "Bois": "100"
+                "Pierre": "5",
+                "Bois": "10"
             },
             "Bonus": {
                 "Maison": "0",

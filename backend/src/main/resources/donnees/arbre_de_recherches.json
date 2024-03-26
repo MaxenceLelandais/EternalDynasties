@@ -19,7 +19,7 @@
             "Max-Pierre":"100",
             "Maison":"1",
             "Puissance militaire":"1",
-            "Puissance commerciale":"1",
+            "Puissance économique":"1",
             "Puissance culturelle": "1"
         }
     },
@@ -90,7 +90,7 @@
             "Mineur":"1",
             "Bûcheron":"1",
             "Grange":"1",
-            "Entrepôt":"1"
+            "Entrepôt":"1",
             "Carriere": "1"
         },
         "Dépendance":[
@@ -536,7 +536,7 @@
             "Banque"
         ],
         "Bonus":{
-            "Puissance commerciale":"100"
+            "Puissance économique":"100"
         },
         "Dépendance":[
             "Monnaie"
@@ -716,7 +716,7 @@
             "Contrôle élémentaire"
         ],
         "Bonus":{
-            "Sort de prospérité": "0"
+            "Sort de prospérité": "1"
         },
         "Dépendance":[
             "Moyen-Age",
@@ -814,7 +814,7 @@
         ],
         "Bonus":{
             "Puissance militaire": "50",
-            "Puissance commerciale": "75",
+            "Puissance économique": "75",
             "Puissance culturelle": "40"
         },
         "Dépendance":[
@@ -836,7 +836,7 @@
             "Economie"
         ],
         "Bonus":{
-            "Puissance commerciale": "300"
+            "Puissance économique": "300"
         },
         "Dépendance":[
             "Renaissance",
@@ -858,7 +858,7 @@
         ],
         "Bonus":{
             "Puissance culturelle": "150",
-            "Puissance commerciale": "50"
+            "Puissance économique": "50"
         },
         "Dépendance":[
             "Renaissance",
@@ -900,7 +900,7 @@
         ],
         "Bonus":{
             "Puissance militaire": "150",
-            "Puissance commerciale": "85",
+            "Puissance économique": "85",
             "Puissance culturelle": "60"
         },
         "Dépendance":[
@@ -997,7 +997,7 @@
             "Globalisation"
         ],
         "Bonus":{
-            "Puissance commerciale": "233"
+            "Puissance économique": "233"
         },
         "Dépendance":[
             "Révolution industrielle",
@@ -1205,10 +1205,10 @@
         "Description":"Explorez les interactions croissantes entre les nations et les cultures à l'échelle mondiale.",
         "Coût": {
             "Points de recherche": "1200",
-            "Point de science": "12000"
+            "Points de science": "12000"
         },
         "Bonus":{
-            "Puissance commerciale": "725"
+            "Puissance économique": "725"
         },
         "Dépendance":[
             "Economie",
@@ -1282,7 +1282,7 @@
             "Robotique"
         ],
         "Bonus":{
-            "Puissance commerciale": "125",
+            "Puissance économique": "125",
             "Puissance culturelle": "35",
             "Points de recherche": "2/s"
         },
@@ -1341,7 +1341,7 @@
         ],
         "Bonus":{
             "Puissance culturelle": "150",
-            "Puissance commerciale": "75"
+            "Puissance économique": "75"
         },
         "Dépendance":[
             "Aviation"
@@ -1450,7 +1450,7 @@
         },
         "Bonus":{
             "Puissance culturelle": "300",
-            "Puissance commerciale": "250"
+            "Puissance économique": "250"
         },
         "Dépendance":[
             "Epoque Futuriste",
@@ -1468,7 +1468,7 @@
         },
         "Bonus":{
             "Puissance culturelle": "230",
-            "Puissance commerciale": "200",
+            "Puissance économique": "200",
             "Puissence militaire": "100"
         },
         "Dépendance":[
