@@ -117,6 +117,7 @@ public class Jeu {
             joueur.init(civilisation, this.arbreEnvironnements.get(environnement));
             joueur.save();
             this.listeJoueur.put(civilisation+"-"+environnement, joueur);
+            joueur.activerRecherche("Tribue");
         }
         return joueur;
     }
@@ -134,7 +135,11 @@ public class Jeu {
     }
 
     public Joueur getJoueur(String nom) {
-        return this.listeJoueur.get(nom);
+        if(this.listeJoueur.containsKey(nom)){
+            return this.listeJoueur.get(nom);
+        }else{
+            return startPartie(nom.split("-")[0], nom.split("-")[1]);
+        }
     }
 
     public Map<String, String> getSauvegardes() {

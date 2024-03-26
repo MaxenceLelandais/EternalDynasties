@@ -50,4 +50,15 @@ export class MenuRessourcesComponent implements OnInit {
       }
     );
   }
+
+  fetchAddRessource(nom:string) {
+    this.jeuService.httpAddRessource(this.civilisation.nom+"-"+this.civilisation.nomEnvironnement,nom).subscribe(
+      data => {
+        this.quantite = data;
+      },
+      error => {
+        console.error("Erreur lors de l'ajout de la ressource", error);
+      }
+    );
+  }
 }

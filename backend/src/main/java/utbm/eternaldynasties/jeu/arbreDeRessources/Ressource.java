@@ -17,6 +17,7 @@ public class Ressource {
     private String description;
     private final Map<String, Double> listeCout = new HashMap<>();
     private final Map<String, Bonus> listeBonus = new HashMap<>();
+    private final Map<String, Double> listeBonusEstime= new HashMap<>();
 
     // Une ressource peut être disponible dans la partie si elle a été activé dans une recherche.
     private boolean active = false;
@@ -70,5 +71,15 @@ public class Ressource {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public Map<String, Double> getListeBonusEstime() {
+        return listeBonusEstime;
+    }
+
+    public void getListeBonusEnString(HashMap<String, Double> ressourcesActuelles) {
+        listeBonus.forEach((key,val)->{
+            listeBonusEstime.put(key,val.estimationValeur(ressourcesActuelles));
+        });
     }
 }

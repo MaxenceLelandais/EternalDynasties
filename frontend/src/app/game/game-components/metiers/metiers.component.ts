@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Ressources } from 'src/app/model/ressource.model';
 
 @Component({
@@ -14,6 +14,8 @@ export class MetiersComponent {
 
   @Input()
   quantite!:any;
+
+  @Output() addFonction: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(){
     this.valClick = new Map<string, string>;
@@ -66,6 +68,7 @@ export class MetiersComponent {
     }
     if(this.quantite[nom] + nombre>=0){
       this.quantite[nom] = this.quantite[nom] + nombre;
+      this.addFonction.emit(nom);
     }
   }
 

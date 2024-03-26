@@ -55,6 +55,8 @@ public class Joueur {
             }
             this.arbreDeRecherche.init(this.recherches);
             this.arbreDeRessources.init(this.ressources);
+
+
         }
     }
 
@@ -95,6 +97,11 @@ public class Joueur {
                 String nom = bonusRessource.getRessourceGenere();
                 Bonus bonusInfos = this.arbreDeRessources.getRessource(nom).getListeBonus().get(nom);
                 bonusInfos.add(bonusRessource);
+                for(Map<String, Ressource> val : this.arbreDeRessources.getListeRessources().values()){
+                    if(val.containsKey(key)){
+                        val.get(key).setActive(true);
+                    }
+                }
                 if (key.contains("Max-")) {
                     this.ressources.putIfAbsent(key, bonusInfos.estimationValeur(this.ressources));
                 }
@@ -119,7 +126,7 @@ public class Joueur {
         });
     }
 
-    public Map<Object, Object> clickAchat(String nomRessource) {
+    public HashMap<String, Double> clickAchat(String nomRessource) {
 
         Map<String, Double> cout = this.arbreDeRessources.getRessource(nomRessource).getListeCout();
         Map<String, Bonus> bonus = this.arbreDeRessources.getRessource(nomRessource).getListeBonus();
@@ -142,7 +149,7 @@ public class Joueur {
         }
 
         save();
-        return toMap();
+        return getRessources();
     }
 
 
@@ -313,6 +320,7 @@ public class Joueur {
 
     public Map<String, Map<String, Ressource>> getArbreRessources() {
 
+        this.arbreDeRessources.actualiseEstimationBonus(this.ressources);
         Map<String, Map<String, Ressource>> toutesLesRessources = this.arbreDeRessources.getListeRessources();
         Map<String, Map<String, Ressource>> nouvelArbre = new HashMap<>();
         for(String type : toutesLesRessources.keySet()){

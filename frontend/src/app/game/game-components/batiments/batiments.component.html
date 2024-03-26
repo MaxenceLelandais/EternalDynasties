@@ -2,7 +2,7 @@
     <p>Batiments</p>
     <div class="zone_batiments">
         <button *ngFor="let envKey of donnees | keyvalue"
-            title="{{ envKey.value.description }}"
+           title="{{detail(envKey.value.nom)}}"
             (click)="this.add(envKey.value.nom)"
             class="{{envKey.value.nom}}"
         >

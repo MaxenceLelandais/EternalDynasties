@@ -16,6 +16,10 @@
 
             <div class="informations">
                 <p>{{ getNumberRessources(envKey.value.nom) }} <br> <br> {{ envKey.value.nom }}</p>
+                <p>Coûts</p>
+                <p *ngFor="let cout of envKey.value.listeCout | keyvalue">{{ cout.key }} : {{ cout.value }}</p>
+                <p>Bonus</p>
+                <p *ngFor="let bonus of envKey.value.listeBonusEstime | keyvalue">{{ bonus.key }} : {{ bonus.value }}</p>
             </div>
 
             <div class="boutons-additions">

@@ -7,17 +7,17 @@
             "Préhistoire"
         ],
         "Bonus": {
-            "Personne":"5",
-            "Max-Personne":"0",
-            "Personne Morte":"0",
-            "Points de recherche":"0",
-            "Nourriture":"0",
-            "Max-Nourriture":"0",
-            "Bois":"0",
-            "Max-Bois":"0",
-            "Pierre":"0",
-            "Max-Pierre":"0",
-            "Maison":"0"
+            "Personne":"1",
+            "Max-Personne":"10",
+            "Personne Morte":"1",
+            "Points de recherche":"1",
+            "Nourriture":"1",
+            "Max-Nourriture":"100",
+            "Bois":"1",
+            "Max-Bois":"100",
+            "Pierre":"1",
+            "Max-Pierre":"100",
+            "Maison":"1"
         }
     },
     "Préhistoire":{
@@ -79,15 +79,15 @@
             "Chasse et pêche"
         ],
         "Bonus": {
-            "Mine":"0",
-            "Fermier":"0",
+            "Mine":"1",
+            "Fermier":"1",
             "Nourriture":"0.25/Fermier",
-            "Ferme":"0",
-            "Forestier":"0",
-            "Mineur":"0",
-            "Bûcheron":"0",
-            "Grange":"0",
-            "Entrepôt":"0"
+            "Ferme":"1",
+            "Forestier":"1",
+            "Mineur":"1",
+            "Bûcheron":"1",
+            "Grange":"1",
+            "Entrepôt":"1"
         },
         "Dépendance":[
             "Cueuillette"
@@ -106,11 +106,11 @@
             "Mythologie"
         ],
         "Bonus":{
-            "Piété": "0",
-            "Temple": "0",
+            "Piété": "1",
+            "Temple": "1",
             "Max-Piété":"100",
-            "Prêtre": "0",
-            "Max-Prêtre": "0"
+            "Prêtre": "1",
+            "Max-Prêtre": "1"
         },
         "Dépendance":[
             "Préhistoire"

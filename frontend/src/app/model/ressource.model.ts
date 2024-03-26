@@ -1,4 +1,3 @@
-import { LesBonus } from "./bonus.model";
 
 export interface Ressource {
     nom: string;
@@ -6,7 +5,7 @@ export interface Ressource {
     icone: string;
     cout: string;
     bonus: string;
-    listeBonus: LesBonus[];
+    listeBonusEstime: LesBonusEstimes;
     listeCout: LesCouts;
   }
   
@@ -14,6 +13,10 @@ export interface Ressource {
     [key: string]: Ressource;
   }
   export interface LesCouts {
+    [key: string]: number;
+  }
+
+  export interface LesBonusEstimes {
     [key: string]: number;
   }
 

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Ressources } from 'src/app/model/ressource.model';
 
 @Component({
@@ -15,6 +15,8 @@ export class BatimentsComponent {
 
   @Input()
   quantite!:any;
+
+  @Output() addFonction: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(){
     this.valClick = new Map<string, string>;
@@ -46,6 +48,7 @@ export class BatimentsComponent {
       }
     }
     this.quantite[nom] = this.quantite[nom] + nombre;
+    this.addFonction.emit(nom);
   }
 
   getNumberRessources(nom:string){
@@ -67,5 +70,35 @@ export class BatimentsComponent {
     if(elementFils!=null){
       elementFils.className = classe;
     }
+  }
+
+  detail(nom: string): string {
+    const ressource = this.donnees[nom];
+    let text = `Description : ${this.donnees[nom].description}`;
+  
+    const coutKeys = Object.keys(ressource.listeCout);
+    const bonusKeys = Object.keys(ressource.listeBonusEstime);
+    let presenceCout = false;
+    if (coutKeys.length > 0) {
+      presenceCout = true;
+      text += `\n\nCoûts : \n`;
+      for (const key of coutKeys) {
+        text += `- ${key} : ${ressource.listeCout[key]}\n`;
+      }
+    }
+  
+    if (bonusKeys.length > 0) {
+      if(presenceCout){
+        text += `\nBonus : \n`;
+      }else{
+        text += `\n\nBonus : \n`;
+      }
+      
+      for (const key of bonusKeys) {
+        text += `- ${key} : ${ressource.listeBonusEstime[key]}\n`;
+      }
+    }
+  
+    return text;
   }
 }
