@@ -154,9 +154,9 @@
             "Antiquité"
         ],
         "Bonus":{
-            "Ecole": "0",
-            "Max-Enseignant": "0",
-            "Enseignant": "0"
+            "Ecole": "1",
+            "Max-Enseignant": "1",
+            "Enseignant": "1"
         },
         "Dépendance":[
             "Croyance"
@@ -192,9 +192,9 @@
             "Antiquité"
         ],
         "Bonus": {
-            "Caserne":"0",
-            "Soldat":"0",
-            "Max-Soldat":"0"
+            "Caserne":"1",
+            "Soldat":"1",
+            "Max-Soldat":"1"
         },
         "Dépendance":[
             "Chasse et pêche"
@@ -291,9 +291,9 @@
             "Renaissance"
         ],
         "Bonus":{
-            "Port": "0",
-            "Navigateur": "0",
-            "Max-Navigateur": "0"
+            "Port": "1",
+            "Navigateur": "1",
+            "Max-Navigateur": "1"
         },
         "Dépendance":[
             "Chasse et pêche",
@@ -315,10 +315,10 @@
             "Université"
         ],
         "Bonus":{
-            "Laboratoire": "0",
-            "Points de science": "0",
-            "Scientifique": "0",
-            "Max-Scientifique": "0"
+            "Laboratoire": "1",
+            "Points de science": "1",
+            "Scientifique": "1",
+            "Max-Scientifique": "1"
         },
         "Dépendance":[
             "Religion",
@@ -342,8 +342,8 @@
             "Magie Noire"
         ],
         "Bonus":{
-            "Mana": "0",
-            "Max-Mana": "0"
+            "Mana": "1",
+            "Max-Mana": "1"
         },
         "Dépendance":[
             "Religion",
@@ -367,7 +367,7 @@
             "Fortification"
         ],
         "Bonus":{
-            "Villa": "0"
+            "Villa": "1"
         },
         "Dépendance":[
             "Elevage",
@@ -387,11 +387,11 @@
             "Commerce"
         ],
         "Bonus":{
-            "Or": "0",
-            "Max-Or": "0",
-            "Banque": "0",
-            "Banquier": "0",
-            "Max-Banquier": "0"
+            "Or": "1",
+            "Max-Or": "1",
+            "Banque": "1",
+            "Banquier": "1",
+            "Max-Banquier": "1"
         },
         "Dépendance":[
             "Education",
@@ -478,7 +478,7 @@
         "Bonus":{
             "Sorcier": "1",
             "Max-Sorcier": "1",
-            "Personne Morte": "50"
+            "Personne Morte": "1"
         },
         "Dépendance":[
             "Magie"
@@ -574,7 +574,7 @@
         ],
         "Bonus":{
             "Puissance culturelle": "100",
-            "Mine d'or": "0"
+            "Mine d'or": "1"
         },
         "Dépendance":[
             "Monnaie"
@@ -670,9 +670,9 @@
         ],
         "Bonus":{
             "Points de recherche": "0.1/Professeur",
-            "Professeur d'université": "0",
-            "Max-Professeur d'université": "0",
-            "Université": "0"
+            "Professeur d'université": "1",
+            "Max-Professeur d'université": "1",
+            "Université": "1"
         },
         "Dépendance":[
             "Moyen-Age",
@@ -1029,10 +1029,7 @@
         "Description":"Découvrez les mystères de l'électricité et de ses applications.",
         "Coût": {
             "Points de recherche":"300",
-            "Points de science": "25000",
-            "Electricité": "0",
-            "Max-Electricité": "0",
-            "Centrale électrique": "0"
+            "Points de science": "25000"
         },
         "Débloque":[
             "Epoque Moderne",
@@ -1040,6 +1037,7 @@
         ],
         "Bonus":{
             "Electricité": "1",
+            "Max-Electricité": "1",
             "Centrale électrique": "1"
         },
         "Dépendance":[
@@ -1060,11 +1058,11 @@
             "Puissance élémentaire"
         ],
         "Bonus":{
-            "Mage supreme":"0",
-            "Pouvoir arcanique": "0",
-            "Tour de la sagesse": "0",
-            "Max-Mage supreme": "O",
-            "Max-Pouvoir arcanique": "0"
+            "Mage supreme":"1",
+            "Pouvoir arcanique": "1",
+            "Tour de la sagesse": "1",
+            "Max-Mage supreme": "1",
+            "Max-Pouvoir arcanique": "1"
         },
         "Dépendance":[
             "Renaissance",
@@ -1086,11 +1084,11 @@
             "Force du chaos"
         ],
         "Bonus":{
-            "Ame maudite": "0",
-            "Necromancien": "0",
-            "Max-Ame maudite": "0",
-            "Tour du Mordor": "0",
-            "Max-Necromancien": "0"
+            "Ame maudite": "1",
+            "Necromancien": "1",
+            "Max-Ame maudite": "1",
+            "Tour du Mordor": "1",
+            "Max-Necromancien": "1"
         },
         "Dépendance":[
             "Renaissance",
