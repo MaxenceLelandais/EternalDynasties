@@ -67,6 +67,7 @@ export class ModalArbreRechercheComponent implements OnInit {
         }
       }
     });
+    console.log(this.arborescenceRecherche);
   }
   
 

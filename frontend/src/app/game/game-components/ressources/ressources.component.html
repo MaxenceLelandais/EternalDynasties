@@ -1,18 +1,1 @@
-<div>
-    <p>Ressources</p>
-    <div class="zone_ressources">
-        <div *ngFor="let envKey of getExclude('Max-') | keyvalue">
-            <div *ngIf="!envKey.value.nom.includes('Max-')">
-                <button (click)="this.add(envKey.value.nom)" title="{{detail(envKey.value.nom)}}">
-                    <div *ngIf="this.testPresent('Max-'+envKey.value.nom)">
-                        {{envKey.value.nom}} <br> {{this.getNumberRessources(envKey.value.nom)}} / {{this.getNumberRessources("Max-"+envKey.value.nom)}}
-                    </div>
-                    <div *ngIf="!this.testPresent('Max-'+envKey.value.nom)">
-                        {{envKey.value.nom}} <br> {{this.getNumberRessources(envKey.value.nom)}}
-                    </div>
-                    
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
+<p>ressources works!</p>

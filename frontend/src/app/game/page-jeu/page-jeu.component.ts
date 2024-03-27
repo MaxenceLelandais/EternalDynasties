@@ -16,7 +16,7 @@ import { Icon } from 'src/app/model/icon.model';
 @Component({
   selector: 'app-page-jeu',
   templateUrl: './page-jeu.component.html',
-  styleUrls: ['./page-jeu.component.scss']
+  styleUrls: ['./page-jeu.component.css']
 })
 export class PageJeuComponent implements OnInit {
   civilisation: Civilisation | null = null;
@@ -78,5 +78,3 @@ constructor(
     }
   }
 }
-
-

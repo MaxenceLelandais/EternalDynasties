@@ -17,7 +17,6 @@ export class JeuService {
     return this.http.get(url, { observe: 'body', responseType: 'json'});
   }
 
-
   // Observable pour surveiller les réponses de l'API
   httpListeRecherches(): Observable<any> {
     return this.fetchData(this.apiUrl+"listeRecherches");
@@ -38,10 +37,6 @@ export class JeuService {
     return this.fetchData(this.apiUrl+"environnement?nom="+nom);
   }
 
-  httpEres(): Observable<any> {
-    return this.fetchData(this.apiUrl + "listeEres");
-  }
-
   httpJoueur(nomCivilisation:string, nomEnvironnement: string): Observable<any> {
     return this.fetchData(this.apiUrl+"joueur?civilisation="+nomCivilisation+"&environnement="+nomEnvironnement);
   }
@@ -58,9 +53,6 @@ export class JeuService {
   }
   httpListeRessources(nomJoueur:string): Observable<any> {
     return this.fetchData(this.apiUrl+"listeRessources?nomJoueur="+nomJoueur);
-  }
-  httpArbreRessources(nomJoueur:string): Observable<any> {
-    return this.fetchData(this.apiUrl+"arbreRessources?nomJoueur="+nomJoueur);
   }
   httpAddRessource(nomJoueur:string,ressource:string): Observable<any> {
     return this.fetchData(this.apiUrl+"addRessource?nomJoueur="+nomJoueur+"&ressource="+ressource);
