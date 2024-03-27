@@ -4,7 +4,9 @@
         "Description": "Le commencement d'une belle aventure.",
         "Coût": null,
         "Débloque": [
-            "Préhistoire"
+            "Préhistoire",
+            "Cueillette",
+            "Croyance"
         ],
         "Bonus": {
             "Personne":"1",
@@ -31,7 +33,7 @@
             "Pierre": "10"
         },
         "Débloque":[
-            "Cueuillette",
+            "Cueillette",
             "Croyance"
         ],
         "Bonus":null,
@@ -39,7 +41,7 @@
             "Tribue"
         ],
         "Recherches": [
-            "Cueuillette",
+            "Cueillette",
             "Feu",
             "Chasse et pêche",
             "Armée",
@@ -67,7 +69,7 @@
             "Nourriture": "1.0/s;0.5/Fermier"
         },
         "Dépendance":[
-            "Préhistoire"
+            "Tribue"
         ]
     },
     "Feu":{
@@ -94,7 +96,7 @@
             "Carriere": "1"
         },
         "Dépendance":[
-            "Cueuillette"
+            "Cueillette"
         ]
     },
     "Croyance":{
@@ -117,7 +119,7 @@
             "Max-Prêtre": "1"
         },
         "Dépendance":[
-            "Préhistoire"
+            "Tribue"
         ]
     },
     "Chasse et pêche":{

@@ -268,7 +268,7 @@ body {
     .header-jeu-ecusson {
       filter: drop-shadow(0px -5px 16px #000000);
       position: relative;
-      width: 200px;
+      width: 180px;
       margin-top: -110px;
     }
     h1 {
@@ -312,6 +312,28 @@ body {
 }
 
 
-.test {
-  padding: 100px;
+.custom-modal-container {
+  background-color: black;
+}
+
+.liste-ere{
+  list-style: none;
+  margin-left: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-top: 0;
+  li {
+    width: 290px;
+    border: 1px solid rgb(65, 65, 65);
+    display: flex; // Utilise Flexbox pour le conteneur
+    justify-content: center; // Centre horizontalement le contenu
+    align-items: center; // Centre verticalement le contenu
+    text-align: center;
+    color: rgb(65, 65, 65);
+  
+    div {
+      color: rgb(65, 65, 65);
+    }
+  }
 }

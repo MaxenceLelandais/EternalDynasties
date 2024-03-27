@@ -5,10 +5,12 @@ import { JeuService } from 'src/app/http/jeuService';
 import { Environnement } from 'src/app/model/environnement.model';
 import { EnvironnementService } from 'src/app/service/environnementService';
 import { DropEvent } from 'angular-draggable-droppable';
+import { ComponentFactoryResolver, ViewContainerRef } from '@angular/core';
 import {
   DroppableDirective,
   ValidateDrop,
 } from 'src/lib/droppable.directive';
+import { Icon } from 'src/app/model/icon.model';
 
 
 @Component({
@@ -19,19 +21,25 @@ import {
 export class PageJeuComponent implements OnInit {
   civilisation: Civilisation | null = null;
   environnement: Environnement | null = null;
+  public droppedComponentZone1: any = null;
+  public droppedComponentZone2: any = null;
 
   
   
 
-  constructor(private jeuService: JeuService, private civilisationService: CivilisationService, private environnementService: EnvironnementService) { }
-
+constructor(
+  private jeuService: JeuService, 
+  private civilisationService: CivilisationService, 
+  private environnementService: EnvironnementService,
+  private componentFactoryResolver: ComponentFactoryResolver
+) { }
   ngOnInit() {
     this.civilisation = this.civilisationService.getCivilisation();
     this.fetchData();
   }
 
-  droppedDataZone1: string = '';
-  droppedDataZone2: string = '';
+  droppedDataZone1!: string;
+  droppedDataZone2!: string;
 
   @ViewChild(DroppableDirective, { read: ElementRef, static: true })
   droppableElement!: ElementRef;

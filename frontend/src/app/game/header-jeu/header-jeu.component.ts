@@ -3,6 +3,8 @@ import { Environnement } from 'src/app/model/environnement.model';
 import { EnvironnementService } from 'src/app/service/environnementService';
 import { Civilisation } from 'src/app/model/civilisation.model';
 import { CivilisationService } from 'src/app/service/civilisationService';
+import { take } from 'rxjs/operators';
+import { ModalService } from 'src/app/service/modal.Service';
 
 @Component({
   selector: 'app-header-jeu',
@@ -14,8 +16,10 @@ export class HeaderJeuComponent implements OnInit {
   environnement: Environnement | null = null;
   civilisation: Civilisation | null = null;
 
-  constructor(private environnementService: EnvironnementService, private civilisationService: CivilisationService) {}
+  constructor(private environnementService: EnvironnementService, private civilisationService: CivilisationService, private modalService: ModalService) {}
 
+
+  
   ngOnInit() {
 
     this.loadEnvironnement();
@@ -35,7 +39,6 @@ export class HeaderJeuComponent implements OnInit {
         localStorage.setItem('environnement', JSON.stringify(environnement));
       });
     }
-    
   }
 
   private loadCivilisation() {
@@ -50,4 +53,10 @@ export class HeaderJeuComponent implements OnInit {
       localStorage.setItem('civilisation', JSON.stringify(this.civilisation));
     }
   }
+
+  openModal() {
+    this.modalService.open();
+    
+  }
+  
 }
