@@ -132,11 +132,7 @@
         },
         "Points de science": {
             "Description": "Science sans conscience n'est que ruine de l'âme",
-            "Coût": {
-                "Nourriture": "100",
-                "Pierre": "100",
-                "Bois": "100"
-            },
+            "Coût": null,
             "Bonus": {
                 "Piété": "10;-0.01/s",
                 "Points de science": "0"
@@ -211,7 +207,7 @@
             }
         },
         "Sort de prospérité": {
-            "Description": "",
+            "Description": "et la nation prospera",
             "Coût": null,
             "Bonus": {
                 "Sort de prospérité": "0"
