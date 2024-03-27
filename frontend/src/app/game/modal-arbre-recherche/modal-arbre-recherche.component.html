@@ -1,9 +1,24 @@
-<p>modal-arbre-recherche works!</p>
-<div *ngIf="listeRecherches">
-    <ul class="liste-logo-recherche" *ngIf="listeRecherches">
-        <li *ngFor="let envKey of listeRecherches | keyvalue; let i = index">
-            <p>{{ envKey.value.nom }}</p>
-            <p>{{ envKey.value.ere }}</p>
-        </li>
-    </ul>
+<div *ngIf="displayModal" class="modal-background" (click)="onBackgroundClicked($event)">
+    <div class="modal" (click)="$event.stopPropagation()">
+        <div class="modal-title">
+            <span class="close-button" (click)="closeModal()">&times;</span>
+            <h3>Arbre de Recherches</h3>
+        </div>
+        <div class="modal-content">
+            <ul *ngIf="arborescenceRecherche && arborescenceRecherche.length > 0">
+                <ng-container *ngTemplateOutlet="recursiveList; context: {$implicit: arborescenceRecherche}"></ng-container>
+            </ul>
+        </div>
+    </div>
 </div>
+
+<ng-template #recursiveList let-recherches>
+    <li *ngFor="let recherche of recherches">
+        <div class="connector"></div> <!-- Connecteur horizontal -->
+        <div>{{ recherche.nom }}</div>
+        <ul *ngIf="recherche.enfant && recherche.enfant.length > 0">
+            <div class="connector vertical"></div> <!-- Connecteur vertical -->
+            <ng-container *ngTemplateOutlet="recursiveList; context: {$implicit: recherche.enfant}"></ng-container>
+        </ul>
+    </li>
+</ng-template>

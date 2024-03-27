@@ -16,11 +16,19 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ModalArbreRechercheComponent } from './game/modal-arbre-recherche/modal-arbre-recherche.component';
 import { FriseChronologiqueComponent } from './game/frise-chronologique/frise-chronologique.component';
 import { MenuBurgerComponent } from './game/menu-burger/menu-burger.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { SortRecherchesById } from './sorts/sort-recherches-by-id.pipe';
+import { DrappableComponent } from './game/drappable/drappable.component';
 import { ApercueComponent } from './game/game-components/apercue/apercue.component';
-import { MenuRessourcesComponent } from './menu/menu-ressources/menu-ressources.component';
-import { BatimentsComponent } from './game/game-components/batiments/batiments.component';
 import { RessourcesComponent } from './game/game-components/ressources/ressources.component';
 import { MetiersComponent } from './game/game-components/metiers/metiers.component';
+import { BatimentsComponent } from './game/game-components/batiments/batiments.component';
+import { PuissancesComponent } from './game/game-components/puissances/puissances.component';
+import { MerveilleComponent } from './game/game-components/merveille/merveille.component';
+import { MenuRessourcesComponent } from './menu/menu-ressources/menu-ressources.component';
+
 
 @NgModule({
   declarations: [
@@ -34,17 +42,23 @@ import { MetiersComponent } from './game/game-components/metiers/metiers.compone
     HeaderJeuComponent,
     MenuBurgerComponent,
     ApercueComponent,
-    MenuRessourcesComponent,
+    SortRecherchesById,
+    DrappableComponent,
     BatimentsComponent,
+    MerveilleComponent,
+    MetiersComponent,
     RessourcesComponent,
-    MetiersComponent
+    PuissancesComponent
+    MenuRessourcesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    DragAndDropModule
+    DragAndDropModule,
+    NgbModule,
+    BrowserAnimationsModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

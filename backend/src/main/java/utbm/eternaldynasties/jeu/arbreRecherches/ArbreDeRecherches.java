@@ -79,8 +79,8 @@ public class ArbreDeRecherches {
         for (Recherche recherche : this.listeRecherches.values()) {
             if (recherche.getId() != -1) {
                 Map<String, String> map = new HashMap<>();
-                map.put("key", "" + recherche.getId());
-                map.put("text", recherche.getNom());
+                map.put("id", "" + recherche.getId());
+                map.put("nom", recherche.getNom());
                 map.put("fill", "#f68c06");
                 map.put("stroke", "#4d90fe");
 
