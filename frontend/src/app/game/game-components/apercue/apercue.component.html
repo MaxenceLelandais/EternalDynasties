@@ -1,1 +1,4 @@
-<p>apercue works!</p>
+<div *ngIf="environnement && environnement.images && environnement.images.length > 0" class="apercue-container">
+    <img [src]="environnement.images[0]" alt="">
+    <h4>{{ environnement.nom }}</h4>
+</div>

@@ -1,0 +1,28 @@
+.apercue-container {
+    max-width: fit-content;
+    margin: 20px;
+    position: relative;
+    display: inline-block; /* ou block selon votre mise en page */
+    border-radius: 5px; /* Pour le wrapper */
+    overflow: hidden; /* Assurez-vous que l'ombre interne suit les bordures arrondies */
+  }
+  
+  .apercue-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 31px -4px rgba(0, 0, 0, 0.27);
+    pointer-events: none;
+  }
+  
+  .apercue-container img {
+    width: 100%;
+    border-radius: 5px; /* Pour l'image elle-même si nécessaire */
+    display: block;
+  }
+  

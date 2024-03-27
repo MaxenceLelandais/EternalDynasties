@@ -23,7 +23,6 @@
     transform: translate(-50%, -50%);
     margin-left: auto;
     margin-right: auto;
-    overflow-y:scroll;
     background-color: rgb(14, 14, 14);
     box-shadow:  0px 0px 8px 5px rgba(0,0,0,0.74);
     background-image: url("../../../assets/img/image/recherches-fond.png");
@@ -65,6 +64,8 @@
         }
     }
     .modal-content {
+        overflow-y:scroll;
+        overflow-x:scroll;
         padding: 15px;
         display: flex;
         flex-direction: row;
