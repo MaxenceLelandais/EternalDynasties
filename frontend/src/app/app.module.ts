@@ -48,8 +48,8 @@ import { MenuRessourcesComponent } from './menu/menu-ressources/menu-ressources.
     MerveilleComponent,
     MetiersComponent,
     RessourcesComponent,
-    PuissancesComponent
-    MenuRessourcesComponent,
+    PuissancesComponent,
+    MenuRessourcesComponent
   ],
   imports: [
     BrowserModule,
