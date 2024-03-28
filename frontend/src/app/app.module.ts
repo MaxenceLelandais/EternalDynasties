@@ -28,6 +28,7 @@ import { BatimentsComponent } from './game/game-components/batiments/batiments.c
 import { PuissancesComponent } from './game/game-components/puissances/puissances.component';
 import { MerveilleComponent } from './game/game-components/merveille/merveille.component';
 import { MenuRessourcesComponent } from './menu/menu-ressources/menu-ressources.component';
+import { MusicComponent } from './music/music.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { MenuRessourcesComponent } from './menu/menu-ressources/menu-ressources.
     MetiersComponent,
     RessourcesComponent,
     PuissancesComponent,
-    MenuRessourcesComponent
+    MenuRessourcesComponent,
+    MusicComponent
   ],
   imports: [
     BrowserModule,
