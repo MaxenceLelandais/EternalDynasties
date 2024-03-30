@@ -8,6 +8,7 @@ import org.json.simple.JSONObject;
 import utbm.eternaldynasties.jeu.arbreDeRessources.ArbreDeRessources;
 import utbm.eternaldynasties.jeu.arbreDeRessources.Bonus;
 import utbm.eternaldynasties.jeu.arbreDeRessources.Ressource;
+import utbm.eternaldynasties.jeu.arbreDeRessources.RessourceSimplifee;
 import utbm.eternaldynasties.jeu.arbreEnvironnements.Environnement;
 import utbm.eternaldynasties.jeu.arbreRecherches.ArbreDeRecherches;
 import utbm.eternaldynasties.jeu.arbreRecherches.Recherche;
@@ -316,6 +317,20 @@ public class Joueur {
 
     public HashMap<String, Double> getRessources() {
         return ressources;
+    }
+
+    public HashMap<String, RessourceSimplifee> getRessourcesSimplifie() {
+
+        HashMap<String, RessourceSimplifee> mapRessourcesSimplifiees = new HashMap<>();
+        ressources.forEach((nom, valeur) -> {
+            if (!nom.contains("Max-")) {
+                Ressource ressource = this.arbreDeRessources.getRessource(nom);
+                mapRessourcesSimplifiees.put(
+                        nom,
+                        new RessourceSimplifee(nom, valeur, ressources.getOrDefault("Max-" + nom, -1.0), ressource.getType(), ressource.getId()));
+            }
+        });
+        return mapRessourcesSimplifiees;
     }
 
     public String getEreActuelle() {

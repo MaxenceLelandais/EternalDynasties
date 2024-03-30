@@ -1,6 +1,8 @@
 {
     "ressources": {
         "Personne": {
+            "Type": "Ressource jeu",
+            "Id" : "1",
             "Description": "Il était une fois la vie !",
             "Coût": {
                 "Nourriture": "5"
@@ -10,6 +12,8 @@
             }
         },
         "Personne Morte": {
+            "Type": "Ressource jeu",
+            "Id" : "2",
             "Description": "RIP",
             "Coût": {
                 "Personne": "1"
@@ -26,6 +30,8 @@
             }
         },
         "Or": {
+            "Type": "Ressource jeu",
+            "Id" : "3",
             "Description": "Le capitalisme",
             "Coût": {
             },
@@ -33,14 +39,9 @@
                 "Or": "0"
             }
         },
-        "Max-Or": {
-            "Description": "",
-            "Coût": null,
-            "Bonus": {
-                "Max-Or": "0"
-            }
-        },
         "Points de recherche": {
+            "Type": "Ressource jeu",
+            "Id" : "4",
             "Description": "Pour débloquer les recherches",
             "Coût": {
             },
@@ -48,14 +49,9 @@
                 "Points de recherche": "0"
             }
         },
-        "Max-Points de recherche": {
-            "Description": "",
-            "Coût": null,
-            "Bonus": {
-                "Max-Points de recherche": "0"
-            }
-        },
         "Nourriture": {
+            "Type": "Ressource base",
+            "Id" : "1",
             "Description": "C'est le début de la vie",
             "Coût": null,
             "Bonus": {
@@ -70,6 +66,8 @@
             }
         },
         "Bois": {
+            "Type": "Ressource base",
+            "Id" : "2",
             "Description": "Bob le bricoleur est là !!",
             "Coût": null,
             "Bonus": {
@@ -84,6 +82,8 @@
             }
         },
         "Pierre": {
+            "Type": "Ressource base",
+            "Id" : "3",
             "Description": "Hé ho Hé ho, on va au boulôt",
             "Coût": null,
             "Bonus": {
@@ -98,6 +98,8 @@
             }
         },
         "Piété": {
+            "Type": "Ressource base",
+            "Id" : "4",
             "Description": "Pies lesu Domine. Dona eis requiem.",
             "Coût": null,
             "Bonus": {
@@ -112,6 +114,8 @@
             }
         },
         "Mana": {
+            "Type": "Ressource spécialité",
+            "Id" : "1",
             "Description": "Force mystique et puissante",
             "Coût": {
                 "Nourriture": "100",
@@ -131,6 +135,8 @@
             }
         },
         "Points de science": {
+            "Type": "Ressource spécialité",
+            "Id" : "2",
             "Description": "Science sans conscience n'est que ruine de l'âme",
             "Coût": null,
             "Bonus": {
@@ -139,6 +145,8 @@
             }
         },
         "Pouvoir arcanique": {
+            "Type": "Ressource spécialité",
+            "Id" : "3",
             "Description": "L'essence du bien",
             "Coût": {
                 "Mana": "100"
@@ -155,6 +163,8 @@
             }
         },
         "Ames maudites": {
+            "Type": "Ressource spécialité",
+            "Id" : "4",
             "Description": "666",
             "Coût": {
                 "Mana": "100",
@@ -172,6 +182,8 @@
             }
         },
         "Électricité": {
+            "Type": "Ressource spécialité",
+            "Id" : "5",
             "Description": "Brizzzt",
             "Coût": null,
             "Bonus": {
@@ -186,6 +198,8 @@
             }
         },
         "Puissance militaire": {
+            "Type": "Ressource spécialité",
+            "Id" : "6",
             "Description": "",
             "Coût": null,
             "Bonus": {
@@ -193,6 +207,8 @@
             }
         },
         "Puissance économique": {
+            "Type": "Ressource spécialité",
+            "Id" : "7",
             "Description": "",
             "Coût": null,
             "Bonus": {
@@ -200,6 +216,8 @@
             }
         },
         "Puissance culturelle": {
+            "Type": "Ressource spécialité",
+            "Id" : "8",
             "Description": "",
             "Coût": null,
             "Bonus": {
@@ -207,6 +225,8 @@
             }
         },
         "Sort de prospérité": {
+            "Type": "Ressource spécialité",
+            "Id" : "9",
             "Description": "et la nation prospera",
             "Coût": null,
             "Bonus": {
@@ -214,6 +234,8 @@
             }
         },
         "Malédiction de guerre": {
+            "Type": "Ressource spécialité",
+            "Id" : "10",
             "Description": "",
             "Coût": null,
             "Bonus": {
@@ -221,6 +243,8 @@
             }
         },
         "Clic maudit": {
+            "Type": "Ressource spécialité",
+            "Id" : "11",
             "Description": "",
             "Coût": null,
             "Bonus": {
@@ -228,31 +252,46 @@
             }
         }
     },
-
     "bâtiments": {
-        "Maison": {
-            "Description": "4 murs et un toit.",
+        "Ferme": {
+            "Type": "Bâtiment ressources",
+            "Id" : "1",
+            "Description": "Plantons des choux à la mode de chez nous !",
             "Coût": {
-                "Pierre": "5",
+                "Pierre": "50",
+                "Bois": "100"
+            },
+            "Bonus": {
+                "Ferme": "0"
+            }
+        },
+        "Forestier": {
+            "Type": "Bâtiment ressources",
+            "Id" : "2",
+            "Description": "Coupe coupe coupe",
+            "Coût": {
+                "Pierre": "50",
                 "Bois": "10"
             },
             "Bonus": {
-                "Maison": "0",
-                "Max-Personne": "4"
+                "Forestier": "0"
             }
         },
-        "Villa": {
-            "Description": "",
+        "Mine": {
+            "Type": "Bâtiment ressources",
+            "Id" : "3",
+            "Description": "Hé o Hé o On va au boulot.",
             "Coût": {
-                "Pierre": "120",
-                "Bois": "250"
+                "Pierre": "50",
+                "Bois": "100"
             },
             "Bonus": {
-                "Villa": "0",
-                "Max-Personne": "12"
+                "Mine": "0"
             }
         },
         "Temple": {
+            "Type": "Bâtiment ressource",
+            "Id" : "4",
             "Description": "",
             "Coût": {
 
@@ -264,40 +303,73 @@
                 "Max-Piété": "1000"
             }
         },
-        "Caserne": {
-            "Description": "",
-            "Coût": {
-                "Pierre": "505",
-                "Bois": "300"
-            },
-            "Bonus": {
-                "Caserne": "0",
-                "Max-Soldat": "10"
-            }
-        },
-        "Port": {
-            "Description": "",
-            "Coût": {
-                "Pierre": "1000",
-                "Bois": "100"
-
-            },
-            "Bonus": {
-                "Port": "0",
-                "Max-Navigateur": "4"
-            }
-        },
-        "Ferme": {
-            "Description": "Plantons des choux à la mode de chez nous !",
+        "Grange": {
+            "Type": "Bâtiment stockage",
+            "Id" : "1",
+            "Description": "Ca c'est du grain !!",
             "Coût": {
                 "Pierre": "50",
-                "Bois": "100"
+                "Bois": "50"
             },
             "Bonus": {
-                "Ferme": "0"
+                "Grange": "0",
+                "Max-Nourriture": "1000"
+            }
+        },
+        "Entrepôt": {
+            "Type": "Bâtiment stockage",
+            "Id" : "2",
+            "Description": "Toujours plus!!!",
+            "Coût": {
+                "Pierre": "10",
+                "Bois": "150"
+            },
+            "Bonus": {
+                "Entrepôt": "0",
+                "Max-Bois": "1000"
+            }
+        },
+        "Carrière": {
+            "Type": "Bâtiment stockage",
+            "Id" : "3",
+            "Description": "",
+            "Coût": {
+                "Pierre": "500"
+            },
+            "Bonus": {
+                "Carrière": "0",
+                "Max-Pierre": "1000"
+            }
+        },
+        "Maison": {
+            "Type": "Bâtiment habitation",
+            "Id" : "1",
+            "Description": "4 murs et un toit.",
+            "Coût": {
+                "Pierre": "5",
+                "Bois": "10"
+            },
+            "Bonus": {
+                "Maison": "0",
+                "Max-Personne": "4"
+            }
+        },
+        "Villa": {
+            "Type": "Bâtiment habitation",
+            "Id" : "2",
+            "Description": "",
+            "Coût": {
+                "Pierre": "120",
+                "Bois": "250"
+            },
+            "Bonus": {
+                "Villa": "0",
+                "Max-Personne": "12"
             }
         },
         "Immeuble": {
+            "Type": "Bâtiment habitation",
+            "Id" : "3",
             "Description": "",
             "Coût": {
                 "Pierre": "1000",
@@ -308,28 +380,9 @@
                 "Max-Personne": "120"
             }
         },
-        "Ecole": {
-            "Description": "",
-            "Coût": {
-                "Pierre": "505",
-                "Bois": "2100"
-            },
-            "Bonus": {
-                "Ecole": "0",
-                "Max-Enseignant": "1"
-            }
-        },
-        "Forestier": {
-            "Description": "Coupe coupe coupe",
-            "Coût": {
-                "Pierre": "50",
-                "Bois": "10"
-            },
-            "Bonus": {
-                "Forestier": "0"
-            }
-        },
         "Gratte-Ciel": {
+            "Type": "Bâtiment habitation",
+            "Id" : "4",
             "Description": "",
             "Coût": {
                 "Pierre": "7777",
@@ -341,6 +394,8 @@
             }
         },
         "Mine d'or": {
+            "Type": "Bâtiment jeu",
+            "Id" : "1",
             "Description": "",
             "Coût": {
                 "Pierre": "5000",
@@ -352,6 +407,8 @@
             }
         },
         "Banque": {
+            "Type": "Bâtiment jeu",
+            "Id" : "2",
             "Description": "",
             "Coût": {
                 "Pierre": "500",
@@ -363,27 +420,9 @@
                 "Max-Banquier": "1"
             }
         },
-        "Mine": {
-            "Description": "Hé o Hé o On va au boulot.",
-            "Coût": {
-                "Pierre": "50",
-                "Bois": "100"
-            },
-            "Bonus": {
-                "Mine": "0"
-            }
-        },
-        "Carrière": {
-            "Description": "",
-            "Coût": {
-                "Pierre": "500"
-            },
-            "Bonus": {
-                "Carrière": "0",
-                "Max-Pierre": "1000"
-            }
-        },
         "Laboratoire": {
+            "Type": "Bâtiment jeu",
+            "Id" : "3",
             "Description": "",
             "Coût": {
                 "Pierre": "5000",
@@ -396,7 +435,51 @@
                 "Max-Points de recherche": "100"
             }
         },
+        "Caserne": {
+            "Type": "Bâtiment spécialité",
+            "Id" : "1",
+            "Description": "",
+            "Coût": {
+                "Pierre": "505",
+                "Bois": "300"
+            },
+            "Bonus": {
+                "Caserne": "0",
+                "Max-Soldat": "10"
+            }
+        },
+        "Port": {
+            "Type": "Bâtiment spécialité",
+            "Id" : "2",
+            "Description": "",
+            "Coût": {
+                "Pierre": "1000",
+                "Bois": "100"
+
+            },
+            "Bonus": {
+                "Port": "0",
+                "Max-Navigateur": "4"
+            }
+        },
+        "Ecole": {
+            "Type": "Bâtiment spécialité",
+            "Id" : "3",
+            "Description": "",
+            "Coût": {
+                "Pierre": "505",
+                "Bois": "2100"
+            },
+            "Bonus": {
+                "Ecole": "0",
+                "Max-Enseignant": "1"
+            }
+        },
+
+
         "Université": {
+            "Type": "Bâtiment spécialité",
+            "Id" : "4",
             "Description": "",
             "Coût": {
                 "Pierre": "2500",
@@ -407,29 +490,9 @@
                 "Max-Professeur d'université": "1"
             }
         },
-        "Grange": {
-            "Description": "Ca c'est du grain !!",
-            "Coût": {
-                "Pierre": "50",
-                "Bois": "50"
-            },
-            "Bonus": {
-                "Grange": "0",
-                "Max-Nourriture": "1000"
-            }
-        },
-        "Entrepôt": {
-            "Description": "Toujours plus!!!",
-            "Coût": {
-                "Pierre": "10",
-                "Bois": "150"
-            },
-            "Bonus": {
-                "Entrepôt": "0",
-                "Max-Bois": "1000"
-            }
-        },
         "Centrale électrique": {
+            "Type": "Bâtiment spécialité",
+            "Id" : "5",
             "Description": "",
             "Coût": {
                 "Pierre": "5000",
@@ -442,6 +505,8 @@
             }
         },
         "Ecole bu bien": {
+            "Type": "Bâtiment spécialité",
+            "Id" : "6",
             "Description": "",
             "Coût": {
                 "Pierre": "550",
@@ -455,6 +520,8 @@
             }
         },
         "Tour de la sagesse": {
+            "Type": "Bâtiment spécialité",
+            "Id" : "7",
             "Description": "",
             "Coût": {
                 "Pierre": "50000",
@@ -467,6 +534,8 @@
             }
         },
         "Ecole du mal": {
+            "Type": "Bâtiment spécialité",
+            "Id" : "8",
             "Description": "",
             "Coût": {
                 "Pierre": "1000",
@@ -480,6 +549,8 @@
             }
         },
         "Tour du Mordor": {
+            "Type": "Bâtiment spécialité",
+            "Id" : "9",
             "Description": "",
             "Coût": {
                 "Pierre": "10000",
@@ -494,6 +565,8 @@
     },
     "métiers": {
         "Fermier": {
+            "Type": "Métier base",
+            "Id" : "1",
             "Description": "",
             "Coût": {
                 "Personne": "1"
@@ -503,6 +576,8 @@
             }
         },
         "Mineur": {
+            "Type": "Métier base",
+            "Id" : "2",
             "Description": "",
             "Coût": {
                 "Personne": "1"
@@ -512,6 +587,8 @@
             }
         },
         "Bûcheron": {
+            "Type": "Métier base",
+            "Id" : "3",
             "Description": "",
             "Coût": {
                 "Personne": "1"
@@ -521,6 +598,8 @@
             }
         },
         "Prêtre": {
+            "Type": "Métier base",
+            "Id" : "4",
             "Description": "",
             "Coût": {
                 "Personne": "1"
@@ -536,7 +615,46 @@
                 "Max-Prêtre": "0"
             }
         },
+        "Banquier": {
+            "Type": "Métier jeu",
+            "Id" : "1",
+            "Description": "",
+            "Coût": {
+                "Personne": "1",
+                "Or": "1"
+            },
+            "Bonus": {
+                "Banquier": "0"
+            }
+        },
+        "Max-Banquier": {
+            "Description": "",
+            "Coût": null,
+            "Bonus": {
+                "Max-Banquier": "0"
+            }
+        },
+        "Scientifique": {
+            "Type": "Métier jeu",
+            "Id" : "2",
+            "Description": "",
+            "Coût": {
+                "Personne": "1"
+            },
+            "Bonus": {
+                "Scientifique": "0"
+            }
+        },
+        "Max-Scientifique": {
+            "Description": "",
+            "Coût": null,
+            "Bonus": {
+                "Max-Scientifique": "0"
+            }
+        },
         "Soldat": {
+            "Type": "Métier specialise",
+            "Id" : "1",
             "Description": "",
             "Coût": {
                 "Personne": "1",
@@ -554,6 +672,8 @@
             }
         },
         "Navigateur": {
+            "Type": "Métier specialise",
+            "Id" : "2",
             "Description": "",
             "Coût": {
                 "Personne": "1",
@@ -570,24 +690,9 @@
                 "Max-Navigateur": "0"
             }
         },
-        "Banquier": {
-            "Description": "",
-            "Coût": {
-                "Personne": "1",
-                "Or": "1"
-            },
-            "Bonus": {
-                "Banquier": "0"
-            }
-        },
-        "Max-Banquier": {
-            "Description": "",
-            "Coût": null,
-            "Bonus": {
-                "Max-Banquier": "0"
-            }
-        },
         "Enseignant": {
+            "Type": "Métier specialise",
+            "Id" : "3",
             "Description": "",
             "Coût": {
                 "Personne": "1"
@@ -603,23 +708,9 @@
                 "Max-Enseignant": "0"
             }
         },
-        "Scientifique": {
-            "Description": "",
-            "Coût": {
-                "Personne": "1"
-            },
-            "Bonus": {
-                "Scientifique": "0"
-            }
-        },
-        "Max-Scientifique": {
-            "Description": "",
-            "Coût": null,
-            "Bonus": {
-                "Max-Scientifique": "0"
-            }
-        },
         "Professeur d'université": {
+            "Type": "Métier specialise",
+            "Id" : "4",
             "Description": "",
             "Coût": {
                 "Personne": "1"
@@ -636,6 +727,8 @@
             }
         },
         "Mage": {
+            "Type": "Métier specialise",
+            "Id" : "5",
             "Description": "",
             "Coût": {
                 "Personne": "1",
@@ -654,6 +747,8 @@
             }
         },
         "Mage suprême": {
+            "Type": "Métier specialise",
+            "Id" : "6",
             "Description": "Son pouvoir n'a d'égal que son charisme, le mage suprême est absolu",
             "Coût": {
                 "Personne": "5",
@@ -673,6 +768,8 @@
             }
         },
         "Sorcier": {
+            "Type": "Métier specialise",
+            "Id" : "7",
             "Description": "",
             "Coût": {
                 "Personne": "2",
@@ -692,6 +789,8 @@
             }
         },
         "Nécromancien": {
+            "Type": "Métier specialise",
+            "Id" : "8",
             "Description": "",
             "Coût": {
                 "Personne": "5",

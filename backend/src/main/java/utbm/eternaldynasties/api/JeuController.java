@@ -95,7 +95,7 @@ public class JeuController {
 
     @GetMapping(value="listeRessources")
     public JSONObject getListeRessources(@RequestParam(value = "nomJoueur") String nomJoueur) {
-        return Json.objectToJsonObject(this.jeuService.getJeu().getJoueur(nomJoueur).getRessources());
+        return Json.objectToJsonObject(this.jeuService.getJeu().getJoueur(nomJoueur).getRessourcesSimplifie());
     }
 
     @GetMapping(value = "ereActuelle")
