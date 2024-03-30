@@ -236,28 +236,30 @@
             "Bonus": {
                 "Clic maudit": "0"
             }
-        },
+        }
+    },
+    "Puissances": {
         "Puissance militaire": {
             "Type": "Puissance",
-            "Id" : "6",
+            "Id" : "1",
             "Description": "",
             "Coût": null,
             "Bonus": {
                 "Puissance militaire": "0"
-            },
+            }
         },
         "Puissance économique": {
             "Type": "Puissance",
-            "Id" : "7",
+            "Id" : "2",
             "Description": "",
             "Coût": null,
             "Bonus": {
                 "Puissance économique": "0"
-            },
+            }
         },
         "Puissance culturelle": {
             "Type": "Puissance",
-            "Id" : "8",
+            "Id" : "3",
             "Description": "",
             "Coût": null,
             "Bonus": {
