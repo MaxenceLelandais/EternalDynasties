@@ -327,7 +327,7 @@ public class Joueur {
                 Ressource ressource = this.arbreDeRessources.getRessource(nom);
                 mapRessourcesSimplifiees.put(
                         nom,
-                        new RessourceSimplifee(nom, valeur, ressources.getOrDefault("Max-" + nom, -1.0), ressource.getType(), ressource.getId()));
+                        new RessourceSimplifee(nom, valeur, ressources.getOrDefault("Max-" + nom, -1.0), ressource.getType(), ressource.getId(),ressource.getValeurEchange()));
             }
         });
         return mapRessourcesSimplifiees;

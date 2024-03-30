@@ -15,6 +15,7 @@ public class Ressource {
 
     private String type = "";
     private int id = -1;
+    private double valeurEchange = -1;
     private final String nom;
     private String description;
     private final Map<String, Double> listeCout = new HashMap<>();
@@ -41,6 +42,10 @@ public class Ressource {
         }
         if (jsonObjet.get("Id") != null) {
             this.id = jsonObjet.containsKey("Id") ? Integer.parseInt(jsonObjet.get("Id").toString()) : -1;
+        }
+
+        if (jsonObjet.get("ValeurEchange") != null) {
+            this.valeurEchange = jsonObjet.containsKey("ValeurEchange") ? Integer.parseInt(jsonObjet.get("ValeurEchange").toString()) : -1;
         }
 
         this.description = (String) jsonObjet.get("Description");
@@ -99,5 +104,9 @@ public class Ressource {
 
     public int getId() {
         return id;
+    }
+
+    public double getValeurEchange() {
+        return valeurEchange;
     }
 }

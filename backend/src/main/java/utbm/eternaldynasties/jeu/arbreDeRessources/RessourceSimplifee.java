@@ -7,11 +7,14 @@ public class RessourceSimplifee {
     public String type = "";
     public int id = -1;
 
-    public RessourceSimplifee(String nom, double quantite, double max, String type, int id){
+    public double valeurEchange = -1;
+
+    public RessourceSimplifee(String nom, double quantite, double max, String type, int id, double valeurEchange){
         this.nom = nom;
         this.quantite = quantite;
         this.max = max;
         this.type = type;
         this.id = id;
+        this.valeurEchange = valeurEchange;
     }
 }

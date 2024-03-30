@@ -47,7 +47,8 @@
             },
             "Bonus": {
                 "Points de recherche": "0"
-            }
+            },
+            "ValeurEchange": "10000"
         },
         "Nourriture": {
             "Type": "Ressource base",
@@ -56,7 +57,8 @@
             "Coût": null,
             "Bonus": {
                 "Nourriture": "0"
-            }
+            },
+            "ValeurEchange": "10000"
         },
         "Max-Nourriture": {
             "Description": "",
@@ -72,7 +74,8 @@
             "Coût": null,
             "Bonus": {
                 "Bois": "0"
-            }
+            },
+            "ValeurEchange": "10000"
         },
         "Max-Bois": {
             "Description": "",
@@ -88,7 +91,8 @@
             "Coût": null,
             "Bonus": {
                 "Pierre": "0"
-            }
+            },
+            "ValeurEchange": "10000"
         },
         "Max-Pierre": {
             "Description": "",
@@ -104,7 +108,8 @@
             "Coût": null,
             "Bonus": {
                 "Piété": "0"
-            }
+            },
+            "ValeurEchange": "10000"
         },
         "Max-Piété": {
             "Description": "",
@@ -125,7 +130,8 @@
             },
             "Bonus": {
                 "Mana": "0"
-            }
+            },
+            "ValeurEchange": "10000"
         },
         "Max-Mana": {
             "Description": "",
@@ -142,7 +148,9 @@
             "Bonus": {
                 "Piété": "10;-0.01/s",
                 "Points de science": "0"
-            }
+            },
+            "ValeurEchange": "10000"
+
         },
         "Pouvoir arcanique": {
             "Type": "Ressource spécialité",
@@ -153,7 +161,8 @@
             },
             "Bonus": {
                 "Pouvoir arcanique": "0"
-            }
+            },
+            "ValeurEchange": "10000"
         },
         "Max-Pouvoir arcanique": {
             "Description": "",
@@ -172,7 +181,8 @@
             },
             "Bonus": {
                 "Ames maudites": "0"
-            }
+            },
+            "ValeurEchange": "10000"
         },
         "Max-Ames maudites": {
             "Description": "",
@@ -188,7 +198,8 @@
             "Coût": null,
             "Bonus": {
                 "Électricité": "0"
-            }
+            },
+            "ValeurEchange": "10000"
         },
         "Max-Électricité": {
             "Description": "",
@@ -204,7 +215,8 @@
             "Coût": null,
             "Bonus": {
                 "Puissance militaire": "0"
-            }
+            },
+            "ValeurEchange": "10000"
         },
         "Puissance économique": {
             "Type": "Ressource spécialité",
@@ -213,7 +225,8 @@
             "Coût": null,
             "Bonus": {
                 "Puissance économique": "0"
-            }
+            },
+            "ValeurEchange": "10000"
         },
         "Puissance culturelle": {
             "Type": "Ressource spécialité",
@@ -222,7 +235,8 @@
             "Coût": null,
             "Bonus": {
                 "Puissance culturelle": "0"
-            }
+            },
+            "ValeurEchange": "10000"
         },
         "Sort de prospérité": {
             "Type": "Ressource spécialité",
@@ -231,7 +245,8 @@
             "Coût": null,
             "Bonus": {
                 "Sort de prospérité": "0"
-            }
+            },
+            "ValeurEchange": "10000"
         },
         "Malédiction de guerre": {
             "Type": "Ressource spécialité",
@@ -240,7 +255,8 @@
             "Coût": null,
             "Bonus": {
                 "Malédiction de guerre": "0"
-            }
+            },
+            "ValeurEchange": "10000"
         },
         "Clic maudit": {
             "Type": "Ressource spécialité",
@@ -249,7 +265,8 @@
             "Coût": null,
             "Bonus": {
                 "Clic maudit": "0"
-            }
+            },
+            "ValeurEchange": "10000"
         }
     },
     "bâtiments": {
