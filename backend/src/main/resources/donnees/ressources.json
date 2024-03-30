@@ -208,36 +208,6 @@
                 "Max-Électricité": "0"
             }
         },
-        "Puissance militaire": {
-            "Type": "Ressource spécialité",
-            "Id" : "6",
-            "Description": "",
-            "Coût": null,
-            "Bonus": {
-                "Puissance militaire": "0"
-            },
-            "ValeurEchange": "10000"
-        },
-        "Puissance économique": {
-            "Type": "Ressource spécialité",
-            "Id" : "7",
-            "Description": "",
-            "Coût": null,
-            "Bonus": {
-                "Puissance économique": "0"
-            },
-            "ValeurEchange": "10000"
-        },
-        "Puissance culturelle": {
-            "Type": "Ressource spécialité",
-            "Id" : "8",
-            "Description": "",
-            "Coût": null,
-            "Bonus": {
-                "Puissance culturelle": "0"
-            },
-            "ValeurEchange": "10000"
-        },
         "Sort de prospérité": {
             "Type": "Ressource spécialité",
             "Id" : "9",
@@ -259,14 +229,40 @@
             "ValeurEchange": "10000"
         },
         "Clic maudit": {
-            "Type": "Ressource spécialité",
+            "Type": "Bonus",
             "Id" : "11",
             "Description": "",
             "Coût": null,
             "Bonus": {
                 "Clic maudit": "0"
+            }
+        },
+        "Puissance militaire": {
+            "Type": "Puissance",
+            "Id" : "6",
+            "Description": "",
+            "Coût": null,
+            "Bonus": {
+                "Puissance militaire": "0"
             },
-            "ValeurEchange": "10000"
+        },
+        "Puissance économique": {
+            "Type": "Puissance",
+            "Id" : "7",
+            "Description": "",
+            "Coût": null,
+            "Bonus": {
+                "Puissance économique": "0"
+            },
+        },
+        "Puissance culturelle": {
+            "Type": "Puissance",
+            "Id" : "8",
+            "Description": "",
+            "Coût": null,
+            "Bonus": {
+                "Puissance culturelle": "0"
+            }
         }
     },
     "bâtiments": {
