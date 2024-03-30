@@ -69,7 +69,7 @@ public class ArbreDeRecherches {
 
     public void listeEres() {
         this.eres = (ArrayList<String>) this.listeRecherches.values().stream()
-                .filter(r -> r.getId() == -1)
+                .filter(r -> r.getId() <= -1)
                 .map(Recherche::getNom)
                 .collect(Collectors.toList());
     }
@@ -77,7 +77,7 @@ public class ArbreDeRecherches {
     public void convertEnArbre() {
 
         for (Recherche recherche : this.listeRecherches.values()) {
-            if (recherche.getId() != -1) {
+            if (recherche.getId() >-1) {
                 Map<String, String> map = new HashMap<>();
                 map.put("id", "" + recherche.getId());
                 map.put("nom", recherche.getNom());

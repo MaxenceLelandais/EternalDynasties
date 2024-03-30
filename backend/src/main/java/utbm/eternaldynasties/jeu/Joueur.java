@@ -16,6 +16,7 @@ import utbm.eternaldynasties.utils.Json;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Joueur {
 
@@ -315,6 +316,19 @@ public class Joueur {
 
     public HashMap<String, Double> getRessources() {
         return ressources;
+    }
+
+    public String getEreActuelle() {
+        String nomEre = "";
+        int id = 0;
+        for (Recherche ere : this.arbreDeRecherche.recherchesEffectuees().stream()
+                .filter(r -> (r.getId() <= -1 && r.getEtat())).toList()) {
+            if (id > ere.getId()) {
+                id = ere.getId();
+                nomEre = ere.getNom();
+            }
+        }
+        return nomEre;
     }
 
 

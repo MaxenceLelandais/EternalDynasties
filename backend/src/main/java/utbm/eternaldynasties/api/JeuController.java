@@ -98,6 +98,11 @@ public class JeuController {
         return Json.objectToJsonObject(this.jeuService.getJeu().getJoueur(nomJoueur).getRessources());
     }
 
+    @GetMapping(value = "ereActuelle")
+    public String sendActualEre(@RequestParam(value = "nomJoueur") String nomJoueur) {
+        return this.jeuService.getJeu().getJoueur(nomJoueur).getEreActuelle();
+    }
+
     @GetMapping(value="arbreRessources")
     public JSONObject getArbreRessources(@RequestParam(value = "nomJoueur") String nomJoueur) {
         return Json.objectToJsonObject(this.jeuService.getJeu().getJoueur(nomJoueur).getArbreRessources());

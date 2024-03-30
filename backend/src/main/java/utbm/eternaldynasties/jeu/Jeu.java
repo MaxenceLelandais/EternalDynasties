@@ -118,6 +118,7 @@ public class Jeu {
             joueur.save();
             this.listeJoueur.put(civilisation+"-"+environnement, joueur);
             joueur.activerRecherche("Tribue");
+            joueur.activerRecherche("Préhistoire");
         }
         return joueur;
     }

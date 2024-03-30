@@ -26,12 +26,9 @@
         }
     },
     "Préhistoire":{
+        "Id": "-1",
         "Description":"Entamons le voyage dans les premiers âges.",
-        "Coût":{
-            "Nourriture": "10",
-            "Bois": "10",
-            "Pierre": "10"
-        },
+        "Coût":null,
         "Débloque":[
             "Cueillette",
             "Croyance"
@@ -52,7 +49,7 @@
             "Religion"
         ]
     },
-    "Cueuillette":{
+    "Cueillette":{
         "Id": "2",
         "Description":"Rassemblons les ressources de la nature.",
         "Coût":{
@@ -242,6 +239,7 @@
         ]
     },
     "Antiquité":{
+        "Id": "-2",
         "Description":"Avançons dans les connaissances et les découvertes anciennes.",
         "Coût":null,
         "Débloque":[
@@ -583,6 +581,7 @@
         ]
     },
     "Moyen-Age":{
+        "Id": "-3",
         "Description":"Entamons une nouvelle ère de progrès.",
         "Coût":null,
         "Débloque":[
@@ -750,6 +749,7 @@
         ]
     },
     "Renaissance":{
+        "Id": "-4",
         "Description":"Entrez dans l'ère de la Renaissance, où l'art, la science et la culture fleurissent. ",
         "Coût":null,
         "Débloque":[
@@ -910,6 +910,7 @@
         ]
     },
     "Révolution industrielle":{
+        "Id": "-5",
         "Description":"Plongez dans l'ère de l'industrialisation et de la production de masse. ",
         "Coût":null,
         "Débloque":[
@@ -1121,6 +1122,7 @@
         ]
     },
     "Epoque Moderne":{
+        "Id": "-6",
         "Description":"Plongez dans une période de changements radicaux, d'explorations audacieuses et de révolutions culturelles",
         "Coût":null,
         "Débloque":[
@@ -1371,6 +1373,7 @@
         ]
     },
     "Epoque Futuriste":{
+        "Id": "-7",
         "Description":"Plongez dans un monde où la technologie repousse les frontières de l'imagination.",
         "Coût":null,
         "Débloque":[

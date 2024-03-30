@@ -3,9 +3,9 @@
 récupère la liste des racherches chargées dans le jeu : http://localhost:9876/jeu/listeRecherches
 récupère les nom des parties existantes : http://localhost:9876/jeu/parties
 récupère arbreRecherches pour l'affichage: http://localhost:9876/jeu/arbreRecherches
-récupère listeEres : http://localhost:9876/jeu/listeEres
 récupère listeRessourcesJeu : http://localhost:9876/jeu/listeRessourcesJeu
 récupère listeEnvironnements : http://localhost:9876/jeu/listeEnvironnements
+récupère les données de l'environnement : http://localhost:9876/jeu/environnement?nom=nomEnvironnement
 récupère listeEre : http://localhost:9876/jeu/listeEres
 
 //////////////////    PARTIES      //////////////////
@@ -13,6 +13,8 @@ récupère listeEre : http://localhost:9876/jeu/listeEres
 récupère ou créer une nouvelle partie : http://localhost:9876/jeu/joueur?civilisation=max&environnement=Plaine
 récupère les recherches disponibles : http://localhost:9876/jeu/recherchesDisponibles?nomJoueur=maxenc
 active une recherche : http://localhost:9876/jeu/activerRecherche?nomJoueur=maxenc&recherche=Tribue
+liste les ressources du joueur : http://localhost:9876/jeu/listeRessources?nomJoueur=maxenc
+récupère l'ere actuelle du joueur : http://localhost:9876/jeu/ereActuelle?nomJoueur=maxenc
+récupère arbreRessources utilisable en front : http://localhost:9876/jeu/arbreRessources?nomJoueur=maxenc
 add une ressources (achat si besoin) : http://localhost:9876/jeu/addRessource?nomJoueur=maxenc&ressource=Bois
 tick : http://localhost:9876/jeu/tick?nomJoueur=maxenc
-liste ressources : http://localhost:9876/jeu/listeRessources?nomJoueur=maxenc
