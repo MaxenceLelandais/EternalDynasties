@@ -1,6 +1,6 @@
 <app-header-jeu></app-header-jeu>
 <app-frise-chronologique></app-frise-chronologique>
-<ul *ngIf="ressources">
+<!-- <ul *ngIf="ressources">
   <li *ngFor="let ressource of ressources | keyvalue">
     <p>{{ ressource.value.nom }}</p>
     <p>{{ ressource.value.quantite }}</p>
@@ -8,7 +8,7 @@
     <p>{{ ressource.value.type }}</p>
     <p>{{ ressource.value.valeurEchange }}</p>
   </li>
-</ul>
+</ul> -->
 
 <div #zone1Container mwlDroppable (drop)="onDropZone1($event)" class="dropZone1" dragOverClass="drop-over-active">
     <span [hidden]="droppedDataZone1">Drop here</span>

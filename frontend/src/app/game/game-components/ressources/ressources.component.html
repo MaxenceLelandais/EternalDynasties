@@ -1,1 +1,12 @@
-<p>ressources works!</p>
+<ul *ngIf="ressources">
+    <ng-container *ngFor="let ressource of ressources | keyvalue">
+      <li *ngIf="ressource.value.type == 'Ressource base'">
+        <p>{{ ressource.value.nom }}</p>
+        <p>{{ ressource.value.quantite }}</p>
+        <p>{{ ressource.value.max }}</p>
+        <p>{{ ressource.value.type }}</p>
+        <p>{{ ressource.value.valeurEchange }}</p>
+      </li>
+    </ng-container>
+  </ul>
+  

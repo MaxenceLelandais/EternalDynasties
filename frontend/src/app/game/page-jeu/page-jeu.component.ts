@@ -99,6 +99,7 @@ constructor(
         this.jeuService.httpListeRessources(this.nomJoueur).subscribe({
           next: (response) => {
             this.ressources = response;
+            localStorage.setItem('ressources', JSON.stringify(this.ressources));
             console.log('Réponse du serveur', response);
           },
           error: (error) => {

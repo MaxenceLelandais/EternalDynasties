@@ -21,6 +21,7 @@ export class MenuEnvironnementComponent implements OnInit {
   ngOnInit(): void {
     localStorage.removeItem('environnement');
     localStorage.removeItem('civilisation');
+    localStorage.removeItem('ressources');
     this.fetchData();
   }
 
