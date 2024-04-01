@@ -42,24 +42,31 @@ export class MusicComponent implements OnInit {
   }
 
   playRandomAudio() {
-    const randomIndex = Math.floor(Math.random() * this.audioFiles.length);
-    this.currentAudioIndex = randomIndex;
-    const audioPlayer = document.getElementById('audioPlayer') as HTMLAudioElement;
-    audioPlayer.src = `assets/music/${this.audioFiles[randomIndex]}`;
-    audioPlayer.play();
-  }
+    if (this.environnement) {
+        const randomIndex = Math.floor(Math.random() * this.audioFiles.length);
+        this.currentAudioIndex = randomIndex;
+        const audioPlayer = document.getElementById('audioPlayer') as HTMLAudioElement;
+        audioPlayer.src = `assets/music/${this.environnement.nom}/${this.audioFiles[randomIndex]}`;
+        audioPlayer.play();
+    }
+}
 
-  nextAudio() {
-    this.currentAudioIndex = (this.currentAudioIndex + 1) % this.audioFiles.length;
-    const audioPlayer = document.getElementById('audioPlayer') as HTMLAudioElement;
-    audioPlayer.src = `assets/music/${this.audioFiles[this.currentAudioIndex]}`;
-    audioPlayer.play();
-  }
+nextAudio() {
+    if (this.environnement) {
+        this.currentAudioIndex = (this.currentAudioIndex + 1) % this.audioFiles.length;
+        const audioPlayer = document.getElementById('audioPlayer') as HTMLAudioElement;
+        audioPlayer.src = `assets/music/${this.environnement.nom}/${this.audioFiles[this.currentAudioIndex]}`;
+        audioPlayer.play();
+    }
+}
 
-  previousAudio() {
-    this.currentAudioIndex = (this.currentAudioIndex - 1 + this.audioFiles.length) % this.audioFiles.length;
-    const audioPlayer = document.getElementById('audioPlayer') as HTMLAudioElement;
-    audioPlayer.src = `assets/music/${this.audioFiles[this.currentAudioIndex]}`;
-    audioPlayer.play();
-  }
+previousAudio() {
+    if (this.environnement) {
+        this.currentAudioIndex = (this.currentAudioIndex - 1 + this.audioFiles.length) % this.audioFiles.length;
+        const audioPlayer = document.getElementById('audioPlayer') as HTMLAudioElement;
+        audioPlayer.src = `assets/music/${this.environnement.nom}/${this.audioFiles[this.currentAudioIndex]}`;
+        audioPlayer.play();
+    }
+}
+
 }
