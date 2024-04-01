@@ -14,10 +14,10 @@
 
 <ng-template #recursiveList let-recherches>
     <li *ngFor="let recherche of recherches">
-        <div class="connector"></div> <!-- Connecteur horizontal -->
+        <div class="connector"></div>
         <div>{{ recherche.nom }}</div>
         <ul *ngIf="recherche.enfant && recherche.enfant.length > 0">
-            <div class="connector vertical"></div> <!-- Connecteur vertical -->
+            <div class="connector vertical"></div>
             <ng-container *ngTemplateOutlet="recursiveList; context: {$implicit: recherche.enfant}"></ng-container>
         </ul>
     </li>

@@ -293,6 +293,7 @@ body {
 }
 .liste-ere li {
   width: 290px;
+  height: 50px;
   border: 1px solid rgb(65, 65, 65);
   display: flex;
   justify-content: center;
