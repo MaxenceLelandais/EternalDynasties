@@ -3,7 +3,10 @@
 <ul *ngIf="ressources">
   <li *ngFor="let ressource of ressources | keyvalue">
     <p>{{ ressource.value.nom }}</p>
-    <p>{{ ressource.value.valeur }}</p>
+    <p>{{ ressource.value.quantite }}</p>
+    <p>{{ ressource.value.max }}</p>
+    <p>{{ ressource.value.type }}</p>
+    <p>{{ ressource.value.valeurEchange }}</p>
   </li>
 </ul>
 

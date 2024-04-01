@@ -1,6 +1,9 @@
 export interface Ressource {
     nom: string;
-    valeur: number;
+    quantite: number;
+    max: number;
+    type: string;
+    valeurEchange: number;
 }
 
 export interface Ressources {

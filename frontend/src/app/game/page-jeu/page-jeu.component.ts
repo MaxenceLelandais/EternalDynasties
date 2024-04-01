@@ -35,13 +35,11 @@ export class PageJeuComponent implements OnInit {
 constructor(
   private jeuService: JeuService, 
   private civilisationService: CivilisationService, 
-  private environnementService: EnvironnementService,
-  private componentFactoryResolver: ComponentFactoryResolver
+  private environnementService: EnvironnementService
 ) { }
   ngOnInit() {
     this.loadCivilisation();
     this.fetchData();
-    this.structuredRessources();
   }
 
   droppedDataZone1!: string;
@@ -73,17 +71,6 @@ constructor(
       localStorage.setItem('civilisation', JSON.stringify(this.civilisation));
     }
   }
-
-  private structuredRessources() {
-    if (this.ressources != null) {
-      Object.values(this.ressources).forEach((ressource: Ressource) => {
-        if (ressource.nom == "Personne" || ressource.nom == "Or" || ressource.nom == "Points de recherche") {
-          
-        }
-        console.log("structures : " + ressource.nom);
-      });
-    }
-  }
   
 
   fetchData() {
@@ -109,18 +96,37 @@ constructor(
         );
 
         this.nomJoueur = this.civilisation.nom + "-" + this.civilisation.nomEnvironnement;
-        const storedRessources = localStorage.getItem('ressources');
-        if (storedRessources) {
-        try {
-          const parsedRessources: Ressources = JSON.parse(storedRessources);
-          if (Object.keys(parsedRessources).length > 0) {
-            this.ressources = parsedRessources;
-            return; // Arrête l'exécution de fetchData ici puisque les données sont déjà chargées
+        this.jeuService.httpListeRessources(this.nomJoueur).subscribe({
+          next: (response) => {
+            this.ressources = response;
+            console.log('Réponse du serveur', response);
+          },
+          error: (error) => {
+            console.error('Erreur lors de la requête', error);
           }
-        } catch (error) {
-          console.error("Erreur lors de la lecture des ressources depuis localStorage", error);
-        }
-      }
+        });
+      //   const storedRessources = localStorage.getItem('ressources');
+      //   if (storedRessources) {
+      //   try {
+      //     const parsedRessources: Ressources = JSON.parse(storedRessources);
+      //     if (Object.keys(parsedRessources).length > 0) {
+      //       this.ressources = parsedRessources;
+      //       return;
+      //     }
+      //   } catch (error) {
+      //     console.error("Erreur lors de la lecture des ressources depuis localStorage", error);
+      //   }
+      // }
+      // else {
+      //   this.jeuService.httpListeRessources(this.nomJoueur).subscribe({
+      //     next: (response) => {
+      //       console.log('Réponse du serveur', response);
+      //     },
+      //     error: (error) => {
+      //       console.error('Erreur lors de la requête', error);
+      //     }
+      //   });
+      // }
     }
   }
 }
