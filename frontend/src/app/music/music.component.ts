@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Environnement } from '../model/environnement.model';
 import { EnvironnementService } from '../service/environnementService';
 import { EreService } from '../service/ere.service'; 
+import { JeuService } from '../http/jeuService';
+import { CivilisationService } from '../service/civilisationService';
 
 @Component({
   selector: 'app-music',
@@ -15,12 +17,15 @@ export class MusicComponent implements OnInit {
   currentAudioIndex: number = 0;
   environnement: Environnement | null = null;
   ereActuelle: string = ""; // Variable pour stocker l'ère actuelle
+  civilisation:any;
 
   constructor(
     private environnementService: EnvironnementService,
-    private ereService: EreService // Injection du service EreService
+    private ereService: EreService,
+    private jeuService: JeuService, 
+    private civilisationService: CivilisationService // Injection du service EreService
   ) {}
-
+  
   ngOnInit(): void {
     this.loadAudioFiles();
     this.loadEnvironnement();
@@ -50,18 +55,17 @@ export class MusicComponent implements OnInit {
   
 
   loadEreActuelle() {
-    if (localStorage.getItem('ereActuelle')) {
-      const savedEre = localStorage.getItem('ereActuelle');
-      if (savedEre !== null) {
-        this.ereActuelle = savedEre;
-      }
-    } else {
-      this.ereService.currentEreActuelle.subscribe((ere: string | null) => {
-        if (ere !== null) {
-          this.ereActuelle = ere;
-          localStorage.setItem('ereActuelle', ere);
+    if(this.civilisationService.getCivilisation()!=null){
+      this.civilisation = this.civilisationService.getCivilisation();
+      this.jeuService.httpEreActuelle(this.civilisation.nom+"-"+this.civilisation.nomEnvironnement).subscribe(
+        ere => {
+          this.ereActuelle = ere["nom"];
+          localStorage.setItem('ereActuelle', ere["nom"]);
+        },
+        error => {
+          console.error("Erreur lors de l'ajout de la ressource", error);
         }
-      });
+      );
     }
   }
   

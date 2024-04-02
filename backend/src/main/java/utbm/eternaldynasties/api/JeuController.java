@@ -99,8 +99,10 @@ public class JeuController {
     }
 
     @GetMapping(value = "ereActuelle")
-    public String sendActualEre(@RequestParam(value = "nomJoueur") String nomJoueur) {
-        return this.jeuService.getJeu().getJoueur(nomJoueur).getEreActuelle();
+    public JSONObject sendActualEre(@RequestParam(value = "nomJoueur") String nomJoueur) {
+        Map<String,String> map = new HashMap<>();
+        map.put("nom", this.jeuService.getJeu().getJoueur(nomJoueur).getEreActuelle());
+        return Json.objectToJsonObject(map);
     }
 
     @GetMapping(value="arbreRessources")

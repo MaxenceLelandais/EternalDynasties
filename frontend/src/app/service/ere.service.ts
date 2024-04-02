@@ -15,14 +15,4 @@ export class EreService {
   updateEreActuelle(ereActuelle: string) {
     this.ereActuelleSource.next(ereActuelle);
   }
-
-  getEreActuelleFromServer(): Observable<string> {
-    // Effectuer une requête HTTP pour récupérer l'ère actuelle depuis le serveur
-    return this.http.get<string>('http://localhost:9876/jeu/ereActuelle');
-  }
-
-  // Méthode pour récupérer la liste des Eres
-  getEresFromServer(): Observable<Eres> {
-    return this.http.get<Eres>('http://localhost:9876/jeu/ereActuelle?nomJoueur=maxen');
-  }
 }
