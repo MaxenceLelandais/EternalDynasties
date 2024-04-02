@@ -94,7 +94,7 @@ export class MusicComponent implements OnInit {
 
   private playAudioAtIndex(index: number) {
     const audioPlayer = document.getElementById('audioPlayer') as HTMLAudioElement;
-    audioPlayer.src = `assets/music/${this.environnement?.nom}/${this.audioFiles[index]}`;
+    audioPlayer.src = `assets/music/${this.environnement?.nom}/${this.ereActuelle}/${this.audioFiles[index]}`;
     audioPlayer.play();
   }
 }
