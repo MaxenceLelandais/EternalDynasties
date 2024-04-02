@@ -115,36 +115,53 @@ public class Joueur {
         return nomRecherche + " : RECHERCHE NON DEBLOQUEE";
     }
 
-    private void checkEtAddVal(Map<String, Bonus> bonus) {
+    private boolean checkEtAddVal(Map<String, Bonus> bonus) {
+        final Boolean[] valide = {true};
         bonus.forEach((key, value) -> {
             double valeur = value.estimationValeur(this.ressources);
             if (this.ressources.containsKey("Max-" + key)) {
                 if (this.ressources.get(key) + valeur <= this.ressources.get("Max-" + key)) {
                     this.ressources.replace(key, this.ressources.get(key) + valeur);
+                }else{
+                    valide[0] = false;
                 }
             } else {
                 this.ressources.replace(key, this.ressources.get(key) + valeur);
             }
         });
+        return valide[0];
     }
 
-    public HashMap<String, Double> clickAchat(String nomRessource) {
+    public HashMap<String, Double> clickAchat(String nomRessource, int quantite) {
 
         Map<String, Double> cout = this.arbreDeRessources.getRessource(nomRessource).getListeCout();
         Map<String, Bonus> bonus = this.arbreDeRessources.getRessource(nomRessource).getListeBonus();
         if ((cout != null && !cout.isEmpty())) {
             boolean pasAssezDeRessources = false;
+            int nombreAchatPossible = 0;
             for (String key : cout.keySet()) {
-                double diff = this.ressources.get(key) - cout.get(key);
-                if (diff >= 0) {
-                    this.ressources.replace(key, diff);
+                int nbr = (int) (this.ressources.get(key) / cout.get(key));
+                if (nbr >=1) {
+                    if(nombreAchatPossible==0){
+                        nombreAchatPossible = nbr;
+                    }else{
+                        nombreAchatPossible = Math.min(nombreAchatPossible, nbr);
+                    }
                 } else {
                     pasAssezDeRessources = true;
                     break;
                 }
             }
             if (!pasAssezDeRessources) {
-                this.checkEtAddVal(bonus);
+                int nbrAchat = 0;
+                for(nbrAchat = 1; nbrAchat<Math.min(nombreAchatPossible, quantite);nbrAchat++){
+                    if(!this.checkEtAddVal(bonus)){
+                        break;
+                    }
+                }
+                for (String key : cout.keySet()) {
+                    this.ressources.replace(key, this.ressources.get(key)-nbrAchat*cout.get(key));
+                }
             }
         } else {
             this.checkEtAddVal(bonus);

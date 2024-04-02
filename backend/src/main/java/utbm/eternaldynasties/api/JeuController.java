@@ -111,8 +111,8 @@ public class JeuController {
     }
 
     @GetMapping(value="addRessource")
-    public JSONObject getAddRessource(@RequestParam(value = "nomJoueur") String nomJoueur,@RequestParam(value = "ressource") String nomRessource) {
-        return Json.objectToJsonObject(this.jeuService.getJeu().getJoueur(nomJoueur).clickAchat(nomRessource));
+    public JSONObject getAddRessource(@RequestParam(value = "nomJoueur") String nomJoueur,@RequestParam(value = "ressource") String nomRessource,@RequestParam(value = "nombre") int nombre) {
+        return Json.objectToJsonObject(this.jeuService.getJeu().getJoueur(nomJoueur).clickAchat(nomRessource, nombre));
     }
 
     @GetMapping(value="tick")
