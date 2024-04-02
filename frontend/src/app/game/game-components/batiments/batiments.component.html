@@ -2,10 +2,7 @@
     <ng-container *ngFor="let ressource of ressources | keyvalue">
       <li *ngIf="ressource.value.type.includes('Bâtiment')">
         <p>{{ ressource.value.nom }}</p>
-        <p>{{ ressource.value.quantite }}</p>
-        <p>{{ ressource.value.max }}</p>
-        <p>{{ ressource.value.type }}</p>
-        <p>{{ ressource.value.valeurEchange }}</p>
+        <p>{{ ressource.value.quantite }} / {{ ressource.value.max }} </p>
       </li>
     </ng-container>
   </ul>

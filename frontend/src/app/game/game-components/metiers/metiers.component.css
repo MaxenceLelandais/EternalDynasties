@@ -1,1 +1,11 @@
-/*# sourceMappingURL=metiers.component.css.map */
+ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+  padding-left: 0;
+}
+ul li {
+  width: 170px;
+  text-align: center;
+}/*# sourceMappingURL=metiers.component.css.map */
