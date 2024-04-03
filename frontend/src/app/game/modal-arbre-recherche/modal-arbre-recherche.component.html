@@ -1,7 +1,7 @@
 <div *ngIf="displayModal" class="modal-background" (click)="onBackgroundClicked($event)">
     <div class="modal" (click)="$event.stopPropagation()">
         <div class="modal-title">
-            <span class="close-button" (click)="closeModal()">&times;</span>
+            <div class="close-button" (click)="closeModal()">&times;</div>
             <h3>Arbre de Recherches</h3>
         </div>
         <div class="modal-content">
