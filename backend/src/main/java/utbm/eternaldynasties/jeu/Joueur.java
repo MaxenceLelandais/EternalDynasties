@@ -29,6 +29,8 @@ public class Joueur {
     private final ArbreDeRecherches arbreDeRecherche;
     private final ArbreDeRessources arbreDeRessources;
 
+    private HashMap<String, RessourceSimplifee> mapRessourcesSimplifiees;
+
     /**
      * Traduit les données.
      * @param jsonObject
@@ -57,6 +59,7 @@ public class Joueur {
             }
             this.arbreDeRecherche.init(this.recherches);
             this.arbreDeRessources.init(this.ressources);
+            getRessourcesSimplifie();
 
 
         }
@@ -128,7 +131,7 @@ public class Joueur {
         });
     }
 
-    public HashMap<String, Double> clickAchat(String nomRessource) {
+    public HashMap<String, RessourceSimplifee> clickAchat(String nomRessource) {
 
         Map<String, Double> cout = this.arbreDeRessources.getRessource(nomRessource).getListeCout();
         Map<String, Bonus> bonus = this.arbreDeRessources.getRessource(nomRessource).getListeBonus();
@@ -151,7 +154,17 @@ public class Joueur {
         }
 
         save();
-        return getRessources();
+        HashMap<String, RessourceSimplifee> map = new HashMap<>();
+
+        getRessources().forEach((key, value)->{
+            if(!key.contains("Max-")) {
+                RessourceSimplifee ressourceSimplifiee = this.mapRessourcesSimplifiees.get(key);
+                ressourceSimplifiee.quantite = value;
+                map.put(key, ressourceSimplifiee);
+            }
+        });
+
+        return map;
     }
 
 
@@ -321,16 +334,16 @@ public class Joueur {
 
     public HashMap<String, RessourceSimplifee> getRessourcesSimplifie() {
 
-        HashMap<String, RessourceSimplifee> mapRessourcesSimplifiees = new HashMap<>();
+        this.mapRessourcesSimplifiees = new HashMap<>();
         ressources.forEach((nom, valeur) -> {
             if (!nom.contains("Max-")) {
                 Ressource ressource = this.arbreDeRessources.getRessource(nom);
-                mapRessourcesSimplifiees.put(
+                this.mapRessourcesSimplifiees.put(
                         nom,
                         new RessourceSimplifee(nom, valeur, ressources.getOrDefault("Max-" + nom, -1.0), ressource.getType(), ressource.getId(),ressource.getValeurEchange()));
             }
         });
-        return mapRessourcesSimplifiees;
+        return this.mapRessourcesSimplifiees;
     }
 
     public String getEreActuelle() {
