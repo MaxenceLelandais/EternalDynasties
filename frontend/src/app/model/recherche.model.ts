@@ -4,7 +4,7 @@ export interface Recherche {
     id: number;
     parent: number;
     nom: string;
-    description: string;
+    Description: string;
     icone: string;
     cout: string;
     bonus: string;

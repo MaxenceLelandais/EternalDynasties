@@ -15,7 +15,16 @@
 <ng-template #recursiveList let-recherches>
     <li *ngFor="let recherche of recherches">
         <div class="connector"></div>
-        <div>{{ recherche.nom }}</div>
+        <div class="tooltip" 
+             (mouseenter)="handleMouseEnter(recherche.nom)" 
+             (mouseleave)="handleMouseLeave()">
+            {{ recherche.nom }}
+            <span class="tooltiptext" [ngClass]="{'tooltiptext-left': isLastChild(recherche, arborescenceRecherche)}" *ngIf="rechercheCouranteSurvolee && rechercheCouranteSurvolee.nom === recherche.nom">
+                <div class="tool-description">{{ rechercheCouranteSurvolee.Description }}</div>
+            </span>
+            
+        </div>
+          
         <ul *ngIf="recherche.enfant && recherche.enfant.length > 0">
             <div class="connector vertical"></div>
             <ng-container *ngTemplateOutlet="recursiveList; context: {$implicit: recherche.enfant}"></ng-container>

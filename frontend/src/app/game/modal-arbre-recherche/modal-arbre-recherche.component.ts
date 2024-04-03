@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JeuService } from 'src/app/http/jeuService';
-import { Recherches } from 'src/app/model/recherche.model';
+import { Recherche, Recherches } from 'src/app/model/recherche.model';
 import { ArbreRecherche } from 'src/app/model/arbreRecherche.model';
 import { ModalService } from 'src/app/service/modal.Service';
 
@@ -15,6 +15,7 @@ export class ModalArbreRechercheComponent implements OnInit {
   arbreRecherches: Recherches | null = null;
   arborescenceRecherche: ArbreRecherche[] = []; 
   displayModal: boolean = false;
+  rechercheCouranteSurvolee: Recherche | null = null;
   
 
   constructor(private jeuService: JeuService, private modalService: ModalService) {this.fetchData()}
@@ -24,7 +25,7 @@ export class ModalArbreRechercheComponent implements OnInit {
     this.jeuService.httpListeRecherches().subscribe(
       data => {
         this.listeRecherches = data;
-        console.log(this.listeRecherches);
+        console.log("voici la liste " + this.listeRecherches);
       },
       error => {
         console.error("Erreur lors de la récupération des recherches", error);
@@ -88,4 +89,76 @@ export class ModalArbreRechercheComponent implements OnInit {
   onBackgroundClicked(event: MouseEvent) {
     this.closeModal();
   }
+
+  getRecherche(nom: string): Recherche | null {
+    console.log("getRechercheEnter dans " + nom);
+    // Convertir les valeurs de l'objet listeRecherches en un tableau
+    const recherchesArray = this.listeRecherches ? Object.values(this.listeRecherches) : [];
+    // Utiliser .find() sur le tableau pour trouver la recherche par nom
+    const recherche = recherchesArray.find(r => r.nom === nom);
+    console.log("recherche trouvé dans " + recherche?.Description);
+    return recherche || null; // Retourner null si recherche est undefined
+  }
+  
+
+  handleMouseEnter(nom: string) {
+    console.log("mouseEnter dans " + nom);
+    this.rechercheCouranteSurvolee = this.getRecherche(nom);
+  }
+  
+  handleMouseLeave() {
+    this.rechercheCouranteSurvolee = null;
+  }
+
+  logArborescenceRecherche(arborescence: ArbreRecherche[], niveau: number = 0): void {
+    if (!arborescence) {
+      console.log("Aucune arborescence de recherche disponible");
+      return;
+    }
+    
+    arborescence.forEach(recherche => {
+      const indentation = Array(niveau + 1).join("  "); // Crée une indentation basée sur le niveau de profondeur
+      console.log(`${indentation}${recherche.nom}`);
+      if (recherche.enfant && recherche.enfant.length > 0) {
+        // S'il y a des enfants, loggez-les récursivement
+        this.logArborescenceRecherche(recherche.enfant, niveau + 1);
+      }
+    });
+  }
+  
+  // Appel de la fonction pour afficher l'arborescence
+  
+  
+  isLastChild(recherche: Recherche, arborescence: ArbreRecherche[]): boolean {
+    // Fonction récursive pour parcourir l'arborescence
+    function search(arborescence: ArbreRecherche[]): boolean | null {
+      for (let i = 0; i < arborescence.length; i++) {
+        const node = arborescence[i];
+        if (node.nom === recherche.nom) {
+          // Si le nœud est trouvé, vérifiez s'il a des enfants
+          if (node.enfant && node.enfant.length > 0) {
+            return false; // Le nœud est un parent, pas un dernier enfant
+          } else {
+            // Le nœud n'a pas d'enfants, vérifiez s'il est le dernier de ses frères et sœurs
+            return i === arborescence.length - 1;
+          }
+        }
+        if (node.enfant && node.enfant.length > 0) {
+          // Si le nœud a des enfants, continuez la recherche récursivement dans les enfants
+          const result = search(node.enfant);
+          if (result !== null) {
+            return result;
+          }
+        }
+      }
+      return null; // Le nœud spécifié n'a pas été trouvé à ce niveau de l'arborescence
+    }
+  
+    const result = search(arborescence);
+    return result !== null ? result : false; // Si le nœud n'est pas trouvé, retournez false par défaut
+  }
+  
+  
+  
+  
 }

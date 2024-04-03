@@ -38,7 +38,7 @@
         flex-wrap: wrap;
         position: sticky;
         top: 0;
-        background-color: rgb(14, 14, 14);
+        background-color: rgb(0, 0, 0);
         z-index: 1000;
         box-shadow: 0px 11px 27px 0px rgba(0,0,0,0.79);
         &::before,
@@ -93,7 +93,7 @@
     }
     
     li > div {
-        padding-right: 20px;
+        padding: 0 20px 0 30px;
     }
     
     /* Style supplémentaire pour aligner les éléments enfants */
@@ -104,42 +104,92 @@
         justify-content: center;
     }
     
-/* Cache le connecteur vertical par défaut */
-li::after {
-    display: none;
-}
+    /* Cache le connecteur vertical par défaut */
+    li::after {
+        display: none;
+    }
 
-/* Ajoute un connecteur vertical si un 'li' suit un autre 'li', indiquant plusieurs enfants */
-li + li::before {
-    content: '';
-    position: absolute;
-    top: 0; /* Ajustez si nécessaire pour aligner avec le parent */
-    left: -40px; /* Position horizontale du connecteur, à ajuster */
-    transform: translateY(-50%); 
-    height: calc(100%); /* Hauteur pour connecter au li précédent et suivant */
-    border-left: 2px solid #fff; /* Style du connecteur vertical */
-}
+    /* Ajoute un connecteur vertical si un 'li' suit un autre 'li', indiquant plusieurs enfants */
+    li + li::before {
+        content: '';
+        position: absolute;
+        top: 0; /* Ajustez si nécessaire pour aligner avec le parent */
+        left: -40px; /* Position horizontale du connecteur, à ajuster */
+        transform: translateY(-50%); 
+        height: calc(100%); /* Hauteur pour connecter au li précédent et suivant */
+        border-left: 2px solid #fff; /* Style du connecteur vertical */
+    }
 
-/* Connecteur horizontal pour tous les 'li' */
-li > div::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -40px; /* Ajustez pour la longueur souhaitée du connecteur horizontal */
-    width: 60px;
-    border-top: 2px solid #fff; /* Style du connecteur horizontal */
-}
+    /* Connecteur horizontal pour tous les 'li' */
+    li > div::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -40px; /* Ajustez pour la longueur souhaitée du connecteur horizontal */
+        width: 60px;
+        border-top: 2px solid #fff; /* Style du connecteur horizontal */
+    }
 
-/* Assure que les 'li' sont positionnés relativement pour que les pseudos-éléments se positionnent correctement */
-li {
-    position: relative;
-}
+    /* Assure que les 'li' sont positionnés relativement pour que les pseudos-éléments se positionnent correctement */
+    li {
+        position: relative;
+    }
 
-/* Style supplémentaire pour aligner les éléments enfants */
-li > ul {
-    padding-left: 40px; /* Espace pour visualiser la hiérarchie et les connecteurs */
-}
+    /* Style supplémentaire pour aligner les éléments enfants */
+    li > ul {
+        padding-left: 40px; /* Espace pour visualiser la hiérarchie et les connecteurs */
+    }
 
+    .tooltip {
+        cursor: pointer;
+        position: relative; /* Assurez-vous que le parent direct a une position relative pour le positionnement absolu de l'enfant */
+        display: inline-block; /* Pour s'assurer que l'élément tooltip s'ajuste à son contenu */
+    }
+
+    .tooltiptext-left {
+        left: auto; // Désactivez le positionnement gauche par défaut
+        right: 100%; // Positionnez à gauche de l'élément tooltip
+        transform: translate(0, -50%); // Ajustez si nécessaire pour centrer verticalement
+    }
+    
+    span {
+        visibility: hidden;
+        width: 200px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0px 0px 20px 4px rgb(0, 0, 0);
+        position: absolute;
+        z-index: 1;
+        top: 50%; /* Démarre au milieu verticalement */
+        left: 100%; /* Démarre juste à la droite de l'élément tooltip */
+        transform: translate(0, -50%); /* Ajuste pour centrer verticalement par rapport à tooltip */
+        /* Apparition */
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+
+    }
+
+    .tool-description {
+        font-size: 12px;
+        font-style: italic;
+        color: #b3b3b3;
+    }
+
+
+
+    
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .tooltip:hover .tooltiptext-left {
+        visibility: visible;
+        opacity: 1;
+    }
     
     
     

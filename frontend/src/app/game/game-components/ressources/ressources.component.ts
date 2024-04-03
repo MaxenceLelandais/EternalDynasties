@@ -35,7 +35,6 @@ export class RessourcesComponent {
   }
 
 addRessource(nomJoueur: string, ressource: string) {
-  console.log("bonjour");
   if (nomJoueur == null) {
     return;
   }

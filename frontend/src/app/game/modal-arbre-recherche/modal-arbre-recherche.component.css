@@ -45,7 +45,7 @@
   flex-wrap: wrap;
   position: sticky;
   top: 0;
-  background-color: rgb(14, 14, 14);
+  background-color: rgb(0, 0, 0);
   z-index: 1000;
   box-shadow: 0px 11px 27px 0px rgba(0, 0, 0, 0.79);
 }
@@ -96,7 +96,7 @@
   height: 100%;
 }
 .modal li > div {
-  padding-right: 20px;
+  padding: 0 20px 0 30px;
 }
 .modal li > ul {
   display: flex;
@@ -129,4 +129,45 @@
 }
 .modal li > ul {
   padding-left: 40px; /* Espace pour visualiser la hiérarchie et les connecteurs */
+}
+.modal .tooltip {
+  cursor: pointer;
+  position: relative; /* Assurez-vous que le parent direct a une position relative pour le positionnement absolu de l'enfant */
+  display: inline-block; /* Pour s'assurer que l'élément tooltip s'ajuste à son contenu */
+}
+.modal .tooltiptext-left {
+  left: auto;
+  right: 100%;
+  transform: translate(0, -50%);
+}
+.modal span {
+  visibility: hidden;
+  width: 200px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 0px 20px 4px rgb(0, 0, 0);
+  position: absolute;
+  z-index: 1;
+  top: 50%; /* Démarre au milieu verticalement */
+  left: 100%; /* Démarre juste à la droite de l'élément tooltip */
+  transform: translate(0, -50%); /* Ajuste pour centrer verticalement par rapport à tooltip */
+  /* Apparition */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.modal .tool-description {
+  font-size: 12px;
+  font-style: italic;
+  color: #b3b3b3;
+}
+.modal .tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+.modal .tooltip:hover .tooltiptext-left {
+  visibility: visible;
+  opacity: 1;
 }/*# sourceMappingURL=modal-arbre-recherche.component.css.map */
