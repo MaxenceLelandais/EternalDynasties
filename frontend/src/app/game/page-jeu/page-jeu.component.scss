@@ -3,18 +3,15 @@
     background-color: black;
     width: 40vw;
     min-height: 60%;
-    z-index: 1;
     position: fixed;
     border-radius: 10px;
     transition-duration: 0.3s;
 }
 .dropZone1{
     right: 10vh;
-    z-index: -1;
 }
 .dropZone2{
     left: 10vh;
-    z-index: -1;
 }
   
 [mwlDraggable],

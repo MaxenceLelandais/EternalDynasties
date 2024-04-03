@@ -13,6 +13,7 @@ import {
 import { Icon } from 'src/app/model/icon.model';
 import { Ressource, Ressources } from 'src/app/model/ressource.model';
 import { RessourceStructure, RessourceStructures } from 'src/app/model/ressourceStructure.model';
+import { NomJoueurService } from 'src/app/service/nomJoueurService';
 
 
 @Component({
@@ -35,7 +36,8 @@ export class PageJeuComponent implements OnInit {
 constructor(
   private jeuService: JeuService, 
   private civilisationService: CivilisationService, 
-  private environnementService: EnvironnementService
+  private environnementService: EnvironnementService,
+  private nomJoueurService: NomJoueurService
 ) { }
   ngOnInit() {
     this.loadCivilisation();
@@ -96,6 +98,8 @@ constructor(
         );
 
         this.nomJoueur = this.civilisation.nom + "-" + this.civilisation.nomEnvironnement;
+        this.nomJoueurService.setNomJoueur(this.nomJoueur);
+        
         this.jeuService.httpListeRessources(this.nomJoueur).subscribe({
           next: (response) => {
             this.ressources = response;
