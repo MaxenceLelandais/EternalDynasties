@@ -42,7 +42,7 @@ addRessource(nomJoueur: string, ressource: string) {
   this.jeuService.httpAddRessource(nomJoueur, ressource).subscribe({
     next: (response) => {
       console.log("Ressource ajoutée avec succès", response);
-      //this.ressources= response;
+      this.ressources= response;
     },
     error: (error) => {
       console.error("Erreur lors de l'ajout de la ressource", error);

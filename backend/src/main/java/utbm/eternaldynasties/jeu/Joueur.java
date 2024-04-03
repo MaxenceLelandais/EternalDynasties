@@ -29,7 +29,7 @@ public class Joueur {
     private final ArbreDeRecherches arbreDeRecherche;
     private final ArbreDeRessources arbreDeRessources;
 
-    private HashMap<String, RessourceSimplifee> mapRessourcesSimplifiees;
+    private HashMap<String, RessourceSimplifee> mapRessourcesSimplifiees = new HashMap<>();
 
     /**
      * Traduit les données.
@@ -59,8 +59,6 @@ public class Joueur {
             }
             this.arbreDeRecherche.init(this.recherches);
             this.arbreDeRessources.init(this.ressources);
-            getRessourcesSimplifie();
-
 
         }
     }
@@ -329,12 +327,12 @@ public class Joueur {
     }
 
     public HashMap<String, Double> getRessources() {
+        getRessourcesSimplifie();
         return ressources;
     }
 
     public HashMap<String, RessourceSimplifee> getRessourcesSimplifie() {
 
-        this.mapRessourcesSimplifiees = new HashMap<>();
         ressources.forEach((nom, valeur) -> {
             if (!nom.contains("Max-")) {
                 Ressource ressource = this.arbreDeRessources.getRessource(nom);
