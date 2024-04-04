@@ -6,11 +6,16 @@ export interface Recherche {
     nom: string;
     Description: string;
     icone: string;
-    cout: string;
-    bonus: string;
+    Coût: ValeurRecherche[];
+    Bonus: ValeurRecherche[];
     debloque: Recherche[];
     verouille: Recherche[];
     ere: Ere;
+  }
+
+  export interface ValeurRecherche {
+    nom: string;
+    val: string;
   }
   
   export interface Recherches {

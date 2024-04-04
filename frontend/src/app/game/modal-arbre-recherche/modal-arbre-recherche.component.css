@@ -163,6 +163,20 @@
   font-style: italic;
   color: #b3b3b3;
 }
+.modal .bonus-values-list {
+  font-size: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.modal .bonus-values-list .bonus-values-element {
+  text-align: left;
+}
+.modal .bonus-values-list .bonus-values-element .bonus-values-element-value {
+  background-color: #242424;
+  border-radius: 50px;
+  padding: 10px;
+}
 .modal .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;

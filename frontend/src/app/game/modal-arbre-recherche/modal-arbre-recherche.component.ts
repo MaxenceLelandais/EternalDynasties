@@ -24,8 +24,8 @@ export class ModalArbreRechercheComponent implements OnInit {
     console.log(this.listeRecherches);
     this.jeuService.httpListeRecherches().subscribe(
       data => {
+        console.log(data);
         this.listeRecherches = data;
-        console.log("voici la liste " + this.listeRecherches);
       },
       error => {
         console.error("Erreur lors de la récupération des recherches", error);
@@ -33,6 +33,7 @@ export class ModalArbreRechercheComponent implements OnInit {
     );
     this.jeuService.httpArbreRecherches().subscribe(
       data2 => {
+        console.log(data2);
         this.arbreRecherches = data2;
         console.log(this.arbreRecherches);
       },
@@ -130,34 +131,36 @@ export class ModalArbreRechercheComponent implements OnInit {
   
   
   isLastChild(recherche: Recherche, arborescence: ArbreRecherche[]): boolean {
-    // Fonction récursive pour parcourir l'arborescence
     function search(arborescence: ArbreRecherche[]): boolean | null {
       for (let i = 0; i < arborescence.length; i++) {
         const node = arborescence[i];
         if (node.nom === recherche.nom) {
-          // Si le nœud est trouvé, vérifiez s'il a des enfants
           if (node.enfant && node.enfant.length > 0) {
-            return false; // Le nœud est un parent, pas un dernier enfant
+            return false;
           } else {
-            // Le nœud n'a pas d'enfants, vérifiez s'il est le dernier de ses frères et sœurs
             return i === arborescence.length - 1;
           }
         }
         if (node.enfant && node.enfant.length > 0) {
-          // Si le nœud a des enfants, continuez la recherche récursivement dans les enfants
           const result = search(node.enfant);
           if (result !== null) {
             return result;
           }
         }
       }
-      return null; // Le nœud spécifié n'a pas été trouvé à ce niveau de l'arborescence
+      return null;
     }
   
     const result = search(arborescence);
-    return result !== null ? result : false; // Si le nœud n'est pas trouvé, retournez false par défaut
+    return result !== null ? result : false;
   }
   
+  get coutKeyValue() {
+    if (this.rechercheCouranteSurvolee && this.rechercheCouranteSurvolee['Coût']) {
+      return this.rechercheCouranteSurvolee['Coût'];
+    }
+    return null;
+  }
   
   
   
