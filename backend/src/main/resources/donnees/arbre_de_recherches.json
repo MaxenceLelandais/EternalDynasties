@@ -27,7 +27,7 @@
     },
     "Préhistoire":{
         "Id": "-1",
-        "Description":"Entamons le voyage dans les premiers âges.",
+        "Description":"Grouh Guaas Krouik",
         "Coût":null,
         "Débloque":[
             "Cueillette",
@@ -51,7 +51,7 @@
     },
     "Cueillette":{
         "Id": "2",
-        "Description":"Rassemblons les ressources de la nature.",
+        "Description":"Les fruits de notre premier triomphe.",
         "Coût":{
             "Points de recherche":"1",
             "Nourriture": "100"
@@ -71,7 +71,7 @@
     },
     "Feu":{
         "Id": "3",
-        "Description":"Maîtrisons le feu pour progresser.",
+        "Description":"L'étincelle qui embrase nos destins.",
         "Coût":{
             "Points de recherche":"1",
             "Nourriture": "200",
@@ -98,7 +98,7 @@
     },
     "Croyance":{
         "Id": "4",
-        "Description":"Explore les mystères de la foi. ",
+        "Description":"Les mystères célestes guident nos pas.",
         "Coût":{
             "Points de recherche":"2",
             "Nourriture":"500",
@@ -180,7 +180,7 @@
     },
     "Armée":{
         "Id": "8",
-        "Description":"Préparons-nous à défendre et conquérir.",
+        "Description":"Forgeons notre destin sur le champ de bataille.",
         "Coût":{
             "Points de recherche":"6",
             "Bois":"100",
@@ -201,7 +201,7 @@
     },
     "Elevage":{
         "Id": "9",
-        "Description":"Domptons les bêtes pour notre usage.",
+        "Description":"Domptons les bestiole pour notre empire.",
         "Coût":{
             "Points de recherche":"5",
             "Nourriture":"200"
@@ -219,7 +219,7 @@
     },
     "Religion":{
         "Id": "10",
-        "Description":"Explore les croyances et les pratiques spirituelles.",
+        "Description":"Les croyances forgent le destin des royaumes divins.",
         "Coût":{
             "Points de recherche":"6",
             "Nourriture":"2000",
@@ -240,7 +240,7 @@
     },
     "Antiquité":{
         "Id": "-2",
-        "Description":"Avançons dans les connaissances et les découvertes anciennes.",
+        "Description":"Dans l'antique, nous découvrons les secrets enfouis.",
         "Coût":null,
         "Débloque":[
             "Conquête",
@@ -278,7 +278,7 @@
     },
     "Navigation":{
         "Id": "11",
-        "Description":"Apprenons à naviguer sur les eaux. ",
+        "Description":"Sur les flots, nous traçons notre voie vers l'inconnu.",
         "Coût":{
             "Points de recherche":"10",
             "Nourriture":"5000",
@@ -302,7 +302,7 @@
     },
     "Science":{
         "Id": "12",
-        "Description":"Plongeons dans l'étude et la compréhension du monde. ",
+        "Description":"Plongeons dans l'étude de la compréhension du monde. ",
         "Coût":{
             "Points de recherche":"10",
             "Nourriture":"2000",
@@ -330,7 +330,7 @@
     },
     "Magie":{
         "Id": "13",
-        "Description":"Explore les forces mystiques du monde.",
+        "Description":"Explorons les forces mystiques du monde.",
         "Coût":{
             "Points de recherche":"30",
             "Nourriture":"2000",
@@ -355,7 +355,7 @@
     },
     "Construction":{
         "Id": "14",
-        "Description":"Bâtissons des structures durables et fonctionnelles.",
+        "Description":"Levons des bastions, reflets de notre puissance et sagesse.",
         "Coût":{
             "Points de recherche":"8",
             "Bois": "5000",
@@ -376,7 +376,7 @@
     },
     "Monnaie":{
         "Id": "15",
-        "Description":"Créons un système d'échange et de commerce.",
+        "Description":"Frappons des pièces, symboles de notre prospérité et unité..",
         "Coût":{
             "Points de recherche":"15",
             "Nourriture":"10000",
@@ -419,7 +419,7 @@
     },
     "Ingénieurie":{
         "Id": "17",
-        "Description":"Mettons en pratique les connaissances scientifiques. ",
+        "Description":"Sculptons le futur avec les outils de la connaissance.",
         "Coût":{
             "Points de recherche":"21",
             "Nourriture":"30000",
@@ -440,7 +440,7 @@
     },
     "Magie du Bien":{
         "Id": "18",
-        "Description":"Utilisons la magie pour le bien de tous.",
+        "Description":"Nos âmes s'élèvent dans les lueurs de la magie pure.",
         "Coût":{
             "Points de recherche":"40",
             "Nourriture":"20000",
@@ -463,7 +463,7 @@
     },
     "Magie Noire":{
         "Id": "19",
-        "Description":"Le monde n'est que ténèbres,poussières et destructions",
+        "Description":"Dans les ombres, notre essor, l'étreinte des ténèbres.",
         "Coût": {
             "Personne": "50",
             "Points de recherche":"50",
@@ -489,7 +489,7 @@
     },
     "Conquête":{
         "Id": "20",
-        "Description":"Étendons notre influence à travers la force.",
+        "Description":"Nos épées, extensions de volonté, écrivent l'histoire..",
         "Coût": {
             "Points de recherche":"23",
             "Nourriture":"25000",
@@ -525,7 +525,7 @@
     },
     "Commerce":{
         "Id": "22",
-        "Description":"Favorisons les échanges économiques. ",
+        "Description":"Tissons les routes d'échange et de prospérité ",
         "Coût": {
             "Points de recherche":"44",
             "Or":"10"
@@ -544,7 +544,7 @@
     },
     "Politique":{
         "Id": "23",
-        "Description":"Organisons la gouvernance de nos sociétés. ",
+        "Description":"Sculptons le destin de nos sociétés ",
         "Coût":{
             "Points de recherche":"25",
             "Or": "50"
@@ -562,7 +562,7 @@
     },
     "Mine d or":{
         "Id": "60",
-        "Description":"Organisons la gouvernance de nos sociétés. ",
+        "Description":"Exploitons les trésors de la terre",
         "Coût":{
             "Points de recherche":"29",
             "Or":"100",
@@ -582,7 +582,7 @@
     },
     "Moyen-Age":{
         "Id": "-3",
-        "Description":"Entamons une nouvelle ère de progrès.",
+        "Description":"Au creuset des âges, forgeons notre héritage.",
         "Coût":null,
         "Débloque":[
             "Renaissance",
@@ -615,7 +615,7 @@
     },
     "Fortification":{
         "Id": "24",
-        "Description":"Renforçons nos défenses pour assurer notre sécurité.",
+        "Description":"Érigeons des remparts impénétrables.",
         "Coût":{
             "Points de recherche":"40",
             "Or": "40",
@@ -659,7 +659,7 @@
     },
     "Université":{
         "Id": "26",
-        "Description":" Créons des institutions de savoir.",
+        "Description":"Érigeons des phares de lumière dans l'obscurité de l'ignorance..",
         "Coût":{
             "Points de recherche":"55",
             "Or":"100",
@@ -682,7 +682,7 @@
     },
     "Mécanique":{
         "Id": "27",
-        "Description":"Explorez les principes fondamentaux des machines et de la mécanique. ",
+        "Description":"Explorons les rouages de la création ",
         "Coût": {
             "Points de recherche":"65",
             "Or":"150",
@@ -705,7 +705,7 @@
     },
     "Alchimie":{
         "Id": "28",
-        "Description":"Plongez dans l'alchimie mystique et ses secrets.",
+        "Description":"Plongeons dans la quête de la pierre philosophale et de l'élixir de vie.",
         "Coût":{
             "Points de recherche":"80",
             "Or":"200",
@@ -726,7 +726,7 @@
     },
     "Sorcellerie":{
         "Id": "29",
-        "Description":"Plongeons dans les profonds ténèbres",
+        "Description":"Manipulons les forces occultes et les sortilèges interdits.",
         "Coût":{
             "Points de recherche":"105",
             "Or":"200",
@@ -750,7 +750,7 @@
     },
     "Renaissance":{
         "Id": "-4",
-        "Description":"Entrez dans l'ère de la Renaissance, où l'art, la science et la culture fleurissent. ",
+        "Description":"Émergence de la lumière après les ténèbres, éclosion des arts, des sciences et de la pensée humaniste.",
         "Coût":null,
         "Débloque":[
             "Poudre à canon",
@@ -805,7 +805,7 @@
     },
     "Cartographie":{
         "Id": "31",
-        "Description":"Permet de s'orienter afin d'explorer de nouveaux horizons",
+        "Description":"Dompter les mers, dresser les continents, capturer l'infini.",
         "Coût": {
             "Points de recherche":"67",
             "Or":"100",
@@ -827,7 +827,7 @@
     },
     "Banque":{
         "Id": "32",
-        "Description":"Créez des institutions financières pour soutenir l'économie et le commerce.",
+        "Description":" L'or coule, le pouvoir s'érige, les destins se scellent.",
         "Coût": {
             "Points de recherche":"80",
             "Or":"1000",
@@ -848,7 +848,7 @@
     },
     "Humanisme":{
         "Id": "33",
-        "Description":" Plongez dans le mouvement humaniste, qui met l'homme et ses réalisations au centre. ",
+        "Description":"Éclosion des esprits, les hommes se lèvent, la Renaissance s'anime.",
         "Coût": {
             "Points de recherche":"90",
             "Piété":"5000",
@@ -869,7 +869,7 @@
     },
     "Astronomie":{
         "Id": "34",
-        "Description":"Explorez les mystères de l'univers et des astres.",
+        "Description":" Les cieux se dévoilent, les étoiles nous murmurent l'infini.",
         "Coût": {
             "Points de recherche":"95",
             "Or":"500",
@@ -890,7 +890,7 @@
     },
     "Colonisation":{
         "Id": "35",
-        "Description":"Explorez de nouveaux territoires et établissez des colonies lointaines.",
+        "Description":" Vers l'horizon, nos rêves s'étendent, nos pas marquent des terres inexplorées..",
         "Coût": {
             "Points de recherche":"60",
             "Or":"200",
@@ -911,7 +911,7 @@
     },
     "Révolution industrielle":{
         "Id": "-5",
-        "Description":"Plongez dans l'ère de l'industrialisation et de la production de masse. ",
+        "Description":"Sous notre égide, les machines rugissent et les cieux s'embrasent. ",
         "Coût":null,
         "Débloque":[
             "Balistique",
@@ -946,7 +946,7 @@
     },
     "Balistique":{
         "Id": "36",
-        "Description":"Étudiez les principes des projectiles et de leur trajectoire.",
+        "Description":"Flèches vers l'horizon, canons tonnants, guerre forgeant notre destin..",
         "Coût": {
             "Points de recherche":"80",
             "Bois":"50000",
@@ -966,7 +966,7 @@
     },
     "Industrialisation":{
         "Id": "37",
-        "Description":"Passez à l'ère de l'industrialisation massive et de la production automatisée.",
+        "Description":"Sous nos mains, les forges s'enflamment, nos rêves prennent forme dans le fracas des machines.",
         "Coût": {
             "Points de recherche":"500",
             "Bois":"10000",
@@ -989,7 +989,7 @@
     },
     "Economie":{
         "Id": "38",
-        "Description":"Explorez les mécanismes complexes qui régissent les échanges et les marchés.",
+        "Description":"Nos coffres s'emplissent, nos marchés frémissent.",
         "Coût": {
             "Points de recherche":"150",
             "Or":"1000",
@@ -1009,7 +1009,7 @@
     },
     "Culture":{
         "Id": "39",
-        "Description":"Célébrez la diversité et l'expression humaine à travers les arts, la littérature et la philosophie.",
+        "Description":" Nos récits enflammés, nos arts vibrent, notre essence divine rayonne.",
         "Coût": {
             "Points de recherche":"120",
             "Piété":"5000",
@@ -1029,7 +1029,7 @@
     },
     "Electricité":{
         "Id": "40",
-        "Description":"Découvrez les mystères de l'électricité et de ses applications.",
+        "Description":"Éclairs domestiqués, notre pouvoir sur le fil de la vie..",
         "Coût": {
             "Points de recherche":"300",
             "Points de science": "25000"
@@ -1051,7 +1051,7 @@
     },
     "Contrôle élémentaire":{
         "Id": "41",
-        "Description":"Expérimentez le contrôle des éléments naturels.",
+        "Description":"Les éléments soumis, les flammes dansantes, notre maîtrise sur les forces primordiales.",
         "Coût": {
             "Points de recherche":"605",
             "Mana":"50000"
@@ -1075,7 +1075,7 @@
     },
     "Nécromancie":{
         "Id": "42",
-        "Description":"Plongez dans les pratiques sombres de la magie noire et de la manipulation des morts.",
+        "Description":"Les morts éveillés, les ombres dansantes, notre pouvoir sur la frontière entre vie et mort.",
         "Coût": {
             "Points de recherche":"1200",
             "Mana":"50000",
@@ -1101,7 +1101,7 @@
     },
     "Urbanisation":{
         "Id": "43",
-        "Description":"Explorez le processus de développement et d'expansion des zones urbaines à travers l'histoire. ",
+        "Description":"Cités grandioses, tours majestueuses, notre empreinte sur la toile de la civilisation. ",
         "Coût": {
             "Points de recherche":"400",
             "Or":"1500",
@@ -1123,7 +1123,7 @@
     },
     "Epoque Moderne":{
         "Id": "-6",
-        "Description":"Plongez dans une période de changements radicaux, d'explorations audacieuses et de révolutions culturelles",
+        "Description":"L'âge des lumières, la révolution en marche, notre éveil vers de nouveaux horizons.",
         "Coût":null,
         "Débloque":[
             "Nucléaire",
@@ -1204,7 +1204,7 @@
     },
     "Globalisation":{
         "Id": "46",
-        "Description":"Explorez les interactions croissantes entre les nations et les cultures à l'échelle mondiale.",
+        "Description":"Les frontières s'estompent, les cultures se mêlent, notre monde se révèle comme un seul et vaste foyer.",
         "Coût": {
             "Points de recherche": "1200",
             "Points de science": "12000"
@@ -1219,7 +1219,7 @@
     },
     "Médias":{
         "Id": "47",
-        "Description":"Découvrez le pouvoir des médias dans la diffusion de l'information et la formation de l'opinion publique.",
+        "Description":"Les voix s'élèvent, les images dansent, notre conscience tissée dans le fil de l'information.",
         "Coût": {
             "Points de recherche": "1400",
             "Electricité": "10000"
@@ -1237,7 +1237,7 @@
     },
     "Réseaux sociaux":{
         "Id": "48",
-        "Description":"Plongez dans l'ère de la connectivité en ligne et de l'interaction sociale numérique. ",
+        "Description":"Connexions, échos, le monde en un clic",
         "Coût": {
             "Points de recherche": "1200",
             "Electricité": "15000"
@@ -1251,7 +1251,7 @@
     },
     "Physique":{
         "Id": "49",
-        "Description":"Explorez les lois fondamentales de l'univers et les forces qui régissent la matière et l'énergie.",
+        "Description":"Les lois universelles révélées, les mystères de la matière, notre exploration des fondements de l'existence.",
         "Coût": {
             "Points de recherche": "1250",
             "Points de science": "10000"
@@ -1295,7 +1295,7 @@
     },
     "Puissance élémentaire":{
         "Id": "51",
-        "Description":"Manipulez les éléments naturels à une échelle inédite grâce à des avancées magiques révolutionnaires.",
+        "Description":"Flammes fulgurantes, mers déchaînées, notre contrôle sur les forces primordiales.",
         "Coût": {
             "Points de recherche": "100000",
             "Mana": "5000",
@@ -1312,7 +1312,7 @@
     },
     "Force du chaos":{
         "Id": "52",
-        "Description":"Explorez les aspects les plus sombres de la magie et de la manipulation des énergies occultes pour creer la puissante armée des morts.",
+        "Description":"Explorons les aspects les plus sombres de la magie et de la manipulation des énergies occultes pour creer la puissante armée des morts.",
         "Coût": {
             "Points de recherche": "150000",
             "Personne": "5000",
@@ -1331,7 +1331,7 @@
     },
     "Exploration spatiale":{
         "Id": "53",
-        "Description":"Lancez-vous à la conquête de l'espace et explorez les mystères de l'univers.",
+        "Description":"Étoiles lointaines, astres inconnus, notre quête audacieuse à travers les confins de l'univers.",
         "Coût": {
             "Points de recherche": "25000",
             "Electricité": "30000",
@@ -1351,7 +1351,7 @@
     },
     "Robotique":{
         "Id": "54",
-        "Description":"Explorez les possibilités infinies de la robotique.",
+        "Description":"Nos créations, reflets de notre ingéniosité..",
         "Coût": {
             "Points de recherche": "4000",
             "Electricité": "50000",
@@ -1374,7 +1374,7 @@
     },
     "Epoque Futuriste":{
         "Id": "-7",
-        "Description":"Plongez dans un monde où la technologie repousse les frontières de l'imagination.",
+        "Description":"Technologies éclatantes, horizons infinis, notre avancée vers les frontières de l'inconnu..",
         "Coût":null,
         "Débloque":[
             "Laser",
@@ -1409,7 +1409,7 @@
     },
     "Laser":{
         "Id": "55",
-        "Description":"Maîtrisez la puissance destructrice et créatrice du laser.",
+        "Description":"Maîtrisons la puissance destructrice et créatrice du laser.",
         "Coût": {
             "Points de recherche": "45000",
             "Electricité": "75000",
@@ -1425,7 +1425,7 @@
     },
     "Urbanisation futuriste":{
         "Id": "56",
-        "Description":"Explorez les horizons de l'urbanisme dans un monde futuriste.",
+        "Description":"Cités titanesques, néons flamboyants, nos bastions d'acier, témoins de notre audace face à l'avenir incertain.",
         "Coût": {
             "Points de recherche": "15000",
             "Piété": "800000",
@@ -1444,7 +1444,7 @@
     },
     "Voyage supraluminique":{
         "Id": "57",
-        "Description":" Pénétrez dans les confins de l'espace à des vitesses supraluminiques.",
+        "Description":"Éclairs cosmiques, horizons pliés, notre conquête des étoiles, défiant les limites de la vitesse et de l'espace.",
         "Coût": {
             "Points de recherche": "45000",
             "Electricité": "80000",
@@ -1462,7 +1462,7 @@
     },
     "Nano technologies":{
         "Id": "58",
-        "Description":"Maîtrisez les technologies à l'échelle nanométrique. ",
+        "Description":"Particules infimes, révolutions invisibles, notre pouvoir à l'échelle atomique. ",
         "Coût": {
             "Points de recherche": "50000",
             "Electricité": "120000",
