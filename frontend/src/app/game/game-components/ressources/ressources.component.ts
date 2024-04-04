@@ -34,19 +34,19 @@ export class RessourcesComponent {
     }
   }
 
-addRessource(nomJoueur: string, ressource: string) {
-  if (nomJoueur == null) {
-    return;
-  }
-  this.jeuService.httpAddRessource(nomJoueur, ressource).subscribe({
-    next: (response) => {
-      console.log("Ressource ajoutée avec succès", response);
-      this.ressources= response;
-    },
-    error: (error) => {
-      console.error("Erreur lors de l'ajout de la ressource", error);
+  addRessource(nomJoueur: string, ressource: string) {
+    if (nomJoueur == null) {
+      return;
     }
-  });
-}
+    this.jeuService.httpAddRessource(nomJoueur, ressource).subscribe({
+      next: (response) => {
+        console.log("Ressource ajoutée avec succès", response);
+        this.ressources= response;
+      },
+      error: (error) => {
+        console.error("Erreur lors de l'ajout de la ressource", error);
+      }
+    });
+  }
 
 }

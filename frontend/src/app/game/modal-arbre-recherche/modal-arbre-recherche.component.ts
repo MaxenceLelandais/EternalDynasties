@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { JeuService } from 'src/app/http/jeuService';
 import { Recherche, Recherches } from 'src/app/model/recherche.model';
 import { ArbreRecherche } from 'src/app/model/arbreRecherche.model';

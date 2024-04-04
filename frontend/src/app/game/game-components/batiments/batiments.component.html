@@ -1,6 +1,6 @@
 <ul *ngIf="ressources">
     <ng-container *ngFor="let ressource of ressources | keyvalue">
-      <li *ngIf="ressource.value.type.includes('Bâtiment')">
+      <li *ngIf="ressource.value.type.includes('Bâtiment') && nomJoueur" (click)="addRessource(nomJoueur, ressource.value.nom)">
         <p>{{ ressource.value.nom }}</p>
         <p>{{ ressource.value.quantite }} / {{ ressource.value.max }} </p>
       </li>
