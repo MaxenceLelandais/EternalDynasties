@@ -45,6 +45,7 @@ export class BatimentsComponent {
       next: (response) => {
         console.log("Ressource ajoutée avec succès", response);
         this.ressources= response;
+        this.ressourcesService.updateRessources(response);
       },
       error: (error) => {
         console.error("Erreur lors de l'ajout de la ressource", error);
