@@ -4,6 +4,7 @@ import { RessourceService } from 'src/app/service/ressourceService';
 import { JeuService } from 'src/app/http/jeuService';
 import { NomJoueurService } from 'src/app/service/nomJoueurService';
 
+
 @Component({
   selector: 'app-ressources',
   templateUrl: './ressources.component.html',
