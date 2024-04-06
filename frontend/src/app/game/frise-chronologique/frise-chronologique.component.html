@@ -1,7 +1,7 @@
 <div *ngIf="listeEre" class="liste-ere-container">
     <ul *ngIf="listeEre" class="liste-ere">
         <li *ngFor="let envKey of listeEre | keyvalue; let i = index">
-            <div>{{ envKey.value.nom }}</div>
+            <div><img src="{{ envKey.value.imageNonactif }}" alt=""></div>
         </li>
     </ul>
 </div>

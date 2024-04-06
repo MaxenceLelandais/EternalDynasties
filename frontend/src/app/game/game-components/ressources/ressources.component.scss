@@ -1,14 +1,11 @@
-button{
-    border:#666 1px solid;
-    margin:2px;
-    font-size:12px;
-    width:100px;
-    height:100px;
-    border-radius:50%;
+ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+    padding-left: 0;
+    li {
+      width: 170px;
+      text-align: center;
+    }
 }
-
-.zone_ressources{
-    display: grid;
-    grid-template-columns: 100px 100px 0px;
-}
-

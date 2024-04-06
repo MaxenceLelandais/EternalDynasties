@@ -3,37 +3,51 @@
     {
       "id": 1,
       "nom": "Préhistoire",
-      "description": "La Préhistoire, ère de mystères et d'aube de l'humanité, où nos ancêtres ont façonné les premiers outils et découvert le feu, jetant les bases des premières civilisations."
+      "description": "La Préhistoire, ère de mystères et d'aube de l'humanité, où nos ancêtres ont façonné les premiers outils et découvert le feu, jetant les bases des premières civilisations.",
+      "imageNonactif" : "./assets/img/ere/prehistoire-nonactif.png",
+      "imageActif" : "./assets/img/ere/prehistoire-actif.png"
     },
     {
       "id": 2,
       "nom": "Antiquité",
-      "description": "L'Antiquité, apogée des empires et berceau de la philosophie, où les grandes civilisations ont érigé des monuments immortels et posé les fondations mytiques."
+      "description": "L'Antiquité, apogée des empires et berceau de la philosophie, où les grandes civilisations ont érigé des monuments immortels et posé les fondations mytiques.",
+      "imageNonactif" : "./assets/img/ere/antiquité-nonactif.png",
+      "imageActif" : "./assets/img/ere/antiquité-actif.png"
     },
     {
       "id": 3,
       "nom": "Moyen-Age",
-      "description": "Le Moyen Âge, époque des chevaliers et des châteaux forts, marquée par les croisades, la féodalité et l'essor des villes, tissant la trame d'un Monde en pleine mutation."
+      "description": "Le Moyen Âge, époque des chevaliers et des châteaux forts, marquée par les croisades, la féodalité et l'essor des villes, tissant la trame d'un Monde en pleine mutation.",
+      "imageNonactif" : "./assets/img/ere/moyenage-nonactif.png",
+      "imageActif" : "./assets/img/ere/moyenage-actif.png"
     },
     {
       "id": 4,
       "nom": "Renaissance",
-      "description": "La Renaissance, période des arts et des sciences, de redécouverte des savoirs de l'Antiquité et d'innovations qui ont illuminé le Monde, ouvrant la voie à l'âge moderne."
+      "description": "La Renaissance, période des arts et des sciences, de redécouverte des savoirs de l'Antiquité et d'innovations qui ont illuminé le Monde, ouvrant la voie à l'âge moderne.",
+      "imageNonactif" : "./assets/img/ere/renaissance-nonactif.png",
+      "imageActif" : "./assets/img/ere/renaissance-actif.png"
     },
     {
       "id": 5,
       "nom": "Revolution Industrielle",
-      "description": "La Révolution industrielle, ère de progrès technique fulgurant, a transformé les sociétés avec l'avènement des machines, inaugurant l'ère de la production de masse et le début de la société moderne."
+      "description": "La Révolution industrielle, ère de progrès technique fulgurant, a transformé les sociétés avec l'avènement des machines, inaugurant l'ère de la production de masse et le début de la société moderne.",
+      "imageNonactif" : "./assets/img/ere/industrielle-nonactif.png",
+      "imageActif" : "./assets/img/ere/industrielle-actif.png"
     },
     {
       "id": 6,
       "nom": "Epoque Moderne",
-      "description": "L'époque moderne, ère de la connectivité globale et de l'innovation numérique, où la technologie avance à pas de géant, remodelant notre quotidien et ouvrant des horizons sans précédent pour l'humanité."
+      "description": "L'époque moderne, ère de la connectivité globale et de l'innovation numérique, où la technologie avance à pas de géant, remodelant notre quotidien et ouvrant des horizons sans précédent pour l'humanité.",
+      "imageNonactif" : "./assets/img/ere/moderne-nonactif.png",
+      "imageActif" : "./assets/img/ere/moderne-actif.png"
     },
     {
       "id": 7,
       "nom": "Epoque Futuriste",
-      "description": "L'ère futuriste, vision d'un avenir où la technologie avancée et l'intelligence artificielle façonnent une société interconnectée et interstellaire, promettant des découvertes et des modes de vie révolutionnaires."
+      "description": "L'ère futuriste, vision d'un avenir où la technologie avancée et l'intelligence artificielle façonnent une société interconnectée et interstellaire, promettant des découvertes et des modes de vie révolutionnaires.",
+      "imageNonactif" : "./assets/img/ere/futuriste-nonactif.png",
+      "imageActif" : "./assets/img/ere/futuriste-actif.png"
     }
   ]
 }

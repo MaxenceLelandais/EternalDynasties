@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 .modal-background {
+  z-index: 500;
   position: fixed; /* ou absolute */
   top: 0;
   left: 0;
@@ -15,7 +16,7 @@
 .modal {
   border-radius: 10px;
   background-color: black;
-  width: 90%;
+  width: 85%;
   height: 80%;
   position: fixed;
   top: 50%;
@@ -42,17 +43,17 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  position: sticky; /* Modifiez ici de relative à sticky */
-  top: 0; /* Ajoutez cette ligne pour fixer en haut */
-  background-color: rgb(14, 14, 14); /* Assurez-vous que le fond est opaque */
-  z-index: 1000; /* S'assure que modal-title reste au-dessus du contenu défilant */
+  position: sticky;
+  top: 0;
+  background-color: rgb(0, 0, 0);
+  z-index: 1000;
   box-shadow: 0px 11px 27px 0px rgba(0, 0, 0, 0.79);
 }
 .modal .modal-title::before, .modal .modal-title::after {
   content: "";
   flex: 1;
 }
-.modal .modal-title span {
+.modal .modal-title .close-button {
   position: absolute;
   left: 0;
   cursor: pointer;
@@ -61,7 +62,7 @@
   border-radius: 5px;
   margin-left: 20px;
 }
-.modal .modal-title span:hover {
+.modal .modal-title .close-button:hover {
   border: 2px solid rgb(43, 43, 43);
   margin-left: 18px;
   background-color: black;
@@ -70,12 +71,14 @@
   font-style: "Montserrat", sans-serif;
 }
 .modal .modal-content {
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: scroll;
+  position: relative;
   padding: 15px;
+  padding-top: 0;
   display: flex;
   flex-direction: row;
-  height: 80%;
+  height: 91%;
   align-items: center;
 }
 .modal ul {
@@ -85,6 +88,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 0;
 }
 .modal li {
   display: flex;
@@ -93,7 +97,7 @@
   height: 100%;
 }
 .modal li > div {
-  padding-right: 20px;
+  padding: 0 20px 0 30px;
 }
 .modal li > ul {
   display: flex;
@@ -126,4 +130,51 @@
 }
 .modal li > ul {
   padding-left: 40px; /* Espace pour visualiser la hiérarchie et les connecteurs */
+}
+.modal .tooltip {
+  cursor: pointer;
+  position: relative; /* Assurez-vous que le parent direct a une position relative pour le positionnement absolu de l'enfant */
+  display: inline-block; /* Pour s'assurer que l'élément tooltip s'ajuste à son contenu */
+}
+.modal .tooltiptext-left {
+  left: auto;
+  right: 100%;
+  transform: translate(0, -50%);
+}
+.modal span {
+  visibility: visible;
+  width: 200px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 0px 20px 4px rgb(0, 0, 0);
+  position: absolute;
+  z-index: 1001;
+  top: 0;
+  left: 100%;
+  transform: translate(0, -50%);
+  /* Apparition */
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+.modal .tool-description {
+  font-size: 12px;
+  font-style: italic;
+  color: #b3b3b3;
+}
+.modal .bonus-values-list {
+  font-size: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.modal .bonus-values-list .bonus-values-element {
+  text-align: left;
+}
+.modal .bonus-values-list .bonus-values-element .bonus-values-element-value {
+  background-color: #242424;
+  border-radius: 50px;
+  padding: 10px;
 }/*# sourceMappingURL=modal-arbre-recherche.component.css.map */

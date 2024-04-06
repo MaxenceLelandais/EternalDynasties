@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { JeuService } from 'src/app/http/jeuService';
-import { Recherches } from 'src/app/model/recherche.model';
+import { Recherche, Recherches } from 'src/app/model/recherche.model';
 import { ArbreRecherche } from 'src/app/model/arbreRecherche.model';
 import { ModalService } from 'src/app/service/modal.Service';
 
@@ -15,16 +15,19 @@ export class ModalArbreRechercheComponent implements OnInit {
   arbreRecherches: Recherches | null = null;
   arborescenceRecherche: ArbreRecherche[] = []; 
   displayModal: boolean = false;
+  rechercheCouranteSurvolee: Recherche | null = null;
+
+  @ViewChild('modalContent', { static: false }) modalContent!: ElementRef;
   
 
-  constructor(private jeuService: JeuService, private modalService: ModalService) {this.fetchData()}
+  constructor(private jeuService: JeuService, private modalService: ModalService,private renderer: Renderer2) {this.fetchData()}
 
   fetchData() {
     console.log(this.listeRecherches);
     this.jeuService.httpListeRecherches().subscribe(
       data => {
+        console.log(data);
         this.listeRecherches = data;
-        console.log(this.listeRecherches);
       },
       error => {
         console.error("Erreur lors de la récupération des recherches", error);
@@ -32,6 +35,7 @@ export class ModalArbreRechercheComponent implements OnInit {
     );
     this.jeuService.httpArbreRecherches().subscribe(
       data2 => {
+        console.log(data2);
         this.arbreRecherches = data2;
         console.log(this.arbreRecherches);
       },
@@ -67,6 +71,7 @@ export class ModalArbreRechercheComponent implements OnInit {
         }
       }
     });
+    console.log(this.arborescenceRecherche);
   }
   
 
@@ -87,4 +92,111 @@ export class ModalArbreRechercheComponent implements OnInit {
   onBackgroundClicked(event: MouseEvent) {
     this.closeModal();
   }
+
+  getRecherche(nom: string): Recherche | null {
+    console.log("getRechercheEnter dans " + nom);
+    // Convertir les valeurs de l'objet listeRecherches en un tableau
+    const recherchesArray = this.listeRecherches ? Object.values(this.listeRecherches) : [];
+    // Utiliser .find() sur le tableau pour trouver la recherche par nom
+    const recherche = recherchesArray.find(r => r.nom === nom);
+    console.log("recherche trouvé dans " + recherche?.Description);
+    return recherche || null; // Retourner null si recherche est undefined
+  }
+  
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+  }
+
+  async handleMouseEnter(nom: string, event: MouseEvent) {
+    this.rechercheCouranteSurvolee = this.getRecherche(nom);
+    await this.delay(1);
+    const tooltips = document.getElementsByClassName("tooltiptext");
+    
+    if (tooltips) {
+      const tooltip = tooltips[0] as HTMLElement;
+      console.log("tooltip text : " + tooltip.textContent);
+
+      const modalRect = this.modalContent.nativeElement.getBoundingClientRect();
+      const tooltipRect = tooltip.getBoundingClientRect();
+      console.log("bottom : " + tooltipRect.bottom + " vs " + modalRect.bottom);
+      console.log("top : " + tooltipRect.top + " vs " + modalRect.top);
+      if (tooltipRect.bottom > modalRect.bottom) {
+        console.log("trop bas !");
+        const bottomOffset = tooltipRect.bottom - modalRect.bottom;
+        tooltip.style.top = `calc(50% - ${bottomOffset}px - 50px)`;
+      }    
+      else if (tooltipRect.top < modalRect.top) {
+        console.log("trop haut !");
+        const topOffset = modalRect.top - tooltipRect.top;
+        tooltip.style.top = `calc(50% + ${topOffset}px + 20px)`;
+      }
+      else {
+        console.log("bonne !");
+      }
+    }
+  }
+  
+  
+  handleMouseLeave(event: MouseEvent) {
+    const tooltip = (event.target as HTMLElement).querySelector('.tooltiptext');
+    if (tooltip) {
+      // Réinitialisez les styles de l'infobulle
+      this.renderer.removeStyle(tooltip, 'top');
+    }
+    this.rechercheCouranteSurvolee = null;
+  }
+
+  logArborescenceRecherche(arborescence: ArbreRecherche[], niveau: number = 0): void {
+    if (!arborescence) {
+      console.log("Aucune arborescence de recherche disponible");
+      return;
+    }
+    
+    arborescence.forEach(recherche => {
+      const indentation = Array(niveau + 1).join("  "); // Crée une indentation basée sur le niveau de profondeur
+      console.log(`${indentation}${recherche.nom}`);
+      if (recherche.enfant && recherche.enfant.length > 0) {
+        // S'il y a des enfants, loggez-les récursivement
+        this.logArborescenceRecherche(recherche.enfant, niveau + 1);
+      }
+    });
+  }
+  
+  // Appel de la fonction pour afficher l'arborescence
+  
+  
+  isLastChild(recherche: Recherche, arborescence: ArbreRecherche[]): boolean {
+    function search(arborescence: ArbreRecherche[]): boolean | null {
+      for (let i = 0; i < arborescence.length; i++) {
+        const node = arborescence[i];
+        if (node.nom === recherche.nom) {
+          if (node.enfant && node.enfant.length > 0) {
+            return false;
+          } else {
+            return i === arborescence.length - 1;
+          }
+        }
+        if (node.enfant && node.enfant.length > 0) {
+          const result = search(node.enfant);
+          if (result !== null) {
+            return result;
+          }
+        }
+      }
+      return null;
+    }
+  
+    const result = search(arborescence);
+    return result !== null ? result : false;
+  }
+  
+  get coutKeyValue() {
+    if (this.rechercheCouranteSurvolee && this.rechercheCouranteSurvolee['Coût']) {
+      return this.rechercheCouranteSurvolee['Coût'];
+    }
+    return null;
+  }
+  
+  
+  
 }

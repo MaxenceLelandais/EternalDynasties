@@ -1,79 +1,70 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Ressources } from 'src/app/model/ressource.model';
+import { RessourceService } from 'src/app/service/ressourceService';
+import { JeuService } from 'src/app/http/jeuService';
+import { NomJoueurService } from 'src/app/service/nomJoueurService';
 
 @Component({
   selector: 'app-ressources',
   templateUrl: './ressources.component.html',
   styleUrls: ['./ressources.component.scss']
 })
-export class RessourcesComponent {
-  @Input()
-  donnees!:Ressources;
+export class RessourcesComponent implements OnInit, OnDestroy {
+  ressources: Ressources | null = null;
+  nomJoueur: string | null = null;
+  private subscriptions: Subscription = new Subscription();
 
-  @Input()
-  quantite!:any;
+  constructor(
+    private ressourcesService: RessourceService,
+    private jeuService: JeuService,
+    private nomJoueurService: NomJoueurService
+  ) {}
 
-  @Output() addFonction: EventEmitter<any> = new EventEmitter<any>();
-  
+  ngOnInit() {
+    this.loadRessources();
+    this.nomJoueur = this.nomJoueurService.getNomJoueur();
+    // Abonnez-vous à l'Observable pour obtenir les mises à jour automatiques
 
-
-  getNumberRessources(nom:string){
-    return this.quantite[nom];
   }
 
-  getExclude(nom:string){
-    const donneesFiltrees: Ressources = {};
-
-    for (const key in this.donnees) {
-        if (this.donnees.hasOwnProperty(key) && !this.donnees[key].nom.includes(nom)) {
-            donneesFiltrees[key] = this.donnees[key];
-        }
-    }
-    return donneesFiltrees;
+  ngOnDestroy() {
+    // Se désabonner pour éviter les fuites de mémoire
+    this.subscriptions.unsubscribe();
   }
 
-  testPresent(nom:string){
-    return this.quantite[nom]!=null;
-  }
-
-  add(nom:string){
-    if(this.testPresent("Max-"+nom)){
-      if(this.quantite[nom]+1<=this.quantite["Max-"+nom]){
-        this.addFonction.emit(nom);
+  private loadRessources() {
+    if (localStorage.getItem('ressources')) {
+      const savedRessources = localStorage.getItem('ressources');
+      if (savedRessources != null) {
+        this.ressources = JSON.parse(savedRessources);
       }
-    }else{
-      this.addFonction.emit(nom);
+    } else {
+      console.log("savedRessources");
+      this.ressources = this.ressourcesService.getRessources();
+      localStorage.setItem('ressources', JSON.stringify(this.ressources));
     }
   }
 
-  detail(nom: string): string {
-    const ressource = this.donnees[nom];
-    let text = `Description : ${this.donnees[nom].description}`;
-  
-    const coutKeys = Object.keys(ressource.listeCout);
-    const bonusKeys = Object.keys(ressource.listeBonusEstime);
-    let presenceCout = false;
-    if (coutKeys.length > 0) {
-      presenceCout = true;
-      text += `\n\nCoûts : \n`;
-      for (const key of coutKeys) {
-        text += `- ${key} : ${ressource.listeCout[key]}\n`;
-      }
+  addRessource(nomJoueur: string, ressource: string) {
+    if (nomJoueur == null) {
+      return;
     }
-  
-    if (bonusKeys.length > 0) {
-      if(presenceCout){
-        text += `\nBonus : \n`;
-      }else{
-        text += `\n\nBonus : \n`;
+    this.jeuService.httpAddRessource(nomJoueur, ressource).subscribe({
+      next: (response) => {
+        console.log("Ressource ajoutée avec succès", response);
+        // Mise à jour des ressources à travers le service
+        this.ressourcesService.updateRessources(response);
+        this.subscriptions.add(
+          this.ressourcesService.ressources$.subscribe(ressources => {
+            this.ressources = ressources;
+            console.log("ressources : " + this.ressources);
+          })
+        );
+      },
+      error: (error) => {
+        console.error("Erreur lors de l'ajout de la ressource", error);
       }
-      
-      for (const key of bonusKeys) {
-        text += `- ${key} : ${ressource.listeBonusEstime[key]}\n`;
-      }
-    }
-  
-    return text;
+    });
   }
-
 }

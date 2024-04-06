@@ -1,7 +1,9 @@
 export interface Ere {
-  id:number,
+    id:number,
     nom: string;
     description: string;
+    imageNonactif: string;
+    imageActif: string;
   }
   
   export interface Eres {

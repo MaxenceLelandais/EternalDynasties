@@ -5,6 +5,8 @@ import { Civilisation } from 'src/app/model/civilisation.model';
 import { CivilisationService } from 'src/app/service/civilisationService';
 import { take } from 'rxjs/operators';
 import { ModalService } from 'src/app/service/modal.Service';
+import { Ressources } from 'src/app/model/ressource.model';
+import { RessourceService } from 'src/app/service/ressourceService';
 
 @Component({
   selector: 'app-header-jeu',
@@ -15,8 +17,13 @@ export class HeaderJeuComponent implements OnInit {
 
   environnement: Environnement | null = null;
   civilisation: Civilisation | null = null;
+  ressources: Ressources | null = null;
 
-  constructor(private environnementService: EnvironnementService, private civilisationService: CivilisationService, private modalService: ModalService) {}
+  constructor(
+    private environnementService: EnvironnementService, 
+    private civilisationService: CivilisationService, 
+    private modalService: ModalService,
+    private ressourcesService: RessourceService) {}
 
 
   
@@ -24,6 +31,7 @@ export class HeaderJeuComponent implements OnInit {
 
     this.loadEnvironnement();
     this.loadCivilisation();
+    this.loadRessources();
   }
 
   private loadEnvironnement() {
@@ -57,6 +65,19 @@ export class HeaderJeuComponent implements OnInit {
   openModal() {
     this.modalService.open();
     
+  }
+
+  private loadRessources() {
+    if (localStorage.getItem('ressources')) {
+      const savedRessources = localStorage.getItem('ressources');
+      if (savedRessources != null) {
+        this.ressources = JSON.parse(savedRessources);
+      }
+    } else {
+      console.log("savedRessources");
+      this.ressources = this.ressourcesService.getRessources();
+      localStorage.setItem('ressources', JSON.stringify(this.ressources));
+    }
   }
   
 }

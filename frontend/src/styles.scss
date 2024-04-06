@@ -16,8 +16,7 @@
 }
 @font-face {
   font-family: 'medieval';
-  // '../src/assets/font/Por_Siempre_Gotica.ttf'
-  src: url('../src/assets/font/geek.TTF') format('truetype');
+  src: url('../src/assets/font/Por\ Siempre\ Gótica.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -257,13 +256,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    .img-container {
-      height: 200px;
-      .header-jeu-banniere {
-        display: block;
-        height: 200px;
-        width: 100%;
-      }
+    .header-jeu-banniere {
+      width: 100%;
     }
     .header-jeu-ecusson {
       filter: drop-shadow(0px -5px 16px #000000);
@@ -308,7 +302,6 @@ body {
       @include button-style(20px);
     }
   }
-
 }
 
 
@@ -325,6 +318,7 @@ body {
   margin-top: 0;
   li {
     width: 290px;
+    height: 50px;
     border: 1px solid rgb(65, 65, 65);
     display: flex; // Utilise Flexbox pour le conteneur
     justify-content: center; // Centre horizontalement le contenu

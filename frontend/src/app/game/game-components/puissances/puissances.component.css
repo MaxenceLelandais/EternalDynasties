@@ -1,0 +1,12 @@
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  gap: 60px;
+  padding-left: 0;
+}
+ul li {
+  width: 190px;
+  text-align: center;
+}/*# sourceMappingURL=puissances.component.css.map */

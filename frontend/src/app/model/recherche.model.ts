@@ -4,13 +4,18 @@ export interface Recherche {
     id: number;
     parent: number;
     nom: string;
-    description: string;
+    Description: string;
     icone: string;
-    cout: string;
-    bonus: string;
+    Coût: ValeurRecherche[];
+    Bonus: ValeurRecherche[];
     debloque: Recherche[];
     verouille: Recherche[];
     ere: Ere;
+  }
+
+  export interface ValeurRecherche {
+    nom: string;
+    val: string;
   }
   
   export interface Recherches {

@@ -1,11 +1,11 @@
 <div *ngIf="displayModal" class="modal-background" (click)="onBackgroundClicked($event)">
     <div class="modal" (click)="$event.stopPropagation()">
         <div class="modal-title">
-            <span class="close-button" (click)="closeModal()">&times;</span>
+            <div class="close-button" (click)="closeModal()">&times;</div>
             <h3>Arbre de Recherches</h3>
         </div>
-        <div class="modal-content">
-            <ul *ngIf="arborescenceRecherche && arborescenceRecherche.length > 0">
+        <div class="modal-content" #modalContent>
+            <ul *ngIf="arborescenceRecherche && arborescenceRecherche.length > 0" class="tree-view">
                 <ng-container *ngTemplateOutlet="recursiveList; context: {$implicit: arborescenceRecherche}"></ng-container>
             </ul>
         </div>
@@ -13,11 +13,34 @@
 </div>
 
 <ng-template #recursiveList let-recherches>
-    <li *ngFor="let recherche of recherches">
-        <div class="connector"></div> <!-- Connecteur horizontal -->
-        <div>{{ recherche.nom }}</div>
-        <ul *ngIf="recherche.enfant && recherche.enfant.length > 0">
-            <div class="connector vertical"></div> <!-- Connecteur vertical -->
+    <li *ngFor="let recherche of recherches" class="tree-view-node">
+        <div class="connector"></div>
+        <div class="tooltip" 
+             (mouseenter)="handleMouseEnter(recherche.nom, $event)" 
+             (mouseleave)="handleMouseLeave($event)">
+            {{ recherche.nom }}
+            <span class="tooltiptext" [ngClass]="{'tooltiptext-left': isLastChild(recherche, arborescenceRecherche)}" *ngIf="rechercheCouranteSurvolee && rechercheCouranteSurvolee.nom === recherche.nom">
+                <div class="tool-description">{{ rechercheCouranteSurvolee.Description }}</div>
+                <h5>Bonus</h5>
+                <div class="bonus-values-list">
+                    <div *ngFor="let bonusKey of rechercheCouranteSurvolee.Bonus| keyvalue; let i = index" class="bonus-values-element">
+                        <div>{{ bonusKey.key }} </div>
+                        <div class="bonus-values-element-value">{{ bonusKey.value}}</div>
+                    </div>
+                </div>
+                <h5>Coût</h5>
+                <div class="bonus-values-list">
+                    <div *ngFor="let coutKey of coutKeyValue | keyvalue; let i = index"  class="bonus-values-element">
+                        <div>{{ coutKey.key }} </div>
+                        <div class="bonus-values-element-value">{{ coutKey.value}}</div>
+                    </div>
+                </div>
+            </span>
+            
+        </div>
+          
+        <ul *ngIf="recherche.enfant && recherche.enfant.length > 0"  class="tree-view">
+            <div class="connector vertical"></div>
             <ng-container *ngTemplateOutlet="recursiveList; context: {$implicit: recherche.enfant}"></ng-container>
         </ul>
     </li>

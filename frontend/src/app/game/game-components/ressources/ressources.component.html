@@ -1,18 +1,16 @@
-<div>
-    <p>Ressources</p>
-    <div class="zone_ressources">
-        <div *ngFor="let envKey of getExclude('Max-') | keyvalue">
-            <div *ngIf="!envKey.value.nom.includes('Max-')">
-                <button (click)="this.add(envKey.value.nom)" title="{{detail(envKey.value.nom)}}">
-                    <div *ngIf="this.testPresent('Max-'+envKey.value.nom)">
-                        {{envKey.value.nom}} <br> {{this.getNumberRessources(envKey.value.nom)}} / {{this.getNumberRessources("Max-"+envKey.value.nom)}}
-                    </div>
-                    <div *ngIf="!this.testPresent('Max-'+envKey.value.nom)">
-                        {{envKey.value.nom}} <br> {{this.getNumberRessources(envKey.value.nom)}}
-                    </div>
-                    
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
+<ul *ngIf="ressources">
+    <ng-container *ngFor="let ressource of ressources | keyvalue">
+        <li *ngIf="ressource.value.type == 'Ressource base' && nomJoueur" (click)="addRessource(nomJoueur, ressource.value.nom)">
+            <p>{{ ressource.value.nom }}</p>
+            <p>{{ ressource.value.quantite }} / {{ ressource.value.max }}</p>
+        </li>
+    </ng-container>
+</ul>
+<ul *ngIf="ressources">
+    <ng-container *ngFor="let ressource of ressources | keyvalue">
+      <li *ngIf="ressource.value.type == 'Ressource spécialité'">
+        <p>{{ ressource.value.nom }}</p>
+        <p>{{ ressource.value.quantite }} / {{ ressource.value.max }} </p>
+      </li>
+    </ng-container>
+</ul>
