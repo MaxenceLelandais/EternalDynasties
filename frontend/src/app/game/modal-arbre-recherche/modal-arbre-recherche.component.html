@@ -4,7 +4,7 @@
             <div class="close-button" (click)="closeModal()">&times;</div>
             <h3>Arbre de Recherches</h3>
         </div>
-        <div class="modal-content">
+        <div class="modal-content" #modalContent>
             <ul *ngIf="arborescenceRecherche && arborescenceRecherche.length > 0" class="tree-view">
                 <ng-container *ngTemplateOutlet="recursiveList; context: {$implicit: arborescenceRecherche}"></ng-container>
             </ul>
@@ -16,8 +16,8 @@
     <li *ngFor="let recherche of recherches" class="tree-view-node">
         <div class="connector"></div>
         <div class="tooltip" 
-             (mouseenter)="handleMouseEnter(recherche.nom)" 
-             (mouseleave)="handleMouseLeave()">
+             (mouseenter)="handleMouseEnter(recherche.nom, $event)" 
+             (mouseleave)="handleMouseLeave($event)">
             {{ recherche.nom }}
             <span class="tooltiptext" [ngClass]="{'tooltiptext-left': isLastChild(recherche, arborescenceRecherche)}" *ngIf="rechercheCouranteSurvolee && rechercheCouranteSurvolee.nom === recherche.nom">
                 <div class="tool-description">{{ rechercheCouranteSurvolee.Description }}</div>

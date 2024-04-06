@@ -67,6 +67,7 @@
     .modal-content {
         overflow-y:hidden;
         overflow-x:scroll;
+        position: relative; 
         padding: 15px;
         padding-top: 0;
         display: flex;
@@ -153,7 +154,7 @@
     }
     
     span {
-        visibility: hidden;
+        visibility: visible;
         width: 200px;
         background-color: black;
         color: #fff;
@@ -162,12 +163,12 @@
         padding: 10px;
         box-shadow: 0px 0px 20px 4px rgb(0, 0, 0);
         position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 100%;
-        transform: translate(0, -50%);
+        z-index: 1001;
+        // top: 0;
+        // left: 100%;
+        // transform: translate(0, -50%);
         /* Apparition */
-        opacity: 0;
+        opacity: 1;
         transition: opacity 0.3s ease-in-out;
 
     }
@@ -197,15 +198,15 @@
 
 
     
-    .tooltip:hover .tooltiptext {
-        visibility: visible;
-        opacity: 1;
-    }
+    // .tooltip:hover .tooltiptext {
+    //     visibility: visible;
+    //     opacity: 1;
+    // }
 
-    .tooltip:hover .tooltiptext-left {
-        visibility: visible;
-        opacity: 1;
-    }
+    // .tooltip:hover .tooltiptext-left {
+    //     visibility: visible;
+    //     opacity: 1;
+    // }
     
     
     

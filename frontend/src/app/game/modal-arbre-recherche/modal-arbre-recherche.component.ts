@@ -16,9 +16,11 @@ export class ModalArbreRechercheComponent implements OnInit {
   arborescenceRecherche: ArbreRecherche[] = []; 
   displayModal: boolean = false;
   rechercheCouranteSurvolee: Recherche | null = null;
+
+  @ViewChild('modalContent', { static: false }) modalContent!: ElementRef;
   
 
-  constructor(private jeuService: JeuService, private modalService: ModalService) {this.fetchData()}
+  constructor(private jeuService: JeuService, private modalService: ModalService,private renderer: Renderer2) {this.fetchData()}
 
   fetchData() {
     console.log(this.listeRecherches);
@@ -102,12 +104,39 @@ export class ModalArbreRechercheComponent implements OnInit {
   }
   
 
-  handleMouseEnter(nom: string) {
-    console.log("mouseEnter dans " + nom);
+
+  handleMouseEnter(nom: string, event: MouseEvent) {
     this.rechercheCouranteSurvolee = this.getRecherche(nom);
+    const tooltips = document.getElementsByClassName("tooltiptext");
+    console.log("len : " + tooltips.length);
+    if (tooltips) {
+      // Supposons que vous voulez traiter la première infobulle pour cet exemple
+      const tooltip = tooltips[0] as HTMLElement;
+      
+      const modalRect = this.modalContent.nativeElement.getBoundingClientRect();
+      const tooltipRect = tooltip.getBoundingClientRect();
+      console.log("bottom : " + tooltipRect.bottom + "vs" + modalRect.bottom);
+      if (tooltipRect.bottom > modalRect.bottom) {
+        // L'infobulle déborderait vers le bas, ajustez la position
+        const bottomOffset = tooltipRect.bottom - modalRect.bottom;
+        tooltip.style.top = `calc(50% - ${bottomOffset}px - 20px)`; // 20px pour un peu de marge
+      }
+      console.log("top : " + tooltipRect.top + "vs" + modalRect.top);
+      if (tooltipRect.top < modalRect.top) {
+        // L'infobulle déborderait vers le haut, ajustez la position
+        const topOffset = modalRect.top - tooltipRect.top;
+        tooltip.style.top = `calc(50% + ${topOffset}px + 20px)`; // 20px pour un peu de marge
+      }
+    }
   }
   
-  handleMouseLeave() {
+  
+  handleMouseLeave(event: MouseEvent) {
+    const tooltip = (event.target as HTMLElement).querySelector('.tooltiptext');
+    if (tooltip) {
+      // Réinitialisez les styles de l'infobulle
+      this.renderer.removeStyle(tooltip, 'top');
+    }
     this.rechercheCouranteSurvolee = null;
   }
 

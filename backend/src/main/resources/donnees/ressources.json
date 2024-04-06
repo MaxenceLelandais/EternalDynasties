@@ -357,7 +357,7 @@
         "Entrepôt": {
             "Type": "Bâtiment stockage",
             "Id" : "2",
-            "Image": "src/assets/img/ressources/bâtiments/entrepôt.jpg",
+            "Image": "src/assets/img/ressources/bâtiments/entrepôt.png",
             "Description": "Toujours plus!!!",
             "Coût": {
                 "Pierre": "10",
@@ -554,10 +554,10 @@
                 "Max-Électricité": "1000"
             }
         },
-        "Ecole bu bien": {
+        "Académie des mages": {
             "Type": "Bâtiment spécialité",
             "Id" : "6",
-            "Image": "src/assets/img/ressources/bâtiments/école_du_bien.jpg",
+            "Image": "src/assets/img/ressources/bâtiments/académie_des_mages.jpg",
             "Description": "",
             "Coût": {
                 "Pierre": "550",
@@ -570,10 +570,10 @@
                 "Max-Mana": "1"
             }
         },
-        "Tour de la sagesse": {
+        "Territoire arcanique": {
             "Type": "Bâtiment spécialité",
             "Id" : "7",
-            "Image": "src/assets/img/ressources/bâtiments/tour_de_la_sagesse.png",
+            "Image": "src/assets/img/ressources/bâtiments/territoire_arcanique.png",
             "Description": "",
             "Coût": {
                 "Pierre": "50000",
