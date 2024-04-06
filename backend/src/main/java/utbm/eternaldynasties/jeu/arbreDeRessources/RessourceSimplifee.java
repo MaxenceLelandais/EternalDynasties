@@ -6,15 +6,17 @@ public class RessourceSimplifee {
     public double max = 0.0;
     public String type = "";
     public int id = -1;
+    public String image = "";
 
     public double valeurEchange = -1;
 
-    public RessourceSimplifee(String nom, double quantite, double max, String type, int id, double valeurEchange){
+    public RessourceSimplifee(String nom, double quantite, double max, String type, int id, String image, double valeurEchange){
         this.nom = nom;
         this.quantite = quantite;
         this.max = max;
         this.type = type;
         this.id = id;
+        this.image = image;
         this.valeurEchange = valeurEchange;
     }
 }

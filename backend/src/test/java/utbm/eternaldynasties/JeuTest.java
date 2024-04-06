@@ -74,7 +74,7 @@ class JeuTest {
                     double quantite = Double.parseDouble(data[1]);
                     this.addTempsJeu(1.0);
                     for(int n=0;n<quantite;n++) {
-                        joueur.clickAchat(nomRessource);
+                        joueur.clickAchat(nomRessource,1);
                         this.addTempsJeu(1.0 / this.nbrCliquesParSecondes);
                     }
                 }

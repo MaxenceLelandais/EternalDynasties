@@ -133,7 +133,7 @@ public class Joueur {
         return valide[0];
     }
 
-    public HashMap<String, RessourceSimplifee> clickAchat(String nomRessource) {
+    public HashMap<String, RessourceSimplifee> clickAchat(String nomRessource, int quantite) {
 
         Map<String, Double> cout = this.arbreDeRessources.getRessource(nomRessource).getListeCout();
         Map<String, Bonus> bonus = this.arbreDeRessources.getRessource(nomRessource).getListeBonus();
@@ -355,7 +355,7 @@ public class Joueur {
                 Ressource ressource = this.arbreDeRessources.getRessource(nom);
                 this.mapRessourcesSimplifiees.put(
                         nom,
-                        new RessourceSimplifee(nom, valeur, ressources.getOrDefault("Max-" + nom, -1.0), ressource.getType(), ressource.getId(),ressource.getValeurEchange()));
+                        new RessourceSimplifee(nom, valeur, ressources.getOrDefault("Max-" + nom, -1.0), ressource.getType(), ressource.getId(),ressource.getImage(),ressource.getValeurEchange()));
             }
         });
         return this.mapRessourcesSimplifiees;

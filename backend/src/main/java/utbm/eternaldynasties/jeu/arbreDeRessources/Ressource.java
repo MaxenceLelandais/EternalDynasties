@@ -15,6 +15,7 @@ public class Ressource {
 
     private String type = "";
     private int id = -1;
+    private String image = "";
     private double valeurEchange = -1;
     private final String nom;
     private String description;
@@ -42,6 +43,9 @@ public class Ressource {
         }
         if (jsonObjet.get("Id") != null) {
             this.id = jsonObjet.containsKey("Id") ? Integer.parseInt(jsonObjet.get("Id").toString()) : -1;
+        }
+        if (jsonObjet.get("Image") != null) {
+            this.image = jsonObjet.containsKey("Image") ? (String) jsonObjet.get("Image") : "";
         }
 
         if (jsonObjet.get("ValeurEchange") != null) {
@@ -108,5 +112,9 @@ public class Ressource {
 
     public double getValeurEchange() {
         return valeurEchange;
+    }
+
+    public String getImage() {
+        return image;
     }
 }
