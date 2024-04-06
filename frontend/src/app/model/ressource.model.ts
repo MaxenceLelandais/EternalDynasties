@@ -4,6 +4,7 @@ export interface Ressource {
     max: number;
     type: string;
     valeurEchange: number;
+    image: string;
 }
 
 export interface Ressources {

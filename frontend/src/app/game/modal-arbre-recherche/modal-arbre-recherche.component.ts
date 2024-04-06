@@ -103,29 +103,35 @@ export class ModalArbreRechercheComponent implements OnInit {
     return recherche || null; // Retourner null si recherche est undefined
   }
   
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+  }
 
-
-  handleMouseEnter(nom: string, event: MouseEvent) {
+  async handleMouseEnter(nom: string, event: MouseEvent) {
     this.rechercheCouranteSurvolee = this.getRecherche(nom);
+    await this.delay(1);
     const tooltips = document.getElementsByClassName("tooltiptext");
-    console.log("len : " + tooltips.length);
+    
     if (tooltips) {
-      // Supposons que vous voulez traiter la première infobulle pour cet exemple
       const tooltip = tooltips[0] as HTMLElement;
-      
+      console.log("tooltip text : " + tooltip.textContent);
+
       const modalRect = this.modalContent.nativeElement.getBoundingClientRect();
       const tooltipRect = tooltip.getBoundingClientRect();
-      console.log("bottom : " + tooltipRect.bottom + "vs" + modalRect.bottom);
+      console.log("bottom : " + tooltipRect.bottom + " vs " + modalRect.bottom);
+      console.log("top : " + tooltipRect.top + " vs " + modalRect.top);
       if (tooltipRect.bottom > modalRect.bottom) {
-        // L'infobulle déborderait vers le bas, ajustez la position
+        console.log("trop bas !");
         const bottomOffset = tooltipRect.bottom - modalRect.bottom;
-        tooltip.style.top = `calc(50% - ${bottomOffset}px - 20px)`; // 20px pour un peu de marge
-      }
-      console.log("top : " + tooltipRect.top + "vs" + modalRect.top);
-      if (tooltipRect.top < modalRect.top) {
-        // L'infobulle déborderait vers le haut, ajustez la position
+        tooltip.style.top = `calc(50% - ${bottomOffset}px - 50px)`;
+      }    
+      else if (tooltipRect.top < modalRect.top) {
+        console.log("trop haut !");
         const topOffset = modalRect.top - tooltipRect.top;
-        tooltip.style.top = `calc(50% + ${topOffset}px + 20px)`; // 20px pour un peu de marge
+        tooltip.style.top = `calc(50% + ${topOffset}px + 20px)`;
+      }
+      else {
+        console.log("bonne !");
       }
     }
   }
