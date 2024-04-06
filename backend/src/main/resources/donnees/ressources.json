@@ -287,6 +287,15 @@
         }
     },
     "bâtiments": {
+        "Merveille": {
+            "Type": "Bâtiment merveille",
+            "Id" : "1",
+            "Description": "WAAAAAAAAAAWWWWWWWWWWWWWOUUUU !",
+            "Coût": null,
+            "Bonus": {
+                "Merveille": "0"
+            }
+        },
         "Ferme": {
             "Type": "Bâtiment ressources",
             "Id" : "1",

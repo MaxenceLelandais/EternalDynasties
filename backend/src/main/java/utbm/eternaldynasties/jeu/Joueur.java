@@ -133,6 +133,11 @@ public class Joueur {
         return valide[0];
     }
 
+    public HashMap<String, RessourceSimplifee> clickAchatMerveille(int quantite) {
+        return clickAchat("Merveille",quantite);
+    }
+
+
     public HashMap<String, RessourceSimplifee> clickAchat(String nomRessource, int quantite) {
 
         Map<String, Double> cout = this.arbreDeRessources.getRessource(nomRessource).getListeCout();

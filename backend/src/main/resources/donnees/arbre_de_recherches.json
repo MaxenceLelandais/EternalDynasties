@@ -22,7 +22,8 @@
             "Maison":"1",
             "Puissance militaire":"1",
             "Puissance économique":"1",
-            "Puissance culturelle": "1"
+            "Puissance culturelle": "1",
+            "Merveille":"0.000001"
         }
     },
     "Préhistoire":{

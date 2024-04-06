@@ -6,6 +6,7 @@ récupère arbreRecherches pour l'affichage: http://localhost:9876/jeu/arbreRech
 récupère listeRessourcesJeu : http://localhost:9876/jeu/listeRessourcesJeu
 récupère listeEnvironnements : http://localhost:9876/jeu/listeEnvironnements
 récupère les données de l'environnement : http://localhost:9876/jeu/environnement?nom=nomEnvironnement
+récupère une partie : http://localhost:9876/jeu/recupererPartie?nomPartie=ffff-Jungle
 récupère listeEre : http://localhost:9876/jeu/listeEres
 
 //////////////////    PARTIES      //////////////////
@@ -17,4 +18,5 @@ liste les ressources du joueur : http://localhost:9876/jeu/listeRessources?nomJo
 récupère l'ere actuelle du joueur : http://localhost:9876/jeu/ereActuelle?nomJoueur=maxenc
 récupère arbreRessources utilisable en front : http://localhost:9876/jeu/arbreRessources?nomJoueur=maxenc
 add une ressources (achat si besoin) : http://localhost:9876/jeu/addRessource?nomJoueur=maxenc&ressource=Bois?nombre=8
+achat morceaux merveille : http://localhost:9876/jeu/achatPourcentageMerveille?nomJoueur=faaaaafff-Jungle&nombre=10
 tick : http://localhost:9876/jeu/tick?nomJoueur=maxenc
