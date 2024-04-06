@@ -73,6 +73,17 @@ public class JeuController {
         return jeuService.getJeu().eres;
     }
 
+    @GetMapping(value = "recupererPartie")
+    public JSONObject getPartie(@RequestParam(value = "nomPartie") String nomPartie) {
+        return Json.read("src/main/resources/sauvegardes/" + nomPartie + ".save");
+    }
+
+    @GetMapping(value = "chargerPartie")
+    public JSONObject loadPartie(@RequestParam(value = "nom") String nom, @RequestBody String partie) {
+        Json.save("src/main/resources/sauvegardes/" + nom + ".save", Json.stringToJsonObject(partie));
+        return Json.objectToJsonObject(this.jeuService.getJeu().startPartie(nom.split("-")[0], nom.split("-")[1]).toMap());
+    }
+
 
     //////////////////    PARTIES : regroupe les requêtes pour obtenir les informations d'une partie     //////////////////
 

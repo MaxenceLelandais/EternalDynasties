@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -8,7 +8,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class JeuService {
   private apiUrl = 'jeu/'; // Remplacez par l'URL de votre API
-  private responseDataSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
   constructor(private http: HttpClient) {}
 
@@ -17,6 +16,13 @@ export class JeuService {
     return this.http.get(url, { observe: 'body', responseType: 'json'});
   }
 
+  // Fonction pour envoyer un texte à l'API et récupérer des données en retour
+  httpChargerPartie(nomJoueur:string, partie: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.post<any>(this.apiUrl+"chargerPartie?nom="+nomJoueur, { texte: partie }, { headers: headers ,responseType: 'json'});
+  }
 
   // Observable pour surveiller les réponses de l'API
   httpListeRecherches(): Observable<any> {

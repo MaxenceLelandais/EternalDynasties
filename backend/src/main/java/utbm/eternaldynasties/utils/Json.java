@@ -53,10 +53,13 @@ public class Json {
     /**
      * Enregistre les données jsons dans un fichier json.
      */
-    public static void save(String path, Map<Object, Object> data) {
+    public static void saveMap(String path, Map<Object, Object> data) {
+        save(path, new JSONObject(data));
+    }
+    public static void save(String path, JSONObject data) {
         try {
             FileWriter file = new FileWriter(path);
-            file.write(jsonToString(new JSONObject(data)));
+            file.write(jsonToString(data));
             file.close();
         } catch (IOException e) {
             Log.error("Json", "Problème d'écriture du fichier : " + path);

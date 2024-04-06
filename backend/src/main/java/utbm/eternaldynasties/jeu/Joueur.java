@@ -427,6 +427,6 @@ public class Joueur {
     }
 
     public void save() {
-        Json.save("src/main/resources/sauvegardes/" + this.civilisation + "-" + this.environnement.getNom() + ".save", toMap());
+        Json.saveMap("src/main/resources/sauvegardes/" + this.civilisation + "-" + this.environnement.getNom() + ".save", toMap());
     }
 }
