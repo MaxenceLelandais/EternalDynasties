@@ -7,5 +7,13 @@ ul {
     li {
       width: 170px;
       text-align: center;
+      img {
+        cursor: pointer;
+        width: 30%;
+        transition-duration: 0.3s;
+        &:hover {
+          width: 40%;
+        }
+      }
     }
 }

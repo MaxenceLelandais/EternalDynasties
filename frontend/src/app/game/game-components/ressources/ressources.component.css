@@ -8,4 +8,12 @@ ul {
 ul li {
   width: 170px;
   text-align: center;
+}
+ul li img {
+  cursor: pointer;
+  width: 30%;
+  transition-duration: 0.3s;
+}
+ul li img:hover {
+  width: 40%;
 }/*# sourceMappingURL=ressources.component.css.map */
