@@ -1,7 +1,11 @@
 <div *ngIf="listeEre" class="liste-ere-container">
-    <ul *ngIf="listeEre" class="liste-ere">
+    <ul class="liste-ere">
         <li *ngFor="let envKey of listeEre | keyvalue; let i = index">
-            <div><img src="{{ envKey.value.imageNonactif }}" alt=""></div>
+            <!-- Si envKey.value.nom est égal à ere.nom, affiche l'image active -->
+            <img *ngIf="envKey.value.nom === ere?.nom" src="{{ envKey.value.imageActif }}" alt="">
+            <!-- Sinon, affiche l'image non active -->
+            <img *ngIf="envKey.value.nom !== ere?.nom" src="{{ envKey.value.imageNonactif }}" alt="">
+            <!-- <div *ngIf="envKey.value.nom != ere" >{{ envKey.value.nom }}</div> -->
         </li>
     </ul>
 </div>
