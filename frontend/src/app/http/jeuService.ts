@@ -66,7 +66,7 @@ export class JeuService {
     return this.fetchData(this.apiUrl+"arbreRessources?nomJoueur="+nomJoueur);
   }
   httpAddRessource(nomJoueur:string,ressource:string): Observable<any> {
-    return this.fetchData(this.apiUrl+"addRessource?nomJoueur="+nomJoueur+"&ressource="+ressource);
+    return this.fetchData(this.apiUrl+"addRessource?nomJoueur="+nomJoueur+"&ressource="+ressource+"&nombre=1");
   }
   httpTick(nomJoueur:string): Observable<any> {
     return this.fetchData(this.apiUrl+"tick?nomJoueur="+nomJoueur);
