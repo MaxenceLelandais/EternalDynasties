@@ -12,6 +12,7 @@ ul {
         width: 30%;
         transition-duration: 0.3s;
         &:hover {
+          margin-top: -10%;
           width: 40%;
         }
       }

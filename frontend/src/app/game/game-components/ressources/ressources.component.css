@@ -15,5 +15,6 @@ ul li img {
   transition-duration: 0.3s;
 }
 ul li img:hover {
+  margin-top: -10%;
   width: 40%;
 }/*# sourceMappingURL=ressources.component.css.map */
