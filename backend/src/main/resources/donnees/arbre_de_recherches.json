@@ -425,7 +425,8 @@
             "Points de recherche":"21",
             "Nourriture":"30000",
             "Bois": "10000",
-            "Pierre": "12000"
+            "Pierre": "12000",
+            "Points de science": "200"
         },
         "Débloque":[
             "Moyen-Age",
@@ -493,8 +494,7 @@
         "Description":"Nos épées, extensions de volonté, écrivent l'histoire..",
         "Coût": {
             "Points de recherche":"23",
-            "Nourriture":"25000",
-            "Points de science": "100"
+            "Nourriture":"25000"
         },
         "Débloque":[
             "Moyen-Age",
@@ -515,7 +515,6 @@
         "Coût":{
             "Points de recherche":"32",
             "Bois":"20000",
-            "Points de science": "500",
             "Pierre": "15000"
         },
         "Débloque":null,
@@ -621,8 +620,7 @@
             "Points de recherche":"40",
             "Or": "40",
             "Bois": "2000",
-            "Pierre": "40000",
-            "Points de science": "200"
+            "Pierre": "40000"
         },
         "Débloque":[
             "Renaissance",
@@ -644,7 +642,6 @@
         "Coût":{
             "Points de recherche":"30",
             "Or":"200",
-            "Points de science": "400"
         },
         "Débloque":[
             "Renaissance",
@@ -788,8 +785,7 @@
         "Coût": {
             "Points de recherche":"79",
             "Bois":"20000",
-            "Pierre": "50000",
-            "Points de science": "2000"
+            "Pierre": "50000"
         },
         "Débloque":[
             "Révolution industrielle",
@@ -809,8 +805,7 @@
         "Description":"Dompter les mers, dresser les continents, capturer l'infini.",
         "Coût": {
             "Points de recherche":"67",
-            "Or":"100",
-            "Points de science": "1000"
+            "Or":"100"
         },
         "Débloque":[
             "Colonisation"
@@ -831,8 +826,7 @@
         "Description":" L'or coule, le pouvoir s'érige, les destins se scellent.",
         "Coût": {
             "Points de recherche":"80",
-            "Or":"1000",
-            "Points de science": "2500"
+            "Or":"1000"
         },
         "Débloque":[
             "Révolution industrielle",
@@ -852,8 +846,7 @@
         "Description":"Éclosion des esprits, les hommes se lèvent, la Renaissance s'anime.",
         "Coût": {
             "Points de recherche":"90",
-            "Piété":"5000",
-            "Points de science": "500"
+            "Piété":"5000"
         },
         "Débloque":[
             "Révolution industrielle",
@@ -894,8 +887,7 @@
         "Description":" Vers l'horizon, nos rêves s'étendent, nos pas marquent des terres inexplorées..",
         "Coût": {
             "Points de recherche":"60",
-            "Or":"200",
-            "Points de science": "3000"
+            "Or":"200"
         },
         "Débloque":[
             "Révolution industrielle",
@@ -950,8 +942,7 @@
         "Description":"Flèches vers l'horizon, canons tonnants, guerre forgeant notre destin..",
         "Coût": {
             "Points de recherche":"80",
-            "Bois":"50000",
-            "Points de science": "8000"
+            "Bois":"50000"
         },
         "Débloque":[
             "Epoque Moderne",
@@ -971,7 +962,6 @@
         "Coût": {
             "Points de recherche":"500",
             "Bois":"10000",
-            "Points de science": "10000",
             "Pierre": "50000"
         },
         "Débloque":[
@@ -993,8 +983,7 @@
         "Description":"Nos coffres s'emplissent, nos marchés frémissent.",
         "Coût": {
             "Points de recherche":"150",
-            "Or":"1000",
-            "Points de science": "5000"
+            "Or":"1000"
         },
         "Débloque":[
             "Epoque Moderne",
@@ -1013,8 +1002,7 @@
         "Description":" Nos récits enflammés, nos arts vibrent, notre essence divine rayonne.",
         "Coût": {
             "Points de recherche":"120",
-            "Piété":"5000",
-            "Points de science": "5000"
+            "Piété":"5000"
         },
         "Débloque":[
             "Epoque Moderne",
@@ -1105,9 +1093,7 @@
         "Description":"Cités grandioses, tours majestueuses, notre empreinte sur la toile de la civilisation. ",
         "Coût": {
             "Points de recherche":"400",
-            "Or":"1500",
-            "Points de science": "10000",
-            "Electricité": "200"
+            "Or":"1500"
         },
         "Débloque":[
             "Epoque Moderne",
@@ -1167,9 +1153,7 @@
         "Id": "44",
         "Description":"KAAAAAAAAABOOOOOOOOOOOOOUM!!!!!!!!!!!!!!!!!!!!",
         "Coût": {
-            "Points de recherche":"15000",
-            "Electricité":"5000",
-            "Points de science": "50000"
+            "Points de recherche":"15000"
         },
         "Débloque":[
             "Epoque Futuriste",
@@ -1187,9 +1171,7 @@
         "Id": "45",
         "Description":"Déployez les ailes, réalisez le rêve d'Icare",
         "Coût": {
-            "Points de recherche":"1300",
-            "Electricité":"1200",
-            "Points de science": "1000"
+            "Points de recherche":"1300"
         },
         "Débloque":[
             "Exploration spatiale"
@@ -1207,8 +1189,7 @@
         "Id": "46",
         "Description":"Les frontières s'estompent, les cultures se mêlent, notre monde se révèle comme un seul et vaste foyer.",
         "Coût": {
-            "Points de recherche": "1200",
-            "Points de science": "12000"
+            "Points de recherche": "1200"
         },
         "Bonus":{
             "Puissance économique": "725"
@@ -1222,8 +1203,7 @@
         "Id": "47",
         "Description":"Les voix s'élèvent, les images dansent, notre conscience tissée dans le fil de l'information.",
         "Coût": {
-            "Points de recherche": "1400",
-            "Electricité": "10000"
+            "Points de recherche": "1400"
         },
         "Débloque":[
             "Réseaux sociaux"
@@ -1240,8 +1220,7 @@
         "Id": "48",
         "Description":"Connexions, échos, le monde en un clic",
         "Coût": {
-            "Points de recherche": "1200",
-            "Electricité": "15000"
+            "Points de recherche": "1200"
         },
         "Bonus":{
             "Puissance culturelle": "550"
@@ -1255,7 +1234,7 @@
         "Description":"Les lois universelles révélées, les mystères de la matière, notre exploration des fondements de l'existence.",
         "Coût": {
             "Points de recherche": "1250",
-            "Points de science": "10000"
+            "Points de science": "30000"
         },
         "Débloque":[
             "Epoque Futuriste",
@@ -1279,7 +1258,8 @@
         "Description":"1000010010110011101001",
         "Coût": {
             "Points de recherche": "3000",
-            "Electricité": "25000"
+            "Electricité": "25000",
+            "Points de science": "40000"
         },
         "Débloque":[
             "Robotique"
@@ -1335,7 +1315,6 @@
         "Description":"Étoiles lointaines, astres inconnus, notre quête audacieuse à travers les confins de l'univers.",
         "Coût": {
             "Points de recherche": "25000",
-            "Electricité": "30000",
             "Or": "25000"
         },
         "Débloque":[
@@ -1358,7 +1337,8 @@
             "Electricité": "50000",
             "Or": "15000",
             "Bois": "100000",
-            "Pierre": "100000"
+            "Pierre": "100000",
+            "Points de science": "45000"
         },
         "Débloque":[
             "Epoque Futuriste",
@@ -1412,9 +1392,8 @@
         "Id": "55",
         "Description":"Maîtrisons la puissance destructrice et créatrice du laser.",
         "Coût": {
-            "Points de recherche": "45000",
-            "Electricité": "75000",
-            "Points de science": "50000"
+            "Points de recherche": "45000"
+
         },
         "Bonus":{
             "Puissance militaire": "1000"
@@ -1429,8 +1408,7 @@
         "Description":"Cités titanesques, néons flamboyants, nos bastions d'acier, témoins de notre audace face à l'avenir incertain.",
         "Coût": {
             "Points de recherche": "15000",
-            "Piété": "800000",
-            "Electricité": "30000"
+            "Piété": "800000"
         },
         "Bonus":{
             "Gratte-ciel": "0",
@@ -1448,9 +1426,8 @@
         "Description":"Éclairs cosmiques, horizons pliés, notre conquête des étoiles, défiant les limites de la vitesse et de l'espace.",
         "Coût": {
             "Points de recherche": "45000",
-            "Electricité": "80000",
-            "Or": "50000",
-            "Points de science": "1000000"
+            "Or": "50000"
+
         },
         "Bonus":{
             "Puissance culturelle": "300",
@@ -1468,7 +1445,7 @@
             "Points de recherche": "50000",
             "Electricité": "120000",
             "Or": "25000",
-            "Points de science":"350000"
+            "Points de science":"300000"
         },
         "Bonus":{
             "Puissance culturelle": "230",
