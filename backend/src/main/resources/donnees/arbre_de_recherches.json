@@ -1,6 +1,7 @@
 {
     "Tribue": {
         "Id": "1",
+        "Image": "./assets/img/recherche/tribue.png",
         "Description": "Le commencement d'une belle aventure.",
         "Coût": null,
         "Débloque": [
@@ -52,6 +53,7 @@
     },
     "Cueillette":{
         "Id": "2",
+        "Image": "./assets/img/recherche/cueillette.png",
         "Description":"Les fruits de notre premier triomphe.",
         "Coût":{
             "Points de recherche":"1",
@@ -72,6 +74,7 @@
     },
     "Feu":{
         "Id": "3",
+        "Image": "./assets/img/recherche/feu.png",
         "Description":"L'étincelle qui embrase nos destins.",
         "Coût":{
             "Points de recherche":"1",
@@ -99,6 +102,7 @@
     },
     "Croyance":{
         "Id": "4",
+        "Image": "./assets/img/recherche/croyance.png",
         "Description":"Les mystères célestes guident nos pas.",
         "Coût":{
             "Points de recherche":"2",
@@ -122,6 +126,7 @@
     },
     "Chasse et pêche":{
         "Id": "5",
+        "Image": "./assets/img/recherche/chasse_et_peche.png",
         "Description":"Apprenons les arts de la survie. ",
         "Coût":{
             "Points de recherche":"2",
@@ -142,6 +147,7 @@
     },
     "Education":{
         "Id": "6",
+        "Image": "./assets/img/recherche/education.png",
         "Description":"Cultivons l'esprit pour l'avenir. ",
         "Coût":
         {
@@ -164,6 +170,7 @@
     },
     "Mythologie":{
         "Id": "7",
+        "Image": "./assets/img/recherche/mythologie.png",
         "Description":"Plongeons dans les récits anciens. ",
         "Coût":{
             "Points de recherche":"5",
@@ -181,6 +188,7 @@
     },
     "Armée":{
         "Id": "8",
+        "Image": "./assets/img/recherche/armee.png",
         "Description":"Forgeons notre destin sur le champ de bataille.",
         "Coût":{
             "Points de recherche":"6",
@@ -202,6 +210,7 @@
     },
     "Elevage":{
         "Id": "9",
+        "Image": "./assets/img/recherche/elevage.png",
         "Description":"Domptons les bestiole pour notre empire.",
         "Coût":{
             "Points de recherche":"5",
@@ -220,6 +229,7 @@
     },
     "Religion":{
         "Id": "10",
+        "Image": "./assets/img/recherche/religion.png",
         "Description":"Les croyances forgent le destin des royaumes divins.",
         "Coût":{
             "Points de recherche":"6",
@@ -279,6 +289,7 @@
     },
     "Navigation":{
         "Id": "11",
+        "Image": "./assets/img/recherche/navigation.png",
         "Description":"Sur les flots, nous traçons notre voie vers l'inconnu.",
         "Coût":{
             "Points de recherche":"10",
@@ -303,6 +314,7 @@
     },
     "Science":{
         "Id": "12",
+        "Image": "./assets/img/recherche/science.png",
         "Description":"Plongeons dans l'étude de la compréhension du monde. ",
         "Coût":{
             "Points de recherche":"10",
@@ -331,6 +343,7 @@
     },
     "Magie":{
         "Id": "13",
+        "Image": "./assets/img/recherche/magie.png",
         "Description":"Explorons les forces mystiques du monde.",
         "Coût":{
             "Points de recherche":"30",
@@ -356,6 +369,7 @@
     },
     "Construction":{
         "Id": "14",
+        "Image": "./assets/img/recherche/construction.png",
         "Description":"Levons des bastions, reflets de notre puissance et sagesse.",
         "Coût":{
             "Points de recherche":"8",
@@ -377,6 +391,7 @@
     },
     "Monnaie":{
         "Id": "15",
+        "Image": "./assets/img/recherche/monnaie.png",
         "Description":"Frappons des pièces, symboles de notre prospérité et unité..",
         "Coût":{
             "Points de recherche":"15",
@@ -401,6 +416,7 @@
     },
     "Philosophie":{
         "Id": "16",
+        "Image": "./assets/img/recherche/philosophie.png",
         "Description":"Questionnons-nous sur la nature de l'existence.",
         "Coût":{
             "Points de recherche":"13",
@@ -420,6 +436,7 @@
     },
     "Ingénieurie":{
         "Id": "17",
+        "Image": "./assets/img/recherche/ingénieurie.png",
         "Description":"Sculptons le futur avec les outils de la connaissance.",
         "Coût":{
             "Points de recherche":"21",
@@ -442,6 +459,7 @@
     },
     "Magie du Bien":{
         "Id": "18",
+        "Image": "./assets/img/recherche/magie du bien.png",
         "Description":"Nos âmes s'élèvent dans les lueurs de la magie pure.",
         "Coût":{
             "Points de recherche":"40",
@@ -465,6 +483,7 @@
     },
     "Magie Noire":{
         "Id": "19",
+        "Image": "./assets/img/recherche/magie noire.png",
         "Description":"Dans les ombres, notre essor, l'étreinte des ténèbres.",
         "Coût": {
             "Personne": "50",
@@ -491,6 +510,7 @@
     },
     "Conquête":{
         "Id": "20",
+        "Image": "./assets/img/recherche/conquete.png",
         "Description":"Nos épées, extensions de volonté, écrivent l'histoire..",
         "Coût": {
             "Points de recherche":"23",
@@ -511,6 +531,7 @@
     },
     "Monuments":{
         "Id": "21",
+        "Image": "./assets/img/recherche/monument.png",
         "Description":"Érigeons des témoins de notre grandeur.",
         "Coût":{
             "Points de recherche":"32",
@@ -525,6 +546,7 @@
     },
     "Commerce":{
         "Id": "22",
+        "Image": "./assets/img/recherche/commerce.png",
         "Description":"Tissons les routes d'échange et de prospérité ",
         "Coût": {
             "Points de recherche":"44",
@@ -544,6 +566,7 @@
     },
     "Politique":{
         "Id": "23",
+        "Image": "./assets/img/recherche/politique.png",
         "Description":"Sculptons le destin de nos sociétés ",
         "Coût":{
             "Points de recherche":"25",
@@ -562,6 +585,7 @@
     },
     "Mine d or":{
         "Id": "60",
+        "Image": "./assets/img/recherche/mine d'or.png",
         "Description":"Exploitons les trésors de la terre",
         "Coût":{
             "Points de recherche":"29",
@@ -615,6 +639,7 @@
     },
     "Fortification":{
         "Id": "24",
+        "Image": "./assets/img/recherche/fortification.png",
         "Description":"Érigeons des remparts impénétrables.",
         "Coût":{
             "Points de recherche":"40",
@@ -638,10 +663,11 @@
     },
     "Système féodale":{
         "Id": "25",
+        "Image": "./assets/img/recherche/systeme feodale.png",
         "Description":"Organisons notre société autour du pouvoir féodal.",
         "Coût":{
             "Points de recherche":"30",
-            "Or":"200",
+            "Or":"200"
         },
         "Débloque":[
             "Renaissance",
@@ -657,6 +683,7 @@
     },
     "Université":{
         "Id": "26",
+        "Image": "./assets/img/recherche/université.png",
         "Description":"Érigeons des phares de lumière dans l'obscurité de l'ignorance..",
         "Coût":{
             "Points de recherche":"55",
@@ -680,6 +707,7 @@
     },
     "Mécanique":{
         "Id": "27",
+        "Image": "./assets/img/recherche/mécanique.png",
         "Description":"Explorons les rouages de la création ",
         "Coût": {
             "Points de recherche":"65",
@@ -703,6 +731,7 @@
     },
     "Alchimie":{
         "Id": "28",
+        "Image": "./assets/img/recherche/alchimie.png",
         "Description":"Plongeons dans la quête de la pierre philosophale et de l'élixir de vie.",
         "Coût":{
             "Points de recherche":"80",
@@ -724,6 +753,7 @@
     },
     "Sorcellerie":{
         "Id": "29",
+        "Image": "./assets/img/recherche/sorcellerie.png",
         "Description":"Manipulons les forces occultes et les sortilèges interdits.",
         "Coût":{
             "Points de recherche":"105",
@@ -781,6 +811,7 @@
     },
     "Poudre à canon":{
         "Id": "30",
+        "Image": "./assets/img/recherche/poudre à canon.png",
         "Description":"BOOOOUM!!!",
         "Coût": {
             "Points de recherche":"79",
@@ -802,6 +833,7 @@
     },
     "Cartographie":{
         "Id": "31",
+        "Image": "./assets/img/recherche/cartographie.png",
         "Description":"Dompter les mers, dresser les continents, capturer l'infini.",
         "Coût": {
             "Points de recherche":"67",
@@ -823,6 +855,7 @@
     },
     "Banque":{
         "Id": "32",
+        "Image": "./assets/img/recherche/banque.png",
         "Description":" L'or coule, le pouvoir s'érige, les destins se scellent.",
         "Coût": {
             "Points de recherche":"80",
@@ -843,6 +876,7 @@
     },
     "Humanisme":{
         "Id": "33",
+        "Image": "./assets/img/recherche/humanisme.png",
         "Description":"Éclosion des esprits, les hommes se lèvent, la Renaissance s'anime.",
         "Coût": {
             "Points de recherche":"90",
@@ -863,6 +897,7 @@
     },
     "Astronomie":{
         "Id": "34",
+        "Image": "./assets/img/recherche/astronomie.png",
         "Description":" Les cieux se dévoilent, les étoiles nous murmurent l'infini.",
         "Coût": {
             "Points de recherche":"95",
@@ -884,6 +919,7 @@
     },
     "Colonisation":{
         "Id": "35",
+        "Image": "./assets/img/recherche/colonisation.png",
         "Description":" Vers l'horizon, nos rêves s'étendent, nos pas marquent des terres inexplorées..",
         "Coût": {
             "Points de recherche":"60",
@@ -939,6 +975,7 @@
     },
     "Balistique":{
         "Id": "36",
+        "Image": "./assets/img/recherche/balistique.png",
         "Description":"Flèches vers l'horizon, canons tonnants, guerre forgeant notre destin..",
         "Coût": {
             "Points de recherche":"80",
@@ -958,6 +995,7 @@
     },
     "Industrialisation":{
         "Id": "37",
+        "Image": "./assets/img/recherche/industrialisation.png",
         "Description":"Sous nos mains, les forges s'enflamment, nos rêves prennent forme dans le fracas des machines.",
         "Coût": {
             "Points de recherche":"500",
@@ -980,6 +1018,7 @@
     },
     "Economie":{
         "Id": "38",
+        "Image": "./assets/img/recherche/economie.png",
         "Description":"Nos coffres s'emplissent, nos marchés frémissent.",
         "Coût": {
             "Points de recherche":"150",
@@ -999,6 +1038,7 @@
     },
     "Culture":{
         "Id": "39",
+        "Image": "./assets/img/recherche/culture.png",
         "Description":" Nos récits enflammés, nos arts vibrent, notre essence divine rayonne.",
         "Coût": {
             "Points de recherche":"120",
@@ -1018,6 +1058,7 @@
     },
     "Electricité":{
         "Id": "40",
+        "Image": "./assets/img/recherche/electricité.png",
         "Description":"Éclairs domestiqués, notre pouvoir sur le fil de la vie..",
         "Coût": {
             "Points de recherche":"300",
@@ -1040,6 +1081,7 @@
     },
     "Contrôle élémentaire":{
         "Id": "41",
+        "Image": "./assets/img/recherche/controle elementaire.png",
         "Description":"Les éléments soumis, les flammes dansantes, notre maîtrise sur les forces primordiales.",
         "Coût": {
             "Points de recherche":"605",
@@ -1064,6 +1106,7 @@
     },
     "Nécromancie":{
         "Id": "42",
+        "Image": "./assets/img/recherche/necromancie.png",
         "Description":"Les morts éveillés, les ombres dansantes, notre pouvoir sur la frontière entre vie et mort.",
         "Coût": {
             "Points de recherche":"1200",
@@ -1089,6 +1132,7 @@
         ]
     },
     "Urbanisation":{
+        "Image": "./assets/img/recherche/urbanisation.png",
         "Id": "43",
         "Description":"Cités grandioses, tours majestueuses, notre empreinte sur la toile de la civilisation. ",
         "Coût": {
@@ -1151,6 +1195,7 @@
     },
     "Nucléaire":{
         "Id": "44",
+        "Image": "./assets/img/recherche/nucléaire.png",
         "Description":"KAAAAAAAAABOOOOOOOOOOOOOUM!!!!!!!!!!!!!!!!!!!!",
         "Coût": {
             "Points de recherche":"15000"
@@ -1169,6 +1214,7 @@
     },
     "Aviation":{
         "Id": "45",
+        "Image": "./assets/img/recherche/aviation.png",
         "Description":"Déployez les ailes, réalisez le rêve d'Icare",
         "Coût": {
             "Points de recherche":"1300"
@@ -1187,6 +1233,7 @@
     },
     "Globalisation":{
         "Id": "46",
+        "Image": "./assets/img/recherche/globalisation.png",
         "Description":"Les frontières s'estompent, les cultures se mêlent, notre monde se révèle comme un seul et vaste foyer.",
         "Coût": {
             "Points de recherche": "1200"
@@ -1201,6 +1248,7 @@
     },
     "Médias":{
         "Id": "47",
+        "Image": "./assets/img/recherche/média.png",
         "Description":"Les voix s'élèvent, les images dansent, notre conscience tissée dans le fil de l'information.",
         "Coût": {
             "Points de recherche": "1400"
@@ -1218,6 +1266,7 @@
     },
     "Réseaux sociaux":{
         "Id": "48",
+        "Image": "./assets/img/recherche/Réseaux sociaux.png",
         "Description":"Connexions, échos, le monde en un clic",
         "Coût": {
             "Points de recherche": "1200"
@@ -1231,6 +1280,7 @@
     },
     "Physique":{
         "Id": "49",
+        "Image": "./assets/img/recherche/physique.png",
         "Description":"Les lois universelles révélées, les mystères de la matière, notre exploration des fondements de l'existence.",
         "Coût": {
             "Points de recherche": "1250",
@@ -1255,6 +1305,7 @@
     },
     "Informatique":{
         "Id": "50",
+        "Image": "./assets/img/recherche/informatique.png",
         "Description":"1000010010110011101001",
         "Coût": {
             "Points de recherche": "3000",
@@ -1276,6 +1327,7 @@
     },
     "Puissance élémentaire":{
         "Id": "51",
+        "Image": "./assets/img/recherche/Puissance Elémentaire.png",
         "Description":"Flammes fulgurantes, mers déchaînées, notre contrôle sur les forces primordiales.",
         "Coût": {
             "Points de recherche": "100000",
@@ -1293,6 +1345,7 @@
     },
     "Force du chaos":{
         "Id": "52",
+        "Image": "./assets/img/recherche/force du chaos.png",
         "Description":"Explorons les aspects les plus sombres de la magie et de la manipulation des énergies occultes pour creer la puissante armée des morts.",
         "Coût": {
             "Points de recherche": "150000",
@@ -1312,6 +1365,7 @@
     },
     "Exploration spatiale":{
         "Id": "53",
+        "Image": "./assets/img/recherche/exploration spatiale.png",
         "Description":"Étoiles lointaines, astres inconnus, notre quête audacieuse à travers les confins de l'univers.",
         "Coût": {
             "Points de recherche": "25000",
@@ -1331,6 +1385,7 @@
     },
     "Robotique":{
         "Id": "54",
+        "Image": "./assets/img/recherche/robotique.png",
         "Description":"Nos créations, reflets de notre ingéniosité..",
         "Coût": {
             "Points de recherche": "4000",
@@ -1390,6 +1445,7 @@
     },
     "Laser":{
         "Id": "55",
+        "Image": "./assets/img/recherche/laser.png",
         "Description":"Maîtrisons la puissance destructrice et créatrice du laser.",
         "Coût": {
             "Points de recherche": "45000"
@@ -1405,6 +1461,7 @@
     },
     "Urbanisation futuriste":{
         "Id": "56",
+        "Image": "./assets/img/recherche/urbanisation futuriste.png",
         "Description":"Cités titanesques, néons flamboyants, nos bastions d'acier, témoins de notre audace face à l'avenir incertain.",
         "Coût": {
             "Points de recherche": "15000",
@@ -1423,6 +1480,7 @@
     },
     "Voyage supraluminique":{
         "Id": "57",
+        "Image": "./assets/img/recherche/voyage supraluminique.png",
         "Description":"Éclairs cosmiques, horizons pliés, notre conquête des étoiles, défiant les limites de la vitesse et de l'espace.",
         "Coût": {
             "Points de recherche": "45000",
@@ -1440,6 +1498,7 @@
     },
     "Nano technologies":{
         "Id": "58",
+        "Image": "./assets/img/recherche/nanotechnologies.png",
         "Description":"Particules infimes, révolutions invisibles, notre pouvoir à l'échelle atomique. ",
         "Coût": {
             "Points de recherche": "50000",
@@ -1459,6 +1518,7 @@
     },
     "Intelligence artificielle":{
         "Id": "59",
+        "Image": "./assets/img/recherche/Intelligence artificiel.png",
         "Description":"Explorez les possibilités de l'intelligence artificielle.",
         "Coût": {
             "Points de recherche": "45000",
