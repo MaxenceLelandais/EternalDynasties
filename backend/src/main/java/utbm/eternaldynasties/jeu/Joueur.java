@@ -110,6 +110,12 @@ public class Joueur {
                 }
                 this.ressources.putIfAbsent(key, 0.0);
             }
+            List<Recherche> listeRecherchesDispos = this.recherchesPossibles();
+            if(listeRecherchesDispos.size()==1){
+                if(this.arbreDeRecherche.getEres().containsKey(listeRecherchesDispos.get(0).getNom())){
+                    listeRecherchesDispos.get(0).activer();
+                }
+            }
             save();
             return nomRecherche + ": RECHERCHE EFFECTUEE";
         }
