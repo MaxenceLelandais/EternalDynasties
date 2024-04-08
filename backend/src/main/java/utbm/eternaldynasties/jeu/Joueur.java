@@ -121,7 +121,7 @@ public class Joueur {
         bonus.forEach((key, value) -> {
             double valeur = value.estimationValeur(this.ressources);
             if (this.ressources.containsKey("Max-" + key)) {
-                if (this.ressources.get(key) + valeur <= this.ressources.get("Max-" + key)) {
+                if (this.ressources.get(key) + valeur <= this.ressources.get("Max-" + key) && this.ressources.get(key) + valeur>=0) {
                     this.ressources.replace(key, this.ressources.get(key) + valeur);
                 }else{
                     valide[0] = false;
@@ -160,10 +160,16 @@ public class Joueur {
             }
             if (!pasAssezDeRessources) {
                 int nbrAchat = 0;
-                for(nbrAchat = 1; nbrAchat<Math.min(nombreAchatPossible, quantite);nbrAchat++){
-                    if(!this.checkEtAddVal(bonus)){
+                for(int n = 0; n<nombreAchatPossible;n++){
+                    if(quantite<=0){
                         break;
                     }
+                    if(!this.checkEtAddVal(bonus) ){
+                        break;
+                    }else{
+                        nbrAchat++;
+                    }
+                    quantite--;
                 }
                 for (String key : cout.keySet()) {
                     this.ressources.replace(key, this.ressources.get(key)-nbrAchat*cout.get(key));
