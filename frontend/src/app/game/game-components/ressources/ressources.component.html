@@ -1,6 +1,7 @@
 <ul *ngIf="ressources">
     <ng-container *ngFor="let ressource of ressources | keyvalue">
         <li *ngIf="ressource.value.type == 'Ressource base' && nomJoueur" (click)="addRessource(nomJoueur, ressource.value.nom)">
+            <img src="{{ ressource.value.image }}" alt="">
             <p>{{ ressource.value.nom }}</p>
             <p>{{ ressource.value.quantite }} / {{ ressource.value.max }}</p>
         </li>
@@ -9,6 +10,7 @@
 <ul *ngIf="ressources">
     <ng-container *ngFor="let ressource of ressources | keyvalue">
       <li *ngIf="ressource.value.type == 'Ressource spécialité'">
+        <img src="{{ ressource.value.image }}" alt="">
         <p>{{ ressource.value.nom }}</p>
         <p>{{ ressource.value.quantite }} / {{ ressource.value.max }} </p>
       </li>

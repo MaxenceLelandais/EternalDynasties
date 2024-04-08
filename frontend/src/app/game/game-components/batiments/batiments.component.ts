@@ -41,7 +41,7 @@ export class BatimentsComponent {
     if (nomJoueur == null) {
       return;
     }
-    this.jeuService.httpAddRessource(nomJoueur, ressource).subscribe({
+    this.jeuService.httpAddRessource(nomJoueur, ressource, "1").subscribe({
       next: (response) => {
         console.log("Ressource ajoutée avec succès", response);
         this.ressources= response;

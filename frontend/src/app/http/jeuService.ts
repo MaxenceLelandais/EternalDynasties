@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -8,7 +8,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class JeuService {
   private apiUrl = 'jeu/'; // Remplacez par l'URL de votre API
-  private responseDataSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
   constructor(private http: HttpClient) {}
 
@@ -17,6 +16,13 @@ export class JeuService {
     return this.http.get(url, { observe: 'body', responseType: 'json'});
   }
 
+  // Fonction pour envoyer un texte à l'API et récupérer des données en retour
+  httpChargerPartie(nomJoueur:string, partie: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+    return this.http.post<any>(this.apiUrl+"chargerPartie?nom="+nomJoueur, { texte: partie }, { headers: headers ,responseType: 'json'});
+  }
 
   // Observable pour surveiller les réponses de l'API
   httpListeRecherches(): Observable<any> {
@@ -49,6 +55,10 @@ export class JeuService {
     return this.fetchData(this.apiUrl+"joueur?civilisation="+nomCivilisation+"&environnement="+nomEnvironnement);
   }
 
+  httpEreActuelle(nomJoueur:string): Observable<any> {
+    return this.fetchData(this.apiUrl+"ereActuelle?nomJoueur="+nomJoueur);
+  }
+
   httpParties(): Observable<any> {
     return this.fetchData(this.apiUrl+"parties");
   }
@@ -65,8 +75,8 @@ export class JeuService {
   httpArbreRessources(nomJoueur:string): Observable<any> {
     return this.fetchData(this.apiUrl+"arbreRessources?nomJoueur="+nomJoueur);
   }
-  httpAddRessource(nomJoueur:string,ressource:string): Observable<any> {
-    return this.fetchData(this.apiUrl+"addRessource?nomJoueur="+nomJoueur+"&ressource="+ressource+"&nombre=1");
+  httpAddRessource(nomJoueur:string,ressource:string, nombre:string): Observable<any> {
+    return this.fetchData(this.apiUrl+"addRessource?nomJoueur="+nomJoueur+"&ressource="+ressource+"&nombre="+nombre);
   }
   httpTick(nomJoueur:string): Observable<any> {
     return this.fetchData(this.apiUrl+"tick?nomJoueur="+nomJoueur);
