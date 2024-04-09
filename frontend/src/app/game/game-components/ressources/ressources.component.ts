@@ -24,8 +24,6 @@ export class RessourcesComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.loadRessources();
     this.nomJoueur = this.nomJoueurService.getNomJoueur();
-    // Abonnez-vous à l'Observable pour obtenir les mises à jour automatiques
-
   }
 
   ngOnDestroy() {

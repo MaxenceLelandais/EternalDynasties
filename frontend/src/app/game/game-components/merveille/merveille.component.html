@@ -1,1 +1,8 @@
-<p>merveille works!</p>
+<div *ngIf="environnement && environnement.images && environnement.images.length > 0" class="apercue-container">
+    <img [src]="environnement.merveille" alt="">
+    <ng-container *ngFor="let ressource of ressources | keyvalue">
+        <div *ngIf="ressource.value.nom == 'Merveille'">
+        <p>{{ ressource.value.quantite | number:'1.0-6' }}</p>
+        </div>
+    </ng-container>  
+</div>
