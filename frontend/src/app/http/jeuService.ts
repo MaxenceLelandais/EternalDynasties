@@ -67,6 +67,7 @@ export class JeuService {
     return this.fetchData(this.apiUrl+"recherchesDisponibles?nomJoueur="+nomJoueur);
   }
   httpActiverRecherche(nomJoueur:string,recherche:string): Observable<any> {
+    console.log("nom du joueur : " + nomJoueur);
     return this.fetchData(this.apiUrl+"activerRecherche?nomJoueur="+nomJoueur+"&recherche="+recherche);
   }
   httpListeRessources(nomJoueur:string): Observable<any> {

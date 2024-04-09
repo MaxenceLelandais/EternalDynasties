@@ -26,12 +26,21 @@ export class ModalArbreRechercheComponent implements OnInit {
   constructor(private jeuService: JeuService,
               private modalService: ModalService,
               private renderer: Renderer2,
-              private nomJoueurService: NomJoueurService) {this.fetchData()}
+              private nomJoueurService: NomJoueurService) {}
 
+  ngOnInit() {
+    this.fetchData();
+    this.modalService.watch().subscribe((status: 'open' | 'close') => {
+      this.displayModal = status === 'open';
+      if(this.displayModal) {
+        this.construireArborescence();
+      }
+    });
+    this.nomJoueur = this.nomJoueurService.getNomJoueur();
+  }
 
   fetchData() {
     console.log(this.listeRecherches);
-    this.nomJoueur = this.nomJoueurService.getNomJoueur();
     this.jeuService.httpListeRecherches().subscribe(
       data => {
         console.log(data);
@@ -84,14 +93,7 @@ export class ModalArbreRechercheComponent implements OnInit {
   
 
 
-  ngOnInit() {
-    this.modalService.watch().subscribe((status: 'open' | 'close') => {
-      this.displayModal = status === 'open';
-      if(this.displayModal) {
-        this.construireArborescence();
-      }
-    });
-  }
+
 
   closeModal() {
     this.modalService.close();
@@ -214,12 +216,11 @@ export class ModalArbreRechercheComponent implements OnInit {
     this.jeuService.httpActiverRecherche(nomJoueur, recherche.nom).subscribe({
       next: (response) => {
         console.log("Ressource ajoutée avec succès", response);
-        this.arborescenceRecherche = response;
+        // this.arborescenceRecherche = response;
       },
       error: (error) => {
         console.error("Erreur lors de l'ajout de la ressource", error);
       }
     });
   }
-  
 }

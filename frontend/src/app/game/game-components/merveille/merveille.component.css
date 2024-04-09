@@ -3,27 +3,22 @@
   max-width: -moz-fit-content;
   max-width: fit-content;
   margin: 20px;
-  position: relative;
-  display: inline-block; /* ou block selon votre mise en page */
-  border-radius: 5px; /* Pour le wrapper */
-  overflow: hidden; /* Assurez-vous que l'ombre interne suit les bordures arrondies */
-}
-
-.apercue-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  border-radius: 5px;
-  box-shadow: inset 0px 0px 31px -4px rgba(0, 0, 0, 0.27);
-  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .apercue-container img {
-  width: 100%;
+  width: 90%;
   border-radius: 5px; /* Pour l'image elle-même si nécessaire */
   display: block;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+.apercue-container img:hover {
+  width: 100%;
+}
+.apercue-container img:active {
+  width: 90%;
 }/*# sourceMappingURL=merveille.component.css.map */

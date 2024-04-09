@@ -6,6 +6,8 @@ import { EnvironnementService } from 'src/app/service/environnementService';
 import { Civilisation } from 'src/app/model/civilisation.model';
 import { CivilisationService } from 'src/app/service/civilisationService';
 import { Subscription } from 'rxjs';
+import { JeuService } from 'src/app/http/jeuService';
+import { NomJoueurService } from 'src/app/service/nomJoueurService';
 
 @Component({
   selector: 'app-merveille',
@@ -20,11 +22,15 @@ export class MerveilleComponent {
   civilisation: Civilisation | null = null;
   ressources: Ressources | null = null;
   private subscriptions: Subscription = new Subscription();
+  nomJoueur: string | null = null;
+  merveilleRessourceNom: string | null = null;
   
 
   constructor(private ressourcesService: RessourceService,
               private environnementService: EnvironnementService,
-              private civilisationService: CivilisationService) {
+              private civilisationService: CivilisationService,
+              private jeuService: JeuService,
+              private nomJoueurService: NomJoueurService) {
   }
 
   ngOnInit() {
@@ -34,6 +40,7 @@ export class MerveilleComponent {
     this.loadRessources();
     this.loadEnvironnement();
     this.loadCivilisation();
+    this.nomJoueur = this.nomJoueurService.getNomJoueur();
   }
 
   ngOnDestroy() {
@@ -80,4 +87,26 @@ export class MerveilleComponent {
       localStorage.setItem('civilisation', JSON.stringify(this.civilisation));
     }
   }
+
+  addRessource(nomJoueur: string, ressource: string) {
+    if (nomJoueur == null) {
+      return;
+    }
+    this.jeuService.httpAddRessource(nomJoueur, ressource, "1").subscribe({
+      next: (response) => {
+        console.log("Ressource ajoutée avec succès", response);
+        this.ressourcesService.updateRessources(response);
+        this.subscriptions.add(
+          this.ressourcesService.ressources$.subscribe(ressources => {
+            this.ressources = ressources;
+            console.log("ressources : " + this.ressources);
+          })
+        );
+      },
+      error: (error) => {
+        console.error("Erreur lors de l'ajout de la ressource", error);
+      }
+    });
+  }
+
 }
