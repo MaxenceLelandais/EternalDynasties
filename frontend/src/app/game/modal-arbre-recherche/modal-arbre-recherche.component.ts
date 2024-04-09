@@ -23,8 +23,10 @@ export class ModalArbreRechercheComponent implements OnInit {
   constructor(private jeuService: JeuService, private modalService: ModalService,private renderer: Renderer2) {this.fetchData()}
 
   fetchData() {
+    console.log(this.listeRecherches);
     this.jeuService.httpListeRecherches().subscribe(
       data => {
+        console.log(data);
         this.listeRecherches = data;
       },
       error => {
@@ -33,7 +35,9 @@ export class ModalArbreRechercheComponent implements OnInit {
     );
     this.jeuService.httpArbreRecherches().subscribe(
       data2 => {
+        console.log(data2);
         this.arbreRecherches = data2;
+        console.log(this.arbreRecherches);
       },
       error => {
         console.error("Erreur lors de la récupération des recherches", error);
@@ -67,6 +71,7 @@ export class ModalArbreRechercheComponent implements OnInit {
         }
       }
     });
+    console.log(this.arborescenceRecherche);
   }
   
 
@@ -141,6 +146,7 @@ export class ModalArbreRechercheComponent implements OnInit {
     
     arborescence.forEach(recherche => {
       const indentation = Array(niveau + 1).join("  "); // Crée une indentation basée sur le niveau de profondeur
+      console.log(`${indentation}${recherche.nom}`);
       if (recherche.enfant && recherche.enfant.length > 0) {
         // S'il y a des enfants, loggez-les récursivement
         this.logArborescenceRecherche(recherche.enfant, niveau + 1);

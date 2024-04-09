@@ -19,21 +19,25 @@ export class FriseChronologiqueComponent {
   ngOnInit() {
     this.nomJoueur = this.nomJoueurService.getNomJoueur();
     this.fetchData()
+    console.log("nom pour ere : " + this.nomJoueur);
   }
 
   fetchData() {
     this.jeuService.httpListeEres().subscribe(
       data => {
         this.listeEre = data["Ere"];
+        console.log(data);
       },
       error => {
         console.error("Erreur lors de la récupération des eres", error);
       }
     );
+    console.log("bonjour0 : " + this.nomJoueur);
     if (this.nomJoueur) {
       this.jeuService.httpEre(this.nomJoueur).subscribe({
         next: (response) => {
           this.ere = response;
+          console.log('Réponse ere', response);
         },
         error: (error) => {
           console.error('Erreur lors de la requête', error);
