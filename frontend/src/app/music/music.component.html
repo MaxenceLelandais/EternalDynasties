@@ -2,5 +2,7 @@
     Your browser does not support the audio element.
   </audio>
   
-  <button *ngIf="this.etat" class="play" (click)="resumeAudio()">Play</button>
-  <button *ngIf="!this.etat" class="pause" (click)="pauseAudio()">Pause</button>
+  <button class="l1" (click)="playRandomAudio()">Play Random Audio</button>
+  <button class="l2" (click)="nextAudio()">Next</button>
+  <button class="l3" (click)="previousAudio()">Previous</button>
+<!-- <h1>{{ environnement?.nom }}</h1> -->

@@ -145,6 +145,22 @@
         cursor: pointer;
         position: relative; /* Assurez-vous que le parent direct a une position relative pour le positionnement absolu de l'enfant */
         display: inline-block; /* Pour s'assurer que l'élément tooltip s'ajuste à son contenu */
+        transition-duration: 0.3s;
+        &:hover {
+            color: #242424;
+            background-color: #fff;
+            border-radius: 5px;
+            font-weight: 700;
+            //margin-left: -0.19%;
+        }
+    }
+
+    .tooltip-activate {
+        position: relative;
+        display: inline-block;
+        color: #242424;
+        background-color: #fff;
+        border-radius: 5px;
     }
 
     .tooltiptext-left {
