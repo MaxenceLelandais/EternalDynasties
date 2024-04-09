@@ -14,7 +14,7 @@ import { CivilisationService } from '../service/civilisationService';
 export class MusicComponent implements OnInit {
 
   audioFiles: string[] = [];
-  currentAudioIndex: number = 0;
+  etat: boolean = true;
   environnement: Environnement | null = null;
   ereActuelle: string = ""; // Variable pour stocker l'ère actuelle
   civilisation:any;
@@ -30,6 +30,7 @@ export class MusicComponent implements OnInit {
     this.loadAudioFiles();
     this.loadEnvironnement();
     this.loadEreActuelle(); // Appel à la méthode pour charger l'ère actuelle
+    this.playAudioAtIndex();
   }
 
   loadAudioFiles() {
@@ -71,31 +72,38 @@ export class MusicComponent implements OnInit {
   }
   
 
-  playRandomAudio() {
-    if (this.environnement) {
-        const randomIndex = Math.floor(Math.random() * this.audioFiles.length);
-        this.currentAudioIndex = randomIndex;
-        this.playAudioAtIndex(randomIndex);
+  private playAudioAtIndex() {
+    try{
+      const audioPlayer = document.getElementById('audioPlayer') as HTMLAudioElement;
+      audioPlayer.src = `assets/music/${this.environnement?.nom}/${this.ereActuelle}/1.mp3`;
+      audioPlayer.loop = true; // Activer la boucle
+      audioPlayer.addEventListener('ended', () => {
+        audioPlayer.currentTime = 0; // Revenir au début de la piste
+        audioPlayer.play(); // Relancer la lecture
+      });
+      audioPlayer.play();
+    }catch{
+
     }
   }
 
-  nextAudio() {
-    if (this.environnement) {
-        this.currentAudioIndex = (this.currentAudioIndex + 1) % this.audioFiles.length;
-        this.playAudioAtIndex(this.currentAudioIndex);
+  public pauseAudio() {
+    try {
+      const audioPlayer = document.getElementById('audioPlayer') as HTMLAudioElement;
+      audioPlayer.pause(); // Mettre en pause la lecture
+      this.etat = true;
+    } catch (error) {
+      console.error('Une erreur s\'est produite lors de la mise en pause de la musique :', error);
     }
   }
-
-  previousAudio() {
-    if (this.environnement) {
-        this.currentAudioIndex = (this.currentAudioIndex - 1 + this.audioFiles.length) % this.audioFiles.length;
-        this.playAudioAtIndex(this.currentAudioIndex);
+  
+  public resumeAudio() {
+    try {
+      const audioPlayer = document.getElementById('audioPlayer') as HTMLAudioElement;
+      audioPlayer.play(); // Reprendre la lecture
+      this.etat = false;
+    } catch (error) {
+      console.error('Une erreur s\'est produite lors de la reprise de la lecture de la musique :', error);
     }
-  }
-
-  private playAudioAtIndex(index: number) {
-    const audioPlayer = document.getElementById('audioPlayer') as HTMLAudioElement;
-    audioPlayer.src = `assets/music/${this.environnement?.nom}/${this.ereActuelle}/${this.audioFiles[index]}`;
-    audioPlayer.play();
   }
 }
