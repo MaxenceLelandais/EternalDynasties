@@ -1,6 +1,6 @@
 //////////////////    Jeu      //////////////////
 
-récupère la liste des racherches chargées dans le jeu : http://localhost:9876/jeu/listeRecherches
+récupère la liste des recherches chargées dans le jeu : http://localhost:9876/jeu/listeRecherches
 récupère les nom des parties existantes : http://localhost:9876/jeu/parties
 récupère arbreRecherches pour l'affichage: http://localhost:9876/jeu/arbreRecherches
 récupère listeRessourcesJeu : http://localhost:9876/jeu/listeRessourcesJeu

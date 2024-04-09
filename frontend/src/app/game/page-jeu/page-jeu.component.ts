@@ -90,7 +90,6 @@ constructor(
           data => {
             this.environnement = data;
             this.environnementService.changeEnvironnement(data);
-            console.log(data);
           },
           error => {
             console.error("Erreur lors de la récupération des environnements", error);

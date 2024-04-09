@@ -27,6 +27,7 @@ import { MetiersComponent } from './game/game-components/metiers/metiers.compone
 import { BatimentsComponent } from './game/game-components/batiments/batiments.component';
 import { PuissancesComponent } from './game/game-components/puissances/puissances.component';
 import { MerveilleComponent } from './game/game-components/merveille/merveille.component';
+import { MusicComponent } from './music/music.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { MerveilleComponent } from './game/game-components/merveille/merveille.c
     MerveilleComponent,
     MetiersComponent,
     RessourcesComponent,
-    PuissancesComponent
+    PuissancesComponent,
+    MusicComponent
   ],
   imports: [
     BrowserModule,

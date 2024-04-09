@@ -15,6 +15,7 @@ import java.util.Map;
 public class Recherche {
 
     private int id = -1;
+    private String image = "";
     private final String nom;
     private String description;
     private final Map<String, Double> listeCout = new HashMap<>();
@@ -62,6 +63,9 @@ public class Recherche {
             this.id = Integer.parseInt(valId);
         } else {
             this.recherchesEre = (ArrayList<String>) this.jsonObjet.get("Recherches");
+        }
+        if (jsonObjet.get("Image") != null) {
+            this.image = jsonObjet.containsKey("Image") ? (String) jsonObjet.get("Image") : "";
         }
 
         Map<String, String> map = this.jsonObjet.containsKey("Coût") ? (Map<String, String>) this.jsonObjet.get("Coût") : new HashMap<>();
@@ -212,5 +216,9 @@ public class Recherche {
 
     public ArrayList<String> getRecherchesEre() {
         return recherchesEre;
+    }
+
+    public String getImage() {
+        return image;
     }
 }
