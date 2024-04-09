@@ -11,6 +11,7 @@ export interface Recherche {
     debloque: Recherche[];
     verouille: Recherche[];
     ere: Ere;
+    Etat: boolean;
   }
 
   export interface ValeurRecherche {
