@@ -131,6 +131,11 @@ public class JeuController {
         return Json.objectToJsonObject(this.jeuService.getJeu().getJoueur(nomJoueur).clickAchatMerveille(nombre));
     }
 
+    @GetMapping(value="checkRecherche")
+    public boolean getSiRechercheRecherchable(@RequestParam(value = "nomJoueur") String nomJoueur,@RequestParam(value = "recherche") String nomRecherche) {
+        return this.jeuService.getJeu().getJoueur(nomJoueur).checkRecherche(nomRecherche);
+    }
+
     @GetMapping(value="tick")
     public JSONObject getAddRessource(@RequestParam(value = "nomJoueur") String nomJoueur) {
         return Json.objectToJsonObject(this.jeuService.getJeu().getJoueur(nomJoueur).tickBonus());

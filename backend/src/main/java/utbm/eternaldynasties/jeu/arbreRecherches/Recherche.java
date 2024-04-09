@@ -131,6 +131,10 @@ public class Recherche {
         return recherche;
     }
 
+    public boolean check(){
+        return actualiseEtat() && checkConditions();
+    }
+
     public void activer() {
 
         if (actualiseEtat() && checkConditions()) {

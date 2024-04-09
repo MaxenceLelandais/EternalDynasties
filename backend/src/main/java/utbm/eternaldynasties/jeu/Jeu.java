@@ -50,8 +50,11 @@ public class Jeu {
             if (!nomJoueur.isEmpty()) {
                 String civilisation = nomJoueur.split("-")[0];
                 String environnement = nomJoueur.split("-")[1];
+                try {
+                    this.listeJoueur.put(nomJoueur, chargerPartie(civilisation, environnement));
+                }catch (Exception e){
 
-                this.listeJoueur.put(nomJoueur, chargerPartie(civilisation,environnement));
+                }
             }
         }
     }
@@ -74,6 +77,9 @@ public class Jeu {
      * @return la partie nouvellement chargée.
      */
     public Joueur startPartie(String civilisation, String environnement) {
+        if(civilisation.isEmpty() || environnement.isEmpty()){
+            return null;
+        }
         if (getSauvegardes().containsValue(civilisation)) {
             return chargerPartie(civilisation,environnement);
         } else {
@@ -88,13 +94,14 @@ public class Jeu {
      * @return la partie nouvellement chargée.
      */
     public Joueur chargerPartie(String civilisation, String environnement) {
+
         Joueur joueur = null;
         if (this.listeJoueur.containsKey(civilisation+"-"+environnement)) {
             joueur = this.listeJoueur.get(civilisation+"-"+environnement);
         } else {
             JSONObject jsonObject = Json.read("src/main/resources/sauvegardes/" + civilisation+"-"+environnement + ".save");
             if (jsonObject != null) {
-                joueur = new Joueur(jsonObject, new ArbreDeRecherches(fichierJeuService.arbreDeRecherches), new ArbreDeRessources(fichierJeuService.ressources), this.arbreEnvironnements.get(environnement));
+                joueur = new Joueur(civilisation, this.arbreEnvironnements.get(environnement),jsonObject, new ArbreDeRecherches(fichierJeuService.arbreDeRecherches), new ArbreDeRessources(fichierJeuService.ressources));
                 joueur.save();
                 this.listeJoueur.put(civilisation+"-"+environnement, joueur);
             }
@@ -113,8 +120,8 @@ public class Jeu {
         if (this.listeJoueur.containsKey(civilisation+"-"+environnement)) {
             joueur = this.listeJoueur.get(civilisation+"-"+environnement);
         } else {
-            joueur = new Joueur(Json.read("src/main/resources/donnees/joueur.json"), new ArbreDeRecherches(fichierJeuService.arbreDeRecherches), new ArbreDeRessources(fichierJeuService.ressources), this.arbreEnvironnements.get(environnement));
-            joueur.init(civilisation, this.arbreEnvironnements.get(environnement));
+            joueur = new Joueur(civilisation, this.arbreEnvironnements.get(environnement),Json.read("src/main/resources/donnees/joueur.json"), new ArbreDeRecherches(fichierJeuService.arbreDeRecherches), new ArbreDeRessources(fichierJeuService.ressources));
+            joueur.init();
             joueur.save();
             this.listeJoueur.put(civilisation+"-"+environnement, joueur);
             joueur.activerRecherche("Tribue");

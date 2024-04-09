@@ -36,14 +36,14 @@ public class Joueur {
      * @param jsonObject
      * @param arbreDeRecherche
      * @param arbreDeRessources
-     * @param environnement
      */
-    public Joueur(JSONObject jsonObject, ArbreDeRecherches arbreDeRecherche, ArbreDeRessources arbreDeRessources, Environnement environnement) {
+    public Joueur(String civilisation, Environnement env, JSONObject jsonObject, ArbreDeRecherches arbreDeRecherche, ArbreDeRessources arbreDeRessources) {
+
+        this.civilisation = civilisation;
+        this.environnement = env;
         this.arbreDeRecherche = arbreDeRecherche;
         this.arbreDeRessources = arbreDeRessources;
         if (((Map) jsonObject).containsKey("Civilisation")) {
-            this.environnement = environnement;
-            this.civilisation = ((Map) jsonObject).get("Civilisation").toString();
             this.debutDeLaPartie = (String) ((Map) jsonObject).get("Début de la partie");
             HashMap<String, String> mapRessource = (HashMap<String, String>) ((Map) jsonObject).get("Ressources");
             HashMap<String, String> caracteristiquesCollectes = (HashMap<String, String>) ((Map) jsonObject).get("Caracteristiques collectes");
@@ -57,16 +57,14 @@ public class Joueur {
             if (mapRecherches != null && !mapRecherches.isEmpty()) {
                 this.recherches.addAll(mapRecherches.keySet());
             }
+
             this.arbreDeRecherche.init(this.recherches);
             this.arbreDeRessources.init(this.ressources);
-
+            this.ressources.replace("Habitant", 2.0);
         }
     }
 
-    public void init(String civilisation, Environnement environnement) {
-
-        this.civilisation = civilisation;
-        this.environnement = environnement;
+    public void init(){
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         this.debutDeLaPartie = dtf.format(LocalDateTime.now());
@@ -75,6 +73,22 @@ public class Joueur {
     public List<Recherche> recherchesPossibles() {
         return this.arbreDeRecherche.recherchesPossibles();
     }
+
+    public boolean checkRecherche(String nomRecherche) {
+        Map<String, Double> listeCout = this.arbreDeRecherche.getRecherche(nomRecherche).getListeCout();
+        boolean pbRessource = false;
+        for (String nomRessource : listeCout.keySet()) {
+            double val = this.ressources.get(nomRessource) - listeCout.get(nomRessource);
+            if (val < 0) {
+                pbRessource = true;
+            }
+        }
+        if (!pbRessource && this.arbreDeRecherche.getListeRecherches().containsKey(nomRecherche)) {
+            return this.arbreDeRecherche.getListeRecherches().get(nomRecherche).check();
+        }
+        return false;
+    }
+
 
     public String activerRecherche(String nomRecherche) {
         Map<String, Double> listeCout = this.arbreDeRecherche.getRecherche(nomRecherche).getListeCout();
@@ -95,6 +109,7 @@ public class Joueur {
                 this.ressources.replace(nomRessource, this.ressources.get(nomRessource) - listeCout.get(nomRessource));
             }
             Map<String, Bonus> map = this.arbreDeRecherche.getRecherche(nomRecherche).getListeBonus();
+
             for (String key : map.keySet()) {
                 Bonus bonusRessource = map.get(key);
                 String nom = bonusRessource.getRessourceGenere();
@@ -113,7 +128,7 @@ public class Joueur {
             List<Recherche> listeRecherchesDispos = this.recherchesPossibles();
             if(listeRecherchesDispos.size()==1){
                 if(this.arbreDeRecherche.getEres().containsKey(listeRecherchesDispos.get(0).getNom())){
-                    listeRecherchesDispos.get(0).activer();
+                    activerRecherche(listeRecherchesDispos.get(0).getNom());
                 }
             }
             save();
@@ -136,6 +151,8 @@ public class Joueur {
                 this.ressources.replace(key, this.ressources.get(key) + valeur);
             }
         });
+        this.ressources.replace("Points de recherche", this.ressources.get("Points de recherche") + 0.01);
+
         return valide[0];
     }
 
@@ -390,7 +407,6 @@ public class Joueur {
         }
         return nomEre;
     }
-
 
     public Map<String, Map<String, Ressource>> getArbreRessources() {
 

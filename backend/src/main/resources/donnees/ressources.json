@@ -1,6 +1,6 @@
 {
     "ressources": {
-        "Personne": {
+        "Habitant": {
             "Type": "Ressource jeu",
             "Id" : "1",
             "Image": "./assets/img/ressources/ressources/personne.jpg",
@@ -9,26 +9,26 @@
                 "Nourriture": "5"
             },
             "Bonus": {
-                "Personne": "0"
+                "Habitant": "0"
             }
         },
-        "Personne Morte": {
+        "Habitant Mort": {
             "Type": "Ressource jeu",
             "Id" : "2",
             "Image": "./assets/img/ressources/ressources/personne_morte.png",
             "Description": "RIP",
             "Coût": {
-                "Personne": "1"
+                "Habitant": "1"
             },
             "Bonus": {
-                "Personne Morte": "0"
+                "Habitant Mort": "0"
             }
         },
-        "Max-Personne": {
+        "Max-Habitant": {
             "Description": "",
             "Coût": null,
             "Bonus": {
-                "Max-Personne": "0"
+                "Max-Habitant": "0"
             }
         },
         "Or": {
@@ -402,7 +402,7 @@
             },
             "Bonus": {
                 "Maison": "0",
-                "Max-Personne": "4"
+                "Max-Habitant": "4"
             }
         },
         "Villa": {
@@ -416,7 +416,7 @@
             },
             "Bonus": {
                 "Villa": "0",
-                "Max-Personne": "12"
+                "Max-Habitant": "12"
             }
         },
         "Immeuble": {
@@ -430,7 +430,7 @@
             },
             "Bonus": {
                 "Immeuble": "0",
-                "Max-Personne": "120"
+                "Max-Habitant": "120"
             }
         },
         "Gratte-Ciel": {
@@ -444,7 +444,7 @@
             },
             "Bonus": {
                 "Gratte-Ciel": "0",
-                "Max-Personne": "1000"
+                "Max-Habitant": "1000"
             }
         },
         "Mine d'or": {

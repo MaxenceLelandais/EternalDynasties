@@ -10,9 +10,9 @@
             "Croyance"
         ],
         "Bonus": {
-            "Personne":"1",
-            "Max-Personne":"1",
-            "Personne Morte":"1",
+            "Habitant":"1",
+            "Max-Habitant":"1",
+            "Habitant Mort":"1",
             "Points de recherche":"1",
             "Nourriture":"1",
             "Max-Nourriture":"100",
@@ -78,7 +78,7 @@
         "Description":"L'étincelle qui embrase nos destins.",
         "Coût":{
             "Points de recherche":"1",
-            "Nourriture": "200",
+            "Nourriture": "100",
             "Bois":"10"
         },
         "Débloque":[
@@ -486,7 +486,7 @@
         "Image": "./assets/img/recherche/magie noire.png",
         "Description":"Dans les ombres, notre essor, l'étreinte des ténèbres.",
         "Coût": {
-            "Personne": "50",
+            "Habitant": "50",
             "Points de recherche":"50",
             "Nourriture":"20000",
             "Piété": "100",
@@ -499,7 +499,7 @@
         "Bonus":{
             "Sorcier": "1",
             "Max-Sorcier": "1",
-            "Personne Morte": "1"
+            "Habitant Mort": "1"
         },
         "Dépendance":[
             "Magie"
@@ -759,7 +759,7 @@
             "Points de recherche":"105",
             "Or":"200",
             "Mana": "2000",
-            "Personne": "200"
+            "Habitant": "200"
         },
         "Débloque":[
             "Renaissance",
@@ -767,7 +767,7 @@
             "Nécromancie"
         ],
         "Bonus":{
-            "Personne Morte": "200",
+            "Habitant Mort": "200",
             "Malédiction de guerre":"1",
             "Clic maudit": "1"
         },
@@ -1111,8 +1111,8 @@
         "Coût": {
             "Points de recherche":"1200",
             "Mana":"50000",
-            "Personne": "1000",
-            "Personne Morte": "10000"
+            "Habitant": "1000",
+            "Habitant Mort": "10000"
         },
         "Débloque":[
             "Epoque Moderne",
@@ -1349,13 +1349,13 @@
         "Description":"Explorons les aspects les plus sombres de la magie et de la manipulation des énergies occultes pour creer la puissante armée des morts.",
         "Coût": {
             "Points de recherche": "150000",
-            "Personne": "5000",
-            "Personne Morte": "15000",
+            "Habitant": "5000",
+            "Habitant Mort": "15000",
             "Or": "500",
             "Mana": "5000"
         },
         "Bonus": {
-            "Personne Morte": "5000",
+            "Habitant Mort": "5000",
             "Armée des morts": "1"
         },
         "Dépendance":[
