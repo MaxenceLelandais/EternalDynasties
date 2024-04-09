@@ -155,7 +155,7 @@ public class Recherche {
         return false;
     }
 
-    void forceActive() {
+    public void forceActive() {
         this.etat = true;
         this.inhibe.values().forEach(Recherche::disableRecherche);
     }
