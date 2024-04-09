@@ -3,6 +3,7 @@ import { JeuService } from 'src/app/http/jeuService';
 import { Recherche, Recherches } from 'src/app/model/recherche.model';
 import { ArbreRecherche } from 'src/app/model/arbreRecherche.model';
 import { ModalService } from 'src/app/service/modal.Service';
+import { NomJoueurService } from 'src/app/service/nomJoueurService';
 
 @Component({
   selector: 'app-modal-arbre-recherche',
@@ -16,14 +17,21 @@ export class ModalArbreRechercheComponent implements OnInit {
   arborescenceRecherche: ArbreRecherche[] = []; 
   displayModal: boolean = false;
   rechercheCouranteSurvolee: Recherche | null = null;
+  rechercheCouranteCliquee: Recherche | null = null;
+  nomJoueur: string | null = null;
 
   @ViewChild('modalContent', { static: false }) modalContent!: ElementRef;
   
 
-  constructor(private jeuService: JeuService, private modalService: ModalService,private renderer: Renderer2) {this.fetchData()}
+  constructor(private jeuService: JeuService,
+              private modalService: ModalService,
+              private renderer: Renderer2,
+              private nomJoueurService: NomJoueurService) {this.fetchData()}
+
 
   fetchData() {
     console.log(this.listeRecherches);
+    this.nomJoueur = this.nomJoueurService.getNomJoueur();
     this.jeuService.httpListeRecherches().subscribe(
       data => {
         console.log(data);
@@ -95,12 +103,10 @@ export class ModalArbreRechercheComponent implements OnInit {
 
   getRecherche(nom: string): Recherche | null {
     console.log("getRechercheEnter dans " + nom);
-    // Convertir les valeurs de l'objet listeRecherches en un tableau
     const recherchesArray = this.listeRecherches ? Object.values(this.listeRecherches) : [];
-    // Utiliser .find() sur le tableau pour trouver la recherche par nom
     const recherche = recherchesArray.find(r => r.nom === nom);
     console.log("recherche trouvé dans " + recherche?.Description);
-    return recherche || null; // Retourner null si recherche est undefined
+    return recherche || null;
   }
   
   delay(ms: number) {
@@ -189,6 +195,31 @@ export class ModalArbreRechercheComponent implements OnInit {
     return null;
   }
   
-  
+  addRecherche(nomJoueur: string, recherche: Recherche) {
+    this.rechercheCouranteCliquee = this.getRecherche(recherche.nom);
+    if (this.rechercheCouranteCliquee == null) {
+      return;
+    }
+    console.log("possible ? " + this.rechercheCouranteCliquee.RecherchePossible)
+    for (const [key, value] of Object.entries(this.rechercheCouranteCliquee)) {
+      console.log(`${key}: ${value}`);
+    }
+    if (nomJoueur == null) {
+      return;
+    }
+    if (recherche.RecherchePossible == false) {
+      console.log("impossible de débloquer : ressources insufisantes");
+      return;
+    }
+    this.jeuService.httpActiverRecherche(nomJoueur, recherche.nom).subscribe({
+      next: (response) => {
+        console.log("Ressource ajoutée avec succès", response);
+        this.arborescenceRecherche = response;
+      },
+      error: (error) => {
+        console.error("Erreur lors de l'ajout de la ressource", error);
+      }
+    });
+  }
   
 }

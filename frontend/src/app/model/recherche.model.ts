@@ -12,6 +12,7 @@ export interface Recherche {
     verouille: Recherche[];
     ere: Ere;
     Etat: boolean;
+    RecherchePossible: boolean;
   }
 
   export interface ValeurRecherche {
