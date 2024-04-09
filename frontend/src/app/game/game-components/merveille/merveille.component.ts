@@ -28,12 +28,12 @@ export class MerveilleComponent {
   }
 
   ngOnInit() {
-    this.loadRessources();
-    this.loadEnvironnement();
-    this.loadCivilisation();
     this.subscriptions.add(this.ressourcesService.ressources$.subscribe(
       ressources => this.ressources = ressources
     ));
+    this.loadRessources();
+    this.loadEnvironnement();
+    this.loadCivilisation();
   }
 
   ngOnDestroy() {

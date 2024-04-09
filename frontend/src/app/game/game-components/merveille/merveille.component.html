@@ -2,7 +2,7 @@
     <img [src]="environnement.merveille" alt="">
     <ng-container *ngFor="let ressource of ressources | keyvalue">
         <div *ngIf="ressource.value.nom == 'Merveille'">
-        <p>{{ ressource.value.quantite | number:'1.0-6' }}</p>
+        <p>{{ ressource.value.quantite | number:'1.0-6' }} / 100</p>
         </div>
     </ng-container>  
 </div>
