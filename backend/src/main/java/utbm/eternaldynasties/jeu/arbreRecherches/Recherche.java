@@ -87,7 +87,7 @@ public class Recherche {
         ajoutValIf(listeRecherches);
 
         this.jsonObjet.put("Etat", this.etat);
-        this.jsonObjet.put("Recherche possible", this.recherchePossible);
+        this.jsonObjet.put("RecherchePossible", this.recherchePossible);
 
         return this;
     }
