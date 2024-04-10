@@ -53,10 +53,7 @@ export class MusicComponent implements OnInit {
     }
   }
   
-  
-
   loadEreActuelle() {
-    
     if(this.civilisationService.getCivilisation()!=null){
       this.civilisation = this.civilisationService.getCivilisation();
       this.jeuService.httpEreActuelle(this.civilisation.nom+"-"+this.civilisation.nomEnvironnement).subscribe(
@@ -70,7 +67,6 @@ export class MusicComponent implements OnInit {
       );
     }
   }
-  
 
   private playAudioAtIndex() {
     try{
