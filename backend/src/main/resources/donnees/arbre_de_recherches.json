@@ -56,8 +56,7 @@
         "Image": "./assets/img/recherche/cueillette.png",
         "Description":"Les fruits de notre premier triomphe.",
         "Coût":{
-            "Points de recherche":"1",
-            "Nourriture": "100"
+            "Points de recherche":"1"
         },
         "Débloque":[
             "Feu"
@@ -77,9 +76,7 @@
         "Image": "./assets/img/recherche/feu.png",
         "Description":"L'étincelle qui embrase nos destins.",
         "Coût":{
-            "Points de recherche":"1",
-            "Nourriture": "100",
-            "Bois":"10"
+            "Points de recherche":"1"
         },
         "Débloque":[
             "Chasse et pêche"
@@ -105,9 +102,7 @@
         "Image": "./assets/img/recherche/croyance.png",
         "Description":"Les mystères célestes guident nos pas.",
         "Coût":{
-            "Points de recherche":"2",
-            "Nourriture":"500",
-            "Pierre":"500"
+            "Points de recherche":"2"
         },
         "Débloque":[
             "Education",
@@ -129,8 +124,7 @@
         "Image": "./assets/img/recherche/chasse_et_peche.png",
         "Description":"Apprenons les arts de la survie. ",
         "Coût":{
-            "Points de recherche":"2",
-            "Nourriture": "300"
+            "Points de recherche":"2"
         },
         "Débloque":[
             "Armée",
@@ -151,8 +145,7 @@
         "Description":"Cultivons l'esprit pour l'avenir. ",
         "Coût":
         {
-            "Points de recherche":"4",
-            "Bois": "1000"
+            "Points de recherche":"4"
         },
         "Débloque":[
             "Monnaie",
@@ -173,9 +166,7 @@
         "Image": "./assets/img/recherche/mythologie.png",
         "Description":"Plongeons dans les récits anciens. ",
         "Coût":{
-            "Points de recherche":"5",
-            "Nourriture":"1000",
-            "Piété":"100"
+            "Points de recherche":"5"
         },
         "Débloque":[
             "Religion"
@@ -191,9 +182,7 @@
         "Image": "./assets/img/recherche/armee.png",
         "Description":"Forgeons notre destin sur le champ de bataille.",
         "Coût":{
-            "Points de recherche":"6",
-            "Bois":"100",
-            "Pierre":"250"
+            "Points de recherche":"6"
         },
         "Débloque":[
             "Conquête",
@@ -213,8 +202,7 @@
         "Image": "./assets/img/recherche/elevage.png",
         "Description":"Domptons les bestiole pour notre empire.",
         "Coût":{
-            "Points de recherche":"5",
-            "Nourriture":"200"
+            "Points de recherche":"5"
         },
         "Débloque":[
             "Construction",
@@ -232,10 +220,7 @@
         "Image": "./assets/img/recherche/religion.png",
         "Description":"Les croyances forgent le destin des royaumes divins.",
         "Coût":{
-            "Points de recherche":"6",
-            "Nourriture":"2000",
-            "Bois": "2000",
-            "Pierre": "2000"
+            "Points de recherche":"6"
         },
         "Débloque":[
             "Science",
@@ -292,10 +277,7 @@
         "Image": "./assets/img/recherche/navigation.png",
         "Description":"Sur les flots, nous traçons notre voie vers l'inconnu.",
         "Coût":{
-            "Points de recherche":"10",
-            "Nourriture":"5000",
-            "Bois": "3000",
-            "Pierre": "100"
+            "Points de recherche":"10"
         },
         "Débloque":[
             "Cartographie",
@@ -317,10 +299,7 @@
         "Image": "./assets/img/recherche/science.png",
         "Description":"Plongeons dans l'étude de la compréhension du monde. ",
         "Coût":{
-            "Points de recherche":"10",
-            "Nourriture":"2000",
-            "Bois": "3000",
-            "Pierre": "4000"
+            "Points de recherche":"10"
         },
         "Débloque":[
             "Ingénieurie",
@@ -346,10 +325,7 @@
         "Image": "./assets/img/recherche/magie.png",
         "Description":"Explorons les forces mystiques du monde.",
         "Coût":{
-            "Points de recherche":"30",
-            "Nourriture":"2000",
-            "Bois": "3000",
-            "Pierre": "4000"
+            "Points de recherche":"30"
         },
         "Débloque":[
             "Magie du Bien",
@@ -372,9 +348,7 @@
         "Image": "./assets/img/recherche/construction.png",
         "Description":"Levons des bastions, reflets de notre puissance et sagesse.",
         "Coût":{
-            "Points de recherche":"8",
-            "Bois": "5000",
-            "Pierre": "8000"
+            "Points de recherche":"8"
         },
         "Débloque":[
             "Monuments",
@@ -394,10 +368,7 @@
         "Image": "./assets/img/recherche/monnaie.png",
         "Description":"Frappons des pièces, symboles de notre prospérité et unité..",
         "Coût":{
-            "Points de recherche":"15",
-            "Nourriture":"10000",
-            "Piété": "1000",
-            "Pierre": "5000"
+            "Points de recherche":"15"
         },
         "Débloque":[
             "Commerce"
@@ -419,9 +390,7 @@
         "Image": "./assets/img/recherche/philosophie.png",
         "Description":"Questionnons-nous sur la nature de l'existence.",
         "Coût":{
-            "Points de recherche":"13",
-            "Nourriture":"15000",
-            "Piété": "3000"
+            "Points de recherche":"13"
         },
         "Débloque":[
             "Politique"
@@ -439,11 +408,7 @@
         "Image": "./assets/img/recherche/ingénieurie.png",
         "Description":"Sculptons le futur avec les outils de la connaissance.",
         "Coût":{
-            "Points de recherche":"21",
-            "Nourriture":"30000",
-            "Bois": "10000",
-            "Pierre": "12000",
-            "Points de science": "200"
+            "Points de recherche":"21"
         },
         "Débloque":[
             "Moyen-Age",
@@ -462,10 +427,7 @@
         "Image": "./assets/img/recherche/magie du bien.png",
         "Description":"Nos âmes s'élèvent dans les lueurs de la magie pure.",
         "Coût":{
-            "Points de recherche":"40",
-            "Nourriture":"20000",
-            "Piété": "100",
-            "Mana": "100"
+            "Points de recherche":"40"
         },
         "Débloque":[
             "Moyen-Age",
@@ -487,10 +449,7 @@
         "Description":"Dans les ombres, notre essor, l'étreinte des ténèbres.",
         "Coût": {
             "Habitant": "50",
-            "Points de recherche":"50",
-            "Nourriture":"20000",
-            "Piété": "100",
-            "Mana": "100"
+            "Points de recherche":"50"
         },
         "Débloque":[
             "Moyen-Age",
@@ -499,7 +458,7 @@
         "Bonus":{
             "Sorcier": "1",
             "Max-Sorcier": "1",
-            "Habitant Mort": "1"
+            "Habitant Mort": "50"
         },
         "Dépendance":[
             "Magie"
@@ -513,8 +472,7 @@
         "Image": "./assets/img/recherche/conquete.png",
         "Description":"Nos épées, extensions de volonté, écrivent l'histoire..",
         "Coût": {
-            "Points de recherche":"23",
-            "Nourriture":"25000"
+            "Points de recherche":"23"
         },
         "Débloque":[
             "Moyen-Age",
@@ -534,9 +492,7 @@
         "Image": "./assets/img/recherche/monument.png",
         "Description":"Érigeons des témoins de notre grandeur.",
         "Coût":{
-            "Points de recherche":"32",
-            "Bois":"20000",
-            "Pierre": "15000"
+            "Points de recherche":"32"
         },
         "Débloque":null,
         "Bonus":null,
@@ -589,9 +545,7 @@
         "Description":"Exploitons les trésors de la terre",
         "Coût":{
             "Points de recherche":"29",
-            "Or":"100",
-            "Bois": "1000",
-            "Pierre": "20000"
+            "Or":"100"
         },
         "Débloque":[
             "Moyen-Age"
@@ -643,9 +597,7 @@
         "Description":"Érigeons des remparts impénétrables.",
         "Coût":{
             "Points de recherche":"40",
-            "Or": "40",
-            "Bois": "2000",
-            "Pierre": "40000"
+            "Or": "40"
         },
         "Débloque":[
             "Renaissance",
@@ -687,8 +639,7 @@
         "Description":"Érigeons des phares de lumière dans l'obscurité de l'ignorance..",
         "Coût":{
             "Points de recherche":"55",
-            "Or":"100",
-            "Points de science": "1000"
+            "Or":"100"
         },
         "Débloque":[
             "Renaissance",
@@ -711,8 +662,7 @@
         "Description":"Explorons les rouages de la création ",
         "Coût": {
             "Points de recherche":"65",
-            "Or":"150",
-            "Points de science": "1200"
+            "Or":"150"
         },
         "Débloque":[
             "Renaissance",
@@ -735,8 +685,7 @@
         "Description":"Plongeons dans la quête de la pierre philosophale et de l'élixir de vie.",
         "Coût":{
             "Points de recherche":"80",
-            "Or":"200",
-            "Mana": "2000"
+            "Or":"200"
         },
         "Débloque":[
             "Renaissance",
@@ -758,7 +707,6 @@
         "Coût":{
             "Points de recherche":"105",
             "Or":"200",
-            "Mana": "2000",
             "Habitant": "200"
         },
         "Débloque":[
@@ -815,8 +763,7 @@
         "Description":"BOOOOUM!!!",
         "Coût": {
             "Points de recherche":"79",
-            "Bois":"20000",
-            "Pierre": "50000"
+            "Or":"10"
         },
         "Débloque":[
             "Révolution industrielle",
@@ -879,8 +826,7 @@
         "Image": "./assets/img/recherche/humanisme.png",
         "Description":"Éclosion des esprits, les hommes se lèvent, la Renaissance s'anime.",
         "Coût": {
-            "Points de recherche":"90",
-            "Piété":"5000"
+            "Points de recherche":"90"
         },
         "Débloque":[
             "Révolution industrielle",
@@ -901,8 +847,7 @@
         "Description":" Les cieux se dévoilent, les étoiles nous murmurent l'infini.",
         "Coût": {
             "Points de recherche":"95",
-            "Or":"500",
-            "Points de science": "5000"
+            "Or":"500"
         },
         "Débloque":[
             "Révolution industrielle",
@@ -979,7 +924,7 @@
         "Description":"Flèches vers l'horizon, canons tonnants, guerre forgeant notre destin..",
         "Coût": {
             "Points de recherche":"80",
-            "Bois":"50000"
+            "Or":"45"
         },
         "Débloque":[
             "Epoque Moderne",
@@ -999,8 +944,7 @@
         "Description":"Sous nos mains, les forges s'enflamment, nos rêves prennent forme dans le fracas des machines.",
         "Coût": {
             "Points de recherche":"500",
-            "Bois":"10000",
-            "Pierre": "50000"
+            "Or":"30"
         },
         "Débloque":[
             "Urbanisation"
@@ -1029,7 +973,8 @@
             "Globalisation"
         ],
         "Bonus":{
-            "Puissance économique": "233"
+            "Puissance économique": "233",
+            "Or": "0.5/s"
         },
         "Dépendance":[
             "Révolution industrielle",
@@ -1061,8 +1006,7 @@
         "Image": "./assets/img/recherche/electricité.png",
         "Description":"Éclairs domestiqués, notre pouvoir sur le fil de la vie..",
         "Coût": {
-            "Points de recherche":"300",
-            "Points de science": "25000"
+            "Points de recherche":"300"
         },
         "Débloque":[
             "Epoque Moderne",
@@ -1084,8 +1028,7 @@
         "Image": "./assets/img/recherche/controle elementaire.png",
         "Description":"Les éléments soumis, les flammes dansantes, notre maîtrise sur les forces primordiales.",
         "Coût": {
-            "Points de recherche":"605",
-            "Mana":"50000"
+            "Points de recherche":"605"
         },
         "Débloque":[
             "Epoque Moderne",
@@ -1110,7 +1053,6 @@
         "Description":"Les morts éveillés, les ombres dansantes, notre pouvoir sur la frontière entre vie et mort.",
         "Coût": {
             "Points de recherche":"1200",
-            "Mana":"50000",
             "Habitant": "1000",
             "Habitant Mort": "10000"
         },
@@ -1198,7 +1140,8 @@
         "Image": "./assets/img/recherche/nucléaire.png",
         "Description":"KAAAAAAAAABOOOOOOOOOOOOOUM!!!!!!!!!!!!!!!!!!!!",
         "Coût": {
-            "Points de recherche":"15000"
+            "Points de recherche":"15000",
+            "Or": "10000"
         },
         "Débloque":[
             "Epoque Futuriste",
@@ -1217,7 +1160,8 @@
         "Image": "./assets/img/recherche/aviation.png",
         "Description":"Déployez les ailes, réalisez le rêve d'Icare",
         "Coût": {
-            "Points de recherche":"1300"
+            "Points de recherche":"1300",
+            "Or": "5000"
         },
         "Débloque":[
             "Exploration spatiale"
@@ -1283,8 +1227,7 @@
         "Image": "./assets/img/recherche/physique.png",
         "Description":"Les lois universelles révélées, les mystères de la matière, notre exploration des fondements de l'existence.",
         "Coût": {
-            "Points de recherche": "1250",
-            "Points de science": "30000"
+            "Points de recherche": "1250"
         },
         "Débloque":[
             "Epoque Futuriste",
@@ -1309,8 +1252,7 @@
         "Description":"1000010010110011101001",
         "Coût": {
             "Points de recherche": "3000",
-            "Electricité": "25000",
-            "Points de science": "40000"
+            "Or": "15000"
         },
         "Débloque":[
             "Robotique"
@@ -1331,9 +1273,7 @@
         "Description":"Flammes fulgurantes, mers déchaînées, notre contrôle sur les forces primordiales.",
         "Coût": {
             "Points de recherche": "100000",
-            "Mana": "5000",
-            "Or": "500",
-            "Pouvoir arcanique": "500"
+            "Or": "500"
         },
         "Bonus": {
             "Enchantement divin": "1"
@@ -1351,8 +1291,7 @@
             "Points de recherche": "150000",
             "Habitant": "5000",
             "Habitant Mort": "15000",
-            "Or": "500",
-            "Mana": "5000"
+            "Or": "500"
         },
         "Bonus": {
             "Habitant Mort": "5000",
@@ -1389,11 +1328,7 @@
         "Description":"Nos créations, reflets de notre ingéniosité..",
         "Coût": {
             "Points de recherche": "4000",
-            "Electricité": "50000",
-            "Or": "15000",
-            "Bois": "100000",
-            "Pierre": "100000",
-            "Points de science": "45000"
+            "Or": "15000"
         },
         "Débloque":[
             "Epoque Futuriste",
@@ -1448,7 +1383,8 @@
         "Image": "./assets/img/recherche/laser.png",
         "Description":"Maîtrisons la puissance destructrice et créatrice du laser.",
         "Coût": {
-            "Points de recherche": "45000"
+            "Points de recherche": "45000",
+            "Or": "3000"
 
         },
         "Bonus":{
@@ -1465,7 +1401,7 @@
         "Description":"Cités titanesques, néons flamboyants, nos bastions d'acier, témoins de notre audace face à l'avenir incertain.",
         "Coût": {
             "Points de recherche": "15000",
-            "Piété": "800000"
+            "Or": "10005"
         },
         "Bonus":{
             "Gratte-ciel": "0",
@@ -1502,9 +1438,8 @@
         "Description":"Particules infimes, révolutions invisibles, notre pouvoir à l'échelle atomique. ",
         "Coût": {
             "Points de recherche": "50000",
-            "Electricité": "120000",
-            "Or": "25000",
-            "Points de science":"300000"
+            "Or": "25000"
+
         },
         "Bonus":{
             "Puissance culturelle": "230",
@@ -1522,9 +1457,7 @@
         "Description":"Explorez les possibilités de l'intelligence artificielle.",
         "Coût": {
             "Points de recherche": "45000",
-            "Electricité": "150000",
-            "Or": "75000",
-            "Points de science": "500000"
+            "Or": "75000"
         },
         "Bonus":{
             "Nourriture": "300%",
