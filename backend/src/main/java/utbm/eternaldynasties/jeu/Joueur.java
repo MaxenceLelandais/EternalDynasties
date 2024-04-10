@@ -263,6 +263,13 @@ public class Joueur {
                 tick(ressource);
             }
         }
+        if(this.ressources.containsKey("Nourriture")&&this.ressources.containsKey("Piété")&&this.ressources.containsKey("Habitant")) {
+            int nombreHabEnPlus = (int) Math.log(1 + this.ressources.get("Nourriture") * (1 + this.ressources.get("Piété")) / (this.ressources.get("Habitant") * this.ressources.get("Habitant")));
+            if (Math.random() < 0.1) {
+                this.ressources.replace("Habitant", this.ressources.get("Habitant") + nombreHabEnPlus);
+            }
+        }
+
         save();
         return toMap();
     }
