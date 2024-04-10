@@ -212,12 +212,47 @@ public class Joueur {
         getRessources().forEach((key, value)->{
             if(!key.contains("Max-")) {
                 RessourceSimplifee ressourceSimplifiee = this.mapRessourcesSimplifiees.get(key);
+                if(key.contains("Puissance")){
+                    value = actualisePuissance(key);
+                }
                 ressourceSimplifiee.quantite = value;
                 map.put(key, ressourceSimplifiee);
             }
         });
 
         return map;
+    }
+
+    private double checkPresentRessource(String nom){
+        return this.ressources.getOrDefault(nom, 0.0);
+    }
+
+    private double actualisePuissance(String nomPuissance){
+        if(!this.ressources.containsKey(nomPuissance)){
+            return -1;
+        }
+        double valeur = this.ressources.get(nomPuissance);
+
+        switch (nomPuissance){
+            case "Puissance militaire":
+                valeur+=checkPresentRessource("Soldat")+checkPresentRessource("Mana")*0.05+
+                        checkPresentRessource("Ames maudites")*0.5+checkPresentRessource("Navigateur")*0.2+
+                        checkPresentRessource("Points de science")*0.005;
+                break;
+            case "Puissance économique":
+                valeur+=checkPresentRessource("Navigateur")*0.3+checkPresentRessource("Mana")*0.01+
+                        checkPresentRessource("Points de science")*0.01+checkPresentRessource("Pouvoir arcanique")*0.4+
+                        checkPresentRessource("Électricité")*0.1;
+                break;
+            case "Puissance culturelle":
+                valeur+=checkPresentRessource("Navigateur")*0.3+checkPresentRessource("Mana")*0.01+
+                        checkPresentRessource("Points de science")*0.01+checkPresentRessource("Électricité")*0.1;
+                break;
+            default:
+                break;
+        }
+
+        return valeur;
     }
 
 
