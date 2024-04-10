@@ -137,6 +137,10 @@ public class Joueur {
         return nomRecherche + " : RECHERCHE NON DEBLOQUEE";
     }
 
+    public ArbreDeRecherches getArbreDeRecherches() {
+        return this.arbreDeRecherche;
+    }
+
     private boolean checkEtAddVal(Map<String, Bonus> bonus) {
         final Boolean[] valide = {true};
         bonus.forEach((key, value) -> {
