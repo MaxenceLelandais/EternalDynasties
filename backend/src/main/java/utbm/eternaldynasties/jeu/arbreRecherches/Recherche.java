@@ -203,6 +203,8 @@ public class Recherche {
     public Map<String, Object> getJsonObjet() {
 
         this.jsonObjet.put("nom",this.nom);
+        this.jsonObjet.put("Etat", this.etat);
+        this.jsonObjet.put("RecherchePossible", this.recherchePossible);
         return jsonObjet;
     }
 
