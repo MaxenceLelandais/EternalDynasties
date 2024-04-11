@@ -40,3 +40,6 @@ build/
 
 ### graphiques ###
 /Graphiques/*
+
+### dist front ###
+/src/main/ressources/static/*

@@ -99,7 +99,7 @@ public class Jeu {
         if (this.listeJoueur.containsKey(civilisation+"-"+environnement)) {
             joueur = this.listeJoueur.get(civilisation+"-"+environnement);
         } else {
-            JSONObject jsonObject = Json.read("src/main/resources/sauvegardes/" + civilisation+"-"+environnement + ".save");
+            JSONObject jsonObject = Json.read(getClass().getResourceAsStream("/sauvegardes/" + civilisation+"-"+environnement + ".save"));
             if (jsonObject != null) {
                 joueur = new Joueur(civilisation, this.arbreEnvironnements.get(environnement),jsonObject, new ArbreDeRecherches(fichierJeuService.arbreDeRecherches), new ArbreDeRessources(fichierJeuService.ressources));
                 joueur.save();
@@ -120,7 +120,7 @@ public class Jeu {
         if (this.listeJoueur.containsKey(civilisation+"-"+environnement)) {
             joueur = this.listeJoueur.get(civilisation+"-"+environnement);
         } else {
-            joueur = new Joueur(civilisation, this.arbreEnvironnements.get(environnement),Json.read("src/main/resources/donnees/joueur.json"), new ArbreDeRecherches(fichierJeuService.arbreDeRecherches), new ArbreDeRessources(fichierJeuService.ressources));
+            joueur = new Joueur(civilisation, this.arbreEnvironnements.get(environnement),Json.read(getClass().getResourceAsStream("/donnees/joueur.json")), new ArbreDeRecherches(fichierJeuService.arbreDeRecherches), new ArbreDeRessources(fichierJeuService.ressources));
             joueur.init();
             joueur.save();
             this.listeJoueur.put(civilisation+"-"+environnement, joueur);

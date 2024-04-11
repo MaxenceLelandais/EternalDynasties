@@ -75,7 +75,7 @@ public class JeuController {
 
     @GetMapping(value = "recupererPartie")
     public JSONObject getPartie(@RequestParam(value = "nomPartie") String nomPartie) {
-        return Json.read("src/main/resources/sauvegardes/" + nomPartie + ".save");
+        return Json.read(getClass().getResourceAsStream("/sauvegardes/" + nomPartie + ".save"));
     }
 
     @GetMapping(value = "chargerPartie")

@@ -10,9 +10,7 @@ import org.apache.tomcat.util.json.JSONParser;
 import org.apache.tomcat.util.json.ParseException;
 import org.json.simple.JSONObject;
 
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Map;
 
 public class Json {
@@ -22,10 +20,15 @@ public class Json {
      * @param src Chemin du fichier.
      * @return L'objet json généré.
      */
-    public static JSONObject read(String src) {
+    public static JSONObject read(InputStream src) {
 
-        try (FileReader fichier = new FileReader(src)) {
-            return new JSONObject((Map) new JSONParser(fichier).parse());
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(src))) {
+                StringBuilder jsonStr = new StringBuilder();
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    jsonStr.append(line);
+                }
+            return new JSONObject((Map) new JSONParser(jsonStr.toString()).parse());
         } catch (Exception e) {
             Log.error("Json", "Problème de lecture du fichier : " + src);
             e.printStackTrace();
