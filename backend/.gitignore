@@ -42,4 +42,4 @@ build/
 /Graphiques/*
 
 ### dist front ###
-/src/main/ressources/static/*
+/src/main/resources/static/
