@@ -124,8 +124,8 @@ public class Jeu {
             joueur.init();
             joueur.save();
             this.listeJoueur.put(civilisation+"-"+environnement, joueur);
-            joueur.activerRecherche("Tribue");
-            this.arbreDeRecherches.getRecherche("Tribue").forceActive();
+            joueur.activerRecherche("Tribu");
+            this.arbreDeRecherches.getRecherche("Tribu").forceActive();
             joueur.activerRecherche("Préhistoire");
             this.arbreDeRecherches.getRecherche("Préhistoire").forceActive();
         }

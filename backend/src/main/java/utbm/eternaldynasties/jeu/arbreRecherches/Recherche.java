@@ -11,6 +11,7 @@ import utbm.eternaldynasties.utils.Json;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Recherche {
 
@@ -38,6 +39,9 @@ public class Recherche {
     }
 
     public Recherche(String nom, Map<String, Object> jsonObjet, Map<String, Recherche> listeRecherches) {
+        if(Objects.equals(nom, "Tribu")){
+            this.etat = true;
+        }
 
         this.jsonObjet = jsonObjet;
         this.nom = nom;
@@ -139,6 +143,7 @@ public class Recherche {
 
         if (actualiseEtat() && checkConditions()) {
             this.etat = true;
+            this.jsonObjet.replace("Etat", this.etat);
             this.inhibe.values().forEach(Recherche::disableRecherche);
         }
     }
@@ -157,6 +162,7 @@ public class Recherche {
 
     public void forceActive() {
         this.etat = true;
+        this.jsonObjet.replace("Etat", this.etat);
         this.inhibe.values().forEach(Recherche::disableRecherche);
     }
 
@@ -203,7 +209,7 @@ public class Recherche {
     public Map<String, Object> getJsonObjet() {
 
         this.jsonObjet.put("nom",this.nom);
-        this.jsonObjet.put("Etat", this.etat);
+        this.jsonObjet.replace("Etat", this.etat);
         this.jsonObjet.put("RecherchePossible", this.recherchePossible);
         return jsonObjet;
     }

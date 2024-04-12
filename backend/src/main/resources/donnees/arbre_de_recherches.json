@@ -1,7 +1,7 @@
 {
-    "Tribue": {
+    "Tribu": {
         "Id": "1",
-        "Image": "./assets/img/recherche/tribue.png",
+        "Image": "./assets/img/recherche/Tribu.png",
         "Description": "Le commencement d'une belle aventure.",
         "Coût": null,
         "Débloque": [
@@ -37,7 +37,7 @@
         ],
         "Bonus":null,
         "Dépendance":[
-            "Tribue"
+            "Tribu"
         ],
         "Recherches": [
             "Cueillette",
@@ -68,7 +68,7 @@
             "Nourriture": "1.0/s;0.5/Fermier"
         },
         "Dépendance":[
-            "Tribue"
+            "Tribu"
         ]
     },
     "Feu":{
@@ -116,7 +116,7 @@
             "Max-Prêtre": "1"
         },
         "Dépendance":[
-            "Tribue"
+            "Tribu"
         ]
     },
     "Chasse et pêche":{
