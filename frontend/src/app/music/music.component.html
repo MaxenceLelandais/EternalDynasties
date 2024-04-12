@@ -1,22 +1,8 @@
 <audio id="audioPlayer" controls autoplay loop>
-  Your browser does not support the audio element.
-</audio>
-
-<button *ngIf="this.etat" class="play" (click)="resumeAudio()">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
-      <path d="M8 5v14l11-7z" />
-      <path d="M0 0h24v24H0z" fill="none" />
-  </svg>
-</button>
-
-<button *ngIf="!this.etat" class="pause" (click)="pauseAudio()">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
-      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-      <path d="M0 0h24v24H0z" fill="none" />
-  </svg>
-</button>
-
-<audio id="audioPlayer" controls autoplay loop>
-  Your browser does not support the audio element.
-</audio>
-
+    Your browser does not support the audio element.
+  </audio>
+  
+  <button class="l1" (click)="playRandomAudio()">Play Random Audio</button>
+  <button class="l2" (click)="nextAudio()">Next</button>
+  <button class="l3" (click)="previousAudio()">Previous</button>
+<!-- <h1>{{ environnement?.nom }}</h1> -->

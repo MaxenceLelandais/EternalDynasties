@@ -1138,7 +1138,7 @@
     "Nucléaire":{
         "Id": "44",
         "Image": "./assets/img/recherche/nucléaire.png",
-        "Description":"KAAAAAAAAABOOOOOOOOOOOOOUM!!!!!!!!!!!!!!!!!!!!",
+        "Description":"KAAAABOOOOUM!!!!!",
         "Coût": {
             "Points de recherche":"15000",
             "Or": "10000"

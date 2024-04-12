@@ -24,12 +24,9 @@ export class RessourcesComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.loadRessources();
     this.nomJoueur = this.nomJoueurService.getNomJoueur();
-    // Abonnez-vous à l'Observable pour obtenir les mises à jour automatiques
-
   }
 
   ngOnDestroy() {
-    // Se désabonner pour éviter les fuites de mémoire
     this.subscriptions.unsubscribe();
   }
 
@@ -61,6 +58,7 @@ export class RessourcesComponent implements OnInit, OnDestroy {
             console.log("ressources : " + this.ressources);
           })
         );
+        localStorage.setItem('ressources', JSON.stringify(this.ressources));
       },
       error: (error) => {
         console.error("Erreur lors de l'ajout de la ressource", error);
