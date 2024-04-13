@@ -91,7 +91,7 @@ public class Joueur {
 
 
     public String activerRecherche(String nomRecherche) {
-        if(!this.arbreDeRecherche.getRecherche(nomRecherche).getEtat()) {
+        if(!this.arbreDeRecherche.getRecherche(nomRecherche).getEtat() && this.arbreDeRecherche.getRecherche(nomRecherche).getRecherchePossible()) {
             Map<String, Double> listeCout = this.arbreDeRecherche.getRecherche(nomRecherche).getListeCout();
             StringBuilder txt = new StringBuilder(nomRecherche + " : RESSOURCES INSUFISANTES { ");
             boolean pbRessource = false;
