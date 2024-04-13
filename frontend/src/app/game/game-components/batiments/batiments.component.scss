@@ -4,6 +4,7 @@ ul {
   list-style: none;
   gap: 20px;
   padding-left: 0;
+  flex-wrap: wrap;
   li {
     width: 170px;
     text-align: center;

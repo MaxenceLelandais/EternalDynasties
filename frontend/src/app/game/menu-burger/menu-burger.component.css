@@ -1,9 +1,8 @@
-@charset "UTF-8";
 .menu-burgercontainer {
-  position: fixed; /* Ou 'absolute' si vous ne voulez pas qu'il reste fixé lors du défilement */
-  right: 0; /* Aligner à droite */
-  bottom: 0; /* Aligner en bas */
-  margin: 20px; /* Ajoute un peu d'espace autour du bouton pour ne pas qu'il touche les bords de l'écran */
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 20px;
 }
 
 .visuallyHidden {

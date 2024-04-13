@@ -155,13 +155,7 @@
         }
     }
 
-    .tooltip-activate {
-        position: relative;
-        display: inline-block;
-        color: #242424;
-        background-color: #fff;
-        border-radius: 5px;
-    }
+
 
     .tooltiptext-left {
         left: auto; // Désactivez le positionnement gauche par défaut
@@ -187,6 +181,16 @@
         opacity: 1;
         transition: opacity 0.3s ease-in-out;
 
+    }
+
+    .tooltip-activate {
+        position: relative;
+        display: inline-block;
+        color: #242424;
+        background-color: #fff;
+        border-radius: 5px;
+        cursor: help;
+        font-weight: 700;
     }
 
     .tool-description {

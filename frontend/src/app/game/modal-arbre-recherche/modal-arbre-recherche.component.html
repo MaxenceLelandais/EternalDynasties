@@ -15,7 +15,7 @@
 <ng-template #recursiveList let-recherches>
     <li *ngFor="let recherche of recherches" class="tree-view-node">
         <div class="connector"></div>
-        <div [ngClass]="{'tooltip': !recherche.Etat, 'tooltip-activate': recherche.Etat}" 
+        <div [ngClass]="{'tooltip': !getRecherche(recherche.nom)?.Etat, 'tooltip-activate': getRecherche(recherche.nom)?.Etat}" 
         (mouseenter)="handleMouseEnter(recherche.nom, $event)" 
         (mouseleave)="handleMouseLeave($event)"
         (click)="addRecherche(nomJoueur!, recherche)">

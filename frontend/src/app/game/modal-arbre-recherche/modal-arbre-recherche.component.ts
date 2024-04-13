@@ -104,10 +104,8 @@ export class ModalArbreRechercheComponent implements OnInit {
   }
 
   getRecherche(nom: string): Recherche | null {
-    console.log("getRechercheEnter dans " + nom);
     const recherchesArray = this.listeRecherches ? Object.values(this.listeRecherches) : [];
     const recherche = recherchesArray.find(r => r.nom === nom);
-    console.log("recherche trouvé dans " + recherche?.Description);
     return recherche || null;
   }
   
@@ -202,7 +200,7 @@ export class ModalArbreRechercheComponent implements OnInit {
     if (this.rechercheCouranteCliquee == null) {
       return;
     }
-    console.log("possible ? " + this.rechercheCouranteCliquee.RecherchePossible)
+    //console.log("possible ? " + this.rechercheCouranteCliquee.RecherchePossible)
     for (const [key, value] of Object.entries(this.rechercheCouranteCliquee)) {
       console.log(`${key}: ${value}`);
     }
@@ -210,7 +208,7 @@ export class ModalArbreRechercheComponent implements OnInit {
       return;
     }
     if (recherche.RecherchePossible == false) {
-      console.log("impossible de débloquer : ressources insufisantes");
+      //console.log("impossible de débloquer : ressources insufisantes");
       return;
     }
     this.jeuService.httpActiverRecherche(nomJoueur, recherche.nom).subscribe({

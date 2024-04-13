@@ -7,7 +7,8 @@
     </div>
     <div class="header-buttons">
         <div class="arbre-recherche-button-container">
-            <button (click)="openModal()" class="arbre-recherche-button">Arbre de Recherches</button>
+            <button (click)="openModal()" class="arbre-recherche-button">Arbre de recherches</button>
+            <button class="arbre-recherche-button">Sauvegarder partie</button>
         </div>
         <ul *ngIf="ressources">
             <ng-container *ngFor="let ressource of ressources | keyvalue">

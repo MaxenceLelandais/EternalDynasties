@@ -7,7 +7,7 @@
   margin-top: -8%;
   margin-left: 10vh;
   display: flex;
-  align-items: center;
+  gap: 60px;
 }
 .header-buttons .arbre-recherche-button-container .arbre-recherche-button {
   padding: 0;
@@ -16,6 +16,7 @@
   cursor: pointer;
   font-size: 20px;
   transition-duration: 0.3s;
+  font-size: 16px;
 }
 .header-buttons .arbre-recherche-button-container .arbre-recherche-button:hover {
   color: rgb(225, 209, 117);
