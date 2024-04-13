@@ -21,7 +21,7 @@ export class RessourceService {
         return this.ressources;
       }
 
-      updateRessources(ressources: Ressources): void {
+      public updateRessources(ressources: Ressources): void {
         this._ressources.next(ressources);
       }
 }

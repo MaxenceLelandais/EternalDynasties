@@ -91,7 +91,7 @@
             "Bûcheron":"1",
             "Grange":"1",
             "Entrepôt":"1",
-            "Carriere": "1"
+            "Carrière": "1"
         },
         "Dépendance":[
             "Cueillette"
@@ -375,7 +375,6 @@
         ],
         "Bonus":{
             "Or": "1",
-            "Max-Or": "1",
             "Banque": "1",
             "Banquier": "1",
             "Max-Banquier": "1"

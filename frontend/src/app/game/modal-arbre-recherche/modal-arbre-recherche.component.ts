@@ -1,11 +1,12 @@
-import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, ViewChild, Input} from '@angular/core';
 import { JeuService } from 'src/app/http/jeuService';
 import { Recherche, Recherches } from 'src/app/model/recherche.model';
 import { ArbreRecherche } from 'src/app/model/arbreRecherche.model';
 import { ModalService } from 'src/app/service/modal.Service';
 import { NomJoueurService } from 'src/app/service/nomJoueurService';
 import { Subscription } from 'rxjs';
-import { RechercheService } from 'src/app/service/rechercheService';
+import { Civilisation } from 'src/app/model/civilisation.model';
+import { CivilisationService } from 'src/app/service/civilisationService';
 import { RessourceService } from 'src/app/service/ressourceService';
 import { Ressources } from 'src/app/model/ressource.model';
 
@@ -24,22 +25,30 @@ export class ModalArbreRechercheComponent implements OnInit {
   rechercheCouranteSurvolee: Recherche | null = null;
   rechercheCouranteCliquee: Recherche | null = null;
   nomJoueur: string | null = null;
-  private subscriptions: Subscription = new Subscription();
+  private subscriptions: Subscription = new Subscription();  
+
   ressources: Ressources | null = null;
 
+  civilisation: Civilisation | null = null;
+
+  
   @ViewChild('modalContent', { static: false }) modalContent!: ElementRef;
   
 
   constructor(private jeuService: JeuService,
               private modalService: ModalService,
               private renderer: Renderer2,
-              private nomJoueurService: NomJoueurService,
-              private rechercheService: RechercheService,
-              private ressourcesService: RessourceService) {}
+              private ressourcesService: RessourceService,
+              private civilisationService: CivilisationService, 
+              private nomJoueurService: NomJoueurService,) {}
 
   ngOnInit() {
     this.nomJoueur = this.nomJoueurService.getNomJoueur();
+    if(this.civilisationService.getCivilisation()!=null){
+      this.civilisation = this.civilisationService.getCivilisation();
+    }
     this.loadRessources();
+    
     this.fetchData();
     this.modalService.watch().subscribe((status: 'open' | 'close') => {
       this.displayModal = status === 'open';
@@ -54,10 +63,8 @@ export class ModalArbreRechercheComponent implements OnInit {
   }
 
   fetchData() {
-    console.log(this.listeRecherches);
     this.jeuService.httpListeRecherches().subscribe(
       data => {
-        console.log(data);
         this.listeRecherches = data;
       },
       error => {
@@ -66,9 +73,7 @@ export class ModalArbreRechercheComponent implements OnInit {
     );
     this.jeuService.httpArbreRecherches().subscribe(
       data2 => {
-        console.log(data2);
         this.arbreRecherches = data2;
-        console.log(this.arbreRecherches);
       },
       error => {
         console.error("Erreur lors de la récupération des recherches", error);
@@ -76,9 +81,7 @@ export class ModalArbreRechercheComponent implements OnInit {
     );
     this.jeuService.httpListeRecherchesJoueur(this.nomJoueur!).subscribe(
       data3 => {
-        console.log(data3);
         this.listeRecherchesJoueur = data3;
-        console.log(this.listeRecherchesJoueur);
       },
       error => {
         console.error("Erreur lors de la récupération des recherches", error);
@@ -115,10 +118,6 @@ export class ModalArbreRechercheComponent implements OnInit {
     console.log(this.arborescenceRecherche);
   }
   
-
-
-
-
   closeModal() {
     this.modalService.close();
   }
@@ -235,36 +234,49 @@ export class ModalArbreRechercheComponent implements OnInit {
     }
     this.jeuService.httpActiverRecherche(nomJoueur, recherche.nom).subscribe({
       next: (response) => {
-        console.log("Recherche ajoutée avec succès", response);
-        this.subscriptions.add(
-          this.rechercheService.recherches$.subscribe(recherches => {
-            this.listeRecherchesJoueur = recherches;
-            console.log("Recherches : " + this.listeRecherchesJoueur);
-          })
-        );
-        // this.subscriptions.add(
-        //   this.ressourcesService.ressources$.subscribe(ressources => {
-        //     this.ressources = ressources;
-        //     console.log("ressources : " + this.ressources);
-        //   })
-        // );
+        this.listeRecherches = response;
+        
+        this.loadRessources();
+        
       },
       error: (error) => {
         console.error("Erreur lors de l'ajout de la ressource", error);
       }
     });
-  }
-
-  private loadRessources() {
-    if (localStorage.getItem('ressources')) {
-      const savedRessources = localStorage.getItem('ressources');
-      if (savedRessources != null) {
-        this.ressources = JSON.parse(savedRessources);
+    this.jeuService.httpArbreRecherches().subscribe(
+      data2 => {
+        this.arbreRecherches = data2;
+      },
+      error => {
+        console.error("Erreur lors de la récupération des recherches", error);
       }
-    } else {
-      console.log("savedRessources");
-      this.ressources = this.ressourcesService.getRessources();
-      localStorage.setItem('ressources', JSON.stringify(this.ressources));
+    );
+    this.jeuService.httpListeRecherchesJoueur(this.nomJoueur!).subscribe(
+      data3 => {
+        this.listeRecherchesJoueur = data3;
+      },
+      error => {
+        console.error("Erreur lors de la récupération des recherches", error);
+      }
+    );
+  }
+  public loadRessources() {
+    if(this.civilisation!=null){
+        this.jeuService.httpListeRessources(this.civilisation.nom+"-"+this.civilisation.nomEnvironnement).subscribe({
+          next: (reponse) => {
+              this.ressourcesService.updateRessources(reponse);
+              this.subscriptions.add(
+                this.ressourcesService.ressources$.subscribe(ressources => {
+                  this.ressources = ressources;
+                })
+              )
+              localStorage.setItem('ressources', JSON.stringify(reponse));
+            
+          },
+          error: (error) => {
+            console.error('Erreur lors de la requête', error);
+          }
+        });
     }
   }
 }

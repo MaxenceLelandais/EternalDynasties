@@ -80,7 +80,7 @@ public class Jeu {
         if(civilisation.isEmpty() || environnement.isEmpty()){
             return null;
         }
-        if (getSauvegardes().containsValue(civilisation)) {
+        if (getSauvegardes().containsValue(civilisation+"-"+environnement)) {
             return chargerPartie(civilisation,environnement);
         } else {
             return nouvellePartie(civilisation,environnement);
@@ -156,8 +156,10 @@ public class Jeu {
         File[] files = (new File("src/main/resources/sauvegardes")).listFiles();
         Map<String, String> data = new HashMap<>();
         if (files != null) {
+            int n = 0;
             for (File file : files) {
-                data.put("Partie",file.getName().contains(".save") ? file.getName().replace(".save", "") : "");
+                data.put("Partie"+n,file.getName().contains(".save") ? file.getName().replace(".save", "") : "");
+                n++;
             }
         }
         return data;

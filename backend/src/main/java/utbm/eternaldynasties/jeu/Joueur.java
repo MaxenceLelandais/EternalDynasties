@@ -91,50 +91,53 @@ public class Joueur {
 
 
     public String activerRecherche(String nomRecherche) {
-        Map<String, Double> listeCout = this.arbreDeRecherche.getRecherche(nomRecherche).getListeCout();
-        StringBuilder txt = new StringBuilder(nomRecherche + " : RESSOURCES INSUFISANTES { ");
-        boolean pbRessource = false;
-        for (String nomRessource : listeCout.keySet()) {
-            double val = this.ressources.get(nomRessource) - listeCout.get(nomRessource);
-            if (val < 0) {
-                txt.append(nomRessource).append(" : ").append(val).append("; ");
-                pbRessource = true;
-            }
-        }
-        if (pbRessource) {
-            return txt + " }";
-        }
-        if (this.arbreDeRecherche.activerRecherche(nomRecherche)) {
+        if(!this.arbreDeRecherche.getRecherche(nomRecherche).getEtat()) {
+            Map<String, Double> listeCout = this.arbreDeRecherche.getRecherche(nomRecherche).getListeCout();
+            StringBuilder txt = new StringBuilder(nomRecherche + " : RESSOURCES INSUFISANTES { ");
+            boolean pbRessource = false;
             for (String nomRessource : listeCout.keySet()) {
-                this.ressources.replace(nomRessource, this.ressources.get(nomRessource) - listeCout.get(nomRessource));
+                double val = this.ressources.get(nomRessource) - listeCout.get(nomRessource);
+                if (val < 0) {
+                    txt.append(nomRessource).append(" : ").append(val).append("; ");
+                    pbRessource = true;
+                }
             }
-            Map<String, Bonus> map = this.arbreDeRecherche.getRecherche(nomRecherche).getListeBonus();
+            if (pbRessource) {
+                return txt + " }";
+            }
+            if (this.arbreDeRecherche.activerRecherche(nomRecherche)) {
+                for (String nomRessource : listeCout.keySet()) {
+                    this.ressources.replace(nomRessource, this.ressources.get(nomRessource) - listeCout.get(nomRessource));
+                }
+                Map<String, Bonus> map = this.arbreDeRecherche.getRecherche(nomRecherche).getListeBonus();
 
-            for (String key : map.keySet()) {
-                Bonus bonusRessource = map.get(key);
-                String nom = bonusRessource.getRessourceGenere();
-                Bonus bonusInfos = this.arbreDeRessources.getRessource(nom).getListeBonus().get(nom);
-                bonusInfos.add(bonusRessource);
-                for(Map<String, Ressource> val : this.arbreDeRessources.getListeRessources().values()){
-                    if(val.containsKey(key)){
-                        val.get(key).setActive(true);
+                for (String key : map.keySet()) {
+                    Bonus bonusRessource = map.get(key);
+                    String nom = bonusRessource.getRessourceGenere();
+                    Bonus bonusInfos = this.arbreDeRessources.getRessource(nom).getListeBonus().get(nom);
+                    bonusInfos.add(bonusRessource);
+                    for (Map<String, Ressource> val : this.arbreDeRessources.getListeRessources().values()) {
+                        if (val.containsKey(key)) {
+                            val.get(key).setActive(true);
+                        }
+                    }
+                    if (key.contains("Max-")) {
+                        this.ressources.putIfAbsent(key, bonusInfos.estimationValeur(this.ressources));
+                    }
+                    this.ressources.putIfAbsent(key, 0.0);
+                }
+                List<Recherche> listeRecherchesDispos = this.recherchesPossibles();
+                if (listeRecherchesDispos.size() == 1) {
+                    if (this.arbreDeRecherche.getEres().containsKey(listeRecherchesDispos.get(0).getNom())) {
+                        activerRecherche(listeRecherchesDispos.get(0).getNom());
                     }
                 }
-                if (key.contains("Max-")) {
-                    this.ressources.putIfAbsent(key, bonusInfos.estimationValeur(this.ressources));
-                }
-                this.ressources.putIfAbsent(key, 0.0);
+                save();
+                return nomRecherche + ": RECHERCHE EFFECTUEE";
             }
-            List<Recherche> listeRecherchesDispos = this.recherchesPossibles();
-            if(listeRecherchesDispos.size()==1){
-                if(this.arbreDeRecherche.getEres().containsKey(listeRecherchesDispos.get(0).getNom())){
-                    activerRecherche(listeRecherchesDispos.get(0).getNom());
-                }
-            }
-            save();
-            return nomRecherche + ": RECHERCHE EFFECTUEE";
+            return nomRecherche + " : RECHERCHE NON DEBLOQUEE";
         }
-        return nomRecherche + " : RECHERCHE NON DEBLOQUEE";
+        return nomRecherche + ": RECHERCHE DEJA EFFECTUEE";
     }
 
     public ArbreDeRecherches getArbreDeRecherches() {

@@ -5,14 +5,12 @@ import { JeuService } from 'src/app/http/jeuService';
 import { Environnement } from 'src/app/model/environnement.model';
 import { EnvironnementService } from 'src/app/service/environnementService';
 import { DropEvent } from 'angular-draggable-droppable';
-import { ComponentFactoryResolver, ViewContainerRef } from '@angular/core';
 import {
   DroppableDirective,
   ValidateDrop,
 } from 'src/lib/droppable.directive';
-import { Icon } from 'src/app/model/icon.model';
-import { Ressource, Ressources } from 'src/app/model/ressource.model';
-import { RessourceStructure, RessourceStructures } from 'src/app/model/ressourceStructure.model';
+import { Ressources } from 'src/app/model/ressource.model';
+import { RessourceStructures } from 'src/app/model/ressourceStructure.model';
 import { NomJoueurService } from 'src/app/service/nomJoueurService';
 
 
@@ -77,6 +75,7 @@ constructor(
 
   fetchData() {
     if (this.civilisation != null) {
+      console.log("ooo",this.civilisation.nom, this.civilisation.nomEnvironnement)
       this.jeuService.httpJoueur(this.civilisation.nom, this.civilisation.nomEnvironnement).subscribe({
           next: (response) => {
             console.log('Réponse du serveur', response);

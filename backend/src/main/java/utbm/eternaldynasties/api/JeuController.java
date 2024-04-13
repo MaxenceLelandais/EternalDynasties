@@ -105,8 +105,9 @@ public class JeuController {
     }
 
     @GetMapping(value="activerRecherche")
-    public String getActiverRecherche(@RequestParam(value = "nomJoueur") String nomJoueur,@RequestParam(value = "recherche") String nomRecherche) {
-        return this.jeuService.getJeu().getJoueur(nomJoueur).activerRecherche(nomRecherche);
+    public JSONObject getActiverRecherche(@RequestParam(value = "nomJoueur") String nomJoueur,@RequestParam(value = "recherche") String nomRecherche) {
+        this.jeuService.getJeu().getJoueur(nomJoueur).activerRecherche(nomRecherche);
+        return Json.stringToJsonObject(jeuService.getJeu().getJoueur(nomJoueur).getArbreDeRecherches().toString());
     }
 
     @GetMapping(value="listeRessources")
