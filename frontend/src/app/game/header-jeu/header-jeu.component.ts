@@ -7,6 +7,7 @@ import { take } from 'rxjs/operators';
 import { ModalService } from 'src/app/service/modal.Service';
 import { Ressources } from 'src/app/model/ressource.model';
 import { RessourceService } from 'src/app/service/ressourceService';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header-jeu',
@@ -18,6 +19,7 @@ export class HeaderJeuComponent implements OnInit {
   environnement: Environnement | null = null;
   civilisation: Civilisation | null = null;
   ressources: Ressources | null = null;
+  private subscriptions: Subscription = new Subscription();
 
   constructor(
     private environnementService: EnvironnementService, 
@@ -28,10 +30,14 @@ export class HeaderJeuComponent implements OnInit {
 
   
   ngOnInit() {
-
+    this.subscriptions.add(this.ressourcesService.ressources$.subscribe(
+      ressources => this.ressources = ressources
+    ));
+    this.loadRessources();
+   
     this.loadEnvironnement();
     this.loadCivilisation();
-    this.loadRessources();
+    
   }
 
   private loadEnvironnement() {
@@ -70,12 +76,14 @@ export class HeaderJeuComponent implements OnInit {
   private loadRessources() {
     if (localStorage.getItem('ressources')) {
       const savedRessources = localStorage.getItem('ressources');
+      console.log("save : " + savedRessources);
       if (savedRessources != null) {
         this.ressources = JSON.parse(savedRessources);
       }
     } else {
       console.log("savedRessources");
       this.ressources = this.ressourcesService.getRessources();
+      console.log("service : " + this.ressources );
       localStorage.setItem('ressources', JSON.stringify(this.ressources));
     }
   }
