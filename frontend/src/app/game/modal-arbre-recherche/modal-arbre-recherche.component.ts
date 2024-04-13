@@ -4,6 +4,10 @@ import { Recherche, Recherches } from 'src/app/model/recherche.model';
 import { ArbreRecherche } from 'src/app/model/arbreRecherche.model';
 import { ModalService } from 'src/app/service/modal.Service';
 import { NomJoueurService } from 'src/app/service/nomJoueurService';
+import { Subscription } from 'rxjs';
+import { RechercheService } from 'src/app/service/rechercheService';
+import { RessourceService } from 'src/app/service/ressourceService';
+import { Ressources } from 'src/app/model/ressource.model';
 
 @Component({
   selector: 'app-modal-arbre-recherche',
@@ -13,12 +17,15 @@ import { NomJoueurService } from 'src/app/service/nomJoueurService';
 
 export class ModalArbreRechercheComponent implements OnInit {
   listeRecherches: Recherches | null = null;
+  listeRecherchesJoueur: Recherches | null = null;
   arbreRecherches: Recherches | null = null;
   arborescenceRecherche: ArbreRecherche[] = []; 
   displayModal: boolean = false;
   rechercheCouranteSurvolee: Recherche | null = null;
   rechercheCouranteCliquee: Recherche | null = null;
   nomJoueur: string | null = null;
+  private subscriptions: Subscription = new Subscription();
+  ressources: Ressources | null = null;
 
   @ViewChild('modalContent', { static: false }) modalContent!: ElementRef;
   
@@ -26,9 +33,13 @@ export class ModalArbreRechercheComponent implements OnInit {
   constructor(private jeuService: JeuService,
               private modalService: ModalService,
               private renderer: Renderer2,
-              private nomJoueurService: NomJoueurService) {}
+              private nomJoueurService: NomJoueurService,
+              private rechercheService: RechercheService,
+              private ressourcesService: RessourceService) {}
 
   ngOnInit() {
+    this.nomJoueur = this.nomJoueurService.getNomJoueur();
+    this.loadRessources();
     this.fetchData();
     this.modalService.watch().subscribe((status: 'open' | 'close') => {
       this.displayModal = status === 'open';
@@ -36,7 +47,10 @@ export class ModalArbreRechercheComponent implements OnInit {
         this.construireArborescence();
       }
     });
-    this.nomJoueur = this.nomJoueurService.getNomJoueur();
+  }
+
+    ngOnDestroy() {
+    this.subscriptions.unsubscribe();
   }
 
   fetchData() {
@@ -55,6 +69,16 @@ export class ModalArbreRechercheComponent implements OnInit {
         console.log(data2);
         this.arbreRecherches = data2;
         console.log(this.arbreRecherches);
+      },
+      error => {
+        console.error("Erreur lors de la récupération des recherches", error);
+      }
+    );
+    this.jeuService.httpListeRecherchesJoueur(this.nomJoueur!).subscribe(
+      data3 => {
+        console.log(data3);
+        this.listeRecherchesJoueur = data3;
+        console.log(this.listeRecherchesJoueur);
       },
       error => {
         console.error("Erreur lors de la récupération des recherches", error);
@@ -104,7 +128,7 @@ export class ModalArbreRechercheComponent implements OnInit {
   }
 
   getRecherche(nom: string): Recherche | null {
-    const recherchesArray = this.listeRecherches ? Object.values(this.listeRecherches) : [];
+    const recherchesArray = this.listeRecherchesJoueur ? Object.values(this.listeRecherchesJoueur) : [];
     const recherche = recherchesArray.find(r => r.nom === nom);
     return recherche || null;
   }
@@ -200,7 +224,6 @@ export class ModalArbreRechercheComponent implements OnInit {
     if (this.rechercheCouranteCliquee == null) {
       return;
     }
-    //console.log("possible ? " + this.rechercheCouranteCliquee.RecherchePossible)
     for (const [key, value] of Object.entries(this.rechercheCouranteCliquee)) {
       console.log(`${key}: ${value}`);
     }
@@ -208,17 +231,40 @@ export class ModalArbreRechercheComponent implements OnInit {
       return;
     }
     if (recherche.RecherchePossible == false) {
-      //console.log("impossible de débloquer : ressources insufisantes");
       return;
     }
     this.jeuService.httpActiverRecherche(nomJoueur, recherche.nom).subscribe({
       next: (response) => {
-        console.log("Ressource ajoutée avec succès", response);
-        // this.arborescenceRecherche = response;
+        console.log("Recherche ajoutée avec succès", response);
+        this.subscriptions.add(
+          this.rechercheService.recherches$.subscribe(recherches => {
+            this.listeRecherchesJoueur = recherches;
+            console.log("Recherches : " + this.listeRecherchesJoueur);
+          })
+        );
+        // this.subscriptions.add(
+        //   this.ressourcesService.ressources$.subscribe(ressources => {
+        //     this.ressources = ressources;
+        //     console.log("ressources : " + this.ressources);
+        //   })
+        // );
       },
       error: (error) => {
         console.error("Erreur lors de l'ajout de la ressource", error);
       }
     });
+  }
+
+  private loadRessources() {
+    if (localStorage.getItem('ressources')) {
+      const savedRessources = localStorage.getItem('ressources');
+      if (savedRessources != null) {
+        this.ressources = JSON.parse(savedRessources);
+      }
+    } else {
+      console.log("savedRessources");
+      this.ressources = this.ressourcesService.getRessources();
+      localStorage.setItem('ressources', JSON.stringify(this.ressources));
+    }
   }
 }

@@ -18,7 +18,7 @@
         <div [ngClass]="{'tooltip': !getRecherche(recherche.nom)?.Etat, 'tooltip-activate': getRecherche(recherche.nom)?.Etat}" 
         (mouseenter)="handleMouseEnter(recherche.nom, $event)" 
         (mouseleave)="handleMouseLeave($event)"
-        (click)="addRecherche(nomJoueur!, recherche)">
+        (mousedown)="addRecherche(nomJoueur!, recherche)">
             {{ recherche.nom }}
             <span class="tooltiptext" [ngClass]="{'tooltiptext-left': isLastChild(recherche, arborescenceRecherche)}" *ngIf="rechercheCouranteSurvolee && rechercheCouranteSurvolee.nom === recherche.nom">
                 <div class="tool-description">{{ rechercheCouranteSurvolee.Description }}</div>

@@ -25,6 +25,10 @@ export class JeuService {
   }
 
   // Observable pour surveiller les réponses de l'API
+  httpListeRecherchesJoueur(nomJoueur:string): Observable<any> {
+    return this.fetchData(this.apiUrl+"listeRecherchesJoueur?nomJoueur=" + nomJoueur);
+  }
+
   httpListeRecherches(): Observable<any> {
     return this.fetchData(this.apiUrl+"listeRecherches");
   }

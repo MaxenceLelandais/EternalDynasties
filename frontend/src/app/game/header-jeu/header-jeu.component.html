@@ -9,6 +9,7 @@
         <div class="arbre-recherche-button-container">
             <button (click)="openModal()" class="arbre-recherche-button">Arbre de recherches</button>
             <button class="arbre-recherche-button">Sauvegarder partie</button>
+            <button class="arbre-recherche-button" routerLink="/">Menu principal</button>
         </div>
         <ul *ngIf="ressources">
             <ng-container *ngFor="let ressource of ressources | keyvalue">
@@ -19,12 +20,6 @@
             </ng-container>
         </ul>
     </div>
-    <!-- <h1 class="antiquite">{{ civilisation?.nom }}</h1>
-    <h1 class="medieval">{{ civilisation?.nom }}</h1>
-    <h1 class="renaissance">{{ civilisation?.nom }}</h1>
-    <h1 class="industrielle">{{ civilisation?.nom }}</h1>
-    <h1 class="moderne">{{ civilisation?.nom }}</h1>
-    <h1 class="futuriste">{{ civilisation?.nom }}</h1> -->
     <app-modal-arbre-recherche></app-modal-arbre-recherche>
 </header>
 
