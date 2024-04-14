@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6549a25e-83c3-4fa2-9ce3-0ce4679482ec" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/donnees/arbre_de_recherches.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/donnees/arbre_de_recherches.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/img/recherche/chasse et peche.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/img/recherche/magie noir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/donnees/ressources.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/donnees/ressources.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +31,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Branche-FrontEnd4",
+    "git-widget-placeholder": "Branche-FrontEnd6.1",
     "last_opened_file_path": "D:/EternalDynasties/backend"
   }
 }]]></component>
