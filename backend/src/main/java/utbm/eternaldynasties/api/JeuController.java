@@ -144,7 +144,8 @@ public class JeuController {
 
     @GetMapping(value="tick")
     public JSONObject getAddRessource(@RequestParam(value = "nomJoueur") String nomJoueur) {
-        return Json.objectToJsonObject(this.jeuService.getJeu().getJoueur(nomJoueur).tickBonus());
+        this.jeuService.getJeu().getJoueur(nomJoueur).tickBonus();
+        return Json.objectToJsonObject(this.jeuService.getJeu().getJoueur(nomJoueur).getRessourcesSimplifie());
     }
 
     @GetMapping(value = "")

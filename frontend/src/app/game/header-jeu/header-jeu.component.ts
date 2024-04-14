@@ -38,6 +38,22 @@ export class HeaderJeuComponent implements OnInit {
     }
     this.loadEnvironnement();
     this.loadRessources();
+    this.loopTick();
+  }
+
+  loopTick(){
+    setInterval(() => {
+      if(this.civilisation!=null){
+        this.jeuService.httpTick(this.civilisation.nom+"-"+this.civilisation.nomEnvironnement).subscribe({
+          next: (reponse) => {
+            this.updateResources(reponse);
+          },
+          error: (error) => {
+            console.error('Erreur lors de la requête', error);
+          }
+        });
+    }
+    }, 1000);
   }
 
   openModal() {
@@ -61,17 +77,7 @@ export class HeaderJeuComponent implements OnInit {
     if(this.civilisation!=null){
         this.jeuService.httpListeRessources(this.civilisation.nom+"-"+this.civilisation.nomEnvironnement).subscribe({
           next: (reponse) => {
-            this.ressources = reponse;
-            if(this.ressources!=null)
-            {
-              this.ressourcesService.updateRessources(this.ressources);
-              this.subscriptions.add(
-                this.ressourcesService.ressources$.subscribe(ressources => {
-                  this.ressources = ressources;
-                })
-              )
-              localStorage.setItem('ressources', JSON.stringify(this.ressources));
-            }
+            this.updateResources(reponse);
           },
           error: (error) => {
             console.error('Erreur lors de la requête', error);
@@ -82,5 +88,15 @@ export class HeaderJeuComponent implements OnInit {
   
   updateResources(newResource: Ressources) {
     this.ressources = newResource;
+    if(this.ressources!=null)
+    {
+      this.ressourcesService.updateRessources(this.ressources);
+      this.subscriptions.add(
+        this.ressourcesService.ressources$.subscribe(ressources => {
+          this.ressources = ressources;
+        })
+      )
+      localStorage.setItem('ressources', JSON.stringify(this.ressources));
+    }
   }
 }
