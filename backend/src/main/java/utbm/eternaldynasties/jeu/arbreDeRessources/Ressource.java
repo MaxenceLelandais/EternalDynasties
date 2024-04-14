@@ -1,36 +1,65 @@
+/**
+ * Classe Ressource : Rassemble les informations des ressources.
+ */
+
 package utbm.eternaldynasties.jeu.arbreDeRessources;
 
 
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Elle est utilisée dans le jeu pour conserver les données des ressources du jeu.
+ */
 public class Ressource {
 
-    private String nom;
+    private String type = "";
+    private int id = -1;
+    private String image = "";
+    private double valeurEchange = -1;
+    private final String nom;
     private String description;
-    private Map<String, Long> listeCout = new HashMap<>();
-    private Map<String, Bonus> listeBonus = new HashMap<>();
-    private final Map<String, Object> jsonObjet;
+    private final Map<String, Double> listeCout = new HashMap<>();
+    private final Map<String, Bonus> listeBonus = new HashMap<>();
+    private final Map<String, Double> listeBonusEstime= new HashMap<>();
+
+
+    // Une ressource peut être disponible dans la partie si elle a été activé dans une recherche.
     private boolean active = false;
 
 
     public Ressource(String nom, Map<String, Object> jsonObjet) {
-
-        this.jsonObjet = jsonObjet;
         this.nom = nom;
-        this.update();
+        this.update(jsonObjet);
     }
 
-    public Ressource update() {
+    /**
+     * Actualise les données provenant du json ressource.
+     */
+    public Ressource update(Map<String, Object> jsonObjet) {
 
-        this.description = (String) this.jsonObjet.get("Description");
-        Map<String, String> map = this.jsonObjet.containsKey("Coût") ? (Map<String, String>) this.jsonObjet.get("Coût") : new HashMap<String, String>();
+        if (jsonObjet.get("Type") != null) {
+            this.type = jsonObjet.containsKey("Type") ? (String) jsonObjet.get("Type") : "";
+        }
+        if (jsonObjet.get("Id") != null) {
+            this.id = jsonObjet.containsKey("Id") ? Integer.parseInt(jsonObjet.get("Id").toString()) : -1;
+        }
+        if (jsonObjet.get("Image") != null) {
+            this.image = jsonObjet.containsKey("Image") ? (String) jsonObjet.get("Image") : "";
+        }
+
+        if (jsonObjet.get("ValeurEchange") != null) {
+            this.valeurEchange = jsonObjet.containsKey("ValeurEchange") ? Integer.parseInt(jsonObjet.get("ValeurEchange").toString()) : -1;
+        }
+
+        this.description = (String) jsonObjet.get("Description");
+        Map<String, String> map = jsonObjet.containsKey("Coût") ? (Map<String, String>) jsonObjet.get("Coût") : new HashMap<String, String>();
         if (map != null) {
             for (String key : map.keySet()) {
-                this.listeCout.put(key, Long.parseLong(map.get(key)));
+                this.listeCout.put(key, Double.parseDouble(map.get(key)));
             }
         }
-        map = this.jsonObjet.containsKey("Bonus") ? (Map<String, String>) this.jsonObjet.get("Bonus") : new HashMap<String, String>();
+        map = jsonObjet.containsKey("Bonus") ? (Map<String, String>) jsonObjet.get("Bonus") : new HashMap<String, String>();
         if (map != null) {
             for (String key : map.keySet()) {
                 this.listeBonus.put(key, new Bonus(key, map.get(key)));
@@ -47,16 +76,12 @@ public class Ressource {
         return description;
     }
 
-    public Map<String, Long> getListeCout() {
+    public Map<String, Double> getListeCout() {
         return listeCout;
     }
 
     public Map<String, Bonus> getListeBonus() {
         return listeBonus;
-    }
-
-    public Map<String, Object> getJsonObjet() {
-        return jsonObjet;
     }
 
     public boolean isActive() {
@@ -65,5 +90,31 @@ public class Ressource {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public Map<String, Double> getListeBonusEstime() {
+        return listeBonusEstime;
+    }
+
+    public void getListeBonusEnString(HashMap<String, Double> ressourcesActuelles) {
+        listeBonus.forEach((key,val)->{
+            listeBonusEstime.put(key,val.estimationValeur(ressourcesActuelles));
+        });
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public double getValeurEchange() {
+        return valeurEchange;
+    }
+
+    public String getImage() {
+        return image;
     }
 }

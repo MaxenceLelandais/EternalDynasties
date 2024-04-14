@@ -1,0 +1,34 @@
+.header-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.header-buttons .arbre-recherche-button-container {
+  height: 120px;
+  margin-top: -8%;
+  margin-left: 10vh;
+  display: flex;
+  gap: 60px;
+}
+.header-buttons .arbre-recherche-button-container .arbre-recherche-button {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition-duration: 0.3s;
+  font-size: 16px;
+}
+.header-buttons .arbre-recherche-button-container .arbre-recherche-button:hover {
+  color: rgb(225, 209, 117);
+}
+.header-buttons ul {
+  margin-top: -7%;
+  margin-right: 10vh;
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+.header-buttons ul li {
+  width: 170px;
+  text-align: center;
+}/*# sourceMappingURL=header-jeu.component.css.map */

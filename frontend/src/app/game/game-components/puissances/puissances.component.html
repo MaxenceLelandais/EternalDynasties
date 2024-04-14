@@ -1,0 +1,9 @@
+<ul *ngIf="ressources">
+    <ng-container *ngFor="let ressource of ressources | keyvalue">
+      <li *ngIf="ressource.value.type == 'Puissance'">
+        <p>{{ ressource.value.nom }}</p>
+        <p>{{ ressource.value.quantite }}</p>
+      </li>
+    </ng-container>
+  </ul>
+  

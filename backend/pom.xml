@@ -8,6 +8,10 @@
         <version>3.2.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <organization>
+        <name>UTBM</name>
+    </organization>
+    <inceptionYear>2022</inceptionYear>
     <groupId>utbm</groupId>
     <artifactId>eternal-dynasties</artifactId>
     <version>1.0.0</version>
@@ -21,6 +25,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/jfree/jfreechart -->
+        <dependency>
+            <groupId>jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.0.13</version>
+        </dependency>
+
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -49,6 +60,13 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

@@ -1,0 +1,27 @@
+.musqiue-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin: 20px;
+}
+
+.button {
+  box-sizing: border-box;
+  width: 0;
+  height: 32px;
+  border-style: solid;
+  border-radius: 2px;
+  border-width: 16px 0 16px 26px;
+  border-color: transparent transparent transparent #ffffff;
+  cursor: pointer;
+  will-change: border-width;
+  transition: all 0.3s ease;
+}
+.button.paused {
+  border-style: double;
+  border-radius: 2px;
+  border-width: 0px 0 0px 26px;
+}
+.button:hover {
+  border-color: transparent transparent transparent rgb(225, 209, 117);
+}/*# sourceMappingURL=musique.component.css.map */

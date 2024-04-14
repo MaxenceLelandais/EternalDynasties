@@ -1,0 +1,27 @@
+<header class="header-jeu">
+
+    <div class="header-info">
+        <img [src]="environnement?.banniere" alt="" class="header-jeu-banniere">
+        <img [src]="environnement?.ecusson" alt="" class="header-jeu-ecusson">
+        <h1 class="prehistoire">{{ civilisation?.nom }}</h1>
+    </div>
+    <div class="header-buttons">
+        <div class="arbre-recherche-button-container">
+            <button (click)="openModal()" class="arbre-recherche-button">Arbre de recherches</button>
+            <button class="arbre-recherche-button">Sauvegarder partie</button>
+            <button class="arbre-recherche-button" routerLink="/">Menu principal</button>
+        </div>
+        <ul *ngIf="ressources">
+            <ng-container *ngFor="let ressource of ressources | keyvalue">
+            <li *ngIf="ressource.value.type == 'Ressource jeu'">
+                <p>{{ ressource.value.nom }}</p>
+                <p>{{ ressource.value.quantite | number:'1.0-2' }}</p>
+            </li>
+            </ng-container>
+        </ul>
+    </div>
+    <app-modal-arbre-recherche></app-modal-arbre-recherche>
+</header>
+
+
+

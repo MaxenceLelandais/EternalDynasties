@@ -1,0 +1,29 @@
+<app-header-jeu></app-header-jeu>
+<app-frise-chronologique></app-frise-chronologique>
+<!-- <ul *ngIf="ressources">
+  <li *ngFor="let ressource of ressources | keyvalue">
+    <p>{{ ressource.value.nom }}</p>
+    <p>{{ ressource.value.quantite }}</p>
+    <p>{{ ressource.value.max }}</p>
+    <p>{{ ressource.value.type }}</p>
+    <p>{{ ressource.value.valeurEchange }}</p>
+  </li>
+</ul> -->
+
+<div #zone1Container mwlDroppable (drop)="onDropZone1($event)" class="dropZone1" dragOverClass="drop-over-active">
+    <span [hidden]="droppedDataZone1">Drop here</span>
+    <span [hidden]="!droppedDataZone1"
+      ><app-drappable [data]="droppedDataZone1"></app-drappable></span
+    >
+  </div>
+  
+  <div #zone2Container mwlDroppable (drop)="onDropZone2($event)" class="dropZone2" dragOverClass="drop-over-active">
+    <span [hidden]="droppedDataZone2">Drop here</span>
+    <span [hidden]="!droppedDataZone2">
+      
+      <app-drappable [data]="droppedDataZone2"></app-drappable>
+    </span>
+  </div>
+
+
+<app-menu-burger></app-menu-burger>

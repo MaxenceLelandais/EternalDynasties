@@ -1,9 +1,311 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&family=Whisper&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&display=swap');
+
+@font-face {
+  font-family: 'prehistoire';
+  src: url('../src/assets/font/LatinRunesFree-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'antiquite';
+  src: url('../src/assets/font/geek.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'medieval';
+  src: url('../src/assets/font/Por\ Siempre\ Gótica.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'renaissance';
+  src: url('../src/assets/font/Manstein.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'industrielle';
+  src: url('../src/assets/font/Albertsthal\ Typewriter.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'moderne';
+  src: url('../src/assets/font/HackneyPersonalUseOnly.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'futuriste';
+  src: url('../src/assets/font/Glipervelz-Origy\ FULL.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$gold-color: rgb(225, 209, 117);
+$font-primary: 'Montserrat', sans-serif;
+$font-secondary: "Whisper", cursive;
+$font-civilisation-title: "Macondo Swash Caps", cursive;
+$background-color-default: black;
+$text-color-default: white;
+$text-color-secondary: grey;
+$transition-default: 0.3s;
+$hover-opacity: 0.5;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@mixin font-style($font-family, $color: $text-color-default, $size: 16px, $weight: normal) {
+  font-family: $font-family;
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin transition($property: all, $duration: $transition-default) {
+  transition: $property $duration ease-in-out;
+}
+
+@mixin button-style($font-size: 16px) {
+  padding: 0;
+  border: none;
+  background: none;
+  color: $text-color-default;
+  font-family: $font-primary;
+  cursor: pointer;
+  font-size: $font-size;
+  @include transition(color);
+
+  &:hover {
+    color: $gold-color;
+  }
+}
 
 body {
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
-    overflow-x: hidden;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: $font-primary;
+  background-color: $background-color-default;
+  color: $text-color-default;
+  min-height: 100vh;
 }
+
+.demarrage {
+  @include flex-center;
+  flex-direction: column;
+  gap: 19vh;
+  min-height: 100vh;
+
+  img {
+    margin-top: 20px;
+    width: 500px;
+  }
+  
+  button {
+    @include button-style(28px);
+  }
+
+  p {
+    font-style: italic;
+    color: $text-color-secondary;
+  }
+}
+
+.header-environnement {
+  @include flex-center;
+  margin: 35px 50px 100px;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+  }
+
+  a {
+    text-decoration: none;
+    color: gray;
+    position: absolute;
+    left: 0;
+    @include transition(color);
+
+    &:hover {
+      color: $text-color-default;
+    }
+  }
+
+  img {
+    width: 300px;
+  }
+}
+
+.creation-environnement {
+  .creation-environnement-form {
+    margin-top: 50px;
+    margin: 5vh;
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+
+      .label-nom-civilisation {
+        display: inline-block;
+        width: fit-content;
+        position: relative;
+        padding: 5px 5px 0;
+        background-color: $background-color-default;
+        margin: 0 0 -10px 10px;
+        @include transition(color);
+      }
+
+      #nom-civilisation {
+        height: 30px;
+        background-color: $background-color-default;
+        border-radius: 5px;
+        border: 2px solid $text-color-default;
+        color: $text-color-default;
+        font-family: $font-primary;
+        @include transition(border);
+
+        &:focus {
+          outline: none;
+          border: 2px solid $gold-color;
+        }
+      }
+
+      &:focus-within .label-nom-civilisation {
+        color: $gold-color;
+        font-weight: bold;
+      }
+    }
+
+    .liste-logo-environnement {
+      @include flex-center;
+      margin: 50px 0;
+      list-style: none;
+      justify-content: space-between;
+      padding-left: 0;
+      li {
+        position: relative;
+        cursor: pointer;
+        width: 100px;
+        height: 100px;
+
+        .base-image, .hover-image {
+          @include transition(opacity);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        .base-image {
+          opacity: 1;
+        }
+
+        .hover-image {
+          opacity: 0;
+        }
+
+        &:hover .hover-image, &.selected .hover-image {
+          opacity: 1;
+        }
+      }
+    }
+
+    .info-environnement {
+      margin: 0 100px 50px;
+      @include flex-center;
+      flex-direction: column;
+
+      .description {
+        @include font-style($font-secondary, $color: $text-color-default, $size: 26px);
+        text-align: justify;
+        width: 100%;
+      }
+
+      h2 {
+        text-align: justify;
+        width: 100%;
+      }
+
+      button {
+        @include button-style(28px);
+        justify-self: center;
+        margin-top: 100px;
+      }
+    }
+  }
+}
+
+
+.header-jeu {
+  .header-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .header-jeu-banniere {
+      width: 100%;
+    }
+    .header-jeu-ecusson {
+      filter: drop-shadow(0px -5px 16px #000000);
+      position: relative;
+      width: 180px;
+      margin-top: -110px;
+    }
+    h1 {
+      margin-top: 0; 
+    }
+    .prehistoire {
+      font-family: 'prehistoire', sans-serif;
+      font-size: 50px;
+    }
+    .antiquite {
+      font-family: 'antiquite', sans-serif;
+      font-size: 30px;
+    }
+    .medieval {
+      font-family: 'medieval', sans-serif;
+      font-size: 40px;
+    }
+    .renaissance {
+      font-family: 'renaissance', sans-serif;
+    }
+    .industrielle {
+      font-family: 'industrielle', sans-serif;
+    }
+    .moderne {
+      font-family: 'moderne', sans-serif;
+      font-size:  40px;
+    }
+    .futuriste {
+      font-family: 'futuriste', sans-serif;
+      font-size: 40px;
+    }
+  }
+  .arbre-recherche-button-container {
+    position: relative;
+    margin-top: -100px;
+    .arbre-recherche-button {
+      @include button-style(20px);
+    }
+  }
+}
+
+
+.custom-modal-container {
+  background-color: black;
+}
+

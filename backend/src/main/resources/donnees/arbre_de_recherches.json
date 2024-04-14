@@ -1,79 +1,131 @@
 {
-    "Tribue": {
-        "id": "1",
+    "Tribu": {
+        "Id": "1",
+        "Image": "./assets/img/recherche/Tribu.png",
         "Description": "Le commencement d'une belle aventure.",
         "Coût": null,
         "Débloque": [
             "Préhistoire",
-            "Habitation"
+            "Cueillette",
+            "Croyance"
         ],
         "Bonus": {
-            "Villageois": "1",
-            "Nourriture": "1",
-            "Bois": "1",
-            "Pierre": "1"
+            "Habitant":"1",
+            "Max-Habitant":"1",
+            "Habitant Mort":"1",
+            "Points de recherche":"1",
+            "Nourriture":"1",
+            "Max-Nourriture":"100",
+            "Bois":"1",
+            "Max-Bois":"100",
+            "Pierre":"1",
+            "Max-Pierre":"100",
+            "Maison":"1",
+            "Puissance militaire":"1",
+            "Puissance économique":"1",
+            "Puissance culturelle": "1",
+            "Merveille":"0.000001"
         }
     },
     "Préhistoire":{
-        "Description":"Entamons le voyage dans les premiers âges.",
+        "Id": "-1",
+        "Description":"Grouh Guaas Krouik",
         "Coût":null,
         "Débloque":[
-            "Cueuillette",
+            "Cueillette",
             "Croyance"
         ],
         "Bonus":null,
         "Dépendance":[
-            "Tribue"
+            "Tribu"
+        ],
+        "Recherches": [
+            "Cueillette",
+            "Feu",
+            "Chasse et pêche",
+            "Armée",
+            "Elevage",
+            "Croyance",
+            "Education",
+            "Mythologie",
+            "Religion"
         ]
     },
-    "Cueuillette":{
-        "id": "2",
-        "Description":"Rassemblons les ressources de la nature.",
-        "Coût":null,
+    "Cueillette":{
+        "Id": "2",
+        "Image": "./assets/img/recherche/cueillette.png",
+        "Description":"Les fruits de notre premier triomphe.",
+        "Coût":{
+            "Points de recherche":"1"
+        },
         "Débloque":[
             "Feu"
         ],
         "Bonus":{
             "Fermier":"1",
-            "Nourriture": "0.5/Fermier"
+            "Ferme": "1",
+            "Grange":"1",
+            "Nourriture": "1.0/s;0.5/Fermier"
         },
         "Dépendance":[
-            "Préhistoire"
+            "Tribu"
         ]
     },
     "Feu":{
-        "id": "3",
-        "Description":"Maîtrisons le feu pour progresser.",
-        "Coût":null,
+        "Id": "3",
+        "Image": "./assets/img/recherche/feu.png",
+        "Description":"L'étincelle qui embrase nos destins.",
+        "Coût":{
+            "Points de recherche":"1"
+        },
         "Débloque":[
             "Chasse et pêche"
         ],
         "Bonus": {
-            "Nourriture":"0.25/Fermier"
+            "Mine":"1",
+            "Fermier":"1",
+            "Nourriture":"0.25/Fermier",
+            "Ferme":"1",
+            "Forestier":"1",
+            "Mineur":"1",
+            "Bûcheron":"1",
+            "Grange":"1",
+            "Entrepôt":"1",
+            "Carrière": "1"
         },
         "Dépendance":[
-            "Cueuillette"
+            "Cueillette"
         ]
     },
     "Croyance":{
-        "id": "4",
-        "Description":"Explore les mystères de la foi. ",
-        "Coût":null,
+        "Id": "4",
+        "Image": "./assets/img/recherche/croyance.png",
+        "Description":"Les mystères célestes guident nos pas.",
+        "Coût":{
+            "Points de recherche":"2"
+        },
         "Débloque":[
             "Education",
             "Mythologie"
         ],
         "Bonus":{
-            "Piété": "1"
+            "Piété": "1",
+            "Temple": "1",
+            "Max-Piété":"100",
+            "Prêtre": "1",
+            "Max-Prêtre": "1"
         },
         "Dépendance":[
-            "Préhistoire"
+            "Tribu"
         ]
     },
     "Chasse et pêche":{
-        "id": "5",
+        "Id": "5",
+        "Image": "./assets/img/recherche/chasse_et_peche.png",
         "Description":"Apprenons les arts de la survie. ",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"2"
+        },
         "Débloque":[
             "Armée",
             "Elevage",
@@ -88,55 +140,70 @@
         ]
     },
     "Education":{
-        "id": "6",
+        "Id": "6",
+        "Image": "./assets/img/recherche/education.png",
         "Description":"Cultivons l'esprit pour l'avenir. ",
-        "Coût":null,
+        "Coût":
+        {
+            "Points de recherche":"4"
+        },
         "Débloque":[
             "Monnaie",
             "Philosophie",
             "Antiquité"
         ],
         "Bonus":{
-            "Ecole": "1"
+            "Ecole": "1",
+            "Max-Enseignant": "1",
+            "Enseignant": "1"
         },
         "Dépendance":[
             "Croyance"
         ]
     },
     "Mythologie":{
-        "id": "7",
+        "Id": "7",
+        "Image": "./assets/img/recherche/mythologie.png",
         "Description":"Plongeons dans les récits anciens. ",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"5"
+        },
         "Débloque":[
             "Religion"
         ],
         "Bonus":{
-            "Divinité": "1"
         },
         "Dépendance":[
             "Croyance"
         ]
     },
     "Armée":{
-        "id": "8",
-        "Description":"Préparons-nous à défendre et conquérir.",
-        "Coût":null,
+        "Id": "8",
+        "Image": "./assets/img/recherche/armee.png",
+        "Description":"Forgeons notre destin sur le champ de bataille.",
+        "Coût":{
+            "Points de recherche":"6"
+        },
         "Débloque":[
             "Conquête",
             "Antiquité"
         ],
         "Bonus": {
-            "Caserne": "1",
-            "Soldat": "1"
+            "Caserne":"1",
+            "Soldat":"1",
+            "Max-Soldat":"1"
         },
         "Dépendance":[
             "Chasse et pêche"
         ]
     },
     "Elevage":{
-        "id": "9",
-        "Description":"Domptons les bêtes pour notre usage.",
-        "Coût":null,
+        "Id": "9",
+        "Image": "./assets/img/recherche/elevage.png",
+        "Description":"Domptons les bestiole pour notre empire.",
+        "Coût":{
+            "Points de recherche":"5"
+        },
         "Débloque":[
             "Construction",
             "Antiquité"
@@ -149,23 +216,27 @@
         ]
     },
     "Religion":{
-        "id": "10",
-        "Description":"Explore les croyances et les pratiques spirituelles.",
-        "Coût":null,
+        "Id": "10",
+        "Image": "./assets/img/recherche/religion.png",
+        "Description":"Les croyances forgent le destin des royaumes divins.",
+        "Coût":{
+            "Points de recherche":"6"
+        },
         "Débloque":[
             "Science",
             "Magie",
             "Antiquité"
         ],
         "Bonus":{
-            "Temple": "1"
+            "Piété":"1/Prêtre"
         },
         "Dépendance":[
             "Mythologie"
         ]
     },
     "Antiquité":{
-        "Description":"Avançons dans les connaissances et les découvertes anciennes.",
+        "Id": "-2",
+        "Description":"Dans l'antique, nous découvrons les secrets enfouis.",
         "Coût":null,
         "Débloque":[
             "Conquête",
@@ -183,19 +254,40 @@
             "Chasse et pêche",
             "Education",
             "Religion"
+        ],
+        "Recherches": [
+            "Conquête",
+            "Construction",
+            "Monuments",
+            "Navigation",
+            "Mine d or",
+            "Monnaie",
+            "Commerce",
+            "Philosophie",
+            "Politique",
+            "Science",
+            "Ingénieurie",
+            "Magie du Bien",
+            "Magie",
+            "Magie Noire"
         ]
     },
     "Navigation":{
-        "id": "11",
-        "Description":"Apprenons à naviguer sur les eaux. ",
-        "Coût":null,
+        "Id": "11",
+        "Image": "./assets/img/recherche/navigation.png",
+        "Description":"Sur les flots, nous traçons notre voie vers l'inconnu.",
+        "Coût":{
+            "Points de recherche":"10"
+        },
         "Débloque":[
             "Cartographie",
             "Moyen-Age",
             "Renaissance"
         ],
         "Bonus":{
-            "Port": "1"
+            "Port": "1",
+            "Navigateur": "1",
+            "Max-Navigateur": "1"
         },
         "Dépendance":[
             "Chasse et pêche",
@@ -203,9 +295,12 @@
         ]
     },
     "Science":{
-        "id": "12",
-        "Description":"Plongeons dans l'étude et la compréhension du monde. ",
-        "Coût":null,
+        "Id": "12",
+        "Image": "./assets/img/recherche/science.png",
+        "Description":"Plongeons dans l'étude de la compréhension du monde. ",
+        "Coût":{
+            "Points de recherche":"10"
+        },
         "Débloque":[
             "Ingénieurie",
             "Moyen-Age",
@@ -213,8 +308,9 @@
         ],
         "Bonus":{
             "Laboratoire": "1",
-            "Point de science": "1",
-            "Scientifique": "1"
+            "Points de science": "1",
+            "Scientifique": "1",
+            "Max-Scientifique": "1"
         },
         "Dépendance":[
             "Religion",
@@ -225,15 +321,19 @@
         ]
     },
     "Magie":{
-        "id": "13",
-        "Description":"Explore les forces mystiques du monde.",
-        "Coût":null,
+        "Id": "13",
+        "Image": "./assets/img/recherche/magie.png",
+        "Description":"Explorons les forces mystiques du monde.",
+        "Coût":{
+            "Points de recherche":"30"
+        },
         "Débloque":[
             "Magie du Bien",
             "Magie Noire"
         ],
         "Bonus":{
-            "Mana": "1"
+            "Mana": "1",
+            "Max-Mana": "1"
         },
         "Dépendance":[
             "Religion",
@@ -244,9 +344,12 @@
         ]
     },
     "Construction":{
-        "id": "14",
-        "Description":"Bâtissons des structures durables et fonctionnelles.",
-        "Coût":null,
+        "Id": "14",
+        "Image": "./assets/img/recherche/construction.png",
+        "Description":"Levons des bastions, reflets de notre puissance et sagesse.",
+        "Coût":{
+            "Points de recherche":"8"
+        },
         "Débloque":[
             "Monuments",
             "Moyen-Age",
@@ -261,14 +364,20 @@
         ]
     },
     "Monnaie":{
-        "id": "15",
-        "Description":"Créons un système d'échange et de commerce.",
-        "Coût":null,
+        "Id": "15",
+        "Image": "./assets/img/recherche/monnaie.png",
+        "Description":"Frappons des pièces, symboles de notre prospérité et unité..",
+        "Coût":{
+            "Points de recherche":"15"
+        },
         "Débloque":[
             "Commerce"
         ],
         "Bonus":{
-            "Or": "1"
+            "Or": "1",
+            "Banque": "1",
+            "Banquier": "1",
+            "Max-Banquier": "1"
         },
         "Dépendance":[
             "Education",
@@ -276,14 +385,17 @@
         ]
     },
     "Philosophie":{
-        "id": "16",
+        "Id": "16",
+        "Image": "./assets/img/recherche/philosophie.png",
         "Description":"Questionnons-nous sur la nature de l'existence.",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"13"
+        },
         "Débloque":[
             "Politique"
         ],
         "Bonus":{
-            "Point de recherche": "0.003/Ecole"
+            "Points de recherche": "0.003/Ecole"
         },
         "Dépendance":[
             "Education",
@@ -291,55 +403,76 @@
         ]
     },
     "Ingénieurie":{
-        "id": "17",
-        "Description":"Mettons en pratique les connaissances scientifiques. ",
-        "Coût":null,
+        "Id": "17",
+        "Image": "./assets/img/recherche/ingénieurie.png",
+        "Description":"Sculptons le futur avec les outils de la connaissance.",
+        "Coût":{
+            "Points de recherche":"21"
+        },
         "Débloque":[
             "Moyen-Age",
             "Mécanique"
         ],
         "Bonus":{
-            "Point de science": "1/s",
-            "Point de recherche": "1/s"
+            "Points de science": "1/s",
+            "Points de recherche": "1/s"
         },
         "Dépendance":[
             "Science"
         ]
     },
     "Magie du Bien":{
-        "id": "18",
-        "Description":"Utilisons la magie pour le bien de tous.",
-        "Coût":null,
+        "Id": "18",
+        "Image": "./assets/img/recherche/magie du bien.png",
+        "Description":"Nos âmes s'élèvent dans les lueurs de la magie pure.",
+        "Coût":{
+            "Points de recherche":"40"
+        },
         "Débloque":[
             "Moyen-Age",
             "Alchimie"
         ],
         "Bonus":{
-            "Mage": "1"
+            "Mage": "0"
         },
         "Dépendance":[
             "Magie"
+        ],
+        "Inhibe":[
+            "Magie Noire"
         ]
     },
     "Magie Noire":{
-        "id": "19",
-        "Description":"Le monde n'est que ténèbres,poussières et destructions",
-        "Coût":null,
+        "Id": "19",
+        "Image": "./assets/img/recherche/magie noire.png",
+        "Description":"Dans les ombres, notre essor, l'étreinte des ténèbres.",
+        "Coût": {
+            "Habitant": "50",
+            "Points de recherche":"50"
+        },
         "Débloque":[
             "Moyen-Age",
             "Sorcellerie"
         ],
         "Bonus":{
-            "Sorcier": "1"
+            "Sorcier": "1",
+            "Max-Sorcier": "1",
+            "Habitant Mort": "50"
         },
         "Dépendance":[
             "Magie"
+        ],
+        "Inhibe":[
+            "Magie du Bien"
         ]
     },
     "Conquête":{
-        "id": "20",
-        "Description":"Étendons notre influence à travers la force.",
-        "Coût": null,
+        "Id": "20",
+        "Image": "./assets/img/recherche/conquete.png",
+        "Description":"Nos épées, extensions de volonté, écrivent l'histoire..",
+        "Coût": {
+            "Points de recherche":"23"
+        },
         "Débloque":[
             "Moyen-Age",
             "Renaissance",
@@ -354,9 +487,12 @@
         ]
     },
     "Monuments":{
-        "id": "21",
+        "Id": "21",
+        "Image": "./assets/img/recherche/monument.png",
         "Description":"Érigeons des témoins de notre grandeur.",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"32"
+        },
         "Débloque":null,
         "Bonus":null,
         "Dépendance":[
@@ -364,25 +500,33 @@
         ]
     },
     "Commerce":{
-        "id": "22",
-        "Description":"Favorisons les échanges économiques. ",
-        "Coût":null,
+        "Id": "22",
+        "Image": "./assets/img/recherche/commerce.png",
+        "Description":"Tissons les routes d'échange et de prospérité ",
+        "Coût": {
+            "Points de recherche":"44",
+            "Or":"10"
+        },
         "Débloque":[
             "Moyen-Age",
             "Renaissance",
             "Banque"
         ],
         "Bonus":{
-            "Puissance commerciale":"100"
+            "Puissance économique":"100"
         },
         "Dépendance":[
             "Monnaie"
         ]
     },
     "Politique":{
-        "id": "23",
-        "Description":"Organisons la gouvernance de nos sociétés. ",
-        "Coût":null,
+        "Id": "23",
+        "Image": "./assets/img/recherche/politique.png",
+        "Description":"Sculptons le destin de nos sociétés ",
+        "Coût":{
+            "Points de recherche":"25",
+            "Or": "50"
+        },
         "Débloque":[
             "Moyen-Age",
             "Système féodale"
@@ -394,8 +538,28 @@
             "Philosophie"
         ]
     },
+    "Mine d or":{
+        "Id": "60",
+        "Image": "./assets/img/recherche/mine d'or.png",
+        "Description":"Exploitons les trésors de la terre",
+        "Coût":{
+            "Points de recherche":"29",
+            "Or":"100"
+        },
+        "Débloque":[
+            "Moyen-Age"
+        ],
+        "Bonus":{
+            "Puissance culturelle": "100",
+            "Mine d'or": "1"
+        },
+        "Dépendance":[
+            "Monnaie"
+        ]
+    },
     "Moyen-Age":{
-        "Description":"Entamons une nouvelle ère de progrès.",
+        "Id": "-3",
+        "Description":"Au creuset des âges, forgeons notre héritage.",
         "Coût":null,
         "Débloque":[
             "Renaissance",
@@ -409,18 +573,31 @@
             "Construction",
             "Navigation",
             "Commerce",
-            "Politique"
+            "Politique",
+            "Mine d or"
         ],
         "If":{
             "Science+Ingénieurie":"Université+Mécanique",
             "Magie du Bien":"Alchimie",
             "Magie Noire":"Sorcellerie"
-        }
+        },
+        "Recherches": [
+            "Fortification",
+            "Système féodale",
+            "Université",
+            "Mécanique",
+            "Alchimie",
+            "Sorcellerie"
+        ]
     },
     "Fortification":{
-        "id": "24",
-        "Description":"Renforçons nos défenses pour assurer notre sécurité.",
-        "Coût":null,
+        "Id": "24",
+        "Image": "./assets/img/recherche/fortification.png",
+        "Description":"Érigeons des remparts impénétrables.",
+        "Coût":{
+            "Points de recherche":"40",
+            "Or": "40"
+        },
         "Débloque":[
             "Renaissance",
             "Révolution industrielle",
@@ -436,9 +613,13 @@
         ]
     },
     "Système féodale":{
-        "id": "25",
+        "Id": "25",
+        "Image": "./assets/img/recherche/systeme feodale.png",
         "Description":"Organisons notre société autour du pouvoir féodal.",
-        "Coût":null,
+        "Coût":{
+            "Points de recherche":"30",
+            "Or":"200"
+        },
         "Débloque":[
             "Renaissance",
             "Humanisme"
@@ -452,16 +633,22 @@
         ]
     },
     "Université":{
-        "id": "26",
-        "Description":" Créons des institutions de savoir.",
-        "Coût":null,
+        "Id": "26",
+        "Image": "./assets/img/recherche/université.png",
+        "Description":"Érigeons des phares de lumière dans l'obscurité de l'ignorance..",
+        "Coût":{
+            "Points de recherche":"55",
+            "Or":"100"
+        },
         "Débloque":[
             "Renaissance",
             "Astronomie"
         ],
         "Bonus":{
-            "Point de recherche": "0.1/Professeur",
-            "Professeur": "1"
+            "Points de recherche": "0.1/Professeur",
+            "Professeur d'université": "1",
+            "Max-Professeur d'université": "1",
+            "Université": "1"
         },
         "Dépendance":[
             "Moyen-Age",
@@ -469,9 +656,13 @@
         ]
     },
     "Mécanique":{
-        "id": "27",
-        "Description":"Explorez les principes fondamentaux des machines et de la mécanique. ",
-        "Coût":null,
+        "Id": "27",
+        "Image": "./assets/img/recherche/mécanique.png",
+        "Description":"Explorons les rouages de la création ",
+        "Coût": {
+            "Points de recherche":"65",
+            "Or":"150"
+        },
         "Débloque":[
             "Renaissance",
             "Révolution industrielle",
@@ -488,37 +679,53 @@
         ]
     },
     "Alchimie":{
-        "id": "28",
-        "Description":"Plongez dans l'alchimie mystique et ses secrets.",
-        "Coût":null,
+        "Id": "28",
+        "Image": "./assets/img/recherche/alchimie.png",
+        "Description":"Plongeons dans la quête de la pierre philosophale et de l'élixir de vie.",
+        "Coût":{
+            "Points de recherche":"80",
+            "Or":"200"
+        },
         "Débloque":[
             "Renaissance",
             "Révolution industrielle",
             "Contrôle élémentaire"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Sort de prospérité": "1"
+        },
         "Dépendance":[
             "Moyen-Age",
             "Magie du Bien"
         ]
     },
     "Sorcellerie":{
-        "id": "29",
-        "Description":"Plongeons dans les profonds ténèbres",
-        "Coût":null,
+        "Id": "29",
+        "Image": "./assets/img/recherche/sorcellerie.png",
+        "Description":"Manipulons les forces occultes et les sortilèges interdits.",
+        "Coût":{
+            "Points de recherche":"105",
+            "Or":"200",
+            "Habitant": "200"
+        },
         "Débloque":[
             "Renaissance",
             "Révolution industrielle",
             "Nécromancie"
         ],
-        "Bonus":null,
+        "Bonus":{
+            "Habitant Mort": "200",
+            "Malédiction de guerre":"1",
+            "Clic maudit": "1"
+        },
         "Dépendance":[
             "Moyen-Age",
             "Magie Noire"
         ]
     },
     "Renaissance":{
-        "Description":"Entrez dans l'ère de la Renaissance, où l'art, la science et la culture fleurissent. ",
+        "Id": "-4",
+        "Description":"Émergence de la lumière après les ténèbres, éclosion des arts, des sciences et de la pensée humaniste.",
         "Coût":null,
         "Débloque":[
             "Poudre à canon",
@@ -539,12 +746,24 @@
             "Université+Mécanique":"Astronomie+Révolution industrielle+Electricité",
             "Alchimie":"Révolution industrielle+Contrôle élémentaire",
             "Sorcellerie":"Révolution industrielle+Nécromancie"
-        }
+        },
+        "Recherches": [
+            "Poudre à canon",
+            "Cartographie",
+            "Colonisation",
+            "Banque",
+            "Humanisme",
+            "Astronomie"
+        ]
     },
     "Poudre à canon":{
-        "id": "30",
+        "Id": "30",
+        "Image": "./assets/img/recherche/poudre à canon.png",
         "Description":"BOOOOUM!!!",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"79",
+            "Or":"10"
+        },
         "Débloque":[
             "Révolution industrielle",
             "Balistique"
@@ -554,19 +773,24 @@
         },
         "Dépendance":[
             "Renaissance",
+            "Moyen-Age",
             "Conquête"
         ]
     },
     "Cartographie":{
-        "id": "31",
-        "Description":"Permet de s'orienter afin d'explorer de nouveaux horizons",
-        "Coût":null,
+        "Id": "31",
+        "Image": "./assets/img/recherche/cartographie.png",
+        "Description":"Dompter les mers, dresser les continents, capturer l'infini.",
+        "Coût": {
+            "Points de recherche":"67",
+            "Or":"100"
+        },
         "Débloque":[
             "Colonisation"
         ],
         "Bonus":{
             "Puissance militaire": "50",
-            "Puissance commerciale": "75",
+            "Puissance économique": "75",
             "Puissance culturelle": "40"
         },
         "Dépendance":[
@@ -576,15 +800,19 @@
         ]
     },
     "Banque":{
-        "id": "32",
-        "Description":"Créez des institutions financières pour soutenir l'économie et le commerce.",
-        "Coût":null,
+        "Id": "32",
+        "Image": "./assets/img/recherche/banque.png",
+        "Description":" L'or coule, le pouvoir s'érige, les destins se scellent.",
+        "Coût": {
+            "Points de recherche":"80",
+            "Or":"1000"
+        },
         "Débloque":[
             "Révolution industrielle",
             "Economie"
         ],
         "Bonus":{
-            "Puissance commerciale": "300"
+            "Puissance économique": "300"
         },
         "Dépendance":[
             "Renaissance",
@@ -593,16 +821,19 @@
         ]
     },
     "Humanisme":{
-        "id": "33",
-        "Description":" Plongez dans le mouvement humaniste, qui met l'homme et ses réalisations au centre. ",
-        "Coût":null,
+        "Id": "33",
+        "Image": "./assets/img/recherche/humanisme.png",
+        "Description":"Éclosion des esprits, les hommes se lèvent, la Renaissance s'anime.",
+        "Coût": {
+            "Points de recherche":"90"
+        },
         "Débloque":[
             "Révolution industrielle",
             "Culture"
         ],
         "Bonus":{
             "Puissance culturelle": "150",
-            "Puissance commerciale": "50"
+            "Puissance économique": "50"
         },
         "Dépendance":[
             "Renaissance",
@@ -610,16 +841,20 @@
         ]
     },
     "Astronomie":{
-        "id": "34",
-        "Description":"Explorez les mystères de l'univers et des astres.",
-        "Coût":null,
+        "Id": "34",
+        "Image": "./assets/img/recherche/astronomie.png",
+        "Description":" Les cieux se dévoilent, les étoiles nous murmurent l'infini.",
+        "Coût": {
+            "Points de recherche":"95",
+            "Or":"500"
+        },
         "Débloque":[
             "Révolution industrielle",
-            "Epoque moderne",
+            "Epoque Moderne",
             "Physique"
         ],
         "Bonus":{
-            "Point de science": "0.1/Professeur"
+            "Points de science": "0.1/Professeur"
         },
         "Dépendance":[
             "Renaissance",
@@ -627,24 +862,29 @@
         ]
     },
     "Colonisation":{
-        "id": "35",
-        "Description":"Explorez de nouveaux territoires et établissez des colonies lointaines.",
-        "Coût":null,
+        "Id": "35",
+        "Image": "./assets/img/recherche/colonisation.png",
+        "Description":" Vers l'horizon, nos rêves s'étendent, nos pas marquent des terres inexplorées..",
+        "Coût": {
+            "Points de recherche":"60",
+            "Or":"200"
+        },
         "Débloque":[
             "Révolution industrielle",
             "Aviation"
         ],
         "Bonus":{
             "Puissance militaire": "150",
-            "Puissance commercialle": "85",
-            "Puissance culturele": "60"
+            "Puissance économique": "85",
+            "Puissance culturelle": "60"
         },
         "Dépendance":[
             "Cartographie"
         ]
     },
     "Révolution industrielle":{
-        "Description":"Plongez dans l'ère de l'industrialisation et de la production de masse. ",
+        "Id": "-5",
+        "Description":"Sous notre égide, les machines rugissent et les cieux s'embrasent. ",
         "Coût":null,
         "Débloque":[
             "Balistique",
@@ -662,31 +902,49 @@
             "Humanisme"
         ],
         "If":{
-            "Astronomie+Révolution industrielle":"Electricité+Epoque moderne+Physique",
-            "Révolution industrielle+Alchimie":"Contrôle élémentaire",
-            "Révolution industrielle+Sorcellerie":"Nécromancie"
-        }
+            "Astronomie+Renaissance":"Electricité+Epoque Moderne+Physique",
+            "Renaissance+Alchimie":"Contrôle élémentaire",
+            "Renaissance+Sorcellerie":"Nécromancie"
+        },
+        "Recherches": [
+            "Balistique",
+            "Industrialisation",
+            "Urbanisation",
+            "Economie",
+            "Culture",
+            "Electricité",
+            "Contrôle élémentaire",
+            "Nécromancie"
+        ]
     },
     "Balistique":{
-        "id": "36",
-        "Description":"Étudiez les principes des projectiles et de leur trajectoire.",
-        "Coût":null,
+        "Id": "36",
+        "Image": "./assets/img/recherche/balistique.png",
+        "Description":"Flèches vers l'horizon, canons tonnants, guerre forgeant notre destin..",
+        "Coût": {
+            "Points de recherche":"80",
+            "Or":"45"
+        },
         "Débloque":[
-            "Epoque moderne",
+            "Epoque Moderne",
             "Nucléaire"
         ],
         "Bonus":{
             "Puissance militaire": "400"
         },
         "Dépendance":[
-            "Renaissance",
+            "Révolution industrielle",
             "Poudre à canon"
         ]
     },
     "Industrialisation":{
-        "id": "37",
-        "Description":"Passez à l'ère de l'industrialisation massive et de la production automatisée.",
-        "Coût":null,
+        "Id": "37",
+        "Image": "./assets/img/recherche/industrialisation.png",
+        "Description":"Sous nos mains, les forges s'enflamment, nos rêves prennent forme dans le fracas des machines.",
+        "Coût": {
+            "Points de recherche":"500",
+            "Or":"30"
+        },
         "Débloque":[
             "Urbanisation"
         ],
@@ -696,104 +954,135 @@
             "Pierre": "140%"
         },
         "Dépendance":[
-            "Moyen-Age",
+            "Révolution industrielle",
             "Renaissance",
             "Fortification"
         ]
     },
     "Economie":{
-        "id": "38",
-        "Description":"Explorez les mécanismes complexes qui régissent les échanges et les marchés.",
-        "Coût":null,
+        "Id": "38",
+        "Image": "./assets/img/recherche/economie.png",
+        "Description":"Nos coffres s'emplissent, nos marchés frémissent.",
+        "Coût": {
+            "Points de recherche":"150",
+            "Or":"1000"
+        },
         "Débloque":[
-            "Epoque moderne",
+            "Epoque Moderne",
             "Globalisation"
         ],
         "Bonus":{
-            "Puissance commerciale": "233"
+            "Puissance économique": "233",
+            "Or": "0.5/s"
         },
         "Dépendance":[
-            "Renaissance",
+            "Révolution industrielle",
             "Banque"
         ]
     },
     "Culture":{
-        "id": "39",
-        "Description":"Célébrez la diversité et l'expression humaine à travers les arts, la littérature et la philosophie.",
-        "Coût":null,
+        "Id": "39",
+        "Image": "./assets/img/recherche/culture.png",
+        "Description":" Nos récits enflammés, nos arts vibrent, notre essence divine rayonne.",
+        "Coût": {
+            "Points de recherche":"120",
+            "Piété":"5000"
+        },
         "Débloque":[
-            "Epoque moderne",
+            "Epoque Moderne",
             "Médias"
         ],
         "Bonus":{
             "Puissance culturelle": "213"
         },
         "Dépendance":[
-            "Renaissance",
+            "Révolution industrielle",
             "Humanisme"
         ]
     },
     "Electricité":{
-        "id": "40",
-        "Description":"Découvrez les mystères de l'électricité et de ses applications.",
-        "Coût":null,
+        "Id": "40",
+        "Image": "./assets/img/recherche/electricité.png",
+        "Description":"Éclairs domestiqués, notre pouvoir sur le fil de la vie..",
+        "Coût": {
+            "Points de recherche":"300"
+        },
         "Débloque":[
-            "Epoque moderne",
+            "Epoque Moderne",
             "Informatique"
         ],
         "Bonus":{
             "Electricité": "1",
-            "Centralle électrique": "1"
+            "Max-Electricité": "1",
+            "Centrale électrique": "1"
         },
         "Dépendance":[
             "Renaissance",
-            "Moyen-Age",
+            "Révolution industrielle",
             "Mécanique"
         ]
     },
     "Contrôle élémentaire":{
-        "id": "41",
-        "Description":"Expérimentez le contrôle des éléments naturels.",
-        "Coût":null,
+        "Id": "41",
+        "Image": "./assets/img/recherche/controle elementaire.png",
+        "Description":"Les éléments soumis, les flammes dansantes, notre maîtrise sur les forces primordiales.",
+        "Coût": {
+            "Points de recherche":"605"
+        },
         "Débloque":[
-            "Epoque moderne",
+            "Epoque Moderne",
             "Puissance élémentaire"
         ],
         "Bonus":{
             "Mage supreme":"1",
-            "Pouvoir arcanique": "1"
+            "Pouvoir arcanique": "1",
+            "Tour de la sagesse": "1",
+            "Max-Mage supreme": "1",
+            "Max-Pouvoir arcanique": "1"
         },
         "Dépendance":[
             "Renaissance",
-            "Moyen-Age",
+            "Révolution industrielle",
             "Alchimie"
         ]
     },
     "Nécromancie":{
-        "id": "42",
-        "Description":"Plongez dans les pratiques sombres de la magie noire et de la manipulation des morts.",
-        "Coût":null,
+        "Id": "42",
+        "Image": "./assets/img/recherche/necromancie.png",
+        "Description":"Les morts éveillés, les ombres dansantes, notre pouvoir sur la frontière entre vie et mort.",
+        "Coût": {
+            "Points de recherche":"1200",
+            "Habitant": "1000",
+            "Habitant Mort": "10000"
+        },
         "Débloque":[
-            "Epoque moderne",
+            "Epoque Moderne",
             "Force du chaos"
         ],
         "Bonus":{
             "Ame maudite": "1",
-            "Necromancien": "1"
+            "Necromancien": "1",
+            "Max-Ame maudite": "1",
+            "Tour du Mordor": "1",
+            "Max-Necromancien": "1"
         },
         "Dépendance":[
             "Renaissance",
-            "Moyen-Age",
+            "Révolution industrielle",
             "Sorcellerie"
         ]
     },
     "Urbanisation":{
-        "id": "43",
-        "Description":"Explorez le processus de développement et d'expansion des zones urbaines à travers l'histoire. ",
-        "Coût":null,
+        "Image": "./assets/img/recherche/urbanisation.png",
+        "Id": "43",
+        "Description":"Cités grandioses, tours majestueuses, notre empreinte sur la toile de la civilisation. ",
+        "Coût": {
+            "Points de recherche":"400",
+            "Or":"1500"
+        },
         "Débloque":[
-            "Epoque moderne",
-            "Epoque futuriste",
+            "Epoque Moderne",
+            "Epoque Futuriste",
             "Urbanisation futuriste"
         ],
         "Bonus":{
@@ -804,12 +1093,13 @@
             "Industrialisation"
         ]
     },
-    "Epoque moderne":{
-        "Description":"Plongez dans une période de changements radicaux, d'explorations audacieuses et de révolutions culturelles",
+    "Epoque Moderne":{
+        "Id": "-6",
+        "Description":"L'âge des lumières, la révolution en marche, notre éveil vers de nouveaux horizons.",
         "Coût":null,
         "Débloque":[
             "Nucléaire",
-            "Epoque futuriste",
+            "Epoque Futuriste",
             "Urbanisation futuriste",
             "Aviation",
             "Globalisation",
@@ -829,28 +1119,49 @@
             "Astronomie+Electricité":"Physique+Informatique",
             "Contrôle élémentaire":"Puissance élémentaire",
             "Nécromancie":"Force du chaos"
-        }
+        },
+        "Recherches": [
+            "Nucléaire",
+            "Aviation",
+            "Exploration spatiale",
+            "Globalisation",
+            "Médias",
+            "Réseaux sociaux",
+            "Physique",
+            "Informatique",
+            "Robotique",
+            "Puissance élémentaire",
+            "Force du chaos"
+        ]
     },
     "Nucléaire":{
-        "id": "44",
-        "Description":"KAAAAAAAAABOOOOOOOOOOOOOUM!!!!!!!!!!!!!!!!!!!!",
-        "Coût":null,
+        "Id": "44",
+        "Image": "./assets/img/recherche/nucléaire.png",
+        "Description":"KAAABOOOOUM!!!!",
+        "Coût": {
+            "Points de recherche":"15000",
+            "Or": "10000"
+        },
         "Débloque":[
-            "Epoque futuriste",
+            "Epoque Futuriste",
             "Laser"
         ],
         "Bonus":{
             "Puissance militaire": "500"
         },
         "Dépendance":[
-            "Révolution industrielle",
+            "Epoque Moderne",
             "Balistique"
         ]
     },
     "Aviation":{
-        "id": "45",
+        "Id": "45",
+        "Image": "./assets/img/recherche/aviation.png",
         "Description":"Déployez les ailes, réalisez le rêve d'Icare",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche":"1300",
+            "Or": "5000"
+        },
         "Débloque":[
             "Exploration spatiale"
         ],
@@ -859,25 +1170,32 @@
         },
         "Dépendance":[
             "Révolution industrielle",
-            "Renaissance",
+            "Epoque Moderne",
             "Colonisation"
         ]
     },
     "Globalisation":{
-        "id": "46",
-        "Description":"Explorez les interactions croissantes entre les nations et les cultures à l'échelle mondiale.",
-        "Coût":null,
+        "Id": "46",
+        "Image": "./assets/img/recherche/globalisation.png",
+        "Description":"Les frontières s'estompent, les cultures se mêlent, notre monde se révèle comme un seul et vaste foyer.",
+        "Coût": {
+            "Points de recherche": "1200"
+        },
         "Bonus":{
-            "Puissance commerciale": "725"
+            "Puissance économique": "725"
         },
         "Dépendance":[
-            "Economie"
+            "Economie",
+            "Epoque Moderne"
         ]
     },
     "Médias":{
-        "id": "47",
-        "Description":"Découvrez le pouvoir des médias dans la diffusion de l'information et la formation de l'opinion publique.",
-        "Coût":null,
+        "Id": "47",
+        "Image": "./assets/img/recherche/média.png",
+        "Description":"Les voix s'élèvent, les images dansent, notre conscience tissée dans le fil de l'information.",
+        "Coût": {
+            "Points de recherche": "1400"
+        },
         "Débloque":[
             "Réseaux sociaux"
         ],
@@ -885,14 +1203,17 @@
             "Puissance culturelle": "350"
         },
         "Dépendance":[
-            "Révolution industrielle",
+            "Epoque Moderne",
             "Culture"
         ]
     },
     "Réseaux sociaux":{
-        "id": "48",
-        "Description":"Plongez dans l'ère de la connectivité en ligne et de l'interaction sociale numérique. ",
-        "Coût":null,
+        "Id": "48",
+        "Image": "./assets/img/recherche/Réseaux sociaux.png",
+        "Description":"Connexions, échos, le monde en un clic",
+        "Coût": {
+            "Points de recherche": "1200"
+        },
         "Bonus":{
             "Puissance culturelle": "550"
         },
@@ -901,96 +1222,129 @@
         ]
     },
     "Physique":{
-        "id": "49",
-        "Description":"Explorez les lois fondamentales de l'univers et les forces qui régissent la matière et l'énergie.",
-        "Coût":null,
+        "Id": "49",
+        "Image": "./assets/img/recherche/physique.png",
+        "Description":"Les lois universelles révélées, les mystères de la matière, notre exploration des fondements de l'existence.",
+        "Coût": {
+            "Points de recherche": "1250"
+        },
         "Débloque":[
-            "Epoque futuriste",
+            "Epoque Futuriste",
             "Nano technologies"
         ],
         "Bonus":{
             "Nourriture": "150%",
             "Bois": "130%",
             "Pierre": "140%",
-            "Point de recherche": "200%",
-            "Point de science": "155%"
+            "Points de recherche": "200%",
+            "Points de science": "155%"
         },
         "Dépendance":[
             "Révolution industrielle",
-            "Renaissance",
+            "Epoque Moderne",
             "Astronomie"
         ]
     },
     "Informatique":{
-        "id": "50",
+        "Id": "50",
+        "Image": "./assets/img/recherche/informatique.png",
         "Description":"1000010010110011101001",
-        "Coût":null,
+        "Coût": {
+            "Points de recherche": "3000",
+            "Or": "15000"
+        },
         "Débloque":[
             "Robotique"
         ],
         "Bonus":{
-            "Puissance commerciale": "125",
+            "Puissance économique": "125",
             "Puissance culturelle": "35",
-            "Point de recherche": "2/s"
+            "Points de recherche": "2/s"
         },
         "Dépendance":[
-            "Révolution industrielle",
+            "Epoque Moderne",
             "Electricité"
         ]
     },
     "Puissance élémentaire":{
-        "id": "51",
-        "Description":"Manipulez les éléments naturels à une échelle inédite grâce à des avancées magiques révolutionnaires.",
-        "Coût":null,
-        "Bonus":null,
+        "Id": "51",
+        "Image": "./assets/img/recherche/Puissance Elémentaire.png",
+        "Description":"Flammes fulgurantes, mers déchaînées, notre contrôle sur les forces primordiales.",
+        "Coût": {
+            "Points de recherche": "100000",
+            "Or": "500"
+        },
+        "Bonus": {
+            "Enchantement divin": "1"
+        },
         "Dépendance":[
-            "Contrôle élémentaire"
+            "Contrôle élémentaire",
+            "Epoque Moderne"
         ]
     },
     "Force du chaos":{
-        "id": "52",
-        "Description":"Explorez les aspects les plus sombres de la magie et de la manipulation des énergies occultes pour creer la puissante armée des morts.",
-        "Coût":null,
-        "Bonus":null,
+        "Id": "52",
+        "Image": "./assets/img/recherche/force du chaos.png",
+        "Description":"Explorons les aspects les plus sombres de la magie et de la manipulation des énergies occultes pour creer la puissante armée des morts.",
+        "Coût": {
+            "Points de recherche": "150000",
+            "Habitant": "5000",
+            "Habitant Mort": "15000",
+            "Or": "500"
+        },
+        "Bonus": {
+            "Habitant Mort": "5000",
+            "Armée des morts": "1"
+        },
         "Dépendance":[
-            "Nécromancie"
+            "Nécromancie",
+            "Epoque Moderne"
         ]
     },
     "Exploration spatiale":{
-        "id": "53",
-        "Description":"Lancez-vous à la conquête de l'espace et explorez les mystères de l'univers.",
-        "Coût":null,
+        "Id": "53",
+        "Image": "./assets/img/recherche/exploration spatiale.png",
+        "Description":"Étoiles lointaines, astres inconnus, notre quête audacieuse à travers les confins de l'univers.",
+        "Coût": {
+            "Points de recherche": "25000",
+            "Or": "25000"
+        },
         "Débloque":[
-            "Epoque futuriste",
+            "Epoque Futuriste",
             "Voyage supraluminique"
         ],
         "Bonus":{
             "Puissance culturelle": "150",
-            "Puissance commerciale": "75"
+            "Puissance économique": "75"
         },
         "Dépendance":[
             "Aviation"
         ]
     },
     "Robotique":{
-        "id": "54",
-        "Description":"Explorez les possibilités infinies de la robotique.",
-        "Coût":null,
+        "Id": "54",
+        "Image": "./assets/img/recherche/robotique.png",
+        "Description":"Nos créations, reflets de notre ingéniosité..",
+        "Coût": {
+            "Points de recherche": "4000",
+            "Or": "15000"
+        },
         "Débloque":[
-            "Epoque futuriste",
+            "Epoque Futuriste",
             "Intelligence artificielle"
         ],
         "Bonus":{
             "Nourriture": "130%",
-            "Bois": "*130%",
-            "Pierre": "*130%"
+            "Bois": "130%",
+            "Pierre": "130%"
         },
         "Dépendance":[
             "Informatique"
         ]
     },
-    "Epoque futuriste":{
-        "Description":"Plongez dans un monde où la technologie repousse les frontières de l'imagination.",
+    "Epoque Futuriste":{
+        "Id": "-7",
+        "Description":"Technologies éclatantes, horizons infinis, notre avancée vers les frontières de l'inconnu..",
         "Coût":null,
         "Débloque":[
             "Laser",
@@ -1002,7 +1356,7 @@
         ],
         "Bonus":null,
         "Dépendance":[
-            "Epoque moderne",
+            "Epoque Moderne",
             "Nucléaire",
             "Urbanisation",
             "Révolution industrielle",
@@ -1014,73 +1368,103 @@
             "Physique+Robotique":"Nano technologies+Intelligence artificielle",
             "Puissance élémentaire":"",
             "Force du chaos":""
-        }
+        },
+        "Recherches": [
+            "Laser",
+            "Urbanisation futuriste",
+            "Voyage supraluminique",
+            "Nano technologies",
+            "Intelligence artificielle"
+        ]
     },
     "Laser":{
-        "id": "55",
-        "Description":"Maîtrisez la puissance destructrice et créatrice du laser.",
-        "Coût":null,
+        "Id": "55",
+        "Image": "./assets/img/recherche/laser.png",
+        "Description":"Maîtrisons la puissance destructrice et créatrice du laser.",
+        "Coût": {
+            "Points de recherche": "45000",
+            "Or": "3000"
+
+        },
         "Bonus":{
             "Puissance militaire": "1000"
         },
         "Dépendance":[
-            "Epoque moderne",
+            "Epoque Futuriste",
             "Nucléaire"
         ]
     },
     "Urbanisation futuriste":{
-        "id": "56",
-        "Description":"Explorez les horizons de l'urbanisme dans un monde futuriste.",
-        "Coût":null,
+        "Id": "56",
+        "Image": "./assets/img/recherche/urbanisation futuriste.png",
+        "Description":"Cités titanesques, néons flamboyants, nos bastions d'acier, témoins de notre audace face à l'avenir incertain.",
+        "Coût": {
+            "Points de recherche": "15000",
+            "Or": "10005"
+        },
         "Bonus":{
-            "Gratte-ciel": "1",
+            "Gratte-ciel": "0",
             "Prospérité": "15",
             "Puissance culturelle": "200"
         },
         "Dépendance":[
-            "Epoque moderne",
-            "Révolution industrielle",
+            "Epoque Moderne",
+            "Epoque Futuriste",
             "Urbanisation"
         ]
     },
     "Voyage supraluminique":{
-        "id": "57",
-        "Description":" Pénétrez dans les confins de l'espace à des vitesses supraluminiques.",
-        "Coût":null,
+        "Id": "57",
+        "Image": "./assets/img/recherche/voyage supraluminique.png",
+        "Description":"Éclairs cosmiques, horizons pliés, notre conquête des étoiles, défiant les limites de la vitesse et de l'espace.",
+        "Coût": {
+            "Points de recherche": "45000",
+            "Or": "50000"
+
+        },
         "Bonus":{
             "Puissance culturelle": "300",
-            "Puissance commerciale": "250"
+            "Puissance économique": "250"
         },
         "Dépendance":[
-            "Epoque moderne",
+            "Epoque Futuriste",
             "Exploration spatiale"
         ]
     },
     "Nano technologies":{
-        "id": "58",
-        "Description":"Maîtrisez les technologies à l'échelle nanométrique. ",
-        "Coût":null,
+        "Id": "58",
+        "Image": "./assets/img/recherche/nanotechnologies.png",
+        "Description":"Particules infimes, révolutions invisibles, notre pouvoir à l'échelle atomique. ",
+        "Coût": {
+            "Points de recherche": "50000",
+            "Or": "25000"
+
+        },
         "Bonus":{
             "Puissance culturelle": "230",
-            "Puissance commerciale": "200",
+            "Puissance économique": "200",
             "Puissence militaire": "100"
         },
         "Dépendance":[
-            "Epoque moderne",
+            "Epoque Futuriste",
             "Physique"
         ]
     },
     "Intelligence artificielle":{
-        "id": "59",
+        "Id": "59",
+        "Image": "./assets/img/recherche/Intelligence artificiel.png",
         "Description":"Explorez les possibilités de l'intelligence artificielle.",
         "Coût": {
+            "Points de recherche": "45000",
+            "Or": "75000"
+        },
+        "Bonus":{
             "Nourriture": "300%",
             "Bois": "300%",
             "Pierre": "300%"
         },
-        "Bonus":null,
         "Dépendance":[
-            "Epoque moderne",
+            "Epoque Futuriste",
             "Robotique"
         ]
     }

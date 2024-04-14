@@ -1,8 +1,24 @@
-récupère la liste des racherches chargées dans le jeu : http://localhost:9876/listeRecherches
-récupère les nom des parties existantes : http://localhost:9876/parties
-récupère ou créer une nouvelle partie : http://localhost:9876/joueur?nomJoueur=maxenc
-récupère les recherches disponibles : http://localhost:9876/recherchesDisponibles?nomJoueur=maxenc
-active une recherche : http://localhost:9876/activerRecherche?nomJoueur=maxenc&recherche=Tribue
-add une ressources (achat si besoin) : http://localhost:9876/addRessource?nomJoueur=maxenc&ressource=Bois
-tick : http://localhost:9876/tick?nomJoueur=maxenc
-liste ressources : http://localhost:9876/listeRessources?nomJoueur=maxenc
+//////////////////    Jeu      //////////////////
+
+récupère la liste des recherches chargées dans le jeu : http://localhost:9876/jeu/listeRecherches
+récupère les nom des parties existantes : http://localhost:9876/jeu/parties
+récupère arbreRecherches pour l'affichage: http://localhost:9876/jeu/arbreRecherches
+récupère listeRessourcesJeu : http://localhost:9876/jeu/listeRessourcesJeu
+récupère listeEnvironnements : http://localhost:9876/jeu/listeEnvironnements
+récupère les données de l'environnement : http://localhost:9876/jeu/environnement?nom=nomEnvironnement
+récupère une partie : http://localhost:9876/jeu/recupererPartie?nomPartie=ffff-Jungle
+récupère listeEre : http://localhost:9876/jeu/listeEres
+
+//////////////////    PARTIES      //////////////////
+
+récupère ou créer une nouvelle partie : http://localhost:9876/jeu/joueur?civilisation=max&environnement=Plaine
+récupère la liste des recherches actuelles du joueur : http://localhost:9876/jeu/listeRecherchesJoueur?nomJoueur=ma-Plaine
+récupère les recherches disponibles : http://localhost:9876/jeu/recherchesDisponibles?nomJoueur=max-Plaine
+active une recherche : http://localhost:9876/jeu/activerRecherche?nomJoueur=max-Plaine&recherche=Tribu
+liste les ressources du joueur : http://localhost:9876/jeu/listeRessources?nomJoueur=max-Plaine
+récupère l'ere actuelle du joueur : http://localhost:9876/jeu/ereActuelle?nomJoueur=max-Plaine
+récupère arbreRessources utilisable en front : http://localhost:9876/jeu/arbreRessources?nomJoueur=max-Plaine
+add une ressources (achat si besoin) : http://localhost:9876/jeu/addRessource?nomJoueur=max-Plaine&ressource=Bois&nombre=8
+achat morceaux merveille : http://localhost:9876/jeu/achatPourcentageMerveille?nomJoueur=max-Plaine&nombre=10
+check si une recherche peut être achetée : http://localhost:9876/jeu/checkRecherche?nomJoueur=max-Plaine&recherche=Cueillette
+tick : http://localhost:9876/jeu/tick?nomJoueur=max-Plaine

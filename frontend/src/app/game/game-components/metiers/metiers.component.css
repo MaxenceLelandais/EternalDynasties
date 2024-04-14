@@ -1,0 +1,21 @@
+ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 15px;
+  padding-left: 0;
+  flex-wrap: wrap;
+}
+ul li {
+  width: 130px;
+  text-align: center;
+}
+ul li img {
+  cursor: pointer;
+  width: 25%;
+  transition-duration: 0.3s;
+}
+ul li img:hover {
+  margin-top: -10%;
+  width: 35%;
+}/*# sourceMappingURL=metiers.component.css.map */

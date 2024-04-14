@@ -1,0 +1,29 @@
+
+[mwlDroppable] {
+    background-color: black;
+    width: 40vw;
+    min-height: 60%;
+    position: fixed;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+}
+.dropZone1{
+    right: 10vh;
+}
+.dropZone2{
+    left: 10vh;
+}
+  
+[mwlDraggable],
+[mwlDroppable] {
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='white' stroke-width='2' stroke-dasharray='20%2c 20' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");}
+
+.drop-over-active {
+    background-color: rgb(30, 30, 30);
+    box-shadow: inset 0px 0px 8px 5px rgba(0,0,0,0.74);
+}

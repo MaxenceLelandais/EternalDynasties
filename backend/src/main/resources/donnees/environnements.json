@@ -1,0 +1,130 @@
+{
+  "Environnements": [
+    {
+      "nom": "Plaine",
+      "description": "Sur le vaste tapis des plaines, là où l'horizon embrasse le ciel, les herbes dansent au gré du vent, susurrant des histoires d'aventure et de liberté",
+      "logo": "./assets/img/envorionnement/plaine/logo.png",
+      "logo-hover": "./assets/img/envorionnement/plaine/logo-hover.png",
+      "banniere": "./assets/img/envorionnement/plaine/banniere.png",
+      "ecusson": "./assets/img/envorionnement/plaine/ecusson.png",
+      "images": [
+        "./assets/img/envorionnement/plaine/1.png",
+        "./assets/img/envorionnement/plaine/2.png",
+        "./assets/img/envorionnement/plaine/3.png",
+        "./assets/img/envorionnement/plaine/4.png",
+        "./assets/img/envorionnement/plaine/5.png",
+        "./assets/img/envorionnement/plaine/6.png",
+        "./assets/img/envorionnement/plaine/7.png"
+      ],
+      "merveille": "./assets/img/envorionnement/plaine/merveille.png"
+    },
+    {
+      "nom": "Forêt",
+      "description": "Au cœur de la forêt, un murmure ancestral résonne, là où les arbres centenaires tissent des voûtes magiques sur le sol tapissé d'un mélange féerique",
+      "logo": "./assets/img/envorionnement/foret/logo.png",
+      "logo-hover": "./assets/img/envorionnement/foret/logo-hover.png",
+      "banniere": "./assets/img/envorionnement/foret/banniere.png",
+      "ecusson": "./assets/img/envorionnement/foret/ecusson.png",
+      "images": [
+        "./assets/img/envorionnement/foret/1.png",
+        "./assets/img/envorionnement/foret/2.png",
+        "./assets/img/envorionnement/foret/3.png",
+        "./assets/img/envorionnement/foret/4.png",
+        "./assets/img/envorionnement/foret/5.png",
+        "./assets/img/envorionnement/foret/6.png",
+        "./assets/img/envorionnement/foret/7.png"
+      ],
+      "merveille": "./assets/img/envorionnement/foret/merveille.png"
+    },
+    {
+      "nom": "Montagne",
+      "description": "Sur les sommets enneigés, la neige scintille sous un soleil voilé, étreignant les pentes robustes d'un manteau immaculé, promesse d'aventures dans un royaume suspendu entre ciel et terre.",
+      "logo": "./assets/img/envorionnement/montagne/logo.png",
+      "logo-hover": "./assets/img/envorionnement/montagne/logo-hover.png",
+      "banniere": "./assets/img/envorionnement/montagne/banniere.png",
+      "ecusson": "./assets/img/envorionnement/montagne/ecusson.png",
+      "images": [
+        "./assets/img/envorionnement/montagne/1.png",
+        "./assets/img/envorionnement/montagne/2.png",
+        "./assets/img/envorionnement/montagne/3.png",
+        "./assets/img/envorionnement/montagne/4.png",
+        "./assets/img/envorionnement/montagne/5.png",
+        "./assets/img/envorionnement/montagne/6.png",
+        "./assets/img/envorionnement/montagne/7.png"
+      ],
+      "merveille": "./assets/img/envorionnement/montagne/merveille.png"
+    },
+    {
+      "nom": "Jungle",
+      "description": "Sous le voile mystérieux de la jungle, un monde luxuriant s'éveille, baigné dans un ballet de végétation, où chaque feuille, où chaque souffle racontent l'histoire d'une vie",
+      "logo": "./assets/img/envorionnement/jungle/logo.png",
+      "logo-hover": "./assets/img/envorionnement/jungle/logo-hover.png",
+      "banniere": "./assets/img/envorionnement/jungle/banniere.png",
+      "ecusson": "./assets/img/envorionnement/jungle/ecusson.png",
+      "images": [
+        "./assets/img/envorionnement/jungle/1.png",
+        "./assets/img/envorionnement/jungle/2.png",
+        "./assets/img/envorionnement/jungle/3.png",
+        "./assets/img/envorionnement/jungle/4.png",
+        "./assets/img/envorionnement/jungle/5.png",
+        "./assets/img/envorionnement/jungle/6.png",
+        "./assets/img/envorionnement/jungle/7.png"
+      ],
+      "merveille": "./assets/img/envorionnement/jungle/merveille.png"
+    },
+    {
+      "nom": "Desert",
+      "description": "Sur l'océan infini des dunes, le désert dévoile sa majesté sous un ciel d'azur, où le soleil règne en maître, écho d'une beauté antique et intemporelle.",
+      "logo": "./assets/img/envorionnement/desert/logo.png",
+      "logo-hover": "./assets/img/envorionnement/desert/logo-hover.png",
+      "banniere": "./assets/img/envorionnement/desert/banniere.png",
+      "ecusson": "./assets/img/envorionnement/desert/ecusson.png",
+      "images": [
+        "./assets/img/envorionnement/desert/1.png",
+        "./assets/img/envorionnement/desert/2.png",
+        "./assets/img/envorionnement/desert/3.png",
+        "./assets/img/envorionnement/desert/4.png",
+        "./assets/img/envorionnement/desert/5.png",
+        "./assets/img/envorionnement/desert/6.png",
+        "./assets/img/envorionnement/desert/7.png"
+      ],
+      "merveille": "./assets/img/envorionnement/desert/merveille.png"
+    },
+    {
+      "nom": "Tropique",
+      "description": "Dans l'éclatante étreinte des tropiques, la vie s'épanouit dans un florilège de couleurs, où l'air, chargé de parfums, danse au rythme des vagues caressant doucement les plages baignés de soleil, révélant un paradis terrestre dans son éclat le plus pur.",
+      "logo": "./assets/img/envorionnement/tropique/logo.png",
+      "logo-hover": "./assets/img/envorionnement/tropique/logo-hover.png",
+      "banniere": "./assets/img/envorionnement/tropique/banniere.png",
+      "ecusson": "./assets/img/envorionnement/tropique/ecusson.png",
+      "images": [
+        "./assets/img/envorionnement/tropique/1.png",
+        "./assets/img/envorionnement/tropique/2.png",
+        "./assets/img/envorionnement/tropique/3.png",
+        "./assets/img/envorionnement/tropique/4.png",
+        "./assets/img/envorionnement/tropique/5.png",
+        "./assets/img/envorionnement/tropique/6.png",
+        "./assets/img/envorionnement/tropique/7.png"
+      ],
+      "merveille": "./assets/img/envorionnement/tropique/merveille.png"
+    },
+    {
+      "nom": "Steppe",
+      "description": "À travers l'immensité des steppes, où le vent porte les échos de récits ancestraux, se déploie un tableau vivant qui éveille l'esprit et le courage sommeillant en chaque voyageur.",
+      "logo": "./assets/img/envorionnement/steppe/logo.png",
+      "logo-hover": "./assets/img/envorionnement/steppe/logo-hover.png",
+      "banniere": "./assets/img/envorionnement/steppe/banniere.png",
+      "ecusson": "./assets/img/envorionnement/steppe/ecusson.png",
+      "images": [
+        "./assets/img/envorionnement/steppe/1.png",
+        "./assets/img/envorionnement/steppe/2.png",
+        "./assets/img/envorionnement/steppe/3.png",
+        "./assets/img/envorionnement/steppe/4.png",
+        "./assets/img/envorionnement/steppe/5.png",
+        "./assets/img/envorionnement/steppe/6.png",
+        "./assets/img/envorionnement/steppe/7.png"
+      ],
+      "merveille": "./assets/img/envorionnement/steppe/merveille.png"
+    }
+  ]
+}
