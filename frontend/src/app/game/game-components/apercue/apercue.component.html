@@ -1,4 +1,4 @@
-<div *ngIf="environnement && environnement.images && environnement.images.length > 0" class="apercue-container">
-    <img [src]="environnement.images[0]" alt="">
+<div *ngIf="environnement && environnement.images && environnement.images.length > 0 && idEre" class="apercue-container">
+    <img [src]="environnement.images[(idEre) - 1]" alt="">
     <h4>{{ environnement.nom }}</h4>
 </div>

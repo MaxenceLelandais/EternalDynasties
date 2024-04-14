@@ -3,6 +3,9 @@ import { Environnement } from 'src/app/model/environnement.model';
 import { EnvironnementService } from 'src/app/service/environnementService';
 import { Civilisation } from 'src/app/model/civilisation.model';
 import { CivilisationService } from 'src/app/service/civilisationService';
+import { JeuService } from 'src/app/http/jeuService';
+import { NomJoueurService } from 'src/app/service/nomJoueurService';
+import { Ere, Eres } from 'src/app/model/ere.model';
 
 @Component({
   selector: 'app-apercue',
@@ -15,15 +18,54 @@ export class ApercueComponent implements OnInit {
 
   environnement: Environnement | null = null;
   civilisation: Civilisation | null = null;
+  listeEre: Eres | null = null;
+  nomJoueur: string | null = null;
+  ere: Ere | null = null;
+  idEre: number | null = null;
 
-  constructor(private environnementService: EnvironnementService, private civilisationService: CivilisationService) {}
+  constructor(private environnementService: EnvironnementService,
+              private civilisationService: CivilisationService,
+              private jeuService: JeuService,
+              private nomJoueurService: NomJoueurService) {}
 
 
   
   ngOnInit() {
-
+    this.nomJoueur = this.nomJoueurService.getNomJoueur();
+    this.fetchData();
     this.loadEnvironnement();
     this.loadCivilisation();
+  }
+
+  fetchData() {
+    this.jeuService.httpListeEres().subscribe(
+      data => {
+        this.listeEre = data["Ere"];
+      },
+      error => {
+        console.error("Erreur lors de la récupération des eres", error);
+      }
+    );
+    if (this.nomJoueur) {
+      this.jeuService.httpEre(this.nomJoueur).subscribe({
+        next: (response) => {
+          this.ere = response;
+          if (this.listeEre && this.ere) {
+            const ereValues = Object.values(this.listeEre);
+            const ereMatch = ereValues.find(ereItem => ereItem.nom === this.ere!.nom);
+            if (ereMatch) {
+              this.idEre = ereMatch.id;
+            } else {
+              console.log('Aucune correspondance trouvée pour cette ère dans la liste');
+            }
+          }
+          
+        },
+        error: (error) => {
+          console.error('Erreur lors de la requête', error);
+        }
+      });
+    }
   }
 
   private loadEnvironnement() {

@@ -13,7 +13,7 @@
             }
         },
         "Habitant Mort": {
-            "Type": "Ressource jeu",
+            "Type": "Ressource caché",
             "Id" : "2",
             "Image": "./assets/img/ressources/ressources/personne_morte.png",
             "Description": "RIP",
