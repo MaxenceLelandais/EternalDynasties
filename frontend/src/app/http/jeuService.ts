@@ -77,6 +77,9 @@ export class JeuService {
   httpListeRessources(nomJoueur:string): Observable<any> {
     return this.fetchData(this.apiUrl+"listeRessources?nomJoueur="+nomJoueur);
   }
+  httpListeRessourcesComplete(nomJoueur:string): Observable<any> {
+    return this.fetchData(this.apiUrl+"listeRessourcesComplete?nomJoueur="+nomJoueur);
+  }
   httpArbreRessources(nomJoueur:string): Observable<any> {
     return this.fetchData(this.apiUrl+"arbreRessources?nomJoueur="+nomJoueur);
   }

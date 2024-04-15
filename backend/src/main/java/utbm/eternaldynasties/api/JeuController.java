@@ -115,6 +115,12 @@ public class JeuController {
         return Json.objectToJsonObject(this.jeuService.getJeu().getJoueur(nomJoueur).getRessourcesSimplifie());
     }
 
+    @GetMapping(value="listeRessourcesComplete")
+    public JSONObject getListeRessourcesComplete(@RequestParam(value = "nomJoueur") String nomJoueur) {
+
+        return Json.objectToJsonObject(this.jeuService.getJeu().getJoueur(nomJoueur).getArbreDeRessources().getListeRessourcesAll());
+    }
+
     @GetMapping(value = "ereActuelle")
     public JSONObject sendActualEre(@RequestParam(value = "nomJoueur") String nomJoueur) {
         Map<String,String> map = new HashMap<>();

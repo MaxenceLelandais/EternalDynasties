@@ -34,6 +34,7 @@ export class MerveilleComponent {
   }
 
   ngOnInit() {
+    this.subscribeToRessources();
     this.subscriptions.add(this.ressourcesService.ressources$.subscribe(
       ressources => this.ressources = ressources
     ));
@@ -41,10 +42,6 @@ export class MerveilleComponent {
     this.loadEnvironnement();
     this.loadCivilisation();
     this.nomJoueur = this.nomJoueurService.getNomJoueur();
-  }
-
-  ngOnDestroy() {
-    this.subscriptions.unsubscribe();
   }
 
   private loadRessources() {
@@ -94,20 +91,29 @@ export class MerveilleComponent {
     }
     this.jeuService.httpAddRessource(nomJoueur, ressource, "1").subscribe({
       next: (response) => {
-        console.log("Ressource ajoutée avec succès", response);
         this.ressourcesService.updateRessources(response);
-        this.subscriptions.add(
-          this.ressourcesService.ressources$.subscribe(ressources => {
-            this.ressources = ressources;
-            console.log("ressources : " + this.ressources);
-          })
-        );
+        this.subscribeToRessources()
         localStorage.setItem('ressources', JSON.stringify(this.ressources));
       },
       error: (error) => {
         console.error("Erreur lors de l'ajout de la ressource", error);
       }
     });
+  }
+
+  private subscribeToRessources() {
+    this.subscriptions.unsubscribe();
+    // Ajoutez un abonnement pour la récupération des ressources
+    this.subscriptions.add(
+      this.ressourcesService.ressources$.subscribe(ressources => {
+        this.ressources = ressources;
+      })
+    );
+  }
+
+  ngOnDestroy(): void {
+    // Désabonnez-vous de tous les abonnements lorsque le composant est détruit
+    this.subscriptions.unsubscribe();
   }
 
 }

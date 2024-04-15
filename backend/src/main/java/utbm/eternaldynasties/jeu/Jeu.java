@@ -128,6 +128,10 @@ public class Jeu {
             this.arbreDeRecherches.getRecherche("Tribu").forceActive();
             joueur.activerRecherche("Préhistoire");
             this.arbreDeRecherches.getRecherche("Préhistoire").forceActive();
+            if(joueur.ressources.get("Habitant")<2) {
+                joueur.ressources.replace("Habitant", 2.0);
+                joueur.save();
+            }
         }
         return joueur;
     }

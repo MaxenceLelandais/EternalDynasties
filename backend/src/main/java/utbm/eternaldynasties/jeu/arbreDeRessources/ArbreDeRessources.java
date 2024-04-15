@@ -58,6 +58,14 @@ public class ArbreDeRessources {
         return listeRessources;
     }
 
+    public Map<String, Ressource> getListeRessourcesAll() {
+        Map<String, Ressource> map = new HashMap<>();
+        listeRessources.forEach((key, val)->{
+            map.putAll(val);
+        });
+        return map;
+    }
+
     public void actualiseEstimationBonus(HashMap<String, Double> ressourcesActuelles){
         listeRessources.forEach((key, val)->val.forEach((key1,val1)->val1.getListeBonusEnString(ressourcesActuelles)));
     }

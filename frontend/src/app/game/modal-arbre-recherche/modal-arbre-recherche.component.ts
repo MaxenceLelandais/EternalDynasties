@@ -1,12 +1,10 @@
-import { Component, OnInit, ElementRef, Renderer2, ViewChild, Input} from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, ViewChild} from '@angular/core';
 import { JeuService } from 'src/app/http/jeuService';
 import { Recherche, Recherches } from 'src/app/model/recherche.model';
 import { ArbreRecherche } from 'src/app/model/arbreRecherche.model';
 import { ModalService } from 'src/app/service/modal.Service';
 import { NomJoueurService } from 'src/app/service/nomJoueurService';
 import { Subscription } from 'rxjs';
-import { Civilisation } from 'src/app/model/civilisation.model';
-import { CivilisationService } from 'src/app/service/civilisationService';
 import { RessourceService } from 'src/app/service/ressourceService';
 import { Ressources } from 'src/app/model/ressource.model';
 
@@ -29,7 +27,6 @@ export class ModalArbreRechercheComponent implements OnInit {
 
   ressources: Ressources | null = null;
 
-  civilisation: Civilisation | null = null;
 
   
   @ViewChild('modalContent', { static: false }) modalContent!: ElementRef;
@@ -38,15 +35,12 @@ export class ModalArbreRechercheComponent implements OnInit {
   constructor(private jeuService: JeuService,
               private modalService: ModalService,
               private renderer: Renderer2,
-              private ressourcesService: RessourceService,
-              private civilisationService: CivilisationService, 
-              private nomJoueurService: NomJoueurService,) {}
+              private ressourcesService: RessourceService, 
+              private nomJoueurService: NomJoueurService) {}
 
   ngOnInit() {
     this.nomJoueur = this.nomJoueurService.getNomJoueur();
-    if(this.civilisationService.getCivilisation()!=null){
-      this.civilisation = this.civilisationService.getCivilisation();
-    }
+    this.subscribeToRessources();
     this.loadRessources();
     
     this.fetchData();
@@ -58,9 +52,6 @@ export class ModalArbreRechercheComponent implements OnInit {
     });
   }
 
-    ngOnDestroy() {
-    this.subscriptions.unsubscribe();
-  }
 
   fetchData() {
     this.jeuService.httpListeRecherches().subscribe(
@@ -261,22 +252,32 @@ export class ModalArbreRechercheComponent implements OnInit {
     );
   }
   public loadRessources() {
-    if(this.civilisation!=null){
-        this.jeuService.httpListeRessources(this.civilisation.nom+"-"+this.civilisation.nomEnvironnement).subscribe({
+    if(this.nomJoueur!=null){
+        this.jeuService.httpListeRessources(this.nomJoueur).subscribe({
           next: (reponse) => {
               this.ressourcesService.updateRessources(reponse);
-              this.subscriptions.add(
-                this.ressourcesService.ressources$.subscribe(ressources => {
-                  this.ressources = ressources;
-                })
-              )
+              this.subscribeToRessources();
               localStorage.setItem('ressources', JSON.stringify(reponse));
-            
           },
           error: (error) => {
             console.error('Erreur lors de la requête', error);
           }
         });
     }
+  }
+
+  private subscribeToRessources() {
+    this.subscriptions.unsubscribe();
+    // Ajoutez un abonnement pour la récupération des ressources
+    this.subscriptions.add(
+      this.ressourcesService.ressources$.subscribe(ressources => {
+        this.ressources = ressources;
+      })
+    );
+  }
+
+  ngOnDestroy(): void {
+    // Désabonnez-vous de tous les abonnements lorsque le composant est détruit
+    this.subscriptions.unsubscribe();
   }
 }

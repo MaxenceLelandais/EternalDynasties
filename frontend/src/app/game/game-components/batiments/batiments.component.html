@@ -1,6 +1,6 @@
 <ul *ngIf="ressources">
     <ng-container *ngFor="let ressource of ressources | keyvalue">
-      <li *ngIf="ressource.value.type.includes('Bâtiment') && nomJoueur" (click)="addRessource(nomJoueur, ressource.value.nom)">
+      <li title="{{this.infos.get(ressource.value.nom)}}" *ngIf="ressource.value.type.includes('Bâtiment') && nomJoueur" (click)="addRessource(nomJoueur, ressource.value.nom)">
         <img src="{{ressource.value.image}}" alt="">
         <p>{{ ressource.value.nom }}</p>
         <p>{{ ressource.value.quantite | number:'1.0-6' }}</p>

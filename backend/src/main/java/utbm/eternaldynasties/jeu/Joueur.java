@@ -24,7 +24,7 @@ public class Joueur {
     private String civilisation;
     private Environnement environnement;
     private String debutDeLaPartie;
-    private final HashMap<String, Double> ressources = new HashMap<>();
+    public final HashMap<String, Double> ressources = new HashMap<>();
     private final ArrayList<String> recherches = new ArrayList<>();
     private final ArbreDeRecherches arbreDeRecherche;
     private final ArbreDeRessources arbreDeRessources;
@@ -60,7 +60,6 @@ public class Joueur {
 
             this.arbreDeRecherche.init(this.recherches);
             this.arbreDeRessources.init(this.ressources);
-            this.ressources.replace("Habitant", 2.0);
         }
     }
 

@@ -47,9 +47,9 @@ export class RessourcesComponent implements OnInit, OnDestroy {
     if (nomJoueur == null) {
       return;
     }
+    
     this.jeuService.httpAddRessource(nomJoueur, ressource, "1").subscribe({
       next: (response) => {
-        console.log("Ressource ajoutée avec succès", response);
         // Mise à jour des ressources à travers le service
         this.ressourcesService.updateRessources(response);
         this.subscriptions.add(
