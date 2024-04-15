@@ -47,22 +47,35 @@ export class RessourcesComponent implements OnInit, OnDestroy {
     if (nomJoueur == null) {
       return;
     }
+
+    this.subscriptions.unsubscribe();
     
-    this.jeuService.httpAddRessource(nomJoueur, ressource, "1").subscribe({
-      next: (response) => {
-        // Mise à jour des ressources à travers le service
-        this.ressourcesService.updateRessources(response);
-        this.subscriptions.add(
-          this.ressourcesService.ressources$.subscribe(ressources => {
-            this.ressources = ressources;
-            console.log("ressources : " + this.ressources);
-          })
-        );
-        localStorage.setItem('ressources', JSON.stringify(this.ressources));
-      },
-      error: (error) => {
-        console.error("Erreur lors de l'ajout de la ressource", error);
-      }
-    });
+    // Ajoutez un nouvel abonnement
+    this.subscriptions = new Subscription();
+    // Ajoutez un abonnement pour la mise à jour des ressources
+    this.subscriptions.add(
+    
+      this.jeuService.httpAddRessource(nomJoueur, ressource, "1").subscribe({
+        next: (response) => {
+          // Mise à jour des ressources à travers le service
+          this.ressourcesService.updateRessources(response);
+          this.subscribeToRessources()
+          localStorage.setItem('ressources', JSON.stringify(this.ressources));
+        },
+        error: (error) => {
+          console.error("Erreur lors de l'ajout de la ressource", error);
+        }
+      })
+    )
   }
+
+  private subscribeToRessources() {
+    // Ajoutez un abonnement pour la récupération des ressources
+    this.subscriptions.add(
+      this.ressourcesService.ressources$.subscribe(ressources => {
+        this.ressources = ressources;
+      })
+    );
+  }
+
 }

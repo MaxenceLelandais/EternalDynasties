@@ -175,17 +175,22 @@ public class Joueur {
             boolean pasAssezDeRessources = false;
             int nombreAchatPossible = 0;
             for (String key : cout.keySet()) {
+                if (key.equals("Habitant") && this.ressources.get(key) <= 2) {
+                    pasAssezDeRessources = true;
+                    break;
+                }
                 int nbr = (int) (this.ressources.get(key) / cout.get(key));
-                if (nbr >=1) {
-                    if(nombreAchatPossible==0){
+                if (nbr >= 1) {
+                    if (nombreAchatPossible == 0) {
                         nombreAchatPossible = nbr;
-                    }else{
+                    } else {
                         nombreAchatPossible = Math.min(nombreAchatPossible, nbr);
                     }
                 } else {
                     pasAssezDeRessources = true;
                     break;
                 }
+
             }
             if (!pasAssezDeRessources) {
                 int nbrAchat = 0;

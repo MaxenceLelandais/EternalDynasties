@@ -3,7 +3,7 @@
         "Habitant": {
             "Type": "Ressource jeu",
             "Id" : "1",
-            "Image": "./assets/img/ressources/ressources/personne.jpg",
+            "Image": "./assets/img/ressources/ressources/Habitant.jpg",
             "Description": "Il était une fois la vie !",
             "Coût": {
                 "Nourriture": "5"
@@ -15,7 +15,7 @@
         "Habitant Mort": {
             "Type": "Ressource caché",
             "Id" : "2",
-            "Image": "./assets/img/ressources/ressources/personne_morte.png",
+            "Image": "./assets/img/ressources/ressources/Habitant_morte.png",
             "Description": "RIP",
             "Coût": {
                 "Habitant": "1"
@@ -189,7 +189,7 @@
             "Description": "666",
             "Coût": {
                 "Mana": "100",
-                "Personne Morte": "1"
+                "Habitant Mort": "1"
             },
             "Bonus": {
                 "Ames maudites": "0"
@@ -632,7 +632,7 @@
             "Id" : "1",
             "Description": "",
             "Coût": {
-                "Personne": "1"
+                "Habitant": "1"
             },
             "Bonus": {
                 "Fermier": "0"
@@ -643,7 +643,7 @@
             "Id" : "2",
             "Description": "",
             "Coût": {
-                "Personne": "1"
+                "Habitant": "1"
             },
             "Bonus": {
                 "Mineur": "0"
@@ -654,7 +654,7 @@
             "Id" : "3",
             "Description": "",
             "Coût": {
-                "Personne": "1"
+                "Habitant": "1"
             },
             "Bonus": {
                 "Bûcheron": "0"
@@ -665,7 +665,7 @@
             "Id" : "4",
             "Description": "",
             "Coût": {
-                "Personne": "1"
+                "Habitant": "1"
             },
             "Bonus": {
                 "Prêtre": "0"
@@ -683,7 +683,7 @@
             "Id" : "1",
             "Description": "",
             "Coût": {
-                "Personne": "1",
+                "Habitant": "1",
                 "Or": "1"
             },
             "Bonus": {
@@ -702,7 +702,7 @@
             "Id" : "2",
             "Description": "",
             "Coût": {
-                "Personne": "1"
+                "Habitant": "1"
             },
             "Bonus": {
                 "Scientifique": "0"
@@ -720,7 +720,7 @@
             "Id" : "1",
             "Description": "",
             "Coût": {
-                "Personne": "1",
+                "Habitant": "1",
                 "Or": "0.05"
             },
             "Bonus": {
@@ -739,7 +739,7 @@
             "Id" : "2",
             "Description": "",
             "Coût": {
-                "Personne": "1",
+                "Habitant": "1",
                 "Or": "1"
             },
             "Bonus": {
@@ -758,7 +758,7 @@
             "Id" : "3",
             "Description": "",
             "Coût": {
-                "Personne": "1"
+                "Habitant": "1"
             },
             "Bonus": {
                 "Enseignant": "0"
@@ -776,7 +776,7 @@
             "Id" : "4",
             "Description": "",
             "Coût": {
-                "Personne": "1"
+                "Habitant": "1"
             },
             "Bonus": {
                 "Professeur d'université": "0"
@@ -794,7 +794,7 @@
             "Id" : "5",
             "Description": "",
             "Coût": {
-                "Personne": "1",
+                "Habitant": "1",
                 "Mana": "1",
                 "Piété": "1000"
             },
@@ -814,13 +814,13 @@
             "Id" : "6",
             "Description": "Son pouvoir n'a d'égal que son charisme, le mage suprême est absolu",
             "Coût": {
-                "Personne": "5",
-                "Personne Morte": "10",
+                "Habitant": "5",
+                "Habitant Mort": "10",
                 "Mana": "1000"
             },
             "Bonus": {
                 "Mage suprême": "0",
-                "Personne": "10"
+                "Habitant": "10"
             }
         },
         "Max-Mage suprême": {
@@ -835,8 +835,8 @@
             "Id" : "7",
             "Description": "",
             "Coût": {
-                "Personne": "2",
-                "Personne Morte": "1",
+                "Habitant": "2",
+                "Habitant Mort": "1",
                 "Mana": "1",
                 "Piété": "2000"
             },
@@ -856,8 +856,8 @@
             "Id" : "8",
             "Description": "",
             "Coût": {
-                "Personne": "5",
-                "Personne Morte": "10",
+                "Habitant": "5",
+                "Habitant Mort": "10",
                 "Mana": "5000",
                 "Piété": "5000"
             },
