@@ -9,7 +9,8 @@
                 "Nourriture": "5"
             },
             "Bonus": {
-                "Habitant": "0"
+                "Habitant": "0",
+                "Nourriture": "-1/s"
             }
         },
         "Habitant Mort": {
@@ -307,7 +308,8 @@
                 "Bois": "100"
             },
             "Bonus": {
-                "Ferme": "0"
+                "Ferme": "0",
+                "Max-Fermier": "1"
             }
         },
         "Forestier": {
@@ -320,7 +322,8 @@
                 "Bois": "10"
             },
             "Bonus": {
-                "Forestier": "0"
+                "Forestier": "0",
+                "Max-Bûcheron": "1"
             }
         },
         "Mine": {
@@ -333,7 +336,8 @@
                 "Bois": "100"
             },
             "Bonus": {
-                "Mine": "0"
+                "Mine": "0",
+                "Max-Mineur": "1"
             }
         },
         "Temple": {
@@ -631,44 +635,73 @@
             "Type": "Métier base",
             "Id" : "1",
             "Description": "",
+            "Image": "./assets/img/ressources/metier/Fermier.png",
             "Coût": {
                 "Habitant": "1"
             },
             "Bonus": {
-                "Fermier": "0"
+                "Fermier": "0",
+                "Nourriture": "2/s"
+            }
+        },
+        "Max-Fermier": {
+            "Description": "",
+            "Coût": null,
+            "Bonus": {
+                "Max-Fermier": "0"
             }
         },
         "Mineur": {
             "Type": "Métier base",
             "Id" : "2",
             "Description": "",
+            "Image": "./assets/img/ressources/metier/Mineur.png",
             "Coût": {
                 "Habitant": "1"
             },
             "Bonus": {
-                "Mineur": "0"
+                "Mineur": "0",
+                "Pierre": "0.5/s"
+            }
+        },
+        "Max-Mineur": {
+            "Description": "",
+            "Coût": null,
+            "Bonus": {
+                "Max-Mineur": "0"
             }
         },
         "Bûcheron": {
             "Type": "Métier base",
             "Id" : "3",
             "Description": "",
+            "Image": "./assets/img/ressources/metier/Bûcheron.png",
             "Coût": {
                 "Habitant": "1"
             },
             "Bonus": {
-                "Bûcheron": "0"
+                "Bûcheron": "0",
+                "Bois": "1/s"
+            }
+        },
+        "Max-Bûcheron": {
+            "Description": "",
+            "Coût": null,
+            "Bonus": {
+                "Max-Bûcheron": "0"
             }
         },
         "Prêtre": {
             "Type": "Métier base",
             "Id" : "4",
             "Description": "",
+            "Image": "./assets/img/ressources/metier/Prêtre.png",
             "Coût": {
                 "Habitant": "1"
             },
             "Bonus": {
-                "Prêtre": "0"
+                "Prêtre": "0",
+                "Piété": "1/s"
             }
         },
         "Max-Prêtre": {
@@ -682,6 +715,7 @@
             "Type": "Métier jeu",
             "Id" : "1",
             "Description": "",
+            "Image": "./assets/img/ressources/metier/Banquier.png",
             "Coût": {
                 "Habitant": "1",
                 "Or": "1"
@@ -701,6 +735,7 @@
             "Type": "Métier jeu",
             "Id" : "2",
             "Description": "",
+            "Image": "./assets/img/ressources/metier/Scientifique.png",
             "Coût": {
                 "Habitant": "1"
             },
@@ -719,6 +754,7 @@
             "Type": "Métier specialise",
             "Id" : "1",
             "Description": "",
+            "Image": "./assets/img/ressources/metier/Soldat.png",
             "Coût": {
                 "Habitant": "1",
                 "Or": "0.05"
@@ -738,6 +774,7 @@
             "Type": "Métier specialise",
             "Id" : "2",
             "Description": "",
+            "Image": "./assets/img/ressources/metier/Navigateur.png",
             "Coût": {
                 "Habitant": "1",
                 "Or": "1"
@@ -757,6 +794,7 @@
             "Type": "Métier specialise",
             "Id" : "3",
             "Description": "",
+            "Image": "./assets/img/ressources/metier/Enseignant.png",
             "Coût": {
                 "Habitant": "1"
             },
@@ -775,6 +813,7 @@
             "Type": "Métier specialise",
             "Id" : "4",
             "Description": "",
+            "Image": "./assets/img/ressources/metier/Professeur d'université.png",
             "Coût": {
                 "Habitant": "1"
             },
@@ -793,6 +832,7 @@
             "Type": "Métier specialise",
             "Id" : "5",
             "Description": "",
+            "Image": "./assets/img/ressources/metier/Mage.png",
             "Coût": {
                 "Habitant": "1",
                 "Mana": "1",
@@ -813,6 +853,7 @@
             "Type": "Métier specialise",
             "Id" : "6",
             "Description": "Son pouvoir n'a d'égal que son charisme, le mage suprême est absolu",
+            "Image": "./assets/img/ressources/metier/Mage suprême.png",
             "Coût": {
                 "Habitant": "5",
                 "Habitant Mort": "10",
@@ -834,6 +875,7 @@
             "Type": "Métier specialise",
             "Id" : "7",
             "Description": "",
+            "Image": "./assets/img/ressources/metier/Sorcier.png",
             "Coût": {
                 "Habitant": "2",
                 "Habitant Mort": "1",
@@ -855,6 +897,7 @@
             "Type": "Métier specialise",
             "Id" : "8",
             "Description": "",
+            "Image": "./assets/img/ressources/metier/Nécromancien.png",
             "Coût": {
                 "Habitant": "5",
                 "Habitant Mort": "10",
