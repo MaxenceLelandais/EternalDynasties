@@ -1,3 +1,5 @@
-<div class="musqiue-container">
+<div class="musique-container">
+    <audio id="audioPlayer" [preload]="'auto'" controls style="display:none"></audio>
     <div class="button" [class.paused]="isPaused" (click)="togglePause()"></div>
-</div>
+  </div>
+  

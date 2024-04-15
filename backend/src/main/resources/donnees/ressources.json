@@ -384,7 +384,7 @@
             "Image": "./assets/img/ressources/bâtiments/carrière.png",
             "Description": "",
             "Coût": {
-                "Pierre": "500"
+                "Pierre": "100"
             },
             "Bonus": {
                 "Carrière": "0",
