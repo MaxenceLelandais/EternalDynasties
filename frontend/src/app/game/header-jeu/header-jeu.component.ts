@@ -7,6 +7,8 @@ import { Ressources } from 'src/app/model/ressource.model';
 import { RessourceService } from 'src/app/service/ressourceService';
 import { Subscription } from 'rxjs';
 import { JeuService } from 'src/app/http/jeuService';
+import { Ere, Eres } from 'src/app/model/ere.model';
+import { NomJoueurService } from 'src/app/service/nomJoueurService';
 
 @Component({
   selector: 'app-header-jeu',
@@ -18,6 +20,10 @@ export class HeaderJeuComponent implements OnInit {
   environnement: Environnement | null = null;
   civilisation: Civilisation | null = null;
   ressources: Ressources | null = null;
+  listeEre: Eres | null = null;
+  nomJoueur: string | null = null;
+  ere: Ere | null = null;
+  idEre: number | null = null;
   
   private subscriptions: Subscription = new Subscription();
 
@@ -25,20 +31,55 @@ export class HeaderJeuComponent implements OnInit {
     private civilisationService: CivilisationService, 
     private modalService: ModalService,
     private jeuService: JeuService,
-    private ressourcesService: RessourceService) {}
+    private ressourcesService: RessourceService,
+    private nomJoueurService: NomJoueurService) {}
 
 
   
   ngOnInit() {
+    this.nomJoueur = this.nomJoueurService.getNomJoueur();
     this.subscriptions.add(this.ressourcesService.ressources$.subscribe(
       ressources => this.ressources = ressources
     ));
     if(this.civilisationService.getCivilisation()!=null){
       this.civilisation = this.civilisationService.getCivilisation();
     }
+    this.fetchData();
     this.loadEnvironnement();
     this.loadRessources();
     this.loopTick();
+  }
+
+  fetchData() {
+    this.jeuService.httpListeEres().subscribe(
+      data => {
+        this.listeEre = data["Ere"];
+      },
+      error => {
+        console.error("Erreur lors de la récupération des eres", error);
+      }
+    );
+    if (this.nomJoueur) {
+      this.jeuService.httpEre(this.nomJoueur).subscribe({
+        next: (response) => {
+          this.ere = response;
+          if (this.listeEre && this.ere) {
+            const ereValues = Object.values(this.listeEre);
+            const ereMatch = ereValues.find(ereItem => ereItem.nom === this.ere!.nom);
+            if (ereMatch) {
+              this.idEre = ereMatch.id;
+              console.log("ere id : " + this.idEre);
+            } else {
+              console.log('Aucune correspondance trouvée pour cette ère dans la liste');
+            }
+          }
+          
+        },
+        error: (error) => {
+          console.error('Erreur lors de la requête', error);
+        }
+      });
+    }
   }
 
   loopTick(){

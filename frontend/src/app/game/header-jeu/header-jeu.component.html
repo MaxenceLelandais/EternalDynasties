@@ -3,7 +3,13 @@
     <div class="header-info">
         <img [src]="environnement?.banniere" alt="" class="header-jeu-banniere">
         <img [src]="environnement?.ecusson" alt="" class="header-jeu-ecusson">
-        <h1 class="prehistoire">{{ civilisation?.nom }}</h1>
+        <h1 class="prehistoire" *ngIf="idEre == 1">{{ civilisation?.nom }}</h1>
+        <h1 class="antiquite" *ngIf="idEre == 2">{{ civilisation?.nom }}</h1>
+        <h1 class="medieval" *ngIf="idEre == 3">{{ civilisation?.nom }}</h1>
+        <h1 class="renaissance" *ngIf="idEre == 4">{{ civilisation?.nom }}</h1>
+        <h1 class="industrielle" *ngIf="idEre == 5">{{ civilisation?.nom }}</h1>
+        <h1 class="moderne" *ngIf="idEre == 6">{{ civilisation?.nom }}</h1>
+        <h1 class="futuriste" *ngIf="idEre == 7">{{ civilisation?.nom }}</h1>
     </div>
     <div class="header-buttons">
         <div class="arbre-recherche-button-container">

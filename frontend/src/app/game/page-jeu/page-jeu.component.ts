@@ -104,30 +104,30 @@ constructor(
             this.ressources = response;
             localStorage.setItem('ressources', JSON.stringify(this.ressources));
             console.log('Réponse du serveur ressource : ', response);
-            if (this.ressources) {
-              console.log("Current state of this.ressources:");
-              for (const key in this.ressources) {
-                if (this.ressources.hasOwnProperty(key)) {
-                  const ressource = this.ressources[key];
-                  console.log(`Ressource: ${key}`);
-                  console.log(`Nom: ${ressource.nom}`);
-                  console.log(`Description: ${ressource.description}`);
-                  console.log(`Quantité: ${ressource.quantite}`);
-                  console.log(`Max: ${ressource.max}`);
-                  console.log(`Type: ${ressource.type}`);
-                  console.log(`Valeur d'échange: ${ressource.valeurEchange}`);
-                  console.log(`Image: ${ressource.image}`);
-                  console.log(`Coût:`);
-                  if (ressource.Coût) {
-                    Object.entries(ressource.Coût).forEach(([coutNom, coutVal]) => {
-                      console.log(`  ${coutNom}: ${coutVal}`);
-                    });
-                  }
-                }
-              }
-            } else {
-              console.log("No ressources to display.");
-            }
+            // if (this.ressources) {
+            //   console.log("Current state of this.ressources:");
+            //   for (const key in this.ressources) {
+            //     if (this.ressources.hasOwnProperty(key)) {
+            //       const ressource = this.ressources[key];
+            //       console.log(`Ressource: ${key}`);
+            //       console.log(`Nom: ${ressource.nom}`);
+            //       console.log(`Description: ${ressource.description}`);
+            //       console.log(`Quantité: ${ressource.quantite}`);
+            //       console.log(`Max: ${ressource.max}`);
+            //       console.log(`Type: ${ressource.type}`);
+            //       console.log(`Valeur d'échange: ${ressource.valeurEchange}`);
+            //       console.log(`Image: ${ressource.image}`);
+            //       console.log(`Coût:`);
+            //       if (ressource.Coût) {
+            //         Object.entries(ressource.Coût).forEach(([coutNom, coutVal]) => {
+            //           console.log(`  ${coutNom}: ${coutVal}`);
+            //         });
+            //       }
+            //     }
+            //   }
+            // } else {
+            //   console.log("No ressources to display.");
+            // }
           },
           error: (error) => {
             console.error('Erreur lors de la requête', error);

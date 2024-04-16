@@ -242,6 +242,7 @@ body {
 .header-jeu .header-info .antiquite {
   font-family: "antiquite", sans-serif;
   font-size: 30px;
+  margin-top: 5px;
 }
 .header-jeu .header-info .medieval {
   font-family: "medieval", sans-serif;
