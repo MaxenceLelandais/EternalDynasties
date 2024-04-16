@@ -270,11 +270,24 @@ public class Joueur {
                 tick(ressource);
             }
         }
+
         if(this.ressources.containsKey("Nourriture")&&this.ressources.containsKey("Piété")&&this.ressources.containsKey("Habitant")) {
-            int nombreHabEnPlus = (int) Math.log(1 + this.ressources.get("Nourriture") * (1 + this.ressources.get("Piété")) / (this.ressources.get("Habitant") * this.ressources.get("Habitant")));
-            if (Math.random() < 0.1) {
-                this.ressources.replace("Habitant", this.ressources.get("Habitant") + nombreHabEnPlus);
+            double habitantsTotal = this.ressources.get("Habitant");
+            for(Ressource r : this.arbreDeRessources.getListeRessources().get("métiers").values()){
+                if(this.ressources.containsKey(r.getNom())) {
+                    habitantsTotal += this.ressources.get(r.getNom());
+                }
             }
+            int nombreHabEnPlus = (int) Math.log(1 + this.ressources.get("Nourriture") * (1 + this.ressources.get("Piété")) / (habitantsTotal * habitantsTotal));
+            if (Math.random() < 0.1) {
+                if(habitantsTotal + nombreHabEnPlus<=this.ressources.get("Max-Habitant")){
+                    this.ressources.replace("Habitant", habitantsTotal + nombreHabEnPlus);
+                }
+            }
+        }
+
+        if(this.ressources.get("Nourriture")==0){
+            this.ressources.replace("Habitant", (double)(int) (this.ressources.get("Habitant")*0.93));
         }
 
         save();
