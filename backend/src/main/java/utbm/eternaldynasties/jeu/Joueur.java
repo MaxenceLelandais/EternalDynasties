@@ -287,7 +287,10 @@ public class Joueur {
         }
 
         if(this.ressources.get("Nourriture")==0){
-            this.ressources.replace("Habitant", (double)(int) (this.ressources.get("Habitant")*0.93));
+            double restant = (double)(int) (this.ressources.get("Habitant")*0.93);
+            if(restant>2) {
+                this.ressources.replace("Habitant", (double) (int) (this.ressources.get("Habitant") * 0.93));
+            }
         }
 
         save();
