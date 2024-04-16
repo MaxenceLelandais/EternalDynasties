@@ -4,6 +4,9 @@
         <img src="{{ressource.value.image}}" alt="">
         <p>{{ ressource.value.nom }}</p>
         <p>{{ ressource.value.quantite | number:'1.0-6' }}</p>
+        <div *ngFor="let coutKey of ressource.value['Coût'] | keyvalue; let i = index">
+          <p>{{ coutKey.key }} : {{ coutKey.value }}</p>
+        </div>        
       </li>
     </ng-container>
   </ul>

@@ -1,8 +1,8 @@
 <ul *ngIf="ressources">
     <ng-container *ngFor="let ressource of ressources | keyvalue">
       <li *ngIf="ressource.value.type.includes('Métier')" (click)="addRessource(ressource.value.nom)">
-        <img src="{{ ressource.value.image }}" alt="">
-        <p>{{ ressource.value.nom }}, {{ ressource.value.image }}</p>
+        <!-- <img src="{{ ressource.value.image }}" alt=""> -->
+        <p class="metier-button">{{ ressource.value.nom }}</p>
         <p *ngIf="ressource.value.max<0">{{ ressource.value.quantite }}</p>
         <p *ngIf="ressource.value.max>=0">{{ ressource.value.quantite }} / {{ ressource.value.max }}</p>
       </li>

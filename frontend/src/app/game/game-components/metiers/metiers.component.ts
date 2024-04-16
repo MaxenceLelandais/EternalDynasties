@@ -22,10 +22,11 @@ export class MetiersComponent {
   }
 
   ngOnInit() {
+    this.nomJoueur = this.nomJoueurService.getNomJoueur();
     this.subscribeToRessources();
     this.loadRessources();
     
-    this.nomJoueur = this.nomJoueurService.getNomJoueur();
+    
   }
 
   private loadRessources() {

@@ -17,5 +17,15 @@ ul {
         width: 35%;
       }
     }
+    .metier-button {
+      transition-duration: 0.3s;
+      font-size: 100%;
+      cursor: pointer;
+      &:hover {
+        margin-top: 5%;
+        font-size: 130%;
+        color: rgb(225, 209, 117);
+      }
+    }
   }
 }
