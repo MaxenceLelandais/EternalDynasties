@@ -30,7 +30,7 @@
     },
     {
       "id": 5,
-      "nom": "Revolution Industrielle",
+      "nom": "Révolution industrielle",
       "description": "La Révolution industrielle, ère de progrès technique fulgurant, a transformé les sociétés avec l'avènement des machines, inaugurant l'ère de la production de masse et le début de la société moderne.",
       "imageNonactif" : "./assets/img/ere/industrielle-nonactif.png",
       "imageActif" : "./assets/img/ere/industrielle-actif.png"

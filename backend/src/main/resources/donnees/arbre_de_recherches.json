@@ -383,7 +383,7 @@
             "Commerce"
         ],
         "Bonus":{
-            "Or": "1",
+            "Or": "1;0.1/Banquier",
             "Banque": "1",
             "Banquier": "1",
             "Max-Banquier": "1"

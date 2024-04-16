@@ -66,6 +66,7 @@ export class HeaderJeuComponent implements OnInit {
           if (this.listeEre && this.ere) {
             const ereValues = Object.values(this.listeEre);
             const ereMatch = ereValues.find(ereItem => ereItem.nom === this.ere!.nom);
+            console.log("ereMatch : " + ereMatch);
             if (ereMatch) {
               this.idEre = ereMatch.id;
               console.log("ere id : " + this.idEre);
