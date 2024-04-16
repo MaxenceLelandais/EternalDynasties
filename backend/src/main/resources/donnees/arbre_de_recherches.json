@@ -63,6 +63,8 @@
         ],
         "Bonus":{
             "Fermier":"1",
+            "Bûcheron":"1",
+            "Mineur":"1",
             "Ferme": "1",
             "Grange":"1",
             "Max-Bûcheron":"0",
