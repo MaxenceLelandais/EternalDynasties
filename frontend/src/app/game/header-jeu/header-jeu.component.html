@@ -15,7 +15,8 @@
             <ng-container *ngFor="let ressource of ressources | keyvalue">
             <li *ngIf="ressource.value.type == 'Ressource jeu'">
                 <p>{{ ressource.value.nom }}</p>
-                <p>{{ ressource.value.quantite | number:'1.0-2' }}</p>
+                <p *ngIf="ressource.value.nom == 'Habitant'">{{ ressource.value.quantite | number:'1.0-2' }} / {{ ressource.value.max }}</p>
+                <p *ngIf="ressource.value.nom != 'Habitant'">{{ ressource.value.quantite | number:'1.0-2' }}</p>
             </li>
             </ng-container>
         </ul>
