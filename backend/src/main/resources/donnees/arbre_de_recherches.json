@@ -89,7 +89,7 @@
         "Bonus": {
             "Mine":"1",
             "Fermier":"1",
-            "Nourriture":"0.25/Fermier",
+            "Nourriture":"2/Fermier",
             "Ferme":"1",
             "Forestier":"1",
             "Mineur":"1",
@@ -114,7 +114,7 @@
             "Mythologie"
         ],
         "Bonus":{
-            "Piété": "1",
+            "Piété": "1;1/Prêtre",
             "Temple": "1",
             "Max-Piété":"100",
             "Prêtre": "1",
@@ -160,7 +160,8 @@
         "Bonus":{
             "Ecole": "1",
             "Max-Enseignant": "1",
-            "Enseignant": "1"
+            "Enseignant": "1",
+            "Point de recherche": "1/Enseignant"
         },
         "Dépendance":[
             "Croyance"
@@ -177,6 +178,7 @@
             "Religion"
         ],
         "Bonus":{
+            "Piété": "1/s"
         },
         "Dépendance":[
             "Croyance"
@@ -313,7 +315,7 @@
         ],
         "Bonus":{
             "Laboratoire": "1",
-            "Points de science": "1",
+            "Points de science": "1;0.05/Scientifique",
             "Scientifique": "1",
             "Max-Scientifique": "1"
         },
@@ -438,7 +440,8 @@
             "Alchimie"
         ],
         "Bonus":{
-            "Mage": "0"
+            "Mage": "0",
+            "Mana": "0.1/Mage"
         },
         "Dépendance":[
             "Magie"
@@ -462,7 +465,8 @@
         "Bonus":{
             "Sorcier": "1",
             "Max-Sorcier": "1",
-            "Habitant Mort": "50"
+            "Habitant Mort": "50",
+            "Mana": "0.05/Sorcier"
         },
         "Dépendance":[
             "Magie"
