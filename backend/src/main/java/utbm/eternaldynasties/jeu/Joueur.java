@@ -280,9 +280,10 @@ public class Joueur {
             }
             int nombreHabEnPlus = (int) Math.log(1 + this.ressources.get("Nourriture") * (1 + this.ressources.get("Piété")) / (habitantsTotal * habitantsTotal));
             if (Math.random() < 0.1) {
-                if(habitantsTotal + nombreHabEnPlus<=this.ressources.get("Max-Habitant")){
-                    this.ressources.replace("Habitant", habitantsTotal + nombreHabEnPlus);
+                if(habitantsTotal + nombreHabEnPlus>this.ressources.get("Max-Habitant")){
+                    nombreHabEnPlus = (int)( ((int)this.ressources.get("Max-Habitant").doubleValue())-habitantsTotal);
                 }
+                this.ressources.replace("Habitant", habitantsTotal + nombreHabEnPlus);
             }
         }
 
