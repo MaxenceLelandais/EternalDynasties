@@ -68,7 +68,9 @@
             "Max-Bûcheron":"0",
             "Max-Mineur":"0",
             "Max-Fermier": "0",
-            "Nourriture": "1.0/s;0.5/Fermier"
+            "Nourriture": "1.0/s;0.5/Fermier",
+            "Bois":"1/Bûcheron",
+            "Pierre": "1/Mineur"
         },
         "Dépendance":[
             "Tribu"

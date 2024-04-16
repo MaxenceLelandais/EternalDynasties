@@ -680,8 +680,7 @@
                 "Habitant": "1"
             },
             "Bonus": {
-                "Bûcheron": "0",
-                "Bois": "1/s"
+                "Bûcheron": "0"
             }
         },
         "Max-Bûcheron": {
