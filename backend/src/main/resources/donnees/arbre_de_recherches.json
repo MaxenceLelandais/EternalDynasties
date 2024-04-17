@@ -163,7 +163,7 @@
             "Ecole": "1",
             "Max-Enseignant": "1",
             "Enseignant": "1",
-            "Point de recherche": "1/Enseignant"
+            "Points de recherche": "1/Enseignant"
         },
         "Dépendance":[
             "Croyance"

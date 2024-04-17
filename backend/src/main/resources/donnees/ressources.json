@@ -717,7 +717,8 @@
             "Image": "./assets/img/ressources/metier/Banquier.png",
             "Coût": {
                 "Habitant": "1",
-                "Or": "1"
+                "Piété": "10",
+                "Nourriture": "1000"
             },
             "Bonus": {
                 "Banquier": "0"
