@@ -25,6 +25,7 @@
             "Puissance économique":"1",
             "Puissance culturelle": "1",
             "Merveille":"0.000001"
+
         }
     },
     "Préhistoire":{
@@ -63,16 +64,10 @@
         ],
         "Bonus":{
             "Fermier":"1",
-            "Bûcheron":"1",
-            "Mineur":"1",
             "Ferme": "1",
             "Grange":"1",
-            "Max-Bûcheron":"0",
-            "Max-Mineur":"0",
             "Max-Fermier": "0",
-            "Nourriture": "1.0/s;0.5/Fermier",
-            "Bois":"1/Bûcheron",
-            "Pierre": "1/Mineur"
+            "Nourriture": "1.0/s;0.5/Fermier"
         },
         "Dépendance":[
             "Tribu"
@@ -90,15 +85,16 @@
         ],
         "Bonus": {
             "Mine":"1",
-            "Fermier":"1",
-            "Nourriture":"2/Fermier",
-            "Ferme":"1",
+            "Nourriture":"1/Fermier",
             "Forestier":"1",
             "Mineur":"1",
+            "Max-Bûcheron":"0",
+            "Max-Mineur":"0",
             "Bûcheron":"1",
-            "Grange":"1",
             "Entrepôt":"1",
-            "Carrière": "1"
+            "Carrière": "1",
+            "Bois":"1/Bûcheron",
+            "Pierre": "1/Mineur"
         },
         "Dépendance":[
             "Cueillette"
@@ -163,7 +159,7 @@
             "Ecole": "1",
             "Max-Enseignant": "1",
             "Enseignant": "1",
-            "Points de recherche": "1/Enseignant"
+            "Points de recherche": "0.005/Enseignant"
         },
         "Dépendance":[
             "Croyance"
@@ -562,7 +558,8 @@
         ],
         "Bonus":{
             "Puissance culturelle": "100",
-            "Mine d'or": "1"
+            "Mine d'or": "1",
+            "Or":"1/Mine d'or"
         },
         "Dépendance":[
             "Monnaie"

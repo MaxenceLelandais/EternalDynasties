@@ -9,8 +9,7 @@
                 "Nourriture": "5"
             },
             "Bonus": {
-                "Habitant": "0",
-                "Nourriture": "-1/s"
+                "Habitant": "0"
             }
         },
         "Habitant Mort": {
